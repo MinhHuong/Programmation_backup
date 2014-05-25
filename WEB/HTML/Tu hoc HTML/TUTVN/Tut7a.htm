@@ -1,0 +1,288 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <title>7a. Inline Graphics</title>
+   <meta NAME="GENERATOR" CONTENT="Mozilla/3.0Gold (Win95; I) [Netscape]">
+</head>
+<body BGCOLOR="#FFFFFF">
+
+<h5><i>Soạn thảo HTML</i> |
+<a HREF="index.htm">Giới thiệu</a> | <a HREF="faq.htm">FAQ</a> |
+<a HREF="http://www.mcli.dist.maricopa.edu/cgi-bin/alumni.pl">Alumni</a> |
+<a HREF="tag.htm">Các Tag</a> |
+<a HREF="lessons.htm">Mục Lục</a> |
+<a HREF="tut7.htm">Bài trước</a> |
+<a HREF="tut8.htm">Bài kế tiếp</a> | </h5>
+
+<h1>7a. Hình ảnh Inline</h1>
+
+<p>Toán học trong WWW là: </p>
+
+<pre>          Text + Pictures = Multimedia
+          Multimedia + WWW = Global HyperMedia</pre>
+
+<p>Bạn có đồng ý không? </p>
+
+<h2>Mục đích</h2>
+
+<p>Sau bài học này, bạn sẽ có thể:</p>
+
+<ul>
+<li>Đặt một hình ảnh vào trong tài liệu HTML của bạn.
+<li>Chọn lựa cách xắp sếp hình ảnh với văn bản bao quanh.
+<li>Sửa đổi tag chèn hình ảnh để phục vụ cho người sử dụng dùng browser không có hình ảnh.
+<li>Chỉ định chiều của hình ảnh.</li>
+</ul>
+
+<p>
+<hr></p>
+
+<h2>Bài học</h2>
+
+<p>Chúng ta hãy nhìn xem làm thế nào để thêm các hình ảnh giống như &quot;chữ M lớn&quot; vào
+trong một trang web ...</p>
+
+<h3>Tag HTML cho Inline Graphics</h3>
+
+<p>Một hình ảnh &quot;inline&quot; được xuất hiện bên trong văn bản của trang web, giống như
+<img SRC="pictures/m.gif" HEIGHT="87" WIDTH="100"> hình &quot;chữ M lớn&quot; này.
+</p>
+
+<p>Dạng HTML cho tag hình ảnh inline là:</p>
+
+<pre>
+<font COLOR="#000080">     &lt;img src=&quot;filename.gif&quot;&gt;</font>
+</pre>
+<p>
+trong đó <tt>filename.gif</tt> là tên của một tập tin GIF <i>để ở cùng directory/folder</i>
+với tài liệu HTML. Từ &quot;inline&quot; có nghĩa là web browser sẽ hiển thị hình ảnh ngay trong
+văn bản.
+</p>
+Hãy chú ý các văn bản theo ngay sau &quot;chữ M lớn&quot; ở trên. Nếu chúng ta muốn &quot;chữ M lớn&quot;
+ở riêng trên một dòng thì sao? Để một hình ảnh xuất hiện trên một dòng riêng biệt,
+<p><img src="pictures/m.gif" WIDTH="100" HEIGHT="87"><p>
+chỉ cần thêm một tag <tt>paragraph</tt> trước và sau tag <tt>image</tt>:
+<pre><font color="navy">
+     &lt;p&gt; &lt;img src=&quot;filename.gif&quot;&gt; &lt;p&gt;
+</font></pre>
+<h3>Sự sắp xếp trong hàng của văn bản và Inline Graphics</h3>
+
+<p>Tag &lt;img...&gt; có thể thêm thuộc tính để điều khiển vị trí của văn bản
+so với hình ảnh trong hàng. Thuộc tính <tt>align</tt> được thêm vào trong tag
+&lt;img....&gt; có thể đem lại những hiệu quả sau:</p>
+
+<h3>1. <tt>align=top</tt></h3>
+
+<blockquote>
+<pre><font COLOR="navy">&lt;img align=top src=&quot;filename.gif&quot;&gt;</font>
+</pre>
+
+<p><img SRC="pictures/m.gif" HEIGHT="87" WIDTH="100" ALIGN="TOP"> <b>is for Maricopa
+Community Colleges</b> located in the Valley of the Sun, metropolitan Phoenix,
+Arizona. Our license plates say that we are the Grand Canyon State... 
+<hr></p>
+</blockquote>
+
+<h3>2. <tt>align=middle</tt></h3>
+
+<blockquote>
+<pre><font COLOR="navy">&lt;img align=middle src=&quot;filename.gif&quot;&gt;</font></pre>
+
+<p><img SRC="pictures/m.gif" HEIGHT="87" WIDTH="100" ALIGN="CENTER"> <b>is for
+Maricopa Community Colleges</b> located in the Valley of the Sun, metropolitan
+Phoenix, Arizona. Our license plates say that we are the Grand Canyon State...
+
+<hr></p>
+</blockquote>
+
+<h3>3. <tt>align=bottom</tt> (mặc định)</h3>
+
+<blockquote>
+<pre><font COLOR="#000080">&lt;img align=bottom src=&quot;filename.gif&quot;&gt;</font></pre>
+
+<p><img SRC="pictures/m.gif" HEIGHT="87" WIDTH="100" ALIGN="BOTTOM"> <b>is for
+Maricopa Community Colleges</b> located in the Valley of the Sun, metropolitan
+Phoenix, Arizona. Our license plates say that we are the Grand Canyon State...
+</p>
+
+<p>
+<hr></p>
+</blockquote>
+
+<blockquote>
+<p><b>Chú ý cách sắp xếp văn bản trên mỗi dòng...(có thể thu hẹp hay mở rộng
+bề rộng của cửa sổ browser WWW để xem rõ sự thay đổi). Với HTML 2.0, bạn không
+thể có những khối văn bản ngay bên cạnh hình ảnh. Trong những
+bài học sau, chúng ta sẽ xem cách tạo ra những hiệu quả đó.</b></p>
+</blockquote>
+
+<h3>Đặt một hình ảnh vào trong tài liệu HTML của bạn</h3>
+<b>Lưu ý: Nếu bạn chưa có tài liệu từ bài học trước, bạn có thể <a href="tut7aget.htm">
+download</a> ngay bây giờ. Bạn cũng cần có hình GIF từ <a HREF="tut7img.htm">
+Trung tâm Download Hình ảnh Bài 7</a>.</b><p>
+
+Trong bài tập này, bạn sẽ thêm hình ảnh giới thiệu núi lửa trong trang web của bạn.</p>
+
+<ol>
+<li>Mở lại workspace của bạn (nếu nó chưa được mở).
+<li>Mở lại tài liệu <tt>volc.htm</tt> trong trình soạn thảo văn bản.
+<li>Bên trên mục <tt>&lt;h1&gt;Volcano Web&lt;/h1&gt;</tt> đánh vào:
+
+<pre><font COLOR="navy">  &lt;img src=&quot;lava.gif&quot;&gt;</font>
+</pre>
+Dạng HTML này sẽ thêm trên đỉnh trang web của bạn hình ảnh dung nham mà bạn đã
+download trong <a href="tut7img.htm">bài trước</a>.
+<li>Lưu trữ và reload trong web browser của bạn.
+</ol>
+<p>
+Trong việc đặt hình ảnh, bạn có thể tự hỏi tại sao chúng ta không cần đặt một tag
+&lt;p&gt; sau hình ảnh. Điều này không cần thiết bởi vì văn bản theo sau nó là một tiêu
+đề. Một web browser <b>luôn luôn</b> chèn một dấu ngắt đoạn trước và sau
+một tag &lt;h1,h2,h3...&gt;.</p>
+
+<h3>Thuộc tính <tt>alt=&quot;...&quot;</tt> </h3>
+
+<p>Nếu trang web của bạn sẽ được xem bởi một người sử dụng browser dạng văn bản
+(text-only browser, ví dụ như lynx), họ sẽ không có khả năng để xem bất kỳ những hình
+ảnh inline nào.
+Hoặc đôi khi người sử dụng tắt đi việc trình bày hình ảnh inline để tiết kiệm thời gian
+download qua các kết nối mạng chậm. Một thuộc tính của tag &lt;img...&gt;
+cho phép thay vào vị trí của hình ảnh bằng một chuổi văn bản mô tả nó. </p>
+Bình thường khi gặp trường hợp này, một người sử dụng text-browser sẽ thấy một vị
+trí giữ chỗ (place holder) để phần
+đầu trang web của chúng ta trông giống như sau:
+</p>
+
+<pre>[IMAGE]
+                         Volcano Web
+In this lesson you will use the Internet to research information 
+on volcanoes and then write a report on your results. 
+ -----------------------------------------------------------------
+In this Lesson... 
+
+</pre>
+
+<p>Cách trình bày này giúp người sử dụng biết rằng có một hình ảnh được chen vào đầu
+của trang này. Bạn có thể sửa đổi tag &lt;img&gt; để thay vì trình bày một vị trí giữ chỗ
+như trên, browser
+sẽ hiển thị một dòng văn bản. Lấy ví dụ trong bài của chúng ta, chúng ta có
+thể thêm &quot;A lesson on:&quot; bằng cách điều chỉnh lại tag &lt;img...&gt; như sau:</p>
+
+<pre><font COLOR="#000080">     &lt;img alt=&quot;A Lesson on:&quot; src=&quot;lava.gif&quot;&gt;</font></pre>
+
+<p>
+Thuộc tính <tt>alt=&quot;...&quot;</tt> thay vị trí giữ chỗ bằng một dòng văn bản để cho một
+text-browser (hay khi tắt việc hiển thị hình ảnh), bài của chúng ta sẽ xuất hiện
+như sau:</p>
+
+<pre>A Lesson On
+                         Volcano Web
+In this lesson you will use the Internet to research information 
+on volcanoes and then write a report on your results. 
+ -----------------------------------------------------------------
+In this Lesson... 
+</pre>
+Bây giờ hãy điều chỉnh tương tự như trên vào trang HTML của bạn cho tag
+<tt>&lt;img&gt;</tt> có hình núi lửa.
+
+<h2>Thuộc tính chiều cao và chiều rộng</h2>
+
+<p>Một khả năng khác mà bạn có thể muốn thêm vào tag &lt;img...&gt; là
+hai thuộc tính để xác định kích cở hình ảnh tính bằng số điểm (pixel). Tại
+sao vậy? Thông thường web browser của bạn phải tự xác định những kích
+cở này khi nó đọc hình ảnh; việc nạp trang của bạn có thể
+nhanh hơn nếu bạn chỉ định những thông số này trong HTML.</p>
+
+<p>Dạng để thêm những thông số này là:</p>
+
+<pre><font COLOR="#000080">  &lt;img src=&quot;filename.gif&quot; width=X height=Y &gt;</font></pre>
+
+<p>trong đó X là chiều rộng và Y là chiều cao của hình ảnh tính theo điểm. </p>
+
+<p>Bạn có thể sử dụng nhiều chương trình tiện ích để xác định những giá trị số này. Một
+cách khác để tìm những kích cở của hình ảnh là nạp nó vào trong browser của bạn (bạn
+có thể sử dụng chức năng kéo và thả - drag and drop - biểu tượng của hình ảnh vào trong
+browser của bạn), khi đó chiều cao và chiều rộng sẽ được hiển thị trên thanh tiêu đề
+của browser.</p>
+Với ví dụ của chúng ta trong bài học này, hình <tt>lava.gif</tt> có 300 điểm chiều rộng
+và 259 điểm chiều cao. Vì vậy bạn nên điều chỉnh trong tập tin <tt>volc.htm</tt> thành:
+<pre><font color="navy">  &lt;img alt=&quot;A Lesson on:&quot; src=&quot;lava.gif&quot; width=300 height=259&gt;</font></pre>
+<blockquote><b>Chú ý: Thứ tự các thuộc tính trong tag <tt>&lt;img&gt;</tt>
+không quan trọng.
+</b></blockquote>
+
+<p>Thông thường chúng ta sẽ tự hỏi có thể thay đổi những kích cở của hình ảnh bằng
+cách đưa vào những số khác với kích cở thật của hình ảnh không. Câu trả lời là
+<b>được</b> nhưng kết quả nhận được thì không thể biết trước. Nếu bạn cho những số
+lớn hơn (để làm cho hình lớn hơn) kết quả là một hình có các &quot;khối màu&quot;
+(&quot;blocky&quot; picture).  Nếu bạn cho những số bé hơn (để làm cho hình nhỏ hơn) kết quả
+có thể làm biến dạng hình ảnh. Bạn có thể tự làm thử để có kinh nghiệm. Với chúng
+tôi, đó là một sự sai lầm!
+<hr>
+
+<h2>Kiểm tra lại công việc của bạn</h2>
+
+<p>Bạn có thể so sánh công việc của bạn với <a HREF="tut7a_ex.htm">ví dụ mẫu</a>
+để biết tài liệu này nên xuất hiện như thế nào. Nếu tài liệu của bạn không giống như ví dụ
+mẫu, kiểm tra lại xem bạn đã đánh vào dạng hình ảnh trong trình soạn thảo như thế nào.
+Hãy chắc chắn rằng bạn đã đánh vào theo sự hướng dẫn trong phần <b>Đặt một hình ảnh
+vào trong tài liệu HTML của bạn</b> của bài này.</p>
+Nếu bạn thấy một biểu tượng hình với một dấu chấm hỏi như sau:
+<p>
+<center><img SRC="zippo.gif"></center>
+<p>
+trước hết hãy kiểm tra lại xem tập tin HTML và hình ảnh GIF có cùng ở trên một
+folder/directory không. Sau đó, bạn cũng nên chắc chắn rằng tên tập tin bạn đánh
+trong tag <tt>&lt;img... &gt;</tt> là tương ứng với tên của tập tin GIF.
+<blockquote><b>Chú ý: Một số hệ thống máy tính (UNIX) có phân biệt dạng
+chữ hoa và chữ thường (case sensitive) trong tên tập tin, điều này có nghĩa rằng tập tin
+<tt>&quot;lava.GIF&quot;</tt> KHÔNG phải là <tt>&quot;lava.gif&quot;</tt>. Một số máy tính khác
+(Macintosh) lại xem chúng là cùng một tập tin. Ngay cả khi máy tính của bạn không
+có sự khác biệt như vậy, chúng tôi vẫn đề nghị bạn nên xét lại dạng chữ trong cách đặt
+tên tập tin và các tham khảo chúng trong HTML của bạn. (Nhiều WWW servers ở trên
+UNIX).</b></blockquote>
+
+<h2>Xem lại</h2>
+<ol>
+<li>Dạng HTML cho một hình ảnh inline là gì?
+<li>Tag nào bạn phải thêm vào trước một tag hình ảnh để nó xuất hiện
+trên một dòng riêng?
+<li>Làm thế nào để thêm hình ảnh núi lửa vào tài liệu của bạn?
+<li>Thuộc tính <tt>alt=&quot;....&quot;</tt> làm gì? Thuộc tính
+<tt>height=&quot;....&quot;</tt> là gì?
+</ol>
+
+<h2>Thực tập tự do</h2>
+Thêm một hình ảnh inline vào trang web của bạn bằng cách sử dụng một hình GIF đang có trong
+máy của bạn hoặc một hình được download từ Internet.
+<hr>
+
+<h2>Đi đến bài tiếp theo....</h2>
+
+Tạo liên kết đến các tài liệu và tập tin khác mà bạn tạo ra giống như trên Internet.
+
+<h5> ĐẾN.... | <a HREF="lessons.htm">Mục Lục</a>
+| <a HREF="tut7.htm">Bài trước: &quot;Hình ảnh&quot;</a> |
+<a HREF="tut8.htm">Bài kế tiếp: &quot;Tạo Liên kết bằng Anchors&quot;</a> |
+</h5>
+
+<p>
+<hr><b>Soạn thảo HTML</b> bài 7a: Hình ảnh Inline<br>
+</p>
+
+<address>©1995, 1996 <a HREF="http://www.mcli.dist.maricopa.edu/">Maricopa
+Center for Learning and Instruction (MCLI)<br>
+</a><a HREF="http://www.mcli.dist.maricopa.edu/mcccd/">Maricopa County
+Community College District</a>, Arizona</address>
+
+<p> The Internet Connection at MCLI is <a HREF="http://www.mcli.dist.maricopa.edu/alan/">Alan
+Levine --}<br>
+</a>Comments to <b><a HREF="mailto:levine@maricopa.edu">levine@maricopa.edu</a></b>
+</p>
+
+<p><tt>URL: http://www.mcli.dist.maricopa.edu/tut/tut7a.html</tt> </p>
+
+</body>
+</html>
+

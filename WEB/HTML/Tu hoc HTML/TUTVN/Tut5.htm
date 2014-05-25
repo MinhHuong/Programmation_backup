@@ -1,0 +1,200 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>5. Doing it with Style</title>
+</head>
+<body bgcolor="#FFFFFF">
+<h5><i>Soạn thảo HTML</i> |
+<a HREF="index.htm">Giới thiệu</a> | <a HREF="faq.htm">FAQ</a> |
+<a HREF="http://www.mcli.dist.maricopa.edu/cgi-bin/alumni.pl">Alumni</a> |
+<a HREF="tag.htm">Các Tag</a> |
+<a HREF="lessons.htm">Mục Lục</a> |
+<a HREF="tut4.htm">Bài trước</a>   | 
+<a HREF="tut6.htm">Bài kế tiếp</a>   | </h5>
+
+<h1>5. Làm việc với các kiểu mẫu (<i><b>Style</b></i>)</h1>
+Giống như một trình soạn thảo văn bản, HTML có thể báo cho Web browser hiển
+thị một phần nào đó của văn bản ở dạng in <i>nghiêng</i> hoặc in <b>đậm</b> hoặc
+ở dạng in <b>kết hợp</b> cả hai chế độ.
+
+<h2>Mục đích</h2>
+Sau bài học này bạn có khả năng:
+<ul>
+<li>Nhận dạng các tag HTML cho các kiểu mẫu văn bản: <b>Đậm</b>, <i>nghiêng</i>,
+hoặc ở dạng chữ đánh máy <tt>(mono-spaced)</tt>.
+<li>Nhập văn bản trong tài liệu HTML theo nhiều kiểu mẫu khác nhau và nhìn thấy
+sự thay đổi của chúng trong Web browser của bạn.
+</ul>
+<hr>
+<h2>Bài học</h2>
+<h3>Các tag Style của HTML</h3>
+HTML cung cấp một vài tag cho việc định dạng style cho văn bản. Hãy thận trọng và
+suy nghĩ cẩn thận trước khi dùng những kiểu này để định dạng cho văn bản; sử dụng
+quá nhiều có thể làm cho văn bản trở nên khó đọc hơn ...
+
+<table>
+<tr>
+<th colspan="2" bgcolor="#DDFFDD"><font size="+2">Các tag Style</font></th>
+</tr>
+<tr>
+<th bgcolor="#77FF77">HTML</th>
+<th bgcolor="#77FF77">Kết quả</th>
+</tr>
+
+<tr><td>
+<pre><font color="navy">
+&lt;b&gt;This is Bold...&lt;/b&gt;   
+</font></pre>
+</td>
+<td>
+<b>This is Bold</b>
+</td></tr>
+
+<tr><td>
+<pre><font color="navy">
+&lt;i&gt;This is Italic...&lt;/i&gt;
+</font></pre>
+</td>
+<td>
+<i>This is Italic</i>
+</td></tr>
+
+<tr><td>
+<pre><font color="navy">
+&lt;tt&gt;This is Typewriter...&lt;/tt&gt;
+</font></pre>
+</td>
+<td>
+<tt>This is Typewriter</tt>
+</td></tr>
+
+<tr>
+<td colspan="2">Lưu ý rằng bạn có thể kết hợp các tag này để định dạng miễn là chúng
+được lồng vào nhau một cách chính xác, ví dụ như cả hai tag bắt đầu và kết thúc in nghiêng đều phải <i>ở
+bên trong</i> các tag in đậm. Cũng lưu ý là thứ tự các tag không quan trọng.
+</td>
+</tr>
+<tr><td>
+<pre><font color="navy">
+&lt;i&gt;&lt;b&gt;This is Bold AND
+Italic&lt;/b&gt;&lt;/i&gt;
+
+&lt;b&gt;&lt;i&gt;And So is This&lt;/i&gt;&lt;/b&gt;
+</font></pre>
+</td>
+<td>
+<i><b>This is Bold AND Italic</b></i>
+<p>
+<b><i>And So is This</i></b>
+</td></tr>
+
+<tr>
+<td colspan="2">
+Hơn nữa, bạn có thể áp dụng những kiểu vào trong phần tiêu đề. Lưu ý về cách đặt các
+tag style đóng và mở xung quanh những từ muốn tạo kiểu còn những tag đề mục thì bao
+quanh toàn bộ đề mục.
+</td>
+</tr>
+<tr><td valign="top" align="left">
+<pre><font color="navy">blah blah blah
+
+&lt;h2&gt;&lt;i&gt;New&lt;/i&gt; and 
+&lt;tt&gt;Improved!&lt;/tt&gt;&lt;/h2&gt;
+
+blah blah blah
+</font></pre>
+</td>
+<td valign="top">
+blah blah blah
+<h2><i>New</i> and <tt>Improved!</tt></h2>
+blah blah blah
+</td></tr>
+</table>
+
+
+<h3>Áp dụng <i>Style</i> vào trong tài liệu của bạn</h3>
+<b>Lưu ý: Nếu bạn chưa có tài liệu từ các bài học trước, bạn có thể 
+<a href="tut5get.htm">download </a> ngay bây giờ.</b>
+<p>
+Theo những bước sau để áp dụng các tag style cho văn bản HTML của bạn:
+<ol>
+<li>Mở lại workspace của bạn (nếu nó chưa được mở).
+<li>Trở lại tài liệu HTML <tt>&quot;Volc.htm&quot;</tt> của bạn trong chương trình soạn thảo.
+<li>Tìm từ &quot;volcano&quot; trong câu đầu tiên của phần Introduction.
+Chúng ta sẽ làm từ này trở nên in đậm để đánh dấu đây là từ quan trọng.
+<li>Chèn thêm các tag để làm từ này trở nên in đậm :
+<pre><font color="navy">
+          &lt;b&gt;volcano&lt;/b&gt;
+</font></pre>
+<li>Bây giờ chúng ta sẽ sửa đổi đoạn văn thứ hai với những tag in đậm và in ngiêng để
+nhấn mạnh. Hãy thêm tag &lt;b&gt;...&lt;/b&gt; và &lt;i&gt;...&lt;/i&gt; quanh từ
+<tt>billion</tt> đó để đoạn này trông giống như sau :
+
+<pre><font color="navy">
+          &lt;p&gt;
+          Volcanoes have been a part of earth's history long 
+          before humans. Compare the history of human beings, 
+          a few million years in the making, to that of the
+          Earth, over four &lt;b&gt;&lt;i&gt;billion&lt;/i&gt;&lt;/b&gt; years in the
+          making.
+</font></pre>
+
+<li>Cuối cùng, chúng ta sẽ sử dụng tag <tt>typewriter</tt>  để chỉ ra một từ đặc biệt.
+Bên dưới đề mục <b>Volcano Terminology</b>, nhập vào đoạn sau:
+<pre><font color="navy">
+          The study of volcanoes, or &lt;tt&gt;Volcanology&lt;/tt&gt;,
+          includes many odd terms.
+</font></pre>
+
+<li><b>Lưu trữ</b> trong trình soạn thảo và <b>Reload</b> trong Web browser của bạn.
+</ol>
+<hr>
+
+<h2>Kiểm tra lại công việc của bạn</h2>
+Hãy xem <a href="tut5_ex.htm">Ví dụ mẫu</a> để nhìn thấy sự thay đổi. Điều quan
+trọng khi sử dụng các tag style là sự kết thúc đúng đắn các tag này bằng tag &lt;/&gt;
+thích hợp. Nếu không, tất cả phần văn bản còn lại sẽ bị tác động của kiểu đã chọn. Khi
+nhìn sẽ có vẻ kỳ quặc.
+<p>
+<h2>Xem lại</h2>
+<ol>
+<li>Các tag style của HTML là gì?
+<li>Những tag nào được sử dụng cho việc định dạng các kiểu mẫu văn bản?
+<li>Những bước nào bạn sử dụng cho việc áp dụng kiểu vào trong tài liệu HTML ?
+<li>Điểm thêm*- Các tag này tạo ra tiện lợi khi tạo trang web như thế nào?
+</ol>
+
+<h2>Thực tập tự do</h2>
+Thử sử dụng các tag style để <b>làm đậm</b>, <i>làm nghiêng</i>, và dùng kiểu chữ
+đánh máy <tt>typewriter</tt> vào văn bản trong trang web của bạn. Hãy quan sát
+khi bạn có thể sử dụng thành công tổ hợp các kiểu mẫu.
+
+<hr>
+
+<h2>Đi đến phần tiếp theo....</h2>
+Làm thế nào để đặt một danh sách các mục (list of items) lại với nhau, 
+thể hiện chúng ở cả dạng số (numbered fashion) và dạng dấu chấm (bulleted fashion).
+<p>
+<h5> ĐẾN....  |  <a HREF="lessons.htm">Mục Lục</a> | 
+<a HREF="tut4.htm">Bài trước:  &quot;Chia văn bản thành nhiều đoạn&quot;</a> |
+<a HREF="tut6.htm">Bài kế tiếp:  &quot;Danh sách&quot;</a> |
+</h5>
+<hr>
+<b>Soạn thảo HTML</b>  Bài 5: Làm việc với các <b><i>Style</b></i><br>
+<address>
+©1995, 1996 <a HREF="http://www.mcli.dist.maricopa.edu/">
+Maricopa Center for Learning and Instruction (MCLI)</a><br>
+<a HREF="http://www.mcli.dist.maricopa.edu/mcccd/">Maricopa County Community College District</a>, Arizona<p>
+The Internet Connection at MCLI is 
+<a href="http://www.mcli.dist.maricopa.edu/alan/">Alan Levine --}</a><br>
+Comments to <b><a HREF="mailto:levine@maricopa.edu">levine@maricopa.edu</a></b>
+</address>
+<p>
+<tt>URL: http://www.mcli.dist.maricopa.edu/tut/tut5.html</tt>
+<p>
+</body>
+</html>
+
+
+

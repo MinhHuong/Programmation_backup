@@ -1,0 +1,609 @@
+#!/bin/bash
+
+# RAPPEL DES COMMANDES : echo, cat, touch, grep, cut, sort, join...
+
+#echo Mon nom est = $1
+#echo $2 bi khung
+
+#echo la liste = $*
+#echo il y a $# parametres
+#echo parametre zero = $0
+
+#clear
+#echo  sauvegarde du projet $1 version $2
+#tar -czf ~/archives/"$1-$2.tgz" $1
+#echo savegarde terminee. Archive :
+#ls -l "~/archives/$1-$2.tgz"
+
+#echo "Bonjour" > message.txt #le contenu "Bonjour" est ecrit dans le fichier message.txt 
+#date "+%H:%M" >> message.txt #les info sur la date sont ajoutees dans le fichier precedent
+                             #les infos anciennes ne sont pas perdues
+
+#tr '[a-z]' '[A-Z]' < message.txt
+#cat message.txt
+
+#tr '[a-z]' '[A-Z]' <<EOF
+#c'est un test
+#EOF
+
+#w | cat -n
+
+#echo "grep pour trouver tout le mot complet"
+#grep italie villes.txt
+
+#echo "grep pour trouver un ou des caracteres seulement"
+#echo "par ex: grep 'i' villes.txt"
+#grep 'i' villes.txt
+
+#echo "grep ': h' villes.txt"
+#grep ': h' villes.txt
+
+#echo "trouver les elements a des positions selectionnees"
+#grep '^i' villes.txt
+#grep 'i$' villes.txt
+#grep '^f.*: p' villes.txt
+
+#cut -c 1-3 villes.txt 
+#cut -d: -f1 villes.txt
+#grep vietnam villes.txt | cut -d: -f2
+
+#sort pays.txt
+#sort -t: -k2 villes.txt
+
+#touch villes.p.txt
+#sort villes.txt > villes.p.txt
+#cat villes.p.txt
+
+#touch pays.p.txt 
+#sort -t: -k2 pays.txt > pays.p.txt 
+#cat pays.p.txt
+
+#join -t: -1 2 -2 1 pays.p.txt villes.p.txt 
+
+#grep $1 villes.txt | cut -d: -f2
+
+#------------------------------------------------------------------
+
+#CHANGER LE MODE DES UTLISATEUR
+
+#chmod $1 mon-fichier | ls -l mon-fichier
+
+#ls -l > mon-fichier
+#chmod 077 mon-fichier
+#cat mon-fichier
+
+#------------------------------------------------------------------
+
+#VARIABLES, EXPANSION, ...
+
+#A=2
+#B=3
+#E=4
+#C=$A+$B-$E
+#let D=A+B-E
+#echo $C vaut $D #C est la chaine "$A+$B" = "2+3", D indique la valeur de l'operation 2+3
+
+#message="Bienvenue parmi nous"
+#echo $message
+
+#echo "Bonjouer $USER"
+#echo -n "AUjourd'hui "
+#date
+
+#france="Europe/Paris"
+#vietnam="Asia/Ho_Chi_Minh"
+
+#echo -n "heure Vietnam = "
+#TZ=$vietnam date
+
+#echo -n "heure France = "
+#TZ=$france date
+#exit 0
+
+#grep $1 villes.txt | cut -d: -f2
+
+#a=12
+#b=42
+#c=a+b
+#echo $c
+
+#d=$a+$b
+#echo $d
+
+#let e=a+b
+#echo $e
+
+#IFS=, read NOM PRENOM
+#echo $NOM
+
+#echo "Votre annee de naissance ?"
+#read annee
+#let age=2014-annee
+#echo "Vous etes ne en $annee, vous avez donc $age"
+
+#----------------------------------------------------------------
+
+# EXPANSIONS
+
+#echo bonjour $USER
+#read longueur hauteur
+#echo perimetre=$((2*(longueur+hauteur)))
+#echo il y a $( who | wc -l) connexions
+
+#echo "Votre annee de naissance ?"
+#read annee
+#echo $(($( date "+%Y")-annee))
+
+#ls -l $1 | sort -k5 -g -r | grep '^d'  
+
+#echo 'la variable $USER' "contient $USER"
+
+#tar cf $( basename $1).$( date "+%Y-%m-%d").tar $( basename $1)
+
+#---------------------------------------------------------------
+
+# ALGORITHME
+
+#echo "Vous etes ne(e) en quelle annee ?"
+#read annee
+#year=$( date "+%Y")
+#let age=year-annee
+#echo "Vous avez donc $age ans"
+ 
+#let min=$1*60+$2
+#echo "Le nombre de minutes = $min"
+
+#let minDep=$1*60+$2
+#let minArr=$3*60+$4
+#let min=(minArr-minDep)%60
+#let heure=(minArr-minDep)/60
+#echo "$heure:$min"
+
+#echo "la surface du rectangle est $(($1*$2)) m2"
+
+#-----------------------------------------------------------------------------
+
+# CASE
+
+#echo "Choisir un parmi les membres de cette famille celebre : Tri, Tam, ou Long ?"
+#read choix
+#case $choix in
+    #Tri) echo "mac dit ghe";;
+    #Tam) echo "bo ia vao hong may";;
+    #Long) echo "tao dai vao mieng may a";;
+    #*) echo "bitch LOL";;
+#esac
+
+
+#echo "Format=normal gz ?"
+#read format
+#case "$format" in
+    #gz)
+	#option=z ;
+	#suffixe=tgz
+#	;;
+    #normal | "" )
+	#option= ;
+	#suffixe=tar
+#	;;
+    #*)
+#	echo "format '$format’ non reconnu" >&2
+#	exit 1
+#	;;
+#esac
+#prefixe=$( basename $1)
+#tar -c${option}f $prefixe.$suffixe $1
+
+
+#catalogue="telephone.dat"
+#case "$1" in 
+#    ajouter)
+#	shift
+#	echo $* >> $catalogue
+#	;;
+#    chercher)
+#	grep -i "$2" $catalogue
+#	;;
+#    voir)
+#	cat $catalogue
+#	;;
+#    *)
+#	echo "Erreur saisie"
+#	exit 1
+#	;;
+#esac
+
+#------------------------------------------------------------
+
+# FOR
+
+#for i in $*
+#do
+#    let somme+=i    
+#done
+#echo "La somme = $somme"
+
+#giai thua
+#r=1
+#for i in $(seq 1 $1)
+#do 
+#    let r*=i
+#done
+#echo $r
+
+#ls -l .
+#ls -l paoe
+#echo code de retour = $?
+
+#echo "Something strange happened"
+#exit 42   #Quelle est la fonction de exit 42
+
+#-------------------------------------------------------------
+
+# IF
+
+#if g++ -o $1 $1.cpp
+#then
+#    echo "Compilation reussie"
+#else
+#    echo "Il y a eu un probleme"    
+#fi
+
+
+#if test -f $1.cpp
+#then
+#    g++ -o $1 $1.cpp
+#    echo "Compilation reussie"
+#else
+#    echo "Pas trouver le fichier $1.cpp"
+#    exit 1
+#fi
+
+
+#if [ $1 \< $2 ]
+#then
+#    echo "min = $1"
+#else
+#    echo "min = $2"
+#fi
+
+
+#max=$1
+#[ $2 -ge $max ] && max=$2
+#echo $max
+
+
+#if [ -d $1 ]
+#    then
+#    echo $1 est un repertoire
+#elif [ -f $1 ]
+#then
+#    echo $1 est un fichier
+#elif [ -H $1 ]
+#then
+#    echo $1 est un lien symb.
+#else
+#    echo Je ne sais pas
+#fi
+
+
+#if [ $1 = tri ]
+#then
+#    echo "mac dit ghe"
+#elif [ $1 = tam ]
+#then
+#    echo "bo ia vao hong may"
+#elif [ $1 = long ]
+#then
+#    echo "tao dai vo mieng may a"
+#else
+#    echo "bitch no"
+#fi
+
+
+#----------------------------------------------------------
+
+# WHILE
+
+#calculer la factorielle
+#i=1
+#fact=1
+#while [ $i -le $1 ]
+#do
+#    let fact*=i
+#    let i++
+#done
+#echo $fact
+
+#---------------------------------------------------------
+
+#clear
+#echo "Hello $USER"
+#echo -n "Today is "
+#date "+%A %d %B %Y"
+#echo -n "There is/are $(who | wc -l) connection on $HOSTNAME"
+#echo "Calendar" ; cal
+#exit 0
+
+
+#if [ -f $1 ]
+#then
+#    echo "$1 est un fichier"
+#elif [ -d $1 ]
+#then
+#    echo "$1 est un repertoire"
+#else
+#    echo "the fuck ?"
+#fi
+
+
+#a=0
+#while [ $a -lt 10 ]
+#do
+#    echo $a
+#    let a=a+1
+#done
+
+
+#echo "Entrez n dont la valeur se situe entre 1 - 4 : "
+#read n
+#case $n in
+#    1) 
+#	echo "Printemps"
+#	;;
+#    2)
+#	echo "Ete"
+#	;;
+#    3)
+#	echo "Automne"
+#	;;
+#    4) 
+#	echo "Hiver"
+#	;;
+#    *)
+#	echo "The fuck ?"
+#	;;
+#esac
+	
+ 
+#if [ $# != 1 ]
+#then
+#    echo Erreur ! Vous ne saisissez pas le bon nombre de parametres
+#    exit
+#fi
+#grep "^$1:" villes.txt | cut -d: -f2
+
+
+#-p pour poser une question (afficher le message a l'ecran sans influence a d'autres variavles)
+#read -p "Quelle heure est-il ?" heure min
+#echo $heure
+#echo $min
+
+
+#IFS=":" read nom1 nom2
+#echo $nom1
+#echo $nom2
+
+#-----------------------------------------------------
+
+#demander l'annee de naissance
+#echo "Votre annee de naissance ?"
+#read annee
+
+#test de la reponse
+#if [ "$annee" = "" ]
+#then
+#    echo "Erreur saisie"
+#    exit 0  #sortir du script
+#fi
+
+#calculer l'age
+#let age=$( date +%Y)-annee
+
+#afficher le message
+#echo "Vous etes ne(e) en $annee, vous avez donc $age ans"
+
+#-----------------------------------------------------
+
+#calculer le nombre de processus
+#NOMBRE=$( ps -ef | grep ^$root | wc -l )
+#voir="ps -ef"
+#selectionner="grep ^$USER"
+#compter="wc -l"
+#NOMBRE=$( $voir | $selectionner | $compter )
+
+#afficher
+#echo "Sur $HOSTNAME, $USER a $NOMBRE processus"
+
+#----------------------------------------------------
+
+#SORTIR LES REPERTOIRES SELON LEUR TAILLE
+#du -sh "$1"/* | sort -hr | head -n 5
+
+
+#cmd="ls -l"
+#f=result
+#$cmd > $f
+#cat $f
+
+
+#format="%Y/%m/%d"
+#cmd="date +$format"
+#f=resultat
+#$cmd > $f
+#cat $f
+
+
+#message=bonjour
+#echo ${message/jour/soir}
+
+
+#sed "s/i/*/g"
+
+
+#tar cf $( basename $1 ).$( date "+%Y-%m-%d" ).tar $( basename $1 )
+
+
+#r=$( basename "$1")
+#echo Nom du repertoire = $r
+
+#d=$( date "+%Y-%m-%d")
+#echo date = $d
+
+#a="$r.$d.tgz"
+#echo Nom de l\'archive = ${a// /_}
+
+#tar -czf "./$a" "$1"
+
+
+#glob="ma variable globale"
+#v="variable"
+
+#function fun {
+#    local v
+#    glob="la variable glob est modifiee"
+#    v="cette variable v est modifiee"
+#}
+
+#echo $glob
+#echo $v
+
+#fun
+#echo $glob
+#echo $v
+
+
+# PROGRAMMATION ---------------------------------------
+
+#read -p "oui ou non ? : " reponse
+
+#case "$reponse" in 
+#    oui | o | yes | y)
+#	echo "D'accord"
+#	echo "Je fais le travail"
+#	;;
+#    n*) #tous les mots qui commencent par n, par exemple non, nein, ninanina...)       
+#	echo "Alors je ne fais rien"
+#	echo "Au revoir"
+#	;;
+#    *) #autre chose
+#	echo "Ce n'est pas la reponse"
+#	;;
+#esac #case a renvers
+
+
+#read -p "Vous voulez compiler quel fichier ?" f
+
+#case "$f" in 
+#    *.cc | *.cpp)
+#	g++ $f
+#	;;
+#    *.c)
+#	gcc $f
+#	;;
+#    *.java)
+#	javac $f
+#	;;
+#    *)
+#	echo dafuq is that ?
+#	;;
+#esac
+
+
+#for f in *.txt
+#do
+#    echo Le fichier $f contient $( wc -l $f ) lignes
+#done
+
+
+#for f in un deux trois quatre
+#do 
+#    echo === $f ===
+#done
+
+
+#CALCULER LA SOMME DES PARAMETRES
+#let somme=0
+#for nb in $*; do
+#    let somme+=nb
+#done
+#echo Les parametres sont $*
+#echo La somme vaut $somme
+
+
+#CALCULER LA FACTORIELLE
+#r=1
+#for i in $( seq 1 $1 ); do
+#    let r*=i
+#done
+#echo "$1! = $r"
+
+
+#for f in $( find . -name '*.txt' -ctime -7 ); do
+#    ls -l "$f"
+#done
+
+
+#ls -l .
+#echo Code de retour $?
+#ls -l C++
+#echo Code de retour $?
+
+
+#echo "Il y a 1 probleme"
+#exit 42
+
+
+#if [ -f $1 ]
+#then
+#    echo Le fichier $1 existe
+#else
+#    echo Lol it sucks
+#fi
+
+
+#if [ $1 \> $2 ]
+#then
+#    echo "Haha"
+#else
+#    echo "No"
+#fi
+
+#if [ $# -lt 2 ]
+#then
+#    echo If faut 2 parametres
+#    exit 1
+#fi
+
+
+#TROUVER LE MAXIMUM PARMI 2 PAREMETRES SAISIS
+#if [ $1 -gt $2 ]
+#then
+#    echo max = $1
+#else
+#    echo max = $2
+#fi
+
+
+#UNE AUTRE FACON A TROUVER LE MAXIMUM
+#max=$1
+#[ $2 -ge $max ] && max=$2
+#echo max = $max
+
+
+#i=1
+#f=1
+#while [ $i -le $1 ]
+#do
+#    let f*=ix
+#    let i++
+#done
+#echo "$1! = $f"
+
+
+#while read numero nom
+#do
+#    printf "| %12s | %-30s |\n" $numero $nom
+#done < $1
+
+

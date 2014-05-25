@@ -1,0 +1,386 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <title>8a. Linking to Local Files</title>
+   <meta NAME="GENERATOR" CONTENT="Mozilla/3.0Gold (Win95; I) [Netscape]">
+</head>
+<body BGCOLOR="#FFFFFF">
+
+<h5><i>Soạn thảo HTML</i> |
+<a HREF="index.htm">Giới thiệu</a> | <a HREF="faq.htm">FAQ</a> |
+<a HREF="http://www.mcli.dist.maricopa.edu/cgi-bin/alumni.pl">Alumni</a> |
+<a HREF="tag.htm">Các Tag</a> |
+<a HREF="lessons.htm">Mục Lục</a> |
+<a HREF="tut8.htm">Bài trước</a> |
+<a HREF="tut8b.htm">Bài kế</a> | </h5>
+
+<h1>8a. Liên kết đến tập tin cục bộ</h1>
+
+<p>Tài liệu của tôi có thể nói chuyện với tài liệu của tôi được không? Được chứ,
+ít nhất là chúng có thể liên kết với nhau được!
+
+<h2>Mục đích</h2>
+
+<p>Sau bài học này, bạn có thể:
+
+<ul>
+<li>Tạo liên kết đến tài liệu HTML trong cùng directory/folder với tài lệu
+chính của bạn.
+<li>Tạo liên kết để hiển thị một hình ảnh.
+<li>Tạo liên kết đến một tập tin trong một directory/folder khác với tài liệu chính
+của bạn.
+<li>Tổ chức lại cấu trúc web của bạn.
+</ul>
+
+<hr>
+
+<h2>Bài học</h2>
+
+<p>Bây giờ, bạn sẽ đi bước đầu tiên của &quot;anchoring&quot; bằng cách tạo ra
+một liên kết siêu văn bản đến một trang web thứ hai. Những liên kết này
+được gọi là &quot;cục bộ&quot; (local) bởi vì chúng cùng ở trên một máy tính và là tài liệu đang
+làm việc của bạn (chúng không cần phải thám hiểm trên Internet). Bạn sẽ thay đổi một
+chút về sự phát triển web site của bạn (bạn có thấy rằng điều này tạo ra một cái gì đó
+hơi khác một chút với từ &quot;home gape&quot; không?).
+
+<p>
+<b>Lưu ý : Nếu bạn chưa có tài liệu từ bài trước, hãy
+<a HREF="tut8aget.htm">download một bản sao</a>.</b>
+
+<h3>Liên kết đến Tập tin cục bộ</h3>
+
+<p>Liên kết <tt>anchor</tt> đơn giản nhất là liên kết để mở tập tin HTML khác trong
+cùng một thư mục với trang web đang được thể hiện. Dạng HTML để làm việc này là:
+
+<pre><font COLOR="#000080">     &lt;a href=&quot;filename.htm&quot;&gt;text that responds to link&lt;/a&gt;</font>
+</pre>
+
+<p>Hãy xem chữ &quot;a&quot; là <b>a</b>nchor còn &quot;href&quot; là
+&quot;<b>h</b>ypertext <b>ref</b>erence.
+
+<p>Tên tập tin phải là một tập tin HTML khác. Bất cứ văn bản nào xuất hiện sau ký hiệu
+&gt; và trước ký hiệu &lt;/a&gt; sẽ là &quot;siêu văn bản&quot;, nó được hiển thị bằng gạch dưới
+và &quot;hyper&quot;.
+
+<p>Hãy theo những bước sau để xây dựng một Anchor trong tài liệu HTML của bạn để
+liên kết đến một tập tin cục bộ:
+
+<ol>
+<li>Mở văn bản HTML của bạn , <tt>volc.htm</tt>, trong trình soạn thảo.
+<li>Đầu tiên, dưới tiêu đề <tt>Volcanic Places in the USA</tt> đánh vào đoạn văn
+để giới thiệu về hai núi lửa để sử dụng cho các phần kế tiếp.
+<pre><font COLOR="#000080">
+     Listed below are two places in the United States that
+     are considered &quot;active&quot; volcanic areas.
+</font></pre>
+
+<li>Bên dưới tiêu đề &quot;Mount St. Helens&quot;, đánh:
+
+<pre><font COLOR="#000080">
+     On May 18, 1980, after a long period of rest, this quiet
+     mountain in Washington provided &lt;a href=&quot;msh.htm&quot;&gt;
+     detailed observations&lt;/a&gt; on the mechanics
+     of highly explosive eruptions.</font></pre>
+<blockquote>
+<b>Đoạn văn &quot;detailed observations&quot; sẽ tạo liên kết cho người xem đến một tài liệu
+HTML thứ hai gọi là <tt>msh.htm</tt>. Tập tin HTML chưa có; chúng ta sẽ tạo ra nó
+trong các bước (5) và (6).</b>
+</blockquote>
+
+<li>Lưu và đóng tài liệu HTML của bạn
+<li>Bây giờ mở một tài liệu <b>Mới</b> trong trình soạn thảo của bạn.
+<li>Nhập các dòng sau trong màn hình mới:
+
+<pre><font COLOR="#000080">     &lt;html&gt;
+     &lt;head&gt;
+     &lt;title&gt;Mount St Helens&lt;/title&gt;
+     &lt;/head&gt;
+     &lt;body&gt;
+     &lt;h1&gt;Mount St Helens&lt;/h1&gt;
+     The towering pine trees of this once-quiet mountain 
+     were toppled over like toys.
+     &lt;/body&gt;
+     &lt;/html&gt;</font>
+</pre>
+
+<li>Lưu tập tin này với tên <tt>msh.htm</tt> trong cùng một directory/folder với
+tài liệu HTML của bạn (<tt>Volc.htm</tt>).
+<li><b>Reload</b> <tt>Volc.htm</tt> trong web browser.
+<li>Kiểm tra liên kết siêu văn bản tại các từ &quot;detailed observations&quot;. Khi
+được chọn, nó phải kết nối đến trang mới về Mount St. Helens.
+</ol>
+
+<h3>Liên kết Anchor đến một hình ảnh</h3>
+
+<p>Trong <a HREF="file:///A|/tut7a.htm">bài 7a</a>, chúng ta đã xét cách trình bày
+một hình ảnh &quot;inline&quot; trong trang Web. Với tag <tt>anchor</tt>, bạn
+cũng có thể tạo ra một liên kết để hiển thị một tập tin hình ảnh. Khi chọn một liên kết
+<tt>anchor </tt> , hình ảnh sẽ được download và trình bày riêng trong một trang trống
+hoặc cũng có thể web browser của bạn tự động gọi một trình ứng dụng để hiển thị hình
+ảnh.
+<p>
+Liên kết <tt>anchor</tt> đơn giản nhất là liên kết đến một tập tin trong cùng một
+directory/folder với tài liệu gọi nó. Dạng để tạo một liên kết siêu văn bản đến một
+hình ảnh giống như liên kết đến một tài liệu HTML khác ở trên
+
+<pre><font COLOR="#000080">  &lt;a href=&quot;filename.gif&quot;&gt;text that responds to link&lt;/a&gt;</font>
+</pre>
+
+trong đó <tt>filename.gif</tt> là tên của tập tin hình ảnh GIF.
+<p>
+Bây giờ theo những bước sau để thêm một liên kết với một tập tin hình ảnh trong tài
+liệu của bạn:<p>
+
+<ol>
+<li>Trước hết, bạn cần chép một bản sao tập tin hình ảnh GIF từ
+<a HREF="tut8aimg.htm">Trung tâm Download Hình ảnh Bài 8a.</a>
+<li>Mở tập tin <tt>msh.htm</tt> trong trình soạn thảo.
+<li>Điều chỉnh đoạn văn bản để tạo liên kết tới hình ảnh Mount St. Helens.
+
+<pre><font COLOR="#000080">     The towering pine trees of this once-quiet mountain 
+     were &lt;a href=&quot;msh.gif&quot;&gt;toppled over like toys&lt;/a&gt;.
+</font></pre>
+
+<li><b>Lưu lại</b> tập tin <tt>msh.htm</tt> và <b>Reload</b> trong web browser
+của bạn.
+<li>Bây giờ click vào liên kết mà bạn vừa tạo ra trong bước (3)
+<li>Một bức ảnh cây cối bị thổi ngã sẽ được thể hiện
+</ol>
+
+<h3>Những liên kết đến các thư mục khác</h3>
+
+Tag <tt>Anchor</tt> cũng có thể tạo liên kết đến một tài liệu HTML hoặc tập tin
+hình ảnh trong một directory/folder khác có liên quan tới tài liệu mà có chứa anchor.
+Ví dụ như, trong bài của chúng ta , chúng ta có thể lưu trữ tất cả các tập tin hình ảnh
+trong một directory/folder riêng gọi là <tt>pictures</tt>. Khi bạn tạo ngày càng
+nhiều tập tin HTML, sẽ tốt hơn khi giữ các tập tin hình ảnh trong một vùng riêng biệt.
+Hãy làm điều sau:
+
+<ol>
+<li>Trong hệ thống của bạn tạo một sub-directory/folder <tt>pictures</tt> trong cùng
+vị trí lưu trữ tập tin <tt>Volc.htm</tt>.
+<li>Chuyển tập tin <tt>msh.gif</tt> đến sub-directory/folder mới này.
+<li>Mở tập tin <tt>msh.htm</tt> trong trình soạn thảo.
+<li>Điều chỉnh tag <tt>anchor</tt> cho hình ảnh cần đọc:
+
+<pre><font COLOR="#000080">     The towering pine trees of this once-quiet mountain 
+     were &lt;a href=&quot;pictures/msh.gif&quot;&gt;toppled over 
+     like toys&lt;/a&gt;.</font></pre>
+<blockquote>
+<b>Chú ý: Với HTML bạn có thể hướng dẫn web browser của bạn mở mọi
+tài liệu/hình ảnh tại thư mục cấp <i>thấp hơn</i> tài liệu hiện tại bằng cách sử dụng
+ký tự &quot;/&quot; để chỉ ra thư mục con gọi là &quot;pictures.&quot;</b>
+</blockquote>
+
+<li>Lưu trữ tài liệu HTML và reload lại trong browser của bạn
+</ol>
+
+<p>Nếu tất cả đều tốt, việc liên kết trong câu mô tả các cây bị thổi ngã sẽ gọi đến
+tập tin hình ảnh đang có trong directory/folder <tt>pictures</tt>.
+
+<h2>Liên kết Anchor đến thư mục cấp cao hơn</h2>
+
+<p>Loại liên kết chúng ta vừa thực hiện được gọi là các liên kết &quot;tương đối&quot;
+(relative link), nghĩa là một Web browser có thể xây dựng lại đầy đủ URL dựa trên vị trí
+hiện hành của trang HTML và những thông tin liên kết trong các tag
+<tt>&lt;a href=...&gt;</tt>. Điều này rất tốt bởi vì bạn có thể xây dựng
+tất cả các trang web của bạn trên cùng một máy tính, kiểm tra chúng, và di
+chuyển chúng vào một máy khác, tất cả các liên kết tương đối vẫn giữ nguyên hiệu ứng.
+
+<p>
+Trong bài học chúng ta đã biết làm thế nào để xây dựng một siêu liên kết (hyperlink)
+đến một tài liệu lưu trữ trong một thư mục <b>thấp hơn</b> trang HTML đang làm việc.
+Lưu ý rằng bạn cũng có thể xây dựng một liên kết đến một thư mục <b>cao hơn</b> bằng
+cách sử dụng HTML sau:
+
+<pre><font COLOR="#000080">  &lt;a href=&quot;../../home.htm&quot;&gt;return to home&lt;/a&gt;</font></pre>
+
+<p>Mỗi một lần xuất hiện của <tt>&quot;../&quot;</tt>, URL của liên kết anchor báo
+cho web browser đi đến một directory/folder cao hơn một cấp tương ứng với trang hiện tại;
+trong trường hợp cụ thể này có nghĩa là lên hai cấp thư mục và tìm tập tin
+<tt>home.htm</tt>.
+
+<p>Trong ví dụ của chúng ta, hãy xét trường hợp khi thư mục con <tt>pictures</tt>
+không cùng ở trong directory/folder với tập tin <tt>volc.htm</tt> mà ở cao hơn
+một cấp<p>
+<img SRC="pictures/paths.gif" ALT="directory diagram" hspace="8" ALIGN="left" WIDTH="288" HEIGHT="204">
+
+Trong phần trước chúng ta đã tạo liên kết từ <tt>volc.htm</tt> tới tập tin
+<tt>msh.gif</tt> trong thư mục con:
+
+<pre><font COLOR="#000080">&lt;img src=
+  &quot;pictures/msh.gif&quot;&gt;</font></pre>
+
+<p>Bây giờ, chúng ta muốn tổ chức lại cấu trúc web để thư mục <tt>pictures</tt> ở
+một mức cao hơn. Liên kết sẽ được viết như sau:
+
+<pre><font COLOR="#000080">&lt;img src=
+  &quot;../pictures/msh.gif&quot;&gt;</font></pre>
+
+<p>Vì vậy web browser tìm kiếm thư mục <tt>pictures</tt> được lưu trữ cao hơn một
+mức so với tập tin <tt>volc.htm</tt>.
+<p>Sự tiện lợi của cấu trúc này là dễ dàng lưu lại một số lượng lớn hình
+ảnh trong directory/folder cao hơn để có thể dùng chung trong những trang web khác.
+Chúng ta có thể thực hiện một bài học khác về địa mạo (điểm đặc trưng tự nhiên của bề mặt quả đất)
+và sử dụng những hình ảnh được lưu trữ trong directory/folder này.
+
+<p>Bây giờ đã đến lúc tổ chức lại các tập tin HTML của chúng ta. Để thực hiện được
+điều này bạn cần làm quen với việc di chuyển tập tin và thư mục trên máy tính của bạn.
+<b>Hãy đọc một cách cẩn thận! Bạn có thể cảm thấy khá phức tạp, nhưng chẳng bao lâu
+nữa tất cả đều rõ ràng thôi!</b><p>
+<ol>
+<li>Đầu tiên, tạo directory/folder mới có tên là <tt>volcano</tt> (một lời khuyên
+là nên giữ các tên tập tin ở dạng chữ nhỏ).
+<li>Di chuyển hai tập tin HTML <tt>volc.htm</tt> và <tt>msh.htm</tt>
+vào trong directory/folder mới này.
+<li>Di chuyển directory/folder <tt>pictures</tt> (cùng với tập tin <tt>msh.gif</tt>
+bên trong) đến <b>cùng cấp</b> với directory/folder mới <tt>volcano</tt>. Tương tự,
+di chuyển tập tin <tt>lava.gif</tt> mà chúng ta tạo ra trong
+<a HREF="tut7a.htm">bài 7a</a> vào thư mục các hình này.
+
+<li>Như vậy toàn bộ thư mục (<tt>workarea</tt>) bây giờ gồmhai thư mục con - một để giữ các
+tập tin HTML (<tt>volcano</tt>) và một giữ các hình ảnh (<tt>pictures</tt>):
+
+<pre>         + workarea <b>(directory)
+</b>          
+               + pictures <b>(directory)
+</b>                    msh.gif
+                    volc.gif
+               
+               + volcano <b>(directory)
+</b>                    volc.htm
+                    msh.htm
+</pre>
+
+<li>Chúng ta đã di chuyển một số thứ do vậy bây giờ chúng ta phải cập nhật lại
+các liên kết anchor trong các tập tin HTML. Trước hết, hãy xem lại liên kết cục bộ trong
+tập tin <tt>volc.htm</tt>:
+
+<pre><font COLOR="#000080">  &lt;h3&gt;Mount St Helens&lt;/h3&gt;
+  On May 18, 1980, after a long period of rest, this quiet
+  mountain in Washington provided &lt;a href=&quot;msh.htm&quot;&gt;detailed
+  observations&lt;/a&gt; on the mechanics of highly explosive
+  eruptions.</font>
+</pre>
+<b><blockquote>Chú ý: Vì tập tin <tt>msh.htm</tt> vẫn ở cùng thư mục với
+volc.htm, chúng ta không cần thay đổi gì cả trong tập tin HTML này! Bạn có thấy sự
+liên kết tương đối là một tính chất rất hay của HTML không?</blockquote></b>
+
+<li>Nhưng bây giờ hãy xem lại liên kết đến hình Mt. St Helens đã tạo ra
+trong tập tin <tt>msh.htm</tt>:
+
+<pre><font COLOR="#000080">  The towering pine trees of this once-quiet mountain 
+  were &lt;a href=&quot;pictures/msh.gif&quot;&gt;toppled over 
+  like toys&lt;/a&gt;.</font></pre>
+
+<p>Mở tập tin này trong trình soạn thảo văn bản và điều chỉnh liên kết như sau:
+
+<pre><font COLOR="#000080">  The towering pine trees of this once-quiet mountain 
+  were &lt;a href=&quot;../pictures/msh.gif&quot;&gt;toppled over 
+  like toys&lt;/a&gt;.</font></pre>
+Liên kết tương đối này báo cho web browser xét lên một cấp so với directory/folder hiện
+hành (<tt>volcano</tt>) rồi tìm directory/folder có tên (<tt>pictures</tt>) mà ở đó có
+chứa ảnh <tt>msh.gif</tt>
+<p>
+<li>Cuối cùng, bạn cần điều chỉnh lại tag <tt>&lt;img...</tt>&gt; tag để hiển thị
+hình ảnh tiêu đề. Mở tập tin <tt>volc.htm</tt> trong trình soạn thảo và sửa đổi dòng
+ngay sau tag  <tt>&lt;body&gt;</tt>:
+
+<pre><font COLOR="#000080">  &lt;img alt=&quot;A Lesson on:&quot; src=&quot;../pictures/lava.gif&quot;
+                                 width=300 height=259&gt;</font></pre>
+
+<li>Lưu lại tập tin của bạn. Bạn nên <b>Mở lại</b> tập tin <tt>volc.htm</tt> trong
+web browser của bạn và thử lại liên kết đến <tt>msh.htm</tt> và liên kết đến hình
+Mount St Helens.
+</ol>
+<h2>Thêm một sự thay đổi nhỏ nữa</h2>
+Bước thay đổi nhỏ cuối cùng này có thể không rõ ràng, ngưng chúng tôi sẽ cố gắng
+giải thích ngắn gọn. Điều cuối cùng bạn nên làm trong bài này là đổi tên tập tin
+từ <tt>volc.htm</tt> thành <tt>index.htm</tt>
+<p>
+Tại sao vậy? Hãy xem như bạn đã kết thúc bài này và sẵn sàng đưa web site của bạn
+vào World Wide Web server để mọi người cùng xem. Và chúng ta hãy giả thiết rằng
+địa chỉ Internet của server này tại Big University là:
+<pre><font color="navy">    http://www.bigu.edu/</font></pre>
+
+Và tập tin của bạn được cất vào thư mục sau:
+
+<pre><font color="navy">
+--= top level of server: www.bigu.edu
+   /courses
+        /science
+            /geology</font></pre>
+như vậy URL cho Volcano Web có thể là:
+<pre><font color="navy">    http://www.bigu.edu/courses/science/geology/volcano/volc.htm</font></pre>                 
+Ồ, khá dài nhỉ? Bây giờ là những lời giải thích như đã hứa -- trên nhiều WWW server bạn có thể chỉ định
+một tên chuẩn gọi là trang web &quot;mặc nhiên&quot; (default) cho một thư mục và trên nhiều
+hệ thống tên đó là .... <tt>index.htm</tt>. Điều này có nghĩa rằng địa chỉ Internet:
+<pre><font color="navy">    http://www.bigu.edu/courses/science/geology/volcano/</font></pre>
+tương đương với
+<pre><font color="navy">    http://www.bigu.edu/courses/science/geology/volcano/index.htm</font></pre>
+Điều này có thể làm cho bạn nghĩ là đã tiết kiệm được nhiệu năng lượng trong việc xóa
+bớt 20 ký tự từ URL! Thực tế, nó làm cho URL của bạn có vẻ chuyên nghiệp hơn. Nếu
+bạn nói có một Home page là Longhorn Cheese,
+<pre><font color="navy">    http://www.cheese.com/longhorn/</font></pre>
+có vẻ ít rườm ra hơn là
+<pre><font color="navy">    http://www.cheese.com/longhorn/longhorn.htm</font></pre>
+khi để cho mọi người đọc URL của bạn và thử đánh vào browser của họ.
+<hr>
+
+<h2>Kiểm tra lại công việc của bạn </h2>
+
+<p>So sánh trang web với <a HREF="tut8a_ex/index.htm">ví dụ mẫu</a> để biết
+tài liệu nên xuất hiện như thế nào. Trước hết bạn sẽ thấy trang
+<i>Volcano Web</i>. Khi bạn click vào siêu văn bản tại <tt>detailed observations</tt>,
+web browser của bạn sẽ hiển thị một trang mới. Cuối cùng, khi bạn click vào
+<tt><b>toppled over like toys</b></tt>, web browser của bạn sẽ hiển thị trong một
+cửa sổ một tập tin hình ảnh được cất trong một sub-directory/folder.
+<p>
+Sử dụng button <b>back</b> của browser hai lần để quay về trang này. Nếu trang
+web của bạn khác với mẫu, xem lại văn bản bạn đánh vào trong trình soạn thảo
+văn bản.
+<h2>Xem lại</h2>
+
+<ol>
+<li>Các bước nào được sử dụng để tạo một liên kết trong tài liệu của bạn đến
+một tập tin cục bộ?
+<li>Những bước nào được sử dụng để tạo một liên kết khi muốn hiển thị hình ảnh
+trong cửa sổ riêng biệt?
+<li>Làm thế nào để tạo một liên kết đến một tập tin trong một directory/folder
+thấp hơn tài liệu chính của bạn? cao hơn?
+<li>Ý nghĩa của tập tin có tên <tt>index.htm</tt> trên một WWW server là gì?
+</ol>
+
+<h2>Thực tập tự do</h2>
+Tạo một tài liệu HTML sử dụng các định dạng HTML mà bạn đã quen biết đến
+giai đoạn này. Trở về trang đầu tiên và tạo một anchor để liên kết đến trang mới này.
+
+<hr>
+
+<h2>Đi đến phần tiếp theo....</h2>
+
+Wow! Làm việc nhiều quá! Trong bài học tiếp theo bạn sẽ xét làm thế nào để HTML
+liên kết đến những tài nguyên &quot;ở đâu đó&quot; trong Internet.
+
+<h5>ĐẾN.... | <a HREF="lessons.htm">Mục Lục</a> |
+<a HREF="tut8.htm">Bài trước: &quot;Tạo Liên kết với Anchors&quot;</a> |
+<a HREF="tut8b.htm">Bài kế: &quot;URLs-Con trỏ đến Internet&quot;</a> | </h5>
+
+<p>
+<hr><b>Writing HTML</b> Bài 8b: Liên kết đến tập tin cục bộ<br>
+©1995, 1996 <a HREF="http://www.mcli.dist.maricopa.edu/">Maricopa
+Center for Learning and Instruction (MCLI)<br>
+</a><a HREF="http://www.mcli.dist.maricopa.edu/mcccd/">Maricopa County
+Community College District</a>, Arizona</p>
+
+<p>The Internet Connection at MCLI is <a HREF="http://www.mcli.dist.maricopa.edu/alan/">Alan
+Levine --}<br>
+</a>Comments to <b><a HREF="mailto:levine@maricopa.edu">levine@maricopa.edu</a></b>
+</p>
+
+<p><tt>URL: http://www.mcli.dist.maricopa.edu/tut/tut8a.html</tt> </p>
+
+</body>
+</html>
+

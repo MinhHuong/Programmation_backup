@@ -1,0 +1,9 @@
+
+chine:beijing
+france:bordeaux
+france:paris
+inde:delhi
+italie:roma
+japon:tokyo
+vietnam:hanoi
+vietnam:ho chi minh

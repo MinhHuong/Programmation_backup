@@ -1,0 +1,260 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>12. Address Footers and E-Mail Links</title>
+</head>
+<body bgcolor="#FFFFFF">
+<h5><i>Soạn thảo HTML</i> |
+<a HREF="index.htm">Giới thiệu</a> | <a HREF="faq.htm">FAQ</a> |
+<a HREF="http://www.mcli.dist.maricopa.edu/cgi-bin/alumni.pl">Alumni</a> |
+<a HREF="tag.htm">Các Tag</a> |
+<a HREF="lessons.htm">Mục Lục</a> |
+<a HREF="tut11.htm">Bài trước</a> | 
+<a HREF="tut13.htm">Bài kế</a> | 
+</h5>
+
+<h1>12. Danh thiếp Địa chỉ và Liên kết E-Mail</h1>
+Trong bài này bạn sẽõ tạo ra một trang web đúng mốt -- tóm lược bằng một đoạn cuối!
+Hãy để cho mọi người gởi đến bạn một e-mail ngay từ trong trang Web của bạn!
+
+<h2>Mục đích</h2>
+Sau bài học này bạn có thể:
+<ul>
+<li>Thêm một đoạn cuối (stylized footer) vào cuối trang Web.
+<li>Tạo một liên kết siêu văn bản để gởi e-mail
+</ul>
+<hr>
+
+<h2>Bài học</h2>
+<b>Lưu ý: Nếu bạn không có tài liệu từ những bài học trước bạn có thể 
+<a href="tut12get.htm">download </a> ngay bây giờ.</b>
+<p>
+Một đặc điểm đáng giá của những trang Web là &quot;footer&quot; ở cuối của một trang để
+cung cấp thông tin về tác giả và 
+tài liệu, có thể là ngày được cập nhật cuối cùng, cũng như là để gởi tới tác giả
+một thông báo bằng e-mail.
+<p>
+Đây chính là nơi để đặt tag <tt>address</tt> mà trong đó khối văn bản được in 
+trong dòng mới dưới kiểu chữ nghiêng.
+<p>
+Thật là một ý tưởng hay để trong footer có một mô tả ngắn gọn, thông tin và quan hệ
+giữa những trang Web của bạn. Môt vài thông tin hữu ích là:
+<ul>
+<li>Tiêu đề hay chủ đề của trang hiện thời.
+<li>Ngày nó được tạo ra và cập nhật.
+<li>Chủ quyền thích đáng.
+<li>Tên và e-mail cho tác giả của trang Web.
+<li>Tên và liên kết siêu văn bản tới nguồn gốc/tổ chức.
+</ul>
+<p>
+Như là một ví dụ, bạn hãy nhìn footer ở cuối mỗi trang Web của tài liệu hướng dẫn này.
+Trong quá trình sáng tạo ra những kiểu riêng của bạn, hãy nhìn thử những trang Web
+khác để thu thập thêm những ý kiến.
+<b><i>Bắt chước vẫn là cách tốt nhất để tiến bộ!</i></b>
+<p>
+Dạng HTML của tag <tt>address</tt> trông giống như sau :
+<pre><font color="navy">
+    &lt;address&gt;
+      text text text text text text text text text 
+      text text text text text text text text text 
+    &lt;/address&gt;    
+</font></pre>
+
+Lưu ý rằng tất cả những HTML khác bên trong tag <tt>address</tt> đều hợp lệ,
+vì thế chúng ta có thể sửa đổi nó với những tag in đậm, ngắt dòng và một tag 
+liên kết siêu văn bản:
+<p>
+<center>
+<table width="75%" border="0" cellspacing="10">
+<tr>
+<th bgcolor="#77FF77">HTML</th>
+<th bgcolor="#77FF77">Kết quả</th>
+</tr>
+<tr>
+<td valign="top">
+<pre><font color="navy">&lt;address&gt;
+&lt;b&gt;Page Title&lt;/b&gt;&lt;br&gt;
+Last Updated February 31, 1999&lt;br&gt;
+Web Page by Alan Levine 
+(levine@maricopa.edu) &lt;br&gt;
+&lt;a href=&quot;http://www.mcli.dist.maricopa.edu/&quot;&gt;
+Maricopa Community Colleges&lt;/a&gt;&lt;br&gt;
+&lt;/address&gt;    
+</font></pre>
+</td>
+<td valign="top">
+<address>
+<b>Page Title</b> <br>
+Last Updated February 31, 1999 <br>
+Web Page by Alan Levine (levine@maricopa.edu) <br>
+<a href="http://www.mcli.dist.maricopa.edu/">Maricopa Community Colleges</a><br>
+</address>  
+</td></tr></table></center><p>
+
+Bây giờ, giả sử một người nào đó đang đọc trang Web của bạn và muốn gởi cho bạn một 
+lời phê bình về trang Web của bạn. Họ sẽ phải viết ra địa chỉ e-mail, nạp một
+chương trình khác, và 
+gởi cho bạn một thông báo. Có thể gởi e-mail từ trong web browser của bạn được không?
+Được chứ, hầu hết các web browser hiện nay đều có thể làm điều này!
+
+<p>
+Cách để làm điều này là tạo một liên kết siêu văn bản với loại là <tt>mailto</tt> 
+trong URL (hãy xem lại <a HREF="tut8b.htm">bài 8b</a>). Tạo một liên kết siêu
+văn bản như sau:
+<pre><font color="navy">
+  &lt;a href=&quot;mailto:levine@maricopa.edu&quot;&gt;send an e-mail to alan&lt;/a&gt;
+</font></pre>
+
+Khi nhấn vào dòng chữ <b>send an e-mail to alan</b>, Web browser sẽ mở ra một
+màn hình để bạn có thể soạn một thông báo và gởi nó đến cho tôi. Hơn nữa, bạn còn 
+có thể thêm một dòng chủ đề mặc nhiên (subject) cho thông báo e-mail:
+
+<pre><font color="navy">
+  &lt;a href=&quot;mailto:levine@maricopa.edu? subject=hi from lesson 12&quot;&gt;
+        send an e-mail to alan&lt;/a&gt;
+</font></pre>
+
+Hãy thử đi! Hãy gởi cho tôi một thông báo!
+<a href="mailto:levine@maricopa.edu?subject=hi from lesson 12">send an e-mail to alan</a>
+<p>
+Lưu ý rằng bạn có thể làm cho bất kỳ một dòng chữ (hay hình ảnh) nào hoạt động như
+ là một liên kết siêu văn bản. Vì vậy trong ví dụ vừa rồi, chúng ta 
+sẽ sửa đổi HTML để có một địa chỉ internet tạo liên kết cho việc gởi e-mail.
+
+<center>
+<table width="70%" border="0" cellspacing="10">
+<tr>
+<th bgcolor="#77FF77">HTML</th>
+<th bgcolor="#77FF77">Kết quả</th>
+</tr>
+<tr>
+<td valign="top">
+<font size="-1">
+<pre><font color="navy">&lt;address&gt;
+&lt;b&gt;Page Title&lt;/b&gt;&lt;br&gt;
+Last Updated February 31, 1999&lt;br&gt;
+Web Page by Alan Levine 
+&lt;A HREF=&quot;mailto:levine@maricopa.edu&quot;&gt;
+(levine@maricopa.edu)&lt;/A&gt; &lt;br&gt;
+&lt;a href=&quot;http://www.mcli.dist.maricopa.edu/&quot;&gt;
+Maricopa Community Colleges&lt;/a&gt;&lt;br&gt;
+&lt;/address&gt;   
+</font></pre>
+</font>
+</td>
+<td valign="top">
+    <address>
+    <b>Page Title</b> <br>
+    Last Updated February 31, 1999 <br>
+    Web Page by Alan Levine <a HREF="mailto:levine@maricopa.edu">(levine@maricopa.edu)</a> <br>
+    <a href="http://www.mcli.dist.maricopa.edu/">Maricopa Community Colleges</a><br>
+    </address>   
+</td></tr>
+<tr>
+<td colspan="2">
+Và cuối cùng chúng tôi đề nghị rằng bạn cũng nên đặt URL của trang vào trong footer.
+Tại sao vậy? Khi một ai đó in ra trang Web của bạn nhưng chưa viết lại hoặc lưu lại
+URL trong bookmark, có URL trên trang giấy cho phép một sự tham khảo bằng tay.
+Chỉ việc điều chỉnh ví dụ trên một chút (hãy chú ý đoạn HTML này ở <b>dưới</b>
+tag <tt>&lt;address&gt;...&lt;/address&gt;</tt>):
+
+</tr>
+<tr>
+<td valign="top">
+<font size="-1">
+<pre><font color="navy">&lt;address&gt;
+&lt;b&gt;Page Title&lt;/b&gt;&lt;br&gt;
+Last Updated February 31, 1999&lt;br&gt;
+Web Page by Alan Levine 
+&lt;A HREF=&quot;mailto:levine@maricopa.edu&quot;&gt;
+(levine@maricopa.edu)&lt;/A&gt; &lt;br&gt;
+&lt;a href=&quot;http://www.mcli.dist.maricopa.edu/&quot;&gt;
+Maricopa Community Colleges&lt;/a&gt;&lt;br&gt;
+&lt;/address&gt;
+&lt;p&gt;
+&lt;tt&gt;
+URL: http://www.mcli.dist.maricopa.edu/tut/
+&lt;/tt&gt;
+</font></pre>
+</font>
+</td>
+<td valign="top">
+    <address>
+    <b>Page Title</b> <br>
+    Last Updated February 31, 1999 <br>
+    Web Page by Alan Levine <a HREF="mailto:levine@maricopa.edu">(levine@maricopa.edu)</a> <br>
+    <a href="http://www.mcli.dist.maricopa.edu/">Maricopa Community Colleges</a><br>
+    </address>    
+     <p>
+    <tt>URL: http://www.mcli.dist.maricopa.edu/tut/</tt>
+</td>
+</tr>
+</table>
+</center>
+Bây giờ đã đến lúc thêm một footer vào trang file HTML của bạn. Đối với ví dụ này, 
+chúng tôi giả sử rằng bạn là &quot;Lorrie Lava&quot; một Nhà nghiên cứu núi lửa tại Big University
+(hoàn toàn tự do nếu bạn muốn đưa thông tin của bạn vào vị trí dưới đây):
+<ol>
+<li>Mở tập tin HTML <tt>index.htm</tt> trong trình soạn thảo của bạn.
+<li>Tại cuối trang Web (nhưng trên những tag &lt;/body&gt;&lt;/html&gt;), thêm:
+<pre><font color="navy">
+&lt;HR&gt;
+&lt;address&gt;&lt;B&gt;Volcano Web&lt;/B&gt; &lt;br&gt;
+created by Lorrie Lava, 
+&lt;A HREF=&quot;mailto:lava@pele.bigu.edu&quot;&gt;
+lava@pele.bigu.edu&lt;/A&gt;&lt;br&gt;
+Volcanic Studies, 
+&lt;A HREF=&quot;http://www.bigu.edu/&quot;&gt;Big University&lt;/A&gt;&lt;p&gt;
+&lt;TT&gt;last modified: April 1, 1995&lt;/TT&gt;
+&lt;/address&gt;
+&lt;p&gt;
+&lt;tt&gt;URL: http://www.bigu.edu/web/index.htm&lt;/tt&gt;
+</font></pre>
+<blockquote><b>Lưu ý: Chúng ta đã sử dụng một vài tag HTML mà đã được xét
+đến trong các bài trước. Cũng nên lưu ý đến tag &lt;p&gt; ở cuối trang; điều này
+chắc chắn rằng dòng cuối của văn bản luôn luôn được thấy rõ.
+</b></blockquote>
+<li><b>Lưu trữ</b> và <b>Reload</b> tập tin HTML.
+</ol>
+<hr>
+<h2>Kiểm tra lại công việc của bạn</h2>
+So sánh tài liệu của bạn với <a href="tut12_ex/index.htm">ví dụ mẫu</a>.
+Nếu tài liệu của bạn trông khác với mẫu, hãy xem lại văn bản bạn đã nhập trong
+trình soạn thảo.
+
+<h2>Xem lại</h2>
+Xem lại những chủ đề sau:
+<ol>
+<li>Tag <tt>address</tt> dùng để làm gì?
+<li>Tag <tt>address</tt> phải ở cuối một trang phải không?
+<li>Làm thế nào bạn tạo một tag để gởi e-mail đến bạn? hoặc đến một người khác?
+hoặc cùng với dòng chủ đề?
+</ol>
+
+<h2>Thực tập tự do</h2>
+Thêm một danh thiếp địa chỉ cùng với liên kết e-mail vào tài liệu HTML của riêng bạn.
+<hr>
+<h2>Đến bài tiếp theo....</h2>
+Vẫn còn một cách khác để chia đoạn những phần văn bản dài! Đó là BLOCKQUOTE.
+<hr>
+<h5> ĐẾN....  | <a HREF="lessons.htm">Mục Lục</a> | 
+<a HREF="tut11.htm">Bài trước:  &quot;Danh sách Mô tả&quot;</a> |
+<a HREF="tut13.htm">Bài kế:  &quot;Blockquote&quot;</a> |
+</h5>
+<hr>
+<b>Writing HTML</b>  Bài 12: Danh thiếp Địa chỉ và Liên kết E-Mail<br>
+<address>
+©1995, 1996 <a HREF="http://www.mcli.dist.maricopa.edu/">
+Maricopa Center for Learning and Instruction (MCLI)</a><br>
+<a HREF="http://www.mcli.dist.maricopa.edu/mcccd/">Maricopa County Community College District</a>, Arizona<p>
+The Internet Connection at MCLI is 
+<a href="http://www.mcli.dist.maricopa.edu/alan/">Alan Levine --}</a><br>
+Comments to <b><a HREF="mailto:levine@maricopa.edu">levine@maricopa.edu</a></b>
+</address>
+<p>
+<tt>URL: http://www.mcli.dist.maricopa.edu/tut/tut12.html</tt>
+<p>
+</body>
+</html>
+

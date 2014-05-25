@@ -1,0 +1,8 @@
+1) OUVERTE :
+   entry / ouvrir
+   entry / event_timer(Time)
+
+1 --> 2 : Apres un temps
+
+2) FERME :
+   entry / fermer

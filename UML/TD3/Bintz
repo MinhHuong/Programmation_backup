@@ -1,0 +1,33 @@
+debut-1 : ARR-naissance
+
+1) Bintz normal :
+   on chanson / sourire
+   entry / maj etat_Bintz
+   entry / ENV_dde_Temporisatrion [HORLOGE]
+
+1-2 : ARR-fin-delai-repos
+
+2) Bintz a faim
+   entry / maj etat_Bintz
+   entry / ENV_dde_Temporisatrion
+   do / pleurer
+
+2-3 : ARR-mise-a-table
+2-fin : ARR-fin-delai-misere
+
+3) Bintz mange
+   entry / mettre le bavoir
+   entry / maj etat_Bintz
+   entry / ENV_dde_Temporisatrion [HORLOGE]
+   do / manger
+   exit / retirer la bavoir
+
+3-4 : ARR-fin-delai-autonomie
+
+4) Bintz veut se reposer
+   entry / maj etat_Bintz
+   entry / ENV_dde_Temporisatrion [HORLOGE]
+   do / pleurer
+
+4-1 : ARR-Sortir-de-table
+4-fin : ARR-fin-delai-misere

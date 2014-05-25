@@ -1,0 +1,463 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>22. More for Images and Lists</title>
+</head>
+<body bgcolor="#FFFFFF">
+<h5><i>Soạn thảo HTML</i> |
+<a HREF="index.htm">Giới thiệu</a> | <a HREF="faq.htm">FAQ</a> |
+<a HREF="http://www.mcli.dist.maricopa.edu/cgi-bin/alumni.pl">Alumni</a> |
+<a HREF="tag.htm">Các Tag</a> |
+<a HREF="lessons.htm">Mục Lục</a> |
+<a HREF="tut21.htm">Bài trước</a> | 
+<a HREF="tut23.htm">Bài kế</a> | 
+</h5>
+<h1>22. Xét thêm về Hình ảnh và Danh sách</h1>
+<font size="+1">Hãy làm bốc hơi
+<a HREF="likethis.htm"><img SRC="pictures/disk.gif" ALIGN="middle" WIDTH="48" HEIGHT="40" border="0"></a> 
+thoát ra khỏi những hộp dễ gây tức giận
+<a HREF="likethis.htm"><img SRC="pictures/disk.gif" ALIGN="middle" WIDTH="48" HEIGHT="40"></a> 
+bao quanh các button hình ảnh và</font>
+<center>
+<table cellpadding="15">
+<tr>
+<td valign="top">
+<font size="+1">
+<ul>
+<li type="square">biểu diễn
+<li type="circle">những
+<li type="disc">bullet
+</ul>
+</font>
+</td>
+<td valign="top"><font size="+1">
+<ol type="A">
+<li>cộng thêm với
+<li type="a">việc thay đổi
+<li type="I"><b>kiểu số</b>
+<li type="i">và
+<li type="1" value="109"><b>giá trị</b> các
+<li> phần tử trong danh sách</ol></font>
+</td>
+</tr>
+</table>
+</center>
+<p>
+<h2>Mục đích</h2>
+Sau bài học này bạn có thể:
+<ul>
+<li>Tạo một hình ảnh siêu liên kết không có đường viền xung quanh.
+<li>Viết HTML cho một danh sách không có thứ tự sử dụng các dấu bullet khác nhau.
+<li>Tạo một danh sách có thứ tự được đánh số bằng chữ hoa hay chữ thường, 
+hoặc là những số La mã lớn hoặc nhỏ.
+<li>Sửa đổi một danh sách có thứ tự để bắt đầu đánh số từ một trị dương bất kỳ.
+</ul>
+<hr>
+
+<h2>Bài học </h2>
+<b>Lưu ý: Nếu bạn không có tài liệu từ những bài học trước, bạn có thể 
+<a href="tut22get.htm">download </a> ngay bây giờ. Bạn cũng có thể xem qua trang 
+<a HREF="tut22_ex/test.htm">kiểm tra</a> để biết browser của bạn có hổ trợ các tag
+được sử dụng trong bài này không.</b>
+<p>
+<h2>Không có Đường viền trên Hình ảnh Siêu liên kết</h2>
+Trong <a HREF="tut8e.htm">bài 8e</a> chúng ta đã biết làm thế nào để 
+một hình ảnh hoạt động như một siêu liên kết đến những trang Web khác hay đến
+một bản sao lớn hơn của hình ảnh. Chúng ta nhận thấy là browser đặt một hộp
+đường viền quanh hình ảnh, để cho biết rằng đó là một &quot;hyper&quot; như các mục siêu văn bản
+khác.
+<p>
+<a HREF="likethis.htm"><img SRC="pictures/disk.gif" ALIGN="middle" WIDTH="48" HEIGHT="40"></a>
+hoạt động như bất kỳ một <a HREF="likethis.htm">liên kết siêu văn bản</a> nào khác.
+<p>
+
+Tuy nhiên, cái hộp đôi lúc tạo ra sự cản trở, nhất là trong trường hợp chúng ta có
+một hình có sẵn đường viền không vuông vức. Người sử dụng về nguyên tắc vẫn 
+xác định được một hình ảnh là &quot;hyper&quot; nếu dạng dấu nháy thay đổi khi di chuyển chuột
+băng qua hình ảnh (nó thường chuyển thành hình &quot;bàn tay&quot; khi ở trên một liên kết 
+hoạt động được).
+<p>
+Bạn có thể &quot;bỏ đi&quot; hộp bao quanh bằng cách thêm thuộc tính vào tag 
+<tt>&lt;img...&gt;</tt> như sau:
+<pre><font color="navy">  &lt;a href=&quot;bigpict.gif&quot;&gt;&lt;img src=&quot;lilpict.gif&quot; border=0&gt;</a></font></pre>
+Trong ví dụ này, hình ảnh <tt>lilpict.gif</tt> hoạt động như một siêu liên kết
+đến một hình ảnh lớn hơn là <tt>bigpict.gif</tt>. Thuộc tính <tt>border=0</tt> 
+không có nghĩa gì cả nếu như tag <tt>&lt;img..&gt;</tt> 
+không ở bên trong một tag <tt>&lt;a href=...&lt;/a&gt;</tt> khác.
+<p>
+Chúng ta đã có hai chỗ trong bài <i>Volcano Web</i> của chúng ta có hình ảnh inline
+siêu liên kết - Bạn có nhớ ở đâu không?
+<p>
+Cái đầu tiên trong tập tin <a HREF="tut21_ex/usa.htm"><tt>usa.htm</tt></a>, 
+trong đó một hình ảnh nhỏ của máy đo địa chấn liên kết đến 
+một hình ảnh lớn hơn. Cái thứ hai là dấu mũi tên trong trang 
+<a HREF="tut21_ex/msh.htm"><tt>msh.htm</tt></a> để quay lại phần bài học.
+<ol>
+<li>Mở cả hai tập tin <tt>usa.htm</tt> và <tt>msh.htm</tt> trong trình soạn thảo.
+<li>Tìm ra nơi mà chúng ta đã đặt hình ảnh nhỏ có liên kết đến thứ khác.
+<li>Sửa đổi mỗi tag <tt>&lt;img src=....&gt;</tt> để nó là một siêu liên kết và có
+chứa một thuộc tính <tt>border=0</tt> . 
+Lấy ví dụ, trong tập tin <tt>msh.htm</tt> nó sẽ trông giống như sau:
+<pre><font color="navy">  &lt;a href=&quot;usa.htm&quot;&gt; 
+  &lt;img src=&quot;../pictures/left.gif&quot; alt=&quot;** &quot; border=0&gt; 
+  Return to &lt;i&gt;Volcano Web&lt;/i&gt;&lt;/a&gt;</font></pre>
+<li><b>Lưu trữ </b> và <b>Nạp</b> lại các tập tin <tt>usa.htm</tt> và 
+<tt>msh.htm</tt> trong browser của bạn.
+<li>Nếu các hình nhỏ không còn đường viền và vẫn nối đến đúng nơi cần thiết khi 
+bạn click vào, công việc của bạn coi như đã xong.
+</ol>
+
+<h2>Các bullet cho Danh sách Không có Thứ tự</h2>
+Trong <a HREF="tut6.htm">bài 6</a> chúng ta đã tạo các danh sách không có thứ tự 
+<tt>&lt;ul&gt;...&lt;/ul&gt;</tt>. 
+Web browser tự động đặt một dấu bullet phía trước mỗi mục của danh sách - và dấu bullet
+sẽ tự thay đổi nếu chúng ta tạo một danh sách nữa bên trong một danh sách. Với vài 
+loại browser bạn có thể chỉ định trong HTML một trong ba loại bullet sẽ sử dụng bằng cách 
+thêm thuộc tính vào tag <tt>&lt;ul&gt;</tt>:
+<pre><font color="navy"> &lt;ul type=xxxx&gt;</font></pre>
+trong đó <tt>xxxx</tt> có thể là:
+<ul>
+<li type="circle"><tt>type=circle</tt>
+<li type="square"><tt>type=square</tt>
+<li type="disc"><tt>type=disc</tt> [bullet mặc định cho danh sách cấp ngoài cùng]
+</ul>
+Hơn thế nữa! Bạn có thể thay đổi loại <b>bên trong</b> một danh sách bằng cách đặt 
+một thuộc tính <tt>type</tt> trong tag <tt>&lt;li&gt;</tt>:
+<table cellpadding="4">
+<tr>
+<th>HTML</th>
+<th>Nó nhìn thấy như thế nào</th>
+</tr>
+<tr>
+<td valign="top">
+<pre><font color="navy">&lt;ul type=square&gt;
+&lt;li&gt;this is item 1
+&lt;li&gt;this is item 2
+&lt;li&gt;this is item 3
+&lt;li type=circle&gt;
+     Hey! how about these bullets?
+&lt;li&gt;this is another item
+&lt;li&gt;and one more
+&lt;li type=disc&gt;
+     Hey! how about these bullets?
+&lt;/ul&gt;</font></pre>
+</td>
+<td valign="top">
+<ul type="square">
+<li>this is item 1
+<li>this is item 2
+<li>this is item 3
+<li type="circle">Hey! how about these bullets?
+<li>this is another item
+<li>and one more
+<li type="disc">Hey! how about these bullets?
+</ul>
+</td>
+</tr>
+</table>
+<p>
+Lưu ý rằng loại được chỉ định trong tag <tt>&lt;li type=xxxx&gt;</tt> vẫn được 
+sử dụng cho tất cả các tag <tt>&lt;li&gt;</tt> tiếp theo cho đến khi nào một loại 
+bullet khác được chọn.
+<p>
+Bây giờ, chúng ta sẽ thay đổi loại bullet trong trang 
+<a HREF="tut21_ex/proj.htm">Research Projects</a> của chúng ta
+(tập tin <tt>proj.htm</tt>).
+<ol>
+<li>Mở tập tin <tt>proj.htm</tt> trong trình soạn thảo.
+<li>Dòng đầu tiên trong tập tin này là một danh sách có thứ tự 
+<tt>&lt;ol&gt;...&lt;/ol&gt;</tt> nhưng bây giờ chúng ta đổi 
+nó thành một danh sách không có thứ tự với bullet <tt>circle</tt>. 
+Sửa đổi lại HTML cho danh sách đầu tiên thành:
+<pre><font color="navy">
+  &lt;ul type=circle&gt;
+  &lt;li&gt;Type of volcano
+  &lt;li&gt;Geographic location
+  &lt;li&gt;Name, distance, and population of nearest major city
+  &lt;li&gt;Date of most recent eruption and date of most
+      destructive eruption
+  &lt;li&gt;Other events associated with the last eruption
+      (earthquakes, floods, mudslides, etc)
+  &lt;/ul&gt;</font></pre>
+<li><b>Lưu trữ </b> và <b>Nạp lại</b> tập tin của bạn trong browser. 
+Bạn có thể so sánh trang Web của bạn với <a HREF="tut22_ex/list1.htm">ví dụ mẫu</a>
+để biết nó nên xuất hiện như thế nào tại đây.
+</ol>
+
+<h2>Các kiểu và Giá trị cho Danh sách Có thứ tự</h2>
+Khi chúng ta tạo ra một danh sách có thứ tự <tt>&lt;ol&gt;...&lt;/ol&gt;</tt> 
+lần đầu tiên trong <a HREF="tut6.htm">bài 6</a>, chúng ta đã thấy cách browser 
+tự động đánh số thứ tự cho các mục do tag <tt>&lt;li&gt;</tt> chỉ định. Chúng ta sẽ
+làm gì khi chúng ta không muốn sử dụng các số Ả rập (1,2,3...)? Tốt thôi, đây là 
+câu trả lời, sử dụng thuộc tính <tt>type=x</tt> bên trong các tag <tt>&lt;ol&gt;</tt> và 
+<tt>&lt;li&gt;</tt>:
+<p>
+<table>
+<tr>
+<th>Số Ả Rập</th>
+<th>Chữ Hoa</th>
+<th>Chữ Thường</th>
+<th>Số La Mã Lớn</th>
+<th>Số La Mã Nhỏ</th>
+</tr>
+<tr>
+<th><tt>&lt;ol type=1&gt;</tt></th>
+<th><tt>&lt;ol type=A&gt;</tt></th>
+<th><tt>&lt;ol type=a&gt;</tt></th>
+<th><tt>&lt;ol type=I&gt;</tt></th>
+<th><tt>&lt;ol type=i&gt;</tt></th>
+</tr>
+<tr>
+<td valign="top">
+<ol>
+<li>Tôi đầu tiên!
+<li>Tôi thứ hai!
+<li>Tôi thứ ba!
+<li>Tôi thứ tư!
+<li>Tôi thứ năm!
+</ol>
+</td>
+<td valign="top">
+<ol type="A">
+<li>Tôi đầu tiên!
+<li>Tôi thứ hai!
+<li>Tôi thứ ba!
+<li>Tôi thứ tư!
+<li>Tôi thứ năm!
+</ol>
+</td>
+<td valign="top">
+<ol type="a">
+<li>Tôi đầu tiên!
+<li>Tôi thứ hai!
+<li>Tôi thứ ba!
+<li>Tôi thứ tư!
+<li>Tôi thứ năm!
+</ol>
+</td>
+<td valign="top">
+<ol type="I">
+<li>Tôi đầu tiên!
+<li>Tôi thứ hai!
+<li>Tôi thứ ba!
+<li>Tôi thứ tư!
+<li>Tôi thứ năm!
+</ol>
+</td>
+<td valign="top">
+<ol type="i">
+<li>Tôi đầu tiên!
+<li>Tôi thứ hai!
+<li>Tôi thứ ba!
+<li>Tôi thứ tư!
+<li>Tôi thứ năm!
+</ol>
+</td>
+</tr>
+</table>
+<p>
+Chúng ta đã thấy một ví dụ của việc sử dụng danh sách có thứ tự bên trong một danh
+sách có thứ tự khác khi trình bày trang - với thuộc tính 
+<tt>type</tt> chúng ta có thể có những trang với dạng trình bày chuẩn như:
+<ol type="I">
+<li>Cheese in Pre-Historic time
+	<ol type="A">
+	<li>Africa
+		<ol type="1">
+		<li>Afar Triangle
+		<li>East Coast
+		</ol>
+	<li>Asia
+	<li>Europe
+		<ol type="1">
+		<li>France
+			<ol type="a">
+			<li>Cave paintings depicting cheese harvesting
+			<li>Burial rituals inferred from dried cheese remnants
+			</ol>
+		<li>British Isles
+		</ol>
+	<li>North America
+	</ol>
+<li>Cheese in the Middle Ages
+	<ol type="A">
+	<li>King Arthur's Longhorn
+	<li>Sharp Cheddar for the Crusades
+	</ol>
+<li>Cheese in the Space Age
+</ol>
+Một thứ khác chúng ta có thể làm với danh sách có thứ tự là để nó bắt đầu đếm từ một 
+giá trị không phải là 1. Để làm điều này chúng ta thêm thuộc tính 
+<tt>start=y</tt> vào tag <tt>&lt;ol&gt;</tt>. Lưu ý rằng ngay cả chúng ta sử dụng
+các thuộc tính <tt>type=x</tt> khác, chúng ta vẫn chỉ định được giá trị bắt đầu <tt>y</tt> theo
+dạng như &quot;2, 3, 10, 100, ...&quot;. Hãy xem vài ví dụ sau:
+<table width="90%">
+<tr>
+<th>Số Ả Rập</th>
+<th>Chữ Hoa</th>
+<th>Chữ Thường</th>
+<th>Số La Mả Lớn</th>
+<th>Số La Mả Nhỏ</th>
+</tr>
+<tr>
+<th><tt>&lt;ol type=1<br> start=11&gt;</tt></th>
+<th><tt>&lt;ol type=A<br> start=11&gt;</tt></th>
+<th><tt>&lt;ol type=a<br> start=11&gt;</tt></th>
+<th><tt>&lt;ol type=I<br> start=11&gt;</tt></th>
+<th><tt>&lt;ol type=i<br> start=11&gt;</tt></th>
+</tr>
+<tr>
+<td valign="top">
+<ol start="11">
+<li>Tôi thứ 11!
+<li>Tôi thứ 12!
+<li>Tôi thứ 13!
+<li>Tôi thứ 14!
+<li>Tôi thứ 15!
+</ol>
+</td>
+<td valign="top">
+<ol type="A" start="11">
+<li>Tôi thứ 11!
+<li>Tôi thứ 12!
+<li>Tôi thứ 13!
+<li>Tôi thứ 14!
+<li>Tôi thứ 15!
+</ol>
+</td>
+<td valign="top">
+<ol type="a" start="11">
+<li>Tôi thứ 11!
+<li>Tôi thứ 12!
+<li>Tôi thứ 13!
+<li>Tôi thứ 14!
+<li>Tôi thứ 15!
+</ol>
+</td>
+<td valign="top">
+<ol type="I" start="11">
+<li>Tôi thứ 11!
+<li>Tôi thứ 12!
+<li>Tôi thứ 13!
+<li>Tôi thứ 14!
+<li>Tôi thứ 15!
+</ol>
+</td>
+<td valign="top">
+<ol type="i" start="11">
+<li>Tôi thứ 11!
+<li>Tôi thứ 12!
+<li>Tôi thứ 13!
+<li>Tôi thứ 14!
+<li>Tôi thứ 15!
+</ol>
+</td>
+</tr>
+</table>
+<p>
+Và cuối cùng bạn có thể thay đổi thứ tự số <b>bên trong</b> một danh sách bằng cách thêm thuộc tính 
+<tt>value=z</tt> vào tag <tt>&lt;li&gt;</tt>. Hãy xem ví dụ sau:
+<table width="90%">
+<tr>
+<th>HTML</th>
+<th>Nó xem Như thế nào</th>
+</tr>
+<tr>
+<td valign="top">
+<pre><font color="navy">&lt;ol type=A start=5&gt;&lt;i&gt;
+Important Cheese Laws&lt;/i&gt;&lt;br&gt;
+&lt;li&gt;Cheese Curing Act of 1905
+&lt;li&gt;Milk Content Ruling of 1923
+&lt;p&gt;
+&lt;li value=12&gt;Cheese Import Tariff of 1942
+&lt;li&gt;Cheese Freshness Codes of 1942
+&lt;p&gt;
+&lt;li value=1&gt;Cheese Values Act of 1789</font></pre>
+</ol>
+</td>
+<td valign="top">
+<ol type="A" start="5"><i>Important Cheese Laws</i><br>
+<li>Cheese Curing Act of 1905
+<li>Milk Content Ruling of 1923
+<p>
+<li value="12">Cheese Import Tarif of 1942
+<li>Cheese Freshness Codes of 1942
+<p>
+<li value="1">Cheese Values Act of 1789
+</ol>
+</td>
+</tr>
+</table>
+<p>
+Không thể nói rõ lắm (nhất là trong ví dụ này) khi nào bạn có thể cần phải sử dụng 
+các tag này - chỉ cần nhớ rằng bạn có khả năng làm điều đó khi viết trang web của bạn.
+Chúng ta sẽ minh họa thêm một lần nữa trong trang 
+<a HREF="tut21_ex/proj.htm">Research Projects</a> 
+(tập tin <tt>proj.htm</tt>). Nếu bạn nhớ lại trong 
+<a HREF="tut21.htm">bài về bảng</a> chúng ta đã chia danh sách không có thứ tự 
+của những site cần tham khảo thành hai cột. 
+Hãy đổi nó thành một danh sách có thứ tự và sử dụng thuộc tính 
+<tt>type</tt> để liệt kê chúng, sử dụng chữ thường để đánh số thứ tự. 
+Vì thật sự chúng ta có đến <b>hai</b> danh sách, hãy xem cách tại sao chúng ta
+quyết định sử dụng thuộc tính <tt>start</tt>.
+<ol>
+<li>Mở tập tin <tt>proj.htm</tt> trong trình soạn thảo.
+<li>Hãy tìm bảng chúng ta đã tạo dưới phần <b>References</b>. 
+Thay đổi cả hai tag <tt>&lt;ul&gt;</tt> và <tt>&lt;/ul&gt;</tt> thành tag 
+<tt>&lt;ol type=a&gt;</tt> và <tt>&lt;/ol&gt;</tt>
+<li>Bây giờ chúng ta đã có 5 mục trong danh sách thứ nhất, vì thế chúng ta muốn 
+danh sách thứ 2 bắt đầu đánh số từ 6. Sửa đổi tag <tt>&lt;ol&gt;</tt> thành:
+<pre><font color="navy">  &lt;ol type=a start=6&gt;</font></pre>
+<li><b>Lưu trữ</b> và <b>Nạp lại</b> trong browser của bạn. So sánh trang của bạn 
+với <a HREF="tut22_ex/list2.htm">trang mẫu</a> để xem danh sách của bạn nên 
+xuất hiện như thế nào. Cột các mục đầu tiên được đánh thứ tự từ &quot;a&quot; đến &quot;e&quot; còn 
+cột thứ hai từ &quot;f&quot; đến &quot;k&quot;
+</ol>
+<h2>Kiểm tra lại công việc của bạn</h2>
+So sánh trang của bạn với <a href="tut22_ex/index.htm">ví dụ mẫu</a> để biết nó nên 
+xuất hiện như thế nào. Nếu trang của bạn khác với mẫu, kiểm tra lại các văn bản bạn 
+đã đánh trong trình soạn thảo.
+
+<h2>Xem lại</h2>
+Xem lại những chủ đề sau :
+<ol>
+<li>Làm thế nào bỏ được hộp liên kết bao quanh một hình ảnh khi hình ảnh này là 
+một siêu liên kết?
+<li>Làm thế nào thay đổi dấu bullet cho một danh sách không có thứ tự ?
+<li>Browser có sử dụng cùng một dấu bullet cho tất cả các danh sách không? Nếu không,
+làm thế nào để đổi dấu bullet cho các danh sách con?
+<li>Bạn có thể tạo một danh sách mà mỗi mục được đánh thứ tự bằng một số La mã không?
+</ol>
+
+<h2>Thực tập tự do</h2>
+Hãy tạo kinh nghiệm với các kiểu dấu bullet và đánh số thứ tự khác nhau cho danh sách
+trong trang web riêng của bạn. Bạn có nghĩ ra vài cách cố định cho các tính chất 
+này không? Bạn có thể tạo ra cách trình bày phức tạp như dạng trình bày &quot;chuẩn&quot; không?
+Mọi điều về tag
+<pre><font color="navy">&lt;ol&gt;...&lt;/ol&gt;</font></pre>
+bây giờ trở nên khá phức tạp!
+<hr>
+<h2>Đến phần tiếp theo....</h2>
+Click và đến các phần được liên kết khác nhau trong cùng một hình ảnh...
+<h5> ĐẾN....  | <a HREF="lessons.htm">Mục Lục</a> | 
+<a HREF="tut21.htm">Bài trước:  &quot;Bảng&quot;</a> |
+<a HREF="tut23.htm">Bài kế:  &quot;Bản đồ Hình ảnh Liên kết&quot;</a> |
+</h5>
+<hr>
+<b>Soạn thảo HTML</b>  Bài 22: Xét thêm vềø Danh sách và Hình ảnh
+<br>
+<address>
+©1995, 1996 <a HREF="http://www.mcli.dist.maricopa.edu/">
+Maricopa Center for Learning and Instruction (MCLI)</a><br>
+<a HREF="http://www.mcli.dist.maricopa.edu/mcccd/">Maricopa County Community College District</a>, Arizona<p>
+The Internet Connection at MCLI is 
+<a href="http://www.mcli.dist.maricopa.edu/alan/">Alan Levine --}</a><br>
+Comments to <b><a HREF="mailto:levine@maricopa.edu">levine@maricopa.edu</a></b>
+</address>
+<p>
+<tt>URL: http://www.mcli.dist.maricopa.edu/tut/tut22.html</tt>
+<p>
+</body>
+</html>
+

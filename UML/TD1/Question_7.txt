@@ -1,0 +1,32 @@
+a) A quoi correspond la fleche entre PRIXARTICLE et MAGASIN ?
+--> NUMMAG
+
+b) _________________________________ PRIXARTICLE et ARTICLE ?
+--> NUMARTICLE
+
+c) _________________________________ "NUMMAG = NUMMAG_LIEUDETRAVAIL" ?
+--> L'employe ayant NUMMAG_LIEUDETRAVAIL travaille dans le magasin du numero NUMMAG
+
+d) _________________________________ "NUMEMP = NUMEMP_DIRIGEANT" ?
+--> L'employe ayant NUMEMP est le dirigeant au magasin du numero NUMEMP_DIRIGEANT
+
+============================
+============================
+============================
+
+QUESTION DE COURS :
+
+- ra : on peut aller de classe C1 a classe C2 
+  rb : on peut aller de classe C2 a classe C1
+  ==> il y a une interaction entre C1 et C2
+
+- rc : on peut aller de classe C5 a classe C6
+  rd : 
+
+- re, rf : C9 et C0 sont associees 
+
+(ou ra, rb, rc, rd, re, rf sont la multiplicite, par exemple 0..1, *, etc)
+
+- C3 est herite de C4 (C3 est une sorte de C4)
+
+- C7 est l'implementation de l'interface C8

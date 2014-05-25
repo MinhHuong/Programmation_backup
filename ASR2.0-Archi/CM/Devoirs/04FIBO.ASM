@@ -1,0 +1,15 @@
+	MOV BL,1
+	MOV AL,2
+	MOV CL,0
+
+FIBO:
+	PUSH AL POP CL
+	ADD AL,BL
+	PUSH CL POP BL
+
+	JO Break
+
+	JMP FIBO
+
+Break:
+	END

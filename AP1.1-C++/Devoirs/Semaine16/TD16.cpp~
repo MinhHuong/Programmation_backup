@@ -1,0 +1,63 @@
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+
+const int taille = 5;
+
+void TinkyWinky(int *n, int * &ptr) { //int * &ptr nghia la bien con tro ptr ma sau do gia tri chua trong ptr duoc luu tru lai trong main 
+  ptr = new int[taille]; //thiet lap 1 array moi, chua ra 1 khoang trong bo nho cho array nay
+  int cpt = 0;
+  
+  do {
+    *(ptr + cpt) = n[cpt]; //ptr[cpt] = n[cpt], sau do cpt++ cho den khi cpt == taille; luc nay n[cpt] (hay n[0] = 0, n[1] = 1,...) da co san cac gia tri 0, 1, 2...luc nay gan no vao bien con tro *(ptr + cpt)
+    cpt++;
+  } while (cpt < taille);
+}
+
+
+void Dipsy (int *n) { //int *n = int n[]
+  for (int i = 0 ; i < taille ; i++)
+    n[i] = i; //gan n[i] = i, cu the la n[0] = 0, n[1] = 1, n[2] = 2...
+}
+
+
+void LaaLaa(int *n) { //in du lieu ra
+  for (int i = 0 ; i < taille ; i++)
+    cout << *(n + i); //*(n + i) = n[i], nghia la tu n[0] tro toi vi tri n[i]
+  cout << endl;
+}
+
+
+void Po(int *n, int *b) { 
+  int *c = n; //dia chi cua bien con tro *c lay dia chi cua n
+  for (int i = 0 ; i < taille ; i++)
+    n++; //dia chi cua n nhay len 5 don vi (i++ 5 lan)
+  
+  int i = 0;
+  while (c != n) { //c != n do n-- den 1 luc nao do n == c
+    b[i] = *n; //gan vao array b[i] gia tri cua dia chi chua trong n
+    cout << b[i] << " " << endl;
+    n--;
+    i++;
+  }
+}
+
+
+int main() {
+  int *p;
+  int *tabA = new int [taille];
+  int *tabB;
+  
+  Dipsy(tabA);
+  LaaLaa(tabA);
+
+  TinkyWinky(tabA, tabB);
+  LaaLaa(tabB);
+
+  Po(tabA, tabB);
+  LaaLaa(tabB);
+
+  return EXIT_SUCCESS;
+}
+
+

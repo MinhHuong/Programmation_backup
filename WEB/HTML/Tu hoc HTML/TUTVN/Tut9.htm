@@ -1,0 +1,267 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <title>9. Preformatted Text</title>
+   <meta NAME="GENERATOR" CONTENT="Mozilla/3.0Gold (Win95; I) [Netscape]">
+</head>
+<body BGCOLOR="#FFFFFF">
+
+<h5><i>Soạn thảo HTML</i> 
+| <a HREF="index.htm">Giới thiệu</a> | <a HREF="faq.htm">FAQ</a>
+| <a HREF="http://www.mcli.dist.maricopa.edu/cgi-bin/alumni.pl">Alumni</a>
+| <a HREF="tag.htm">Các Tag</a> 
+| <a HREF="lessons.htm">Mục lục</a> 
+| <a HREF="tut8e.htm">Bài trước</a>
+| <a HREF="tut10.htm">Bài kế</a> | </h5>
+
+<h1>9. Preformatted Text</h1>
+
+<p>Làm thế nào bạn có thể hiển thị được những đoạn văn trong đó có xét đến các khoảng
+trắng và dấu xuống dòng?
+<pre>      display  
+          <b>text</b> 
+       where        space   and   carriage return
+                  characters   count?
+</pre>
+
+<h2>Mục đích</h2>
+
+<p>Sau bài học này bạn có khả năng:
+
+<ul>
+<li>Tạo một bảng các văn bản đã được định biên
+<li>Điều khiển vị trí của văn bản trên một trang khi tab và khoảng cách được xét đến
+</ul>
+
+<hr>
+
+<h2>Bài học</h2>
+
+<b>Lưu ý: Nếu bạn không có tài liệu từ những bài học trước,
+bạn có thể <a HREF="tut9get.htm">download</a> ngay bây giờ.</b>
+
+<p>Trong những bài học trước chúng ta đã biết là một Web browser sẽ bỏ qua những
+ký tự khoảng trắng, ký tự tab, và dấu xuống dòng dư thừa trong tập tin HTML của bạn.
+Tuy nhiên có một vài trường hợp cá biệt mà việc trình bày trang với các tính chất đó trở
+nên quan trọng. Trong bài này, chúng ta sẽ xét một ví dụ mà ở đó
+ta sẽ trình bày văn bản thành các cột ngay hàng với nhau.
+
+<p>Tag <tt>preformat</tt> hướng dẫn cho Web browser trình
+bày văn bản <b>chính xác</b> như khi bạn đánh vào trong văn bản HTML,
+bao gồm cả việc thể hiện các khoảng trắng, các tab, và cả dấu xuống dòng. Một browser
+tiêu biểu sẽ hiển thị văn bản như vậy theo kiểu:<p>
+
+<center><font size="+2"><tt>m o n o s p a c e d</tt></font></center> <p>
+
+Một ví dụ cho việc sử dụng tag <tt>preformat</tt> là:
+
+<pre>
+<font COLOR="#000080">    &lt;pre&gt;
+    We have indented with 5 space characters.
+    And used the carriage return to jump
+    to
+    a
+    new
+    line.
+    
+          Here      we
+          use       
+          spaces    to
+          create    a
+          text      table.
+   &lt;/pre&gt;</font>
+</pre>
+
+Không có các tag <tt>&lt;pre&gt;</tt> và <tt>&lt;/pre&gt;</tt>, thì đoạn HTML
+trên sẽ được trình bày như sau:
+
+<blockquote><hr>
+    We have indented with 5 space characters.
+    And used the carriage return to jump
+    to
+    a
+    new
+    line.
+    
+          Here      we
+          use       
+          spaces    to
+          create    a
+          text      table.
+<hr></blockquote>
+Với tag <tt>preformat</tt>, sẽ dễ hơn khi trình soạn thảo bạn đang sử dụng có thể
+trình bày trong một phông mono-spaced (như là &quot;Courier&quot; hay &quot;Monoco&quot;); nếu không
+bạn cần phải đếm kỹ số khoảng trắng để chỉnh cột các đoạn văn (và bạn sẽ khá mệt
+khi làm chuyện đó).
+<p>
+Với bài Volcano của chúng ta, chúng ta muốn thêm vào một bảng bên dưới phần
+<b>Introduction</b> để liệt kê ra một vài núi lửa nổi tiếng, khi nào nó đã hoạt động lại,
+và mức độ hoạt động của nó. Để làm điều này:
+
+<ol>
+<li>Mở tập tin HTML thứ hai, <tt>index.htm</tt> trong trình soạn thảo văn bản.
+<li>Dưới phần cuối cùng của <b>Introduction</b>, đặt một tiêu đề mức 4 (&lt;h4&gt;)
+với dòng chữ: <b><tt>Volumes of Some Well-Known Volcanic Eruptions</tt></b>
+(Nếu bạn không nhớ cách tạo tiêu đề, hãy xem <a HREF="tut3.htm">bài 3</a>).
+<li>Bên dưới tiêu đề này, nhập <b>chính xác</b> văn bản sau (có thể thuận lợi hơn
+khi sử dụng chức năng cắt và dán từ trang web này!):
+
+<pre>
+<font COLOR="#000080">&lt;pre&gt;
+  Eruption                      Date           Volume in km^3
+  --------                      ----           --------------
+  Paricutin, Mexico             1943                 1.3
+  Mt. Vesuvius, Italy          79 A.D.                3
+  Mount St. Helen, Washington   1980                  4
+  Krakatoa, Indonesia           1883                 18
+  Long Valley, California     pre-historic        500 - 600
+  Yellowstone, Wyoming        pre-historic           2400
+&lt;/pre&gt;</font>
+</pre>
+
+<blockquote><b>Trong ví dụ này, chúng ta sử dụng các khoảng trắng để làm cho
+cột đầu tiên được chỉnh biên trái (left justified) còn hai cột kia được chỉnh biên giữa
+(center-justified). Các dấu trừ để nhấn mạnh cột tiêu đề.</b></blockquote>
+
+<li><b>Lưu trữ</b> và <b>Reload</b> trong web browser của bạn.
+</ol>
+
+<hr>
+
+<h2>Kiểm tra lại công việc của bạn</h2>
+
+So sánh trang Web của bạn với <a HREF="tut9_ex/index.htm">ví dụ mẫu</a>
+để biết tài liệu nên xuất hiện như thế nào. Nếu trang web của bạn không giống như
+ví dụ mẫu, hãy kiểm tra lại văn bản bạn đã đánh trong trình soạn thảo. Nếu các cột
+không được chỉnh đúng, có lẽ bạn đánh thiếu hay thừa các khoảng trắng.
+
+<h2>Xem lại</h2>
+
+<p>Những vấn đề ôn lại của bài này là:
+
+<ol>
+<li>Tag <tt>preformat</tt> làm thay đổi cách browser thông dịch HTML như thế nào?
+<li>Trong những trường hợp nào có thể bạn cần sử dụng tag này?
+</ol>
+
+<h2>Thông tin bổ sung</h2>
+Bạn vẫn có thể sử dụng các tag HTML bên trong văn bản đã được đánh dấu bởi
+tag <tt>preformat</tt>. Ví dụ như chúng ta có thể thêm một liên kết siêu văn bản
+và vài tag định kiểu khác <b>bên trong</b> cặp tag <tt>&lt;pre&gt;...&lt;/pre&gt;</tt>:
+
+<table width="75%">
+<tr>
+<th bgcolor="#77FF77">HTML</th>
+<th bgcolor="#77FF77">Kết quả</th>
+</tr>
+
+<tr>
+<td valign="top">
+<pre><font color="navy">&lt;pre&gt;
+This tutorial is copyright
+1995, 1996
+    
+    &lt;B&gt;Be sure to tell all of
+    your friends about it!&lt;/B&gt;
+        &lt;i&gt;We
+             Welcome
+               Your
+                 Feedback&lt;/i&gt;
+fondly,
+&lt;A HREF=
+&quot;http://www.mcli.dist.maricopa.edu/&quot;&gt;
+mcli&lt;/A&gt;
+&lt;/pre&gt;
+</font></pre>
+</td>
+<td valign="top">
+<pre>
+This tutorial is copyright
+1995, 1996
+    
+    <b>Be sure to tell all of
+    your friends about it!</b>
+           <i>We
+             Welcome
+               Your
+                 Feedback</i>
+fondly,
+<a HREF="http://www.mcli.dist.maricopa.edu/">mcli</a>
+</pre>
+
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<blockquote><b>Chú ý rằng các tag HTML không được xem như là khoảng trắng;
+chúng được bỏ qua trong vùng preformat.</b></blockquote>
+Một số tác giả của trang web sử dụng tag <tt>&lt;pre&gt;...&lt;/pre&gt;</tt> với
+các ký tự xuống dòng bên trong để thêm những dòng trắng giữa văn bản và hình ảnh
+trong trang web của họ- nhất là trong trường hợp họ cần nhiều dòng trắng hơn so với tag
+<tt>&lt;p&gt;</tt>. Ví dụ như:
+</td>
+</tr>
+
+<tr>
+<th bgcolor="#77FF77">HTML</th>
+<th bgcolor="#77FF77">Kết quả</th>
+</tr>
+
+<tr>
+<td valign="top">
+<pre><font color="navy">Cheese was long since
+abolished from the Orient.
+&lt;pre&gt;
+
+
+
+&lt;/pre&gt;
+...until Sir Longhorn arrived with the
+great Cheese Crusade of 1167.</font></pre>
+</td>
+<td>Cheese was long since 
+abolished from the Orient.
+<pre>
+
+
+
+</pre>
+...until Sir Longhorn arrived with the 
+great Cheese Crusade of 1167.</td>
+</tr>
+</table>
+
+<h2>Thực tập tự do</h2>
+Thêm vào một bảng hay một sơ đồ trong tài liêu HTML của bạn sử dụng tag <tt>preformat</tt>.
+<hr>
+
+<h2>Đi đến phần tiếp theo....</h2>
+
+<p>Sử dụng những ký tự đặc biệt
+<b><font face="Times New Roman" SIZE="+4">âccèđt....
+</font></b>trong trang Web của bạn.
+
+<h5>ĐẾN.... | <a HREF="lessons.htm">Mục Lục</a>
+| <a HREF="tut8e.htm">Bài trước: &quot;Liên kết Siêu Hình ảnh&quot;</a> 
+| <a HREF="tut10.htm">Bài kế: &quot;Các Ký tự Đặc biệt&quot;</a> | </h5>
+
+<p>
+<hr><b>Soạn thảo HTML</b> Bài 9: Preformatted Text<br>
+</p>
+
+<address>©1995, 1996 <a HREF="http://www.mcli.dist.maricopa.edu/">Maricopa
+Center for Learning and Instruction (MCLI)<br>
+</a><a HREF="http://www.mcli.dist.maricopa.edu/mcccd/">Maricopa County
+Community College District</a>, Arizona</address>
+
+<p> The Internet Connection at MCLI is <a HREF="http://www.mcli.dist.maricopa.edu/alan/">Alan
+Levine --}<br>
+</a>Comments to <b><a HREF="mailto:levine@maricopa.edu">levine@maricopa.edu</a></b>
+</p>
+
+<p><tt>URL: http://www.mcli.dist.maricopa.edu/tut/tut9.html</tt> </p>
+
+</body>
+</html>
+

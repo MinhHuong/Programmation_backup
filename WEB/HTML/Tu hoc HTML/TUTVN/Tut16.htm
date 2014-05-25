@@ -1,0 +1,337 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>16. Colorful and Textured Backgrounds</title>
+</head>
+<body bgcolor="#FFFFFF">
+<h5><i>Soạn thảo HTML</i> |
+<a HREF="index.htm">Giới thiệu</a> | <a HREF="faq.htm">FAQ</a> |
+<a HREF="http://www.mcli.dist.maricopa.edu/cgi-bin/alumni.pl">Alumni</a> |
+<a HREF="tag.htm">Các Tag</a> |
+<a HREF="lessons.htm">Mục Lục</a> |
+<a HREF="tut15.htm">Bài trước</a> | 
+<a HREF="tut17.htm">Bài kế</a> | 
+</h5>
+<h1>16. Màu sắc và Cấu trúc cho Nền</h1>
+Đừng bao giờ để cho trang Web của bạn có một màu xám xịt! Hãy đặt 
+<font size="+2" color="#3300FF">m</font>
+<font size="+3" color="#BB0000"><b>à</b></font>
+<font size="+4" color="#33CC11">u</font>
+<font size="+4" color="#FF0099"><b>S</b></font>
+<font size="+3" color="#774400"><b>ắ</b></font> 
+<font size="+2" color="#3300FF">c</font>
+
+hoặc bố trí một cấu trúc nền nào đó &quot;phía sau&quot; phần văn bản.
+
+<h2>Mục đích</h2>
+Sau bài học này bạn có khả năng:
+<ul>
+<li>Tạo một màu nền cố định cho trang Web.
+<li>Tính được mã dưới hệ thập lục phân cho một giá trị màu.
+<li>Thay đổi màu của văn bản và những mục liên kết siêu văn bản.
+<li>Tạo một cấu trúc nền từ một tập tin hình ảnh.
+</ul>
+<hr>
+
+<h2>Bài học</h2>
+<b>Lưu ý: Nếu bạn không có tài liệu của bạn từ bài học trước,  hãy
+<a href="tut16get.htm">download</a> ngay bây giờ.</b>
+<p>
+Nền (background) của trang Web - chính là phần nền. Khi chúng ta thêm những màu sắc khác nhau
+hoặc ngay cả những mẫu nền, bạn nên nhớ để nó không ảnh hưởng đến việc đọc của
+phần văn bản. 
+Với các trang trong tài liệu hướng dẫn này, chúng tôi sử dụng một màu trắng cố định 
+cho nền
+để tạo ra sự rõ ràng và phông nền không gây ra ảnh hưởng đến nội dung.
+
+<p>
+Với một vài bổ sung cho tag <tt>&lt;body&gt;</tt> (được giới thiệu trong 
+<a HREF="tut1.htm">bài 1</a>), 
+bạn có thể tạo ra màu nền cho trang Web của bạn. Nhưng trước khi chúng tôi chỉ cho bạn
+cách tạo ra màu sắc thích thú như vậy, chúng ta phải nói sơ qua các giá trị màu RGB 
+(red green blue) và sự thể hiện của chúng dưới dạng số &quot;thập lục phân&quot;.
+
+<h2>&quot;Hex-Dec&quot; và cơ bản về màu sắc</h2>
+Trong một web browser, bạn được tùy ý sử dụng 256 màu của hệ thống để tạo màu cho 
+văn bản và nền. Mỗi một màu được xác định dựa trên các giá trị 
+<font color="#FF0000"><b>Red</b></font>-
+<font color="#005500"><b>Green</b></font>-
+<font color="#0000FF"><b>Blue</b></font> (RGB) của nó, ba số này có giá trị từ 
+0 đến 255, mỗi một số thể hiện cường độ của thành phần màu 
+<font color="#FF0000"><b>Red</b></font>, 
+<font color="#005500"><b>Green</b></font>, 
+hay <font color="#0000FF"><b>Blue</b></font> cho màu đang xét. 
+Giá trị lớn nhất của cả ba (R=255, G=255, B=255) cho ra màu 
+<b>trắng</b> và giá trị nhỏ nhất (R=0, G=0, B=0) cho ra màu <b>đen</b>. 
+Tất cả những màu khác được biểu diễn bởi các bộ ba RGB khác nhau.
+<p>
+Tiếp theo đây là một phần phức tạp. Thay vì xác định một 
+<font color="#6699FF"><b>màu</b></font> theo dạng tương tự như 
+<tt>&quot;102,153,255&quot;</tt> thì mỗi số được chuyển từ dạng biểu diễn theo cơ số hệ mười
+(là những số đếm hàng ngày dùng các ký số <tt>0, 1, 2, 3, 4, 5, 6, 7, 8, 9</tt>) sang dạng
+biểu diễn theo cơ số hệ thập lục phân 
+(dùng các ký số <tt>0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F</tt>). 
+Tại sao vậy? Vì máy tính dễ sử dụng và dể hiểu số hệ thập lục phân hơn. 
+Vì vậy đối với màu cho ví dụ trên, chúng ta sẽ viết trong dạng số thập lục phân là:
+<font color="#6699FF"><tt><b>&quot;6699FF&quot;</b></tt></font>. 
+Trong ví dụ này, <tt>&quot;66&quot;</tt> là trị của màu 
+<font color="#FF0000"><b>Red</b></font>, <tt>&quot;99&quot;</tt> là trị của màu
+<font color="#005500"><b>Green</b></font>, và <tt>&quot;FF&quot;</tt> là trị của màu
+<font color="#0000FF"><b>Blue</b></font>.
+<p>
+Sau đây là một vài ví dụ trị hệ thập lục cho các màu khác nhau:
+<center>
+<table border="0" cellpadding="4" cellspacing="10">
+<tr>
+<th bgcolor="#77FF77" width="150">Màu mẫu</th>
+<th bgcolor="#77FF77" width="150">Mã 16</th>
+
+</tr>
+
+<tr>
+<td><font color="#FFCCCC"><b><tt>xx oo xx </tt></b></font><tt>FFCCCC</tt></td>
+<td><font color="#3300FF"><b><tt>xx oo xx </tt></b></font><tt>3300FF</tt></td>
+</tr>
+<tr>
+<td><font color="#33FF66"><b><tt>xx oo xx </tt></b></font><tt>33FF66</tt></td>
+<td><font color="#AA0000"><b><tt>xx oo xx </tt></b></font><tt>AA0000</tt></td>
+</tr>
+<tr>
+<td><font color="#663300"><b><tt>xx oo xx </tt></b></font><tt>663300</tt></td>
+<td><font color="#9900FF"><b><tt>xx oo xx </tt></b></font><tt>9900FF</tt></td>
+</tr>
+<tr>
+<td><font color="#000077"><b><tt>xx oo xx </tt></b></font><tt>000077</tt></td>
+<td><font color="#FFFF00"><b><tt>xx oo xx </tt></b></font><tt>FFFF00</tt></td>
+</tr>
+<tr>
+<td><font color="#EEEEEE"><b><tt>xx oo xx </tt></b></font><tt>EEEEEE</tt></td>
+<td><font color="#888888"><b><tt>xx oo xx </tt></b></font><tt>888888</tt></td>
+</tr>
+<tr>
+<td><font color="#444444"><b><tt>xx oo xx </tt></b></font><tt>444444</tt></td>
+<td><font color="#000000"><b><tt>xx oo xx </tt></b></font><tt>000000</tt></td>
+</tr>
+
+<tr>
+<td colspan="2">
+Nhưng, đừng lo sợ về việc chuyển đổi hệ thống số đếm! Có rất nhiều công cụ trong đó
+bạn chỉ cần click vào một bảng màu và chúng sẽ cho biết cách biểu diễn ở hệ thập lục
+phân. Rất nhiều công cụ màu như vậy có thể tìm thấy trong
+<a HREF="http://www.yahoo.com/Computers_and_Internet/Internet/World_Wide_Web/Page_Design_and_Layout/Color_Information/">Yahoo</a>.
+<p>
+Nhưng tốt hơn thế nữa, bây giờ rất nhiều browser hổ trợ nhanh chóng cho 16 màu sau 
+(chúng là các màu của VGA trên Windows):
+</td></tr>
+<tr>
+<td><font color="aqua"><b><tt>xx oo xx </tt></b></font><tt>aqua</tt></td>
+<td><font color="black"><b><tt>xx oo xx </tt></b></font><tt>black</tt></td>
+</tr>
+<tr>
+<td><font color="blue"><b><tt>xx oo xx </tt></b></font><tt>blue</tt></td>
+<td><font color="fuchsia"><b><tt>xx oo xx </tt></b></font><tt>fuchsia</tt></td>
+</tr>
+<tr>
+<td><font color="gray"><b><tt>xx oo xx </tt></b></font><tt>gray</tt></td>
+<td><font color="green"><b><tt>xx oo xx </tt></b></font><tt>green</tt></td>
+</tr>
+<tr>
+<td><font color="lime"><b><tt>xx oo xx </tt></b></font><tt>lime</tt></td>
+<td><font color="maroon"><b><tt>xx oo xx </tt></b></font><tt>maroon</tt></td>
+</tr>
+<tr>
+<td><font color="navy"><b><tt>xx oo xx </tt></b></font><tt>navy</tt></td>
+<td><font color="olive"><b><tt>xx oo xx </tt></b></font><tt>olive</tt></td>
+</tr>
+<tr>
+<td><font color="purple"><b><tt>xx oo xx </tt></b></font><tt>purple</tt></td>
+<td><font color="red"><b><tt>xx oo xx </tt></b></font><tt>red</tt></td>
+</tr>
+<tr>
+<td><font color="silver"><b><tt>xx oo xx </tt></b></font><tt>silver</tt></td>
+<td><font color="teal"><b><tt>xx oo xx </tt></b></font><tt>teal</tt></td>
+</tr>
+<tr>
+<td><font color="white"><b><tt>xx oo xx </tt></b></font><tt>white</tt></td>
+<td><font color="yellow"><b><tt>xx oo xx </tt></b></font><tt>yellow</tt></td>
+</tr>
+
+</table>
+</center>
+<p>
+
+<h2>Màu nền cố định</h2>
+<blockquote><b>Chú ý: Trước hết bạn có thể thử 
+<a HREF="tut16_ex/test1.htm">kiểm tra</a> để biết được browser của bạn có hổ trợ những
+màu nền cố định không (solid color background).
+</b></blockquote>
+
+Với <tt>Volcano Web</tt> của chúng ta, điều đầu tiên chúng ta sẽ làm là thêm 
+một màu nền vào tập tin <tt>index.htm</tt>. 
+Trong HTML để thêm một màu nền cố định cần điều chỉnh tag <tt>&lt;body&gt;</tt> 
+như sau:
+<pre><font color="navy">    &lt;body bgcolor=#XXXXXX&gt;</font></pre>
+trong đó <tt>XXXXXX</tt> là dạng biểu diễn thập lục phân (được chỉ định bởi dấu 
+# ở phía trước) của màu được chỉ định.
+<p>
+Nếu bạn nhớ lại, <a HREF="pictures/lava.gif">hình</a> chúng ta sử dụng trong 
+phần mở đầu là hình núi lửa trên một nền đen - vì vậy nếu chúng ta cũng sử dụng 
+màu đen cho màu nền của trang Web, hình ảnh sẽ rất hòa hợp với trang Web của 
+chúng ta:
+<ol>
+<li>Mở tập tin <tt>index.htm</tt> trong trình soạn thảo.
+<li>Tìm tag <tt>&lt;body&gt;</tt> và thay đổi nó thành :
+<pre><font color="navy">    &lt;body bgcolor=#000000&gt;</font></pre>
+<li><b>Lưu trữ </b> và <b>Nạp</b> tập tin HTML trong Web browser của bạn
+</ol>
+Nếu bạn thực hiện chính xác những điều trên, browser của bạn sẽ đổi màu nền thành một
+màu đen cố định. <b>Nhưng bạn có thể nhận thấy là bạn không thể nhìn thấy được 
+văn bản của bạn</b>. Tại sao vậy? À, bởi vì màu mặc định cho chữ cũng là màu đen, 
+do đó bạn biết rằng bạn có những chữ màu đen trên một nền đen! May mắn thay, chúng ta
+có thêm những khả năng khác trong tag <tt>body</tt> để thay đổi màu của chữ
+và những siêu văn bản:
+
+<pre><font color="navy">  &lt;BODY BGCOLOR=#XXXXXX TEXT=#XXXXXX LINK=#XXXXXX VLINK=#XXXXXX&gt;</font></pre>
+trong đó các giá trị XXXXXX sẽ xác định:
+<ul>
+	<li><tt>BGCOLOR</tt> = màu sắc của nền (mặc định là màu <font color="#777777"><b>xám</b></font> - grey)
+	<li><tt>TEXT</tt> = màu của chữ trong thân văn bản (mặc định là <b>đen</b> - black)
+	<li><tt>LINK</tt> = Màu sắc của một mục liên kết siêu văn bản (mặc định là <font color="#0000EE"><b>xanh</b></font> - blue)
+	<li><tt>VLINK</tt> = Màu sắc của một mục siêu văn bản đã xem (mặc định là <font color="#660099"><b>tím</b></font> -  purple)
+</ul>
+<p>
+Bây giờ bạn có thể thêm các giá trị màu này để thay đổi tag thành:
+<pre><font color="navy">  &lt;BODY BGCOLOR=#000000 TEXT=#EEEEBB LINK=#33CCFF VLINK=#CC0000&gt;</font></pre>
+Tag này sẽ cho nền màu <b>đen</b>,
+ chữ màu <font color="#FFFF66"><b>vàng</b></font>,
+siêu văn bản màu <font color="#33CCFF"><b>xanh dương sáng</b></font>,
+và siêu văn bản đã xem màu <font color="#CC0000"><b>đỏ</b></font> .
+
+<blockquote><b>Chú ý : thứ tự của các mục trong tag &lt;BODY&gt; không 
+quan trọng.</b></blockquote>
+Bây giờ bạn nên sửa đổi các tag &lt;BODY&gt; trong tất cả các tập tin HTML của bạn
+(cách nhanh và dễ dàng là chép và dán ví dụ trên cho mỗi tag 
+<tt>&lt;BODY&gt;</tt>).
+
+<h2>Cấu trúc nền</h2>
+<blockquote><b>Lưu ý: Trước hết có lẽ bạn hãy thử 
+<a HREF="tut16_ex/test2.htm">kiểm tra</a> 
+xem web browser của bạn có hổ trợ cấu trúc nền không.</b></blockquote>
+Màu sắc cố định tạo thêm vài biến đổi khác nhau cho trang Web - nhưng bạn có thể 
+đi xa hơn nữa bằng cách thêm cấu trúc nền (textured background). Bạn sử dụng một
+tập tin hình ảnh nhỏ (dạng GIF hay JPEG) và browser sẽ &quot;lợp&quot; vào trang web các 
+bản sao liên tục nhau của hình ảnh này. Vài điều bạn cần phải nhớ là:
+
+<ul>
+<li><b>Kích cở tập tin:</b> Việc thêm một cấu trúc nền đòi hỏi một hình ảnh nữa 
+phải được download. Chúng tôi đề nghị tập tin hình ảnh nên có kích thước nhỏ hơn 10k.
+
+<li><b>Khả năng đọc:</b> Hãy chọn lựa! Rất nhiều tập tin sắp đặt nền làm cho người đọc
+cảm thấy khó nhìn thấy chữ. Cố gắng sử dụng những màu rất sáng (với chữ rất tối) 
+hoặc những màu thật tối (với chữ rất sáng) - có nghĩa là hãy chọn độ tương phản cao
+giữa nền và chữ.
+<li><b>Hiệu quả:</b> trong các web browser đầu tiên có sử dụng màu nền, trang sẽ 
+chưa xuất hiện cho tới khi nào màu nền đã được nạp xuống - do sự kết nối chậm, 
+người đọc có thể phải chờ hình ảnh nền một thời gian dài trước khi nhìn
+thấy được một thông tin nào đó trên màn hình! Tuy nhiên, các web browser sau này 
+download nền <b>cuối cùng</b> do đó trước tiên trang sẽ có màu xám, tiếp theo là
+văn bản và hình ảnh xuất hiện, và cuối cùng là nền. HÃY GHI NHỚ! Thời gian nạp
+trang sẽ chậm hơn nữa (nếu xét với các loại modem thế hệ cũ) khi trang của bạn 
+được đọc từ server.
+</ul>
+
+Trong phần này của bài học, chúng tôi sẽ tạo cơ hội để bạn có kinh nghiệm với ba 
+hình nền khác nhau. Dạng HTML cho việc thêm một tập tin hình nền là :
+<pre><font color="navy">  &lt;body background=&quot;bgfile.gif&quot;&gt;</font></pre>
+trong đó  <tt>bgfile.gif</tt> là tên của tập tin hình ảnh (có thể sử dụng URL đầy đủ hay
+tương đối - xem <a HREF="tut8a.htm">bài 8a</a>).
+<p>
+Dưới đây chúng ta sẽ liệt kê tên của ba tập tin nền.  Bạn có thể download từng cái 
+(nếu bạn không biết cách download hình ảnh từ một trang web, xin tham khảo 
+bảng trợ giúp <a HREF="help-dl.htm">Download Hình ảnh</a>) của chúng tôi.
+Bạn nên cất các tập tin hình ảnh trong directory/folder <tt>pictures</tt> trong
+vùng làm việc của bạn:
+<dl>
+<dt><a HREF="pictures/bg.gif">Blue Tile <tt>[bg.gif]</tt></a>
+<dd>Một mẫu hình vuông được lặp lại:<br>
+HTML: <tt><font color="navy">&lt;body background=&quot;../pictures/bg.gif&quot;&gt;</font></tt><br>
+Tập tin <a HREF="tut16_ex/indexb1.htm">ví dụ</a> có nền Blue Tile
+<p>
+<dt><a HREF="pictures/vtext.gif">Volcano Text <tt>[vtext.gif]</tt></a>
+<dd>Văn bản lớn có màu xám sáng:<br>
+HTML: <tt><font color="navy">&lt;body background=&quot;../pictures/vtext.gif&quot;&gt;</font></tt><br>
+Tập tin <a HREF="tut16_ex/indexb2.htm">ví dụ</a> với nền là Volcano Text
+<p>
+<dt><a HREF="pictures/paper.gif">Legal Paper <tt>[paper.gif]</tt></a>
+<dd>Giấy có kẻ hàng<br>
+HTML: <tt><font color="navy">&lt;body background=&quot;../pictures/paper.gif&quot;&gt;</font></tt><br>
+Tập tin <a HREF="tut16_ex/indexb3.htm">ví dụ</a> với nền là Legal Paper 
+</dl>
+
+Bạn cũng có thể sửa đổi màu của văn bản trong trang Web như chúng tôi đã làm trong
+ví dụ trên. Lấy ví dụ, nếu bạn muốn chữ màu <font color="#AA0000"><b>ĐỎ</b></font>
+cho nền Giấy có kẻ hàng, chúng ta có thể viết lại HTML sau:
+<pre><font color="navy">  &lt;body background=&quot;../pictures/paper.gif&quot; text=##AA0000&gt;</font></pre>
+sẽ cho chúng ta <a HREF="tut16_ex/indexb4.htm">chữ đỏ trên giấy vàng.</a>
+<blockquote><b>Chú ý: Có nhiều web browser có khả năng thay đổi 
+màu mặc định - đôi khi một người sử dụng có thể có sự ưa thích một tập các màu mà những màu này
+sẽ làm ảnh hưởng đến tập màu bạn đã chọn. Vì vậy, chúng tôi
+đề nghị khi sử dụng một tag nền bất kỳ nào (màu cố định hay tập cấu trúc nền)
+thì bạn cũng nên bao gồm các màu &quot;bình thường&quot; - màu đen cho phần chữ văn bản, màu xanh dương cho liên kết siêu văn bản
+và màu tím cho các liên kết đã xem :
+<pre><font color="navy">  &lt;BODY TEXT=#000000 VLINK=#660099 LINK=#0000EE&gt;</font></pre>
+</b></blockquote>
+
+Nếu bạn muốn tìm vài ví dụ về các tập tin cấu trúc nền, hãy xem
+<a HREF="http://the-tech.mit.edu/KPT/bgs.htm">Kai's Power Tips Background Archives</a>
+
+<h2>Kiểm tra lại công việc của bạn</h2>
+So sánh trang của bạn với <a href="tut16_ex/index.htm">ví dụ mẫu</a>.
+Nếu trang của bạn trông khác với mẫu hay các liên kết siêu văn bản hoạt động không
+đúng, hãy xem lại văn bản bạn đã nhập trong trình soạn thảo.
+Chúng ta sẽ giữ lại các tập tin mẫu với màu đen cố định mà chúng ta đã thêm vào ở 
+phần đầu của bài này.
+<h2>Xem lại</h2>
+Xem lại những vấn đề sau:
+<ol>
+<li>Làm thế nào để thêm màu nền đồng nhất cho trang Web?
+<li>Tại sao mã màu lại được viết trong dạng mã khó hiểu như <tt>#EE66CC</tt>?
+<li>Làm thế nào để thêm màu cho văn bản trong trang Web?
+<li>Giữa 
+<pre><font color="navy">  &lt;body bgcolor=#FFFFFF&gt;</font></pre>
+và
+<pre><font color="navy">  &lt;body background=&quot;tiles.gif&quot;&gt;</font></pre>
+khác nhau như thế nào?
+</ol>
+
+<h2>Thực tập tự do</h2>
+Thêm một màu nền cố định hay một tập tin cấu trúc nền cho (các) trang web của bạn. 
+Hỏi vài người khác xem họ có đọc được văn bản với màu nền bạn đã chọn không.
+<hr>
+<h2>Đến phần tiếp theo....</h2>
+Tag khó chịu và đáng ghét nhất của HTML vẫn còn ở phía trước...
+<h5> ĐẾN....  | <a HREF="lessons.htm">Mục Lục</a> | 
+<a HREF="tut15.htm">Bài trước:  &quot;HTML tiêu chuẩn và nâng cao&quot;</a> |
+<a HREF="tut17.htm">Bài kế:  &quot;Đừng làm Nhấp nháy&quot;</a> |
+</h5>
+<hr>
+<b>Soạn thảo HTML</b>  bài 16: Màu sắc và Cấu trúc cho Nền.<br>
+<address>
+©1995, 1996 <a HREF="http://www.mcli.dist.maricopa.edu/">
+Maricopa Center for Learning and Instruction (MCLI)</a><br>
+<a HREF="http://www.mcli.dist.maricopa.edu/mcccd/">Maricopa County Community College District</a>, Arizona<p>
+The Internet Connection at MCLI is 
+<a href="http://www.mcli.dist.maricopa.edu/alan/">Alan Levine --}</a><br>
+Comments to <b><a HREF="mailto:levine@maricopa.edu">levine@maricopa.edu</a></b>
+</address>
+<p>
+<tt>URL: http://www.mcli.dist.maricopa.edu/tut/tut16.html</tt>
+<p>
+</body>
+</html>
+
+
+
+
+

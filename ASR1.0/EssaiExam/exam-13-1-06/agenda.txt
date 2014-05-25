@@ -1,0 +1,6 @@
+marcel:dupont:01234567
+gerard:durand:23456789
+sylvie:michel:34567890
+olivier:ly:015285982
+fabien:baldacci:549394921
+karine:heydemann:018829842

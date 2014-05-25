@@ -1,0 +1,156 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>3. Headings - Six Levels Deep</title>
+</head>
+<body bgcolor="#FFFFFF">
+<h5><i>Soạn thảo HTML</i> |
+<a HREF="index.htm">Giới thiệu</a> | <a HREF="faq.htm">FAQ</a> |
+<a HREF="http://www.mcli.dist.maricopa.edu/cgi-bin/alumni.pl">Alumni</a> |
+<a HREF="tag.htm">Các Tag</a> |
+<a HREF="lessons.htm">Mục lục</a> |
+<a HREF="tut2.htm">Bài trước</a>   | 
+<a HREF="tut4.htm">Bài kế tiếp</a>   | </h5>
+
+<h1>3. Sáu mức tiêu đề</h1>
+Như là bạn đã nhìn thấy trong trang Web này, các phần tiêu đề (&quot;Sáu mức tiêu đề&quot;,
+&quot;Mục đích&quot;, &quot;Mục Lục&quot;, ...) xuất hiện ở những kích cỡ khác nhau và, có lẽ ở cả những
+phông chữ và màu sắc khác nhau nữa.
+HTML cung cấp những đoạn mã cho việc thiết kế phần tiêu đề theo sáu mức độ khác
+nhau. Browser tự xác định chính xác phông chữ và kích cỡ để hiển thị.
+
+<h2>Mục đích</h2>
+Sau bài học này bạn có khả năng:
+<ul>
+<li>Nhận dạng được những mức độ khác nhau của các tiêu đề trong HTML và các tag
+liên quan tới chúng.
+<li>Đặt những mức tiêu đề khác nhau vào trong tài liệu HTML và nhìn thấy sự thay đổi
+của chúng trong browser của bạn.
+</ul>
+<hr>
+<h2>Bài học</h2>
+<h3>Những tiêu đề của HTML</h3>
+Những tiêu đề được thực hiện trong HTML bằng cách đặt đoạn văn bản giữa những tag
+tiêu đề (heading tag). Dạng các tag tiêu đề của HTML là:
+
+<pre><font color="navy">
+     &lt;hN&gt;Text to Appear in Heading&lt;/hN&gt;
+</font></pre>
+N là một số có giá trị từ 1 đến 6 chỉ định kích cỡ tiêu đề. Sau đây là một vài ví dụ cho
+những kích cỡ khác nhau của tiêu đề :
+
+
+<h1>Heading Level 1</h1>
+<h2>Heading Level 2</h2>
+<h3>Heading Level 3</h3>
+<h4>Heading Level 4</h4>
+<h5>Heading Level 5</h5>
+<h6>Heading Level 6</h6>
+<p>
+
+Các mức độ tiêu đề được sắp xếp từ 1 (quan trọng nhất) đến 6 (ít quan trọng nhất). Các
+tiêu đề nên có tính tương đối, đánh số thứ tự và đặt tại các vị trí tương tự nhau.
+
+<h3>Đặt những tiêu đề HTML vào tài liệu của bạn</h3>
+<b>Lưu ý: Nếu bạn không có tài liệu từ bài học trước, bạn có thể
+<a href="tut3get.htm">download </a> lại ngay bây giờ.</b>
+<p>
+<ol>
+<li>Mở lại workspace của bạn (nếu nó chưa được mở).
+<li>Đến cửa sổ soạn thảo văn bản.
+<li>Mở lại tập tin HTML đã tạo trong bài 2, <code>&quot;Volc.htm&quot;</code>. 
+<li>Trước hết, chúng ta sử dụng tag &lt;h1&gt; để trình bày tiêu đề như là header lớn
+nhất, <tt>&lt;H1&gt;</tt>. Nhâp dòng sau vào phần thân của HTML và <b>sau</b>
+các tag <tt>&lt;/head&gt;&lt;body&gt;</tt>:
+<pre><font color="navy">
+          &lt;h1&gt;Volcano Web&lt;/h1&gt;
+</font></pre>
+
+<li>Bên dưới những dòng văn bản đã nhập, tạo những đề mục khác nhau cho những phần
+sau này của trang <i>Volcano Web</i> của bạn.<p>
+Nhập những tiêu đề sau trong phần thân của trang Web của bạn (chú ý một số sử dụng
+&lt;/h3&gt; còn một số sử dụng &lt;/h2&gt;):
+<pre><font color="navy">
+          &lt;h2&gt;Introduction&lt;/h2&gt;
+
+          &lt;h2&gt;Volcano Terminology&lt;/h2&gt;
+
+          &lt;h2&gt;Volcanic Places in the USA&lt;/h2&gt;
+
+          &lt;h3&gt;Mount St Helens&lt;/h3&gt;
+
+          &lt;h3&gt;Long Valley&lt;/h3&gt;
+
+          &lt;h2&gt;Volcanic Places on Mars?&lt;/h2&gt;
+
+          &lt;h2&gt;Research Project&lt;/h2&gt;
+
+          &lt;h3&gt;References&lt;/h3&gt;
+</font></pre>
+<li>Lưu trữ (save) lại sự thay đổi trong trình soạn thảo.
+<li>Trở lại web browser của bạn, <b>Mở</b> và <b>Nạp lại</b> tập tin HTML.
+<p>
+
+<blockquote><b>Chú ý rằng trên máy tính bạn đang sử dụng hiện nay, bạn có thể
+cài đặt cho browser của bạn phông và/hay kích thước của các tiêu đề. Ví dụ như, bạn có
+thể có một browser thể hiện tag <em>h1</em> theo phông Times có 36 điểm; tag
+<em>h2</em> theo phông Helvetica có 24 điểm, v.v... 
+Các mã HTML chỉ đưa ra các loại của tiêu đề (từ h1 đến h6); còn việc thể hiện chúng
+thì được điều khiển bởi người sử dụng thông qua trình web browser.</b>
+</blockquote>
+</ol>
+
+<hr>
+<h2>Kiểm tra công việc của bạn</h2>
+So sánh công việc của bạn với <a href="tut3_ex.htm">ví dụ mẫu</a> sẵn có. Nếu có một
+vài tiêu đề xuất hiện không đúng, hãy kiểm tra lại tag bắt đầu và tag kết thúc của mỗi
+tiêu đề.
+<p> 
+
+Như là một phần bài tập đề nghị, 
+hãy nhìn xem chuyện gì sẽ xảy ra khi bạn có một lỗi đánh máy sai. Mở lại tài liệu HTML
+của bạn trong chương trình soạn thảo và xoá đi ký tự &quot;/&quot; trong tag kết thúc 
+<tt>&lt;h1&gt;</tt> , sau đề mục <b>Volcano Web</b>:
+<pre><font color="navy">
+          &lt;h1&gt;Volcano Web&lt;h1&gt;
+[missing &quot;/&quot; -----------^^^]
+</font></pre>     
+Lưu trữ sự thay đổi và nạp lại trong Web browser. Không có sự kết thúc đúng đắn của tag
+h1, browser của bạn sẽ thông dịch phần văn bản tiếp theo như là một phần của tiêu đề!
+Sau khi thử xong bạn nên trở lại tài liệu của bạn và thêm lại dấy / như ban đầu.
+
+<h2>Xem lại</h2>
+<ol>
+<li>Những mức độ khác nhau của tiêu đề trong HTML là gì?
+<li>Những tag liên quan đến những mức độ này là gì?
+<li>Những bước nào được sử dụng trong việc đặt tiêu đề vào trong tài liệu HTML ?
+<li>Những gì xảy ra nếu bạn quên dấu &quot;/&quot; tại cuối của một tag tiêu đề?
+</ol>
+<h2>Thực tập tự do</h2>
+Hãy thêm vào ít nhất ba tiêu đề với các cấp độ khác nhau vào tài liệu WWW của riêng
+bạn.
+<hr>
+<h2>Đi đến phần tiếp theo....</h2>
+Phân chia văn bản thành nhiều đoạn văn.<p>
+<h5> ĐẾN....  | <a HREF="lessons.htm">Mục Lục</a> | 
+<a HREF="tut2.htm">Bài trước:  &quot;Điều chỉnh một tài liệu HTML&quot;</a> |
+<a HREF="tut4.htm">Bài kế tiếp:  &quot;Phân chia thành nhiều đoạn văn&quot;</a> |
+</h5>
+<hr>
+
+<b>Soạn thảo HTML</b> Bài 3: Sáu mức tiêu đề<br>
+<address>
+©1995, 1996 <a HREF="http://www.mcli.dist.maricopa.edu/">
+Maricopa Center for Learning and Instruction (MCLI)</a><br>
+<a HREF="http://www.mcli.dist.maricopa.edu/mcccd/">Maricopa County Community College District</a>, Arizona<p>
+The Internet Connection at MCLI is 
+<a href="http://www.mcli.dist.maricopa.edu/alan/">Alan Levine --}</a><br>
+Comments to <b><a HREF="mailto:levine@maricopa.edu">levine@maricopa.edu</a></b>
+</address>
+<p>
+<tt>URL: http://www.mcli.dist.maricopa.edu/tut/tut3.html</tt>
+<p>
+</body>
+</html>
+

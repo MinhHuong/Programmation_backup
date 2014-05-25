@@ -1,0 +1,843 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>21. Tables</title>
+</head>
+<body bgcolor="#FFFFFF">
+<h5><i>Soạn thảo HTML</i> |
+<a HREF="index.htm">Giới thiệu</a> | <a HREF="faq.htm">FAQ</a> |
+<a HREF="http://www.mcli.dist.maricopa.edu/cgi-bin/alumni.pl">Alumni</a> |
+<a HREF="tag.htm">Các Tag</a> |
+<a HREF="lessons.htm">Mục Lục</a> |
+<a HREF="tut20.htm">Bài trước</a> | 
+<a HREF="tut22.htm">Bài kế</a> | 
+</h5>
+<h1>21. Bảng (Table)</h1>
+<center>
+<table width="100%">
+<tr>
+<td colspan="2" valign="bottom"><font size="+3">Hãy tạo một bảng...</font></td>
+
+<td rowspan="2">
+
+<table border="4" cellpadding="2" cellspacing="8" align="center">
+<tr>
+<td align="right" bgcolor="black"><i><b><font size="+1" color="#8811DD">Một khi</font></b></i></td>
+<td valign="top"><font color="#CC1100">Bạn</font><p> </td>
+<td valign="bottom"><font color="#662244">Tạo</font></td>
+<td colspan="2"><font size="+2" color="#2211DD"><tt>ra</tt></font></td>
+</tr>
+<tr>
+<td bgcolor="purple"><br></td>
+<td colspan="4" align="right" bgcolor="lime"><font size="+2">một bảng</font></td>
+</tr>
+<tr>
+<td><font size="+4" color="#CC1100"><tt>ban</tt></font></td>
+<td rowspan="2" colspan="2" valign="top"><font color="#1004411">sẽ không<p> B a o g i ờ</font></td>
+<td align="right"><font size="+1" color="#331166">Quay</font></td>
+</tr>
+<tr><td bgcolor="navy"><br></td><td bgcolor="gray"><font size="-1" color="blue">Lại!</font></td>
+</tr>
+</table>
+</td>
+</tr>
+
+<tr>
+<td></td>
+<td align="right"><font size="+2">...và hoàn tất <br> cuộc cách mạng hóa trên <br> những trang Web thông thường
+</font></td>
+</table>
+</center>
+
+<h2>Mục đích</h2>
+Sau bài học này bạn sẽ có thể:
+<ul>
+<li>Thiết kế một bảng với những hàng và cột văn bản trình bày theo dạng lưới trên 
+trang Web.
+<li>Viết HTML tạo sự trộn lẫn phức tạp giữa hình ảnh và văn bản.
+<li>Viết HTML cho một bảng ẩn để trình bày các cột dữ kiện.
+<li>Tạo một bảng với những ô có màu khác nhau.
+</ul>
+<hr>
+
+<h2>Bài học</h2>
+<b>Chú ý: Nếu bạn chưa có tài liệu từ những bài học trước, bạn có thể 
+<a href="tut21get.htm">download </a> ngay bây giờ. Bạn cũng có thể xem trang 
+<a HREF="tut21_ex/test.htm">kiểm tra</a> để biết web browser đang sử dụng có hổ trợ 
+cho những tag trong bài này không.</b>
+<p>
+Bảng được giới thiệu trong HTML 3.0 và được NetScape phát triển thêm để tạo ra
+một hướng thiết kế khác cho trang Web. 
+Chúng cung cấp một cấu trúc để tổ chức những phần tử HTML trong trang thành dạng &quot;lưới&quot;
+(grid). Một trong những ứng dụng rõ ràng nhất của bảng là khi bạn phải định dạng... 
+một bảng theo từng cột! Nhưng bảng cũng mở ra một chân trời mới cho nhiều khả năng
+trình bày trang khác nhau.
+<p>
+Dạng HTML cho bảng trông có thể rất phức tạp - nhưng chúng ta sẽ bắt đầu một cách đơn giản với việc xây dựng một 
+vài bảng đơn giản trong bài <i>Volcano Web</i>.
+<p>
+Đối với những người mới bắt đầu, hãy nhớ kỹ khái niệm sau:
+<blockquote><b>Các bảng được xây dựng bắt đầu từ phần tử cao nhất bên trái, tiếp theo
+xây dựng các phần tử của hàng đầu tiên, xong chuyển đến hàng thứ hai, xây dựng các 
+phần tử của hàng thứ hai....
+</b>
+<pre><font color="red">
+      --&gt;  --&gt;  --&gt;  --&gt;  --&gt;  --&gt; 
+      ___________________________|
+      |
+      --&gt;  --&gt;  --&gt;  --&gt;  --&gt;</font></pre>
+
+Chúng ta gọi mỗi ô lưới trong một bảng là một <i>phần tử</i> (cell)
+</blockquote>
+
+<h2>Những tag cơ bản của Bảng</h2>
+HTML cho cấu trúc cơ bản của một bảng được trình bày như dưới đây:
+<center>
+<table border="0" cellspacing="10">
+<tr>
+<th bgcolor="#77FF77">HTML</th>
+<th bgcolor="#77FF77">Kết quả</th>
+</tr>
+
+<tr>
+<td valign="top">
+<pre><font color="navy">&lt;table border=1&gt;
+  &lt;tr&gt;
+  &lt;td&gt;Row 1 col 1&lt;/td&gt;
+  &lt;td&gt;Row 1 col 2&lt;/td&gt;
+  &lt;td&gt;Row 1 col 3&lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+  &lt;td&gt;Row 2 col 1&lt;/td&gt;
+  &lt;td&gt;Row 2 col 2&lt;/td&gt;
+  &lt;td&gt;Row 2 col 3&lt;/td&gt;
+  &lt;/tr&gt;
+  
+  &lt;tr&gt;
+  &lt;td&gt;Row 3 col 1&lt;/td&gt;
+  &lt;td&gt;Row 3 col 2&lt;/td&gt;
+  &lt;td&gt;Row 3 col 3&lt;/td&gt;
+  &lt;/tr&gt;
+
+&lt;/table&gt;</font></pre>
+
+</td>
+<td valign="middle">
+<table border="1">
+  <tr>
+  <td>Row 1 col 1</td>
+  <td>Row 1 col 2</td>
+  <td>Row 1 col 3</td>
+  </tr>
+
+  <tr>
+  <td>Row 2 col 1</td>
+  <td>Row 2 col 2</td>
+  <td>Row 2 col 3</td>
+  </tr>
+  
+  <tr>
+  <td>Row 3 col 1</td>
+  <td>Row 3 col 2</td>
+  <td>Row 3 col 3</td>
+  </tr>
+</table>
+</td>
+</tr>
+</table>
+</center>
+Thuộc tính <tt>border=1</tt> trong tag <tt>&lt;table&gt;</tt> chỉ thị cho browser 
+vẽ một đường viền quanh bảng với độ dày là một điểm. Lưu ý rằng mỗi một hàng được 
+xác định bởi  tag <b>T</b>able <b>R</b>ow là <tt>&lt;tr&gt;...&lt;/tr&gt;</tt>, rồi 
+sau đó mỗi phần tử trong hàng được định nghĩa bởi tag <b>T</b>able <b>D</b>ata là 
+<tt>&lt;td&gt;...&lt;/td&gt;</tt>. 
+Trong mỗi tag <tt>&lt;td&gt;...&lt;/td&gt;</tt> có thể có bất kỳ loại tag nào của HTML 
+mà chúng ta đã sử dụng trong tài liệu này - tiêu đề, định kiểu, liên kết siêu văn bản, 
+hình ảnh inline, v.v.... Trong tag này bạn còn có thể sử dụng một vài loại thuộc tính để 
+điều khiển sự chỉnh lề của các thông tin trong phần tử đó:
+<p>
+<table width="90%">
+<tr>
+<th>Chỉnh lề theo chiều ngang</th>
+<th>Chỉnh lề theo chiều dọc</th>
+</tr>
+<tr>
+<td valign="top">
+<ul>
+<li><b><tt>&lt;td align=left&gt;</b></tt> Sắp xếp tất cả các thành phần về bên trái của cell 
+(đây là thuộc tính mặc định)
+<li><tt><b>&lt;td align=right&gt;</b></tt> Sắp xếp tất cả các thành phần về bên phải của cell
+<li><tt><b>&lt;td align=center&gt;</b></tt> Sắp xếp tất cả các thành phần vào giữa cell
+</ul>
+</td>
+<td valign="top">
+<ul>
+<li><tt><b>&lt;td valign=top&gt;</b></tt> Sắp xếp các thành phần từ đỉnh cell xuống dưới
+<li><tt><b>&lt;td valign=bottom&gt;</b></tt> Sắp xếp các thành phần từ dưới cell lên trên
+<li><tt><b>&lt;td valign=middle&gt;</b></tt> Sắp xếp tất cả phần tử ở giữa của cell
+(đây là thuộc tính mặc định)
+</td>
+</tr>
+</table>
+<p>
+Bạn có thể kết hợp các thuộc tính này lại với nhau:
+<pre><font color="navy">  &lt;td align=left valign=bottom&gt;</font></pre>
+Dạng HTML này sẽ hiển thị một phần tử với các thành phần dọc theo bên trái và từ
+dưới lên.
+
+<h2>Các Hàng và Cột</h2>
+Bảng ở ví dụ trên trông rất đơn giản và vuông vức - ba hàng và ba cột. Bây giờ hãy xem 
+chúng ta làm được gì khi sử dụng các tag thuộc tính <tt>colspan</tt> và 
+<tt>rowspan</tt> trong tag <tt>&lt;td&gt;...&lt;/td&gt;</tt>.
+
+<table width="90%" border="0" cellspacing="10">
+<tr>
+<th bgcolor="#77FF77">HTML</th>
+<th bgcolor="#77FF77">Kết quả</th>
+</tr>
+
+<tr>
+<td valign="top" rowspan="2">
+<pre><font color="navy">&lt;table border&gt;
+  &lt;tr&gt;
+  &lt;td&gt;Row 1 col 1&lt;/td&gt;
+<b>  &lt;td align=center colspan=2&gt;
+   Row 1 col 2-3&lt;/td&gt;</b>
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+  &lt;td&gt;Row 2 col 1&lt;/td&gt;
+  &lt;td&gt;Row 2 col 2&lt;/td&gt;
+  &lt;td&gt;Row 2 col 3&lt;/td&gt;
+  &lt;/tr&gt;
+  
+  &lt;tr&gt;
+  &lt;td&gt;Row 3 col 1&lt;/td&gt;
+  &lt;td&gt;Row 3 col 2&lt;/td&gt;
+  &lt;td&gt;Row 3 col 3&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</font></pre>
+</td>
+
+<td>
+<br>** Lưu ý đến thuộc tính cho phần tử thứ hai của hàng đầu tiên - nó <b>mở rộng</b>
+ra thành 2 cột. Chúng ta cũng chỉnh văn bản vào chính giữa của phần tử này này.
+</td>
+</tr>
+
+<tr>
+<td>
+<table border>
+  <tr>
+  <td>Row 1 col 1</td>
+ <td align="center" colspan="2">
+   Row 1 col 2-3</td>  
+   </tr>
+
+  <tr>
+  <td>Row 2 col 1</td>
+  <td>Row 2 col 2</td>
+  <td>Row 2 col 3</td>
+  </tr>
+  
+  <tr>
+  <td>Row 3 col 1</td>
+  <td>Row 3 col 2</td>
+  <td>Row 3 col 3</td>
+  </tr>
+</table>
+</td>
+</tr>
+
+<tr>
+<td colspan="2">
+Được rồi, chúng ta đã biết một phần tử mở rộng trong hai cột - giờ đây, chúng ta sẽ tạo 
+một phần tử mở rộng trong hai hàng. Hãy nhớ rằng HTML xây dựng bảng từ bên trái, 
+băng qua hàng, rồi xuống dưới, rồi băng qua...
+</td>
+</tr>
+
+<tr>
+<th bgcolor="#77FF77">HTML</th>
+<th bgcolor="#77FF77">Kết quả</th>
+</tr>
+<tr>
+<td valign="top" rowspan="2">
+<pre><font color="navy">&lt;table border=1&gt;
+  &lt;tr&gt;
+  &lt;td&gt;Row 1 col 1&lt;/td&gt;
+  &lt;td align=center colspan=2&gt;
+   Row 1 col 2-3&lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+  &lt;td&gt;Row 2 col 1&lt;/td&gt;
+<b>  &lt;td valign=top rowspan=2&gt;
+  Row 2 col 2&lt;/td&gt;
+</b>  &lt;td&gt;Row 2 col 3&lt;/td&gt;
+  &lt;/tr&gt;
+  
+  &lt;tr&gt;
+  &lt;td&gt;Row 3 col 1&lt;/td&gt;
+  &lt;td&gt;Row 3 col 3&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</font></pre>
+</td>
+
+<td>
+<table border="1">
+  <tr>
+  <td>Row 1 col 1</td>
+  <td align="center" colspan="2">
+   Row 1 col 2-3</td>
+  </tr>
+
+  <tr>
+  <td>Row 2 col 1</td>
+  <td valign="top" rowspan="2">
+   Row 2 col 2</td>
+  <td>Row 2 col 3</td>
+  </tr>
+  
+  <tr>
+  <td>Row 3 col 1</td>
+  <td>Row 3 col 3</td>
+  </tr>
+</table>
+</td>
+</tr>
+</table>
+<p>
+Vẫn còn một vài điều phải xét đến, nhưng chúng ta tạm ngưng các ví dụ minh họa ở đây 
+để thực hiện công việc trên trang Web của chúng ta.
+
+<h2>Một bảng dữ liệu</h2>
+Trong trang <a HREF="tut20_ex/intro.htm">Introduction</a> của chúng ta có một bảng 
+(&quot;Volumes of Some Well Known Eruptions&quot;) 
+mà chúng ta đã tạo ra lần đầu tiên trong <a HREF="tut9.htm">bài 9</a> bằng cách 
+sử dụng tag preformat <tt>&lt;pre&gt;...&lt;/pre&gt;</tt>. 
+Giờ đây chúng ta sẽ cải thiện nó bằng cách sử dụng tag <tt>table</tt>.
+<p>
+<ol>
+<li>Mở tập tin <tt>intro.htm</tt> trong trình soạn thảo.
+<li>Xoá bỏ mọi thứ bên trong tag <tt>&lt;pre&gt;...&lt;/pre&gt;</tt> và cả chính nó.
+<li>Thay vào chính chỗ đó bằng:
+<pre><font color="navy">
+&lt;table border&gt;
+&lt;tr&gt;
+&lt;th&gt;Eruption&lt;/th&gt;                     
+&lt;th&gt;Date&lt;/th&gt;           
+&lt;th&gt;Volume in km&lt;sup&gt;3&lt;/sup&gt;&lt;/th&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Paricutin, Mexico&lt;/td&gt;
+&lt;td align=center&gt;1943&lt;/td&gt;
+&lt;td align=center&gt;1.3&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Mt. Vesuvius, Italy&lt;/td&gt;
+&lt;td align=center&gt;79 A.D.&lt;/td&gt;
+&lt;td align=center&gt;3&lt;/td&gt; 
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Mount St. Helens,&lt;br&gt;Washington&lt;/td&gt;
+&lt;td align=center&gt;1980&lt;/td&gt;
+&lt;td align=center&gt;4&lt;/td&gt; 
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Krakatoa, Indonesia&lt;/td&gt;
+&lt;td align=center&gt;1883&lt;/td&gt;
+&lt;td align=center&gt;18&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Long Valley, California&lt;/td&gt;
+&lt;td align=center&gt;pre-historic&lt;/td&gt;
+&lt;td align=center&gt;&gt;450 &amp; &lt;700&lt;/td&gt;
+&lt;/tr&gt; 
+
+&lt;tr&gt;
+&lt;td&gt;Yellowstone, Wyoming&lt;/td&gt;
+&lt;td align=center&gt;pre-historic&lt;/td&gt;
+&lt;td align=center&gt;400&lt;/td&gt; 
+&lt;/tr&gt;
+&lt;/table&gt;
+</font></pre>
+<blockquote><b>Chú ý: Hãy nhìn dòng HTML đầu tiên. Tag <b>T</b>able<b>
+H</b>eader là <tt>&lt;th&gt;...&lt;/th&gt;</tt> có kết quả giống y như tag 
+<tt>&lt;td&gt;...&lt;/td&gt;</tt> ngoại trừ là
+mọi văn bản trong nó đều được in đậm và tất cả các thành phần của nó đều tự động 
+được canh giữa.</b></blockquote>
+<li><b>Lưu trữ </b> và <b>Nạp</b> lại trong Web browser. Bạn có thể so sánh với 
+bản <a HREF="tut21_ex/table1.htm">mẫu</a> để xem nó nên xuất hiện như thế nào
+tại lúc này.
+<blockquote><b>Chú ý: Bảng có thể xem không được rõ khi sử dụng nền màu 
+đen.</b></blockquote>
+
+<li>Bây giờ hãy thêm một vài thứ vào trong bảng của chúng ta.
+<li>Một vài browser cho phép bạn chỉ định một vài thông số cho các đường tạo ra bảng.
+Chúng là các thuộc tính của tag <tt>&lt;table&gt;</tt>:
+<pre><font color="navy">  &lt;table border=X cellpadding=Y cellspacing=Z&gt;</font></pre>
+trong đó X là chiều rộng (tính bằng điểm) đường viền bên ngoài của bảng. Thuộc tính 
+<tt>cellpadding</tt> cho biết có bao nhiêu &quot;khoảng trắng&quot; giữa khối bên trong phần tử và 
+vách ngăn - trị Y càng lớn càng làm cho các phần tử (cell) lớn hơn
+do &quot;độn thêm&quot; (padding). Thuộc tính <tt>cellspacing</tt> cho biết độ rộng (tính bằng
+ điểm) của những đường bên trong bảng để phân chia các phần tử.
+<p>
+Hãy sửa tag <tt>&lt;table&gt;</tt> của bạn thành:
+<pre><font color="navy">  &lt;table border=3 cellpadding=4 cellspacing=8&gt;</font></pre>
+
+<li>Tag <tt>&lt;caption&gt;</tt> đặt một chuỗi văn bản (được chỉnh vào giữa theo
+chiều rộng) như là tiêu đề cho bảng. Hãy sửa đổi những dòng trong bảng của bạn thành:
+<pre><font color="navy">  &lt;table border=3 cellpadding=4 cellspacing=8&gt;
+  &lt;caption&gt;&lt;b&gt;&lt;font size=+1&gt;
+  Volumes of Some Well-Known 
+  Volcanic Eruptions&lt;/font&gt;&lt;/b&gt;&lt;/caption&gt;</font></pre>
+Bạn có thể lồng vào trong tag <tt>&lt;caption&gt;</tt> các HTML khác; nhưng 
+phải nhớ là tag này phải <b>nằm trong</b> tag <tt>&lt;table&gt;...&lt;/table&gt;</tt>.
+<p>
+<li>Và để tăng sự thích thú, hãy tô màu đoạn văn trong tag 
+<tt>&lt;th&gt;...&lt;/th&gt;</tt> thành màu cam (để biết thêm về tô màu cho văn bản, 
+xem <a HREF="tut19.htm">bài 19</a>). Điều chỉnh phần HTML cho hàng đầu tiên thành:
+
+<pre><font color="navy">  &lt;tr&gt;
+&lt;th&gt;&lt;font color=#EE8844&gt;Eruption&lt;/font&gt;&lt;/th&gt;                     
+&lt;th&gt;&lt;font color=#EE8844&gt;Date&lt;/font&gt;&lt;/th&gt;           
+&lt;th&gt;&lt;font color=#EE8844&gt;Volume in km&lt;sup&gt;3&lt;/sup&gt;&lt;/font&gt;&lt;/th&gt;
+&lt;/tr&gt;</font></pre>
+<li>Và hãy di chuyển bảng này vào giữa trang. Nếu browser của bạn có hổ trợ tag 
+<tt>&lt;center&gt;...&lt;/center&gt;</tt>, thì chỉ cần bao quanh bảng bằng tag này. 
+Để biết thêm về chỉnh lề cho văn bản, xem <a HREF="tut20.htm">lesson 20.</a>
+<p>
+<li><b>Lưu trữ</b> và <b>Nạp lại</b> trong web browser của bạn. Bạn có thể so sánh 
+với <a HREF="tut21_ex/table2.htm">ví dụ mẫu</a> để biết bảng này nên như thế nào.
+Vẫn tốt chứ, phải không?
+<p>
+<li>Cuối cùng, chúng ta sẽ thêm một cột về phía bên trái - 
+chúng ta muốn ghép nhóm các núi lửa đã phun lại trong lịch sử (bốn hàng đầu tiên) 
+và các núi lửa thời tiền sử (hai dòng cuối). Bây giờ chúng ta sẽ thêm một phần tử rỗng 
+bằng cách thêm <tt>&lt;th&gt;&lt;/th&gt;</tt> vào hàng đầu tiên - lý do của 
+việc làm này sẽ được làm rõ hơn trong những bước sắp tới khi chúng ta xây dựng cột 
+mới này .
+<pre><font color="navy">&lt;tr&gt;
+<b>&lt;th&gt;&lt;/th&gt;</b>
+&lt;th&gt;&lt;font color=#EE8844&gt;Eruption&lt;/font&gt;&lt;/th&gt;                     
+&lt;th&gt;&lt;font color=#EE8844&gt;Date&lt;/font&gt;&lt;/th&gt;           
+&lt;th&gt;&lt;font color=#EE8844&gt;Volume in km&lt;sup&gt;3&lt;/sup&gt;&lt;/font&gt;&lt;/th&gt;
+&lt;/tr&gt;</font></pre>
+<li>Chúng ta đến dòng đầu tiên và thêm một phần tử ở đầu tiên mà phần tử này
+sẽ mở rộng ra 4 hàng:
+<pre><font color="navy">
+&lt;tr&gt;
+<b>&lt;td rowspan=4&gt;
+&lt;font color=#EE8844&gt;
+&lt;i&gt;eruptions&lt;br&gt;
+observed&lt;br&gt;
+by humans&lt;/i&gt;
+&lt;/font&gt;&lt;/td&gt;</b>
+&lt;td&gt;Paricutin, Mexico&lt;/td&gt;
+&lt;td align=center&gt;1943&lt;/td&gt;
+&lt;td align=center&gt;1.3&lt;/td&gt;
+&lt;/tr&gt;
+</font></pre>
+<blockquote><b>Chú ý: Chúng ta đã thêm một vài tag <tt>&lt;br&gt;</tt> để cột 
+đầu tiên này không trở nên quá rộng. Bạn có thể tự đánh giá khi bỏ qua những tag này.</b>
+</blockquote>
+
+<li>Và trong hàng thứ năm, chúng ta thêm một phần tử mà nó được mở rộng trong
+hai hàng:
+<pre><font color="navy">
+&lt;tr&gt;
+<b>&lt;td rowspan=2&gt;
+&lt;font color=#EE8844&gt;
+&lt;i&gt;inferred&lt;br&gt;
+by study&lt;br&gt;
+of deposits&lt;/i&gt;
+&lt;/font&gt;&lt;/td&gt;</b>
+&lt;td&gt;Long Valley, California&lt;/td&gt;
+&lt;td align=center&gt;pre-historic&lt;/td&gt;
+&lt;td align=center&gt;&gt;450 &amp; &lt;700&lt;/td&gt;
+&lt;/tr&gt; </font></pre>
+
+<li><b>Lưu trữ </b> và <b>Nạp lại</b> một lần nữa trong browser của bạn. Bạn 
+có thể so sánh với <a HREF="tut21_ex/table3.htm">bài mẫu</a> để biết kết quả 
+lúc này nên như thế nào. Đây là tất cả những gì chúng ta sẽ thêm vào bảng này.
+</ol>
+
+<h2>Bảng không nhìn thấy hay Bảng Ma</h2>
+Một bảng cùng với những đường viền thì rất tiện lợi nhưng đôi khi chúng ta muốn tạo 
+nên một sự trình bày ở dạng lưới và không muốn có các đường viền. Chúng ta gọi đó là 
+các bảng &quot;ma&quot; (phantom) vì người đọc không nhìn thấy rõ ràng đó là một bảng.
+
+<p>
+Một bảng ma được xây dựng theo cách giống như bảng mà chúng ta đã thực hiện ở trên
+ngoại trừ tag <b>&lt;table&gt;</b> có dạng như sau:
+<pre><font color="navy">  &lt;table&gt;</font></pre>
+hoặc 
+<pre><font color="navy">  &lt;table border=0&gt;</font></pre>
+Trên một vài browser, khi không có thuộc tính border sẽ làm cho nó hiển thị một bảng
+không có bất kỳ đường viền nào. Trên vài browser khác, bạn cần phải cài đặt border là 
+0 điểm để tạo ra hiệu quả này.
+
+<p>
+Nếu bạn xem lại phần gần đầu của trang này, thật sự nó là một bảng ma mà trong đó 
+có một phần tử của nó lại là một bảng có đường viền! Tuy vậy, chúng ta hãy cứ tiếp tục. 
+Để làm ví dụ, chúng ta sẽ định dạng lại tập tin <b>usa.htm</b> (Volcanoes in the USA) 
+thành dạng có hai cột. Thay vì tạo các đoạn văn
+<a HREF="tut20_ex/usa.htm">được sắp đặt thẳng đứng</a> dựa theo độ rộng của trang,
+chúng ta sẽ làm chúng giống như bản phác họa sau:
+<p>
+<center>
+<table border="0" cellpadding="3">
+<tr>
+<td>XXXXX<br>
+<font size="-1"><b>[tiêu đề]</b></font></td>
+</td><td>XXXXX
+<br>
+<font size="-1"><b>[tiêu đề]</b></font></td>
+</tr>
+<tr>
+<td valign="top">
+<pre><font color="navy">xxxxx xxxxx xxxx 
+xxx xx xxxxx xx xx
+ xxxx xxxxx xxxxx</font></pre>
+</td>
+<td valign="top">
+<pre><font color="navy">  xxx xx x xxxx 
+xxx xx x x xx xx
+xxxx xxxxx xx
+x xxxxx xxx xxxxx</font></pre></font>
+</td>
+<td valign="bottom">
+<pre><font color="navy"><a HREF="likethis.htm">_______
+| img |
+|     |
+|_____|</a></font></pre></td>
+<td valign="bottom">
+<font size="-1"><b>[hình<br>liên<br>kết<br>đến<br>hình<br>lớn]</b></font>
+</td>
+
+</tr>
+<tr>
+<td colspan="3" align="right"> <a HREF="likethis.htm">xxx xx xx</a><br>
+<font size="-1"><b>[siêu liên kết đến hình lớn]</b></font></td>
+</tr>
+</table>
+</center>
+<p>
+Lưu ý rằng cột bên phải cũng có một hình nằm kề bên, và đó chính là một siêu liên kết đến 
+một ảnh lớn trong một cửa sổ riêng (xem <a HREF="tut8e.htm">bài 8e</a>).
+
+<ol>
+<li>Mở tập tin <tt>usa.htm</tt> trong trình soạn thảo.
+<li>Tìm phần sau đây:
+<pre><font color="navy">
+&lt;font size=+1&gt;&lt;B&gt;Mount St Helens&lt;/B&gt;&lt;/font&gt;&lt;br&gt;
+On May 18, 1980, after a long period of rest, 
+this quiet mountain in Washington provided 
+&lt;a href=&quot;msh.htm&quot;&gt;detailed observations&lt;/a&gt; on
+the mechanics of highly explosive eruptions.
+
+&lt;p&gt;
+&lt;font size=+1&gt;&lt;B&gt;Long Valley&lt;/B&gt;&lt;/font&gt;&lt;br&gt;
+This field seismometer measures earthquakes 
+associated with subsurface volcanic forces and 
+may help to predict future events. It sits on a 
+plateau known as the &quot;Volcanic Tableland&quot; formed 
+by a major eruption  600,000 years ago.&lt;p&gt;
+&lt;a href=&quot;../pictures/seismo.jpg&quot;&gt;
+&lt;img src=&quot;../pictures/stamp.gif&quot;&gt; 
+-- [full size image] --&lt;/a&gt;</font></pre>
+
+và thay thế nó bằng đoạn HTML sau:
+
+<pre><font color="navy">&lt;table cellpadding=6&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;font size=+1&gt;&lt;B&gt;Mount St Helens&lt;/B&gt;&lt;/font&gt;&lt;/td&gt;
+&lt;td colspan=2&gt;&lt;font size=+1&gt;&lt;B&gt;Long Valley&lt;/B&gt;&lt;/font&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td valign=top&gt;On May 18, 1980, after a 
+long period of rest, this quiet mountain 
+in Washington provided &lt;a href=&quot;msh.htm&quot;&gt;
+detailed observations&lt;/a&gt; on
+the mechanics of highly explosive eruptions.
+&lt;/td&gt;
+
+&lt;td valign=top&gt;
+This field seismometer measures earthquakes 
+associated with subsurface volcanic forces 
+and may help to predict future events. It
+sits on a plateau known as the 
+&quot;Volcanic Tableland&quot; formed by a major
+eruption  600,000 years ago.
+&lt;/td&gt;
+&lt;td valign=top&gt;&lt;a href=&quot;../pictures/seismo.jpg&quot;&gt;
+&lt;img src=&quot;../pictures/stamp.gif&quot;&gt;&lt;/a&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td colspan=3 align=right&gt;
+&lt;a href=&quot;../pictures/seismo.jpg&quot;&gt;
+-- [full size image] --&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;</font></pre>
+<blockquote><b>Chú ý: Hãy xem cẩn thận dạng HTML ở đây. Thật sự chúng ta
+đã sử dụng một bảng có 3 cột - đoạn văn đầu tiên (Mount St Helens) ở trong cột bên trái.
+Còn cột bên phải bao gồm một cột văn bản và một cột khác có một ảnh nhỏ.
+
+Hàng dưới cùng được chỉnh lề phải và mở rộng trong 3 cột được dùng để nối liên kết
+siêu văn bản đến một hình ảnh giống như hình thu nhỏ này nhưng lớn hơn.</b></blockquote>
+
+<li><b>Lưu trữ </b> và <b>Nạp lại</b> một lần nữa trong web browser.
+</ol>
+
+<h2>Chia đoạn một danh sách dài</h2>
+Một cách sử dụng khác nữa của bảng là đổi dạng cho một danh sách dài 
+(tạo bởi tag <tt>list</tt> , xem <a HREF="tut6.htm">bài 6</a>). Danh sách được
+kéo dài theo trang, và rất là có giá trị nếu chúng ta có thể sử dụng thêm được phân
+bên phải của trang.
+<p>
+Hiệu quả là sự chuyển dạng của danh sách:
+<table cellpadding="5">
+<tr>
+<th>Danh sách Dài</th>
+<th></th>
+<th>Cột 1</th>
+<th>Cột 2</th>
+</tr>
+<tr>
+<td valign="top">
+<pre><font color="navy">&lt;ul&gt;
+&lt;li&gt; xxxxxx
+&lt;li&gt; xxxx xxxx
+&lt;li&gt; xxx  x xxxx
+&lt;li&gt; xxx xxxxx
+&lt;li&gt; xx x  xxxxx
+&lt;li&gt; xxx xx
+&lt;li&gt; xxxx x
+&lt;li&gt; xxx  x xxx
+&lt;/ul&gt;
+</font></pre>
+</td>
+<td valign="top"><font size="+3"><br><br><b> thành </b></font>
+</td>
+<td valign="top">
+<pre><font color="navy">&lt;ul&gt;
+&lt;li&gt; xxxxxx
+&lt;li&gt; xxxx xxxx
+&lt;li&gt; xxx  x xxxx
+&lt;li&gt; xxx xxxxx
+&lt;/ul&gt;</font></pre>
+</td>
+<td valign="top">
+<pre><font color="navy">&lt;ul&gt;
+&lt;li&gt; xxx xx
+&lt;li&gt; xxxx x
+&lt;li&gt; xxx  x xxx
+&lt;/ul&gt;</font></pre>
+</td>
+</tr>
+</table>
+<p>
+Bây giờ chúng ta sẽ chia danh sách các tài nguyên trong trang 
+<a HREF="tut20_ex/proj.htm">Resource Projects</a> của chúng ta (tập tin 
+<tt>proj.htm</tt>).
+<ol>
+<li>Mở tập  tin <tt>proj.htm</tt> trong trình soạn thảo.
+<li>Tìm danh sách <tt>&lt;ul&gt;...&lt;/ul&gt;</tt> bên dưới tiêu đề 
+<b>References</b> và nhập như sau :
+<font size="-1">
+<pre><font color="navy">
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td valign=top&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;A HREF=&quot;http://www.avo.alaska.edu/&quot;&gt;
+  Alaska Volcano Observatory&lt;/A&gt;
+  &lt;li&gt;&lt;A HREF=&quot;http://vulcan.wr.usgs.gov/home.html&quot;&gt;
+  Cascades Volcano Observatory&lt;/A&gt;
+  &lt;li&gt;&lt;A HREF=
+    &quot;http://www.dartmouth.edu/pages/rox/volcanoes/elecvolc.html&quot;&gt;
+  The Electronic Volcano&lt;/A&gt;
+  &lt;li&gt;&lt;A HREF=&quot;http://www.geo.mtu.edu/volcanoes/&quot;&gt;
+  Michigan Tech Volcanoes Page&lt;/a&gt;
+  &lt;li&gt;&lt;A HREF=&quot;http://www.geo.mtu.edu/eos/&quot;&gt;
+  NASA Earth Observing System (EOS) IDS Volcanology Team&lt;/A&gt;
+&lt;/ul&gt;
+&lt;/td&gt;
+&lt;td valign=top&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;A HREF=
+    &quot;http://spso2.gsfc.nasa.gov/NASA_FACTS/volcanoes/volcano.html&quot;&gt;
+  NASA Facts: Volcanoes and Global Climate Change&lt;/A&gt;
+  &lt;li&gt;&lt;A HREF=
+    &quot;http://www.ngdc.noaa.gov/seg/hazard/hazards.html&quot;&gt;
+  NGDC Natural Hazards Data&lt;/a&gt;
+  &lt;li&gt;&lt;a href=
+    &quot;gopher://hoshi.cic.sfu.ca:5555/11/epix/topics/volcano&quot;&gt;
+  Volcano Listserv&lt;/a&gt;
+  &lt;li&gt;&lt;a href= &quot;http://www.soest.hawaii.edu/hvo&quot;&gt;
+  Volcano Watch Newsletter&lt;/a&gt;
+  &lt;li&gt;&lt;a href=
+    &quot;http://seawifs.gsfc.nasa.gov/JASON/HTML/EXPEDITIONS_JASON_6_home.html&quot;&gt;
+  JASON Project VI: Island Earth&lt;/a&gt;
+  &lt;li&gt;&lt;A HREF=&quot;http://volcano.und.nodak.edu/&quot;&gt;
+  VolcanoWorld&lt;/A&gt;
+&lt;/ul&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;</font></pre>
+</font>  
+<blockquote><b>Chú ý: chúng ta chỉ lấy danh sách đi
+<tt>&lt;ul&gt;...&lt;/ul&gt;</tt> và chia nó thành hai danh sách. 
+Mỗi một danh sách là một phần tử của một bảng ma có một hàng và hai cột.
+</b></blockquote>
+<li><b>Lưu trữ </b> và <b>Reload</b> trong Web browser. Bạn có thể so sánh với 
+<a HREF="tut21_ex/proj.htm">mẫu</a> để biết bảng nên có dạng như thế nào tại đây.
+</ol>
+
+<h2>Màu sắc của bảng</h2>
+
+Một vài browser hiện nay hổ trợ để tô màu bảng, hàng và những cell của phantom table. 
+Thật ra, chúng ta đã sử dụng nó trong suốt tài liệu này - trong trang 
+<a HREF="index.htm">Giới thiệu</a> , trong <a HREF="lessons.htm">Mục Lục</a>, 
+và trong các bài khi trình bày các ví dụ HTML.
+
+<p>
+Bạn có thể xem trang <a HREF="tut21_ex/test.htm">kiểm tra</a> cuối cùng để biết 
+browser của bạn có hổ trợ việc tô màu cho bảng không.
+<p>
+Chúng ta sẽ sử dụng mã màu hệ thập lục phân đã biết trong 
+<a HREF="tut16.htm">bài 16</a> để tô  màu nền của những trang Web và trong 
+<a HREF="tut18.htm">bài 18</a> để tô màu chữ.
+<p>
+Dưới đây là một ví dụ đơn giản về việc chèn màu <tt>bgcolor=#FF0000</tt> trong các tag 
+<tt>&lt;table&gt;</tt>:
+<p>
+<center>
+<table>
+<tr>
+<th bgcolor="#77FF77">Phần của Bảng</th>
+<th bgcolor="#77FF77">Dạng HTML</th>
+</tr>
+
+<tr>
+<td valign="top"><b>bảng</b><br>
+Tô màu nền cho toàn bảng</td>
+<td valign="bottom"><pre><font color="navy">&lt;table bgcolor=#880000&gt;</font></pre></td>
+</tr>
+
+<tr>
+<td valign="top"><b>hàng</b><br>
+tô màu nền cho một hàng đơn</td>
+<td valign="bottom"><pre><font color="navy">&lt;tr bgcolor=#880000&gt;</font></pre></td>
+</tr>
+
+<td valign="top"><b>phần tử</b><br>
+tô màu nền cho một phần tử</td>
+<td valign="bottom"><pre><font color="navy">&lt;td bgcolor=#880000&gt;</font></pre></td>
+</tr>
+</table>
+</center>
+<p>
+Bây giờ chúng ta sẽ thêm một vài màu cho bảng dữ liệu bạn đã tạo trong trang 
+&quot;Introduction&quot;. Trong ví dụ của chúng ta, đơn giản chúng ta chỉ thêm dạng HTML để làm
+cho các phần tử trong các hàng và cột tiêu đề có màu xám sáng hơn một chút so với nền đen.
+<ol>
+<li>Mở tập tin <tt>intro.htm</tt> trong trình soạn thảo.
+<li>Trước hết tìm tất cả tag <tt>&lt;th&gt;</tt> để giữ các tiêu đề của cột:
+<pre><font color="navy">
+&lt;th&gt;&lt;font color=#EE8844&gt;Eruption&lt;/font&gt;&lt;/th&gt;                     
+&lt;th&gt;&lt;font color=#EE8844&gt;Date&lt;/font&gt;&lt;/th&gt;           
+&lt;th&gt;&lt;font color=#EE8844&gt;Volume in km&lt;sup&gt;3&lt;/sup&gt;&lt;/font&gt;&lt;/th&gt;
+</font></pre>
+và thêm thuộc tính để tô màu các phần tử này thành màu xám (#222222):
+<pre><font color="navy">
+&lt;th bgcolor=#222222&gt;&lt;font color=#EE8844&gt;Eruption&lt;/font&gt;&lt;/th&gt;                     
+&lt;th bgcolor=#222222&gt;&lt;font color=#EE8844&gt;Date&lt;/font&gt;&lt;/th&gt;           
+&lt;th bgcolor=#222222&gt;&lt;font color=#EE8844&gt;Volume in
+                              km&lt;sup&gt;3&lt;/sup&gt;&lt;/font&gt;&lt;/th&gt;
+</font></pre>
+<li>Bây giờ, tìm hai tag đặt tên cho các hàng và tô với cùng màu sắc vào như trên:
+<pre><font color="navy">
+  &lt;td  bgcolor=#222222 rowspan=4&gt;
+  &lt;font color=#EE8844&gt;
+  &lt;i&gt;eruptions&lt;br&gt;
+  observed&lt;br&gt;
+  by humans&lt;/i&gt;
+  &lt;/font&gt;&lt;/td&gt;
+
+     :
+     :
+     :
+  &lt;td  bgcolor=#222222 rowspan=2&gt;
+  &lt;font color=#EE8844&gt;
+  &lt;i&gt;inferred&lt;br&gt;
+  by study&lt;br&gt;
+  of deposits&lt;/i&gt;
+  &lt;/font&gt;&lt;/td&gt;
+ 
+</font></pre>
+<li>Lưu trữ và Nạp lại trong Web browser của bạn. Bạn có thể so sánh với 
+<a HREF="tut21_ex/intro.htm">mẫu</a> để biết bảng nên xuất hiện như thế nào tại đây.
+</ol>
+
+<h2>Kiểm tra lại công việc của bạn</h2>
+So sánh trang của bạn với <a href="tut21_ex/index.htm">mẫu</a> để biết chúng
+nên như thế nào. Nếu trang của bạn khác với mẫu hoặc các liên kết siêu văn bản
+hoạt động không đúng, kiểm tra lại văn bản bạn đã đánh trong trình soạn thảo.
+Các bảng trở nên phức tạp rất nhanh, vì vậy nên kiểm tra lại một lần nữa xem các
+hàng và cột có hoàn toàn đúng không.
+
+<h2>Xem lại</h2>
+Xem lại những chủ đề sau cho bài này:
+<ol>
+<li>Các phần tử của tag bảng được một browser diễn dịch theo thứ tự nào?
+<li>Sự khác nhau giữa tag <tt>&lt;td&gt;...&lt;/td&gt;</tt> và tag 
+<tt>&lt;th&gt;...&lt;/th&gt;</tt> là gì?
+<li>Thuộc tính <tt>colspan=X</tt> để làm gì? Cách hoạt động của nó?
+<li>Làm thế nào tạo một bảng có các cạnh không trông thấy được?
+<li>Làm thế nào tô màu một dòng của bảng?
+</ol>
+
+<h2>Thực tập tự do</h2>
+Xem lại trang web của bạn và tìm các vị trí mà bạn thấy bảng sẽ làm cho cách trình bày
+tốt hơn. Hay thêm một sơ đồ vào trang web của bạn và sử dụng bảng để định dạng cho nó.
+Thử tạo bảng với các phần tử được tô màu, hoặc giống như chúng tôi đã làm trong tài liệu
+này, sử dụng màu trong các bảng không nhìn thấy được.
+<hr>
+<h2>Đến phần tiếp theo....</h2>
+Vẫn còn <b>vài</b> thứ có thể thêm vào danh sách và hình ảnh của bạn
+<h5> ĐẾN....  | <a HREF="lessons.htm">Mục Lục</a> | 
+<a HREF="tut20.htm">Bài trước:  &quot;Xét thêm về Sự Chỉnh lề&quot;</a> |
+<a HREF="tut22.htm">Bài kế:  &quot;Xét thêm vềø Danh sách và Hình ảnh&quot;</a> |
+</h5>
+<hr>
+<b>Soạn thảo HTML</b>  Bài 21: Tạo Bảng<br>
+<address>
+©1995, 1996 <a HREF="http://www.mcli.dist.maricopa.edu/">
+Maricopa Center for Learning and Instruction (MCLI)</a><br>
+<a HREF="http://www.mcli.dist.maricopa.edu/mcccd/">Maricopa County Community College District</a>, Arizona<p>
+The Internet Connection at MCLI is 
+<a href="http://www.mcli.dist.maricopa.edu/alan/">Alan Levine --}</a><br>
+Comments to <b><a HREF="mailto:levine@maricopa.edu">levine@maricopa.edu</a></b>
+</address>
+<p>
+<tt>URL: http://www.mcli.dist.maricopa.edu/tut/tut21.html</tt>
+<p>
+</body>
+</html>
+
+
+
+
+

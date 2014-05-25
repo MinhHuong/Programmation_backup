@@ -1,0 +1,12 @@
+A->B->C
+A->B->E->F
+A->C
+A->D->E->F
+G->H->A->C
+D->E->G
+G->H
+A->B->C->D
+a:b:c:d
+A:B:C:D
+G:H:I:J
+A->B->C->D

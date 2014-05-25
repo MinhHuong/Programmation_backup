@@ -1,0 +1,5 @@
+1 Linux-programming 2 450
+2 Advanced-Linux 3 300
+3 Computer-Network 4 400
+4 00AD&UML 3 450
+5 Java 5 200

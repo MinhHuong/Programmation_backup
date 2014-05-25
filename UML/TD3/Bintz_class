@@ -1,0 +1,14 @@
+                      BINTZ 
+
+- string etat;
+- Horloge timer;
+
++ Bintz();
++ ~Bintz();
++ void mise_a_jour_etat_Bintz(string etat);
++ void ENV_dde_Temporisatrisation(Horloge t)
++ void pleurer();
++ void sourire();
++ void mettre_bavoir();
++ void retirer_bavoir();
++ manger();

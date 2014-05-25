@@ -1,0 +1,312 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>4. Breaking it up into paragraphs</title>
+</head>
+<body bgcolor="#FFFFFF">
+<h5><i>Soạn thảo HTML</i> |
+<a HREF="index.htm">Giới thiệu</a> | <a HREF="faq.htm">FAQ</a> |
+<a HREF="http://www.mcli.dist.maricopa.edu/cgi-bin/alumni.pl">Alumni</a> |
+<a HREF="tag.htm">Các Tag</a> |
+<a HREF="lessons.htm">Mục lục</a> |
+<a HREF="tut3.htm">Bài trước</a>   | 
+<a HREF="tut5.htm">Bài kế tiếp</a>   | </h5>
+
+<h1>4. Chia văn bản ra thành nhiều đoạn</h1>
+Cho đến bây giờ bạn đã tạo và sửa đổi tài liệu HTML, và chắc bạn đã cảm thấy thoải
+mái với việc soạn thảo và nạp lại văn bản trong Web browser. Vì vậy bây giờ bạn sẽ
+cảm thấy dễ dàng với bài học <b>nhanh</b> này: thêm vào các dấu chia đoạn văn
+(paragraph break).
+
+<h2>Mục đích</h2>
+Sau bài học này bạn có thể:
+<ul>
+<li>Nhận dạng những tag chia đoạn trong HTML.
+<li>Chép một đoạn văn bản từ Web page và dán (paste) nó vào một tài liệu khác.
+<li>Chèn các dấu chia đoạn vào trong văn bản HTML và nhìn sự thay đổi trong Web
+browser của bạn.
+</ul>
+<hr>
+<h2>Bài học</h2>
+<h3>Chia đoạn trong HTML</h3>
+Trước đây chúng ta đã biết rằng một Web browser sẽ bỏ qua tất cả ký tự XUỐNG DÒNG
+(carriage returns) được đánh trong trình soạn thảo. Nhưng, khi browser nhìn thấy tag chia
+đoạn, nó chèn một dòng trống và bắt đầu một đoạn mới. Mã HTML cho công việc
+chèn một sự chia đoạn là :
+
+<pre><font color="navy">     &lt;p&gt;
+</font></pre>
+Lưu ý rằng tag này là một đặc biệt vì nó không cần tag kết thúc; vì thế bạn không cần sử
+dụng: 
+
+<pre><font color="navy">     &lt;/p&gt;
+</font></pre>
+Trong bài sau chúng ta sẽ thấy trường hợp tag &lt;p&gt; có sử dụng tag &lt;/p&gt; để
+kết thúc.
+<p>
+Cũng lưu ý rằng tag <tt>&lt;h&gt;</tt> có sự gắn liền với sự chia đoạn nên không cần 
+thiết đặt tag <tt>&lt;p&gt;</tt> trước một tag tiêu đề như ví dụ dưới đây:
+<pre><font color="navy">     &lt;p&gt;
+     &lt;h2&gt;Blah Blah Blah Blah&lt;/h2&gt;
+</font></pre>
+
+<h3>Chèn các dấu chia đoạn</h3>
+<b>Lưu ý : Nếu bạn không có tài liệu từ bài học trước, bạn có thể
+<a href="tut4get.htm">download </a> lại ngay bây giờ.</b><p>
+Hãy theo sự chỉ dẫn dưới đây để chèn và xem lại một sự ngắt đoạn trong tài liệu
+HTML của bạn.
+<p>
+<ol>
+<li>Mở lại workspace của bạn (nếu nó chưa được mở).
+<li>Đi đến cửa sổ soạn thảo văn bản.
+<li>Mở tài liệu làm việc của bạn <code>Volc.htm</code> trong trình soạn thảo văn bản
+(nếu nó chưa được mở).
+<li>Trước hết chúng ta di chuyển câu <tt>(&quot;A volcano is ...&quot;)</tt> đến dưới tiêu đề
+<b>Introduction</b>. Hãy sử dụng chuột để <b>cắt</b> và <b>dán</b> đoạn văn bản này vào vị
+trí thích hợp.
+<li>Sau những câu này, chúng ta muốn thêm vào một đoạn nữa. Nhưng thay vì
+phải đánh lại nó, từ trang Web này hãy sử dụng chuột để chọn và <b>chép</b> (copy)
+vào clipboard các đoạn văn:
+<pre><font color="navy">
+     Volcanoes have been a part of earth's history
+     long before humans. Compare the history of human 
+     beings, a few million years in the making, to that of 
+     the Earth, over four billion years in the making. 
+
+</font></pre>
+<li>Bây giờ, hãy trở lại tài liệu HTML trong trình soạn thảo và <b>dán</b> (paste) nó
+vào sau những câu có sẵn bên trong đề mục 
+<tt>&lt;h2&gt;Introduction&lt;/h2&gt;</tt>.
+<li>Lưu trữ sự thay đổi trong trình soạn thảo.
+<li>Trở lại Web browser của bạn.
+<li>Nếu tài liệu của bạn chưa có, sử dụng lệnh <b>Open Local...</b> từ thực đơn
+<b>File</b> để mở tài liệu.
+<li>Chọn <b>Reload</b> từ thực đơn <b>File</b>. Bây giờ bạn sẽ nhìn thấy hai câu của
+phần Introduction. Bây giờ chúng ta muốn đặt một dấu phân đoạn <i>giữa</i> các câu
+này.
+<li>Một lần nữa trở lại tài liệu HTML trong trình soạn thảo.
+<li>Sau câu thứ hai của phần <tt>&lt;h2&gt;Introduction&lt;/h2&gt;</tt> (tức là câu có
+kết thúc là &quot; as a sticky, slow lava flow.&quot;) nhấn RETURN (thật ra không cần thiết nhưng
+điều này làm cho bản HTML dễ đọc hơn khi bạn làm việc với nó), và bây giờ hãy nhập
+tag <i>phân đoạn</i> như sau :
+<pre><font color="navy">     &lt;p&gt;
+
+</font></pre>
+
+Lúc này đoạn văn bản trông giống như sau:
+<pre><font color="navy">  &lt;h2&gt;Introduction&lt;/h2&gt;
+  A volcano is a location where magma, 
+  or hot melted rock from within a planet, reaches the
+  surface. It may happen violently, in a massive supersonic
+  explosion, or more quietly, as a sticky, slow lava flow.
+  &lt;p&gt;
+  Volcanoes have been a part of earth's history long before
+  humans. Compare the history of human beings, a few million
+  years in the making, to that of the Earth, over four
+  billion years in the making.
+</font></pre>
+<li>Lưu trữ sự thay đổi trong trình soạn thảo.
+<li>Trở lại Web browser và <b>nạp lại</b> tài liệu. Hai câu của mục introduction bây
+giờ sẽ ở trên hay đoạn văn khác nhau.
+</ol>
+<hr>
+
+<h3>Những dạng phân đoạn khác</h3>
+Để phân chia những phần chính của một trang Web, sử dụng 
+<tt>hard rule</tt> hay còn gọi là tag <tt>hr</tt> . Tag này sẽ chèn một đường thẳng
+giống như bạn nhìn thấy ngay trên phần tiêu đề của mục này.
+<p>
+
+Dạng HTML cho tag <tt>hard rule</tt> là:
+<pre><font color="navy">
+     &lt;hr&gt;
+</font></pre>
+Bây giờ chúng ta hãy sử dụng nó! Đặt một tag <tt>hr</tt> ngay trên tiêu đề 
+<b>Introduction</b>. Công việc này giúp cho việc tách câu mở đầu của bài
+học ra khỏi những phần đi sau nó.
+
+
+<p>
+Và cuối cùng, tag <tt>&lt;br&gt;</tt> sẽ đẩy văn bản xuống dòng mới như tag
+<tt>&lt;p&gt;</tt> nhưng không chèn thêm một dòng trống.
+Bạn có thể phải sử dụng tag này khi tạo một danh sách (list), khi viết những dòng
+của một bài thơ, v.v... Hãy so sánh sự khác nhau giữa việc sử dụng tag 
+&lt;br&gt; và tag &lt;p&gt; trong hai ví dụ sau đây:
+<p>
+<table>
+<tr>
+<th colspan="2" bgcolor="#DDFFDD"><font size="+2">Chỉ sử dụng các tag <tt>&lt;p&gt;</tt></font></th>
+</tr>
+<tr>
+<th bgcolor="#77FF77">HTML</th>
+<th bgcolor="#77FF77">Kết quả</th>
+</tr>
+<tr>
+<td valign="top">
+<pre><font color="navy">And then, we could all see
+at once the brilliant purpose 
+of the paragraph tag.
+<b>&lt;p&gt;</b>
+Moving on...
+<b>&lt;p&gt;</b>
+the more tags you write, 
+the better you will feel?</font></pre>
+</td>
+<td valign="top">
+And then, we could all see at once the brilliant purpose of the
+paragraph tag.
+<p>
+Moving on...
+<p>
+the more tags you write, the better you will feel?
+</td>
+</tr>
+<th colspan="2" bgcolor="#DDFFDD"><font size="+2">Sử dụng cả tag <tt>&lt;p&gt;</tt> và tag <tt>&lt;br&gt;</tt></font></th>
+</tr>
+<tr>
+<th bgcolor="#77FF77">HTML</th>
+<th bgcolor="#77FF77">Kết quả</th>
+</tr>
+
+<tr>
+<td valign="top">
+<pre><font color="navy">And then, we could all see<b>&lt;br&gt; </b>
+at once the brilliant purpose<b>&lt;br&gt;</b>
+of the paragraph tag.
+<b>&lt;p&gt;</b>
+Moving on...
+<b>&lt;br&gt;</b>
+the more tags you write,<b>&lt;br&gt;</b> 
+the better you  will feel?</font></pre>
+</td>
+<td valign="top">
+And then, we could all see<br> 
+at once the brilliant purpose<br>
+of the paragraph tag.
+<p>
+Moving on...
+<br>
+the more tags you write,<br>
+the better you will feel?
+</td>
+</tr>
+</table>
+
+Tag <tt>&lt;br&gt;</tt> còn có thể được sử dụng cho những cách trình bày khác nhau cho
+phần tiêu đề của bạn. Nếu như bạn chú ý, bạn sẽ nhận thấy là các tag <b>tiêu đề</b>
+<tt>&lt;h1&gt;, &lt;h2&gt;, ...</tt> 
+tự động chèn thêm các dòng trắng trên và dưới dòng chữ của tag tiêu đề.
+Một vài tác giả của những trang Web thích tự điều khiển những dòng trắng này.
+
+<table>
+<tr>
+<th colspan="2" bgcolor="#DDFFDD"><font size="+2">Tên đề mục dùng tag tiêu đề</font></th>
+</tr>
+<tr>
+<th bgcolor="#77FF77">HTML</th>
+<th bgcolor="#77FF77">Kết quả</th>
+</tr>
+<tr>
+<td valign="top">
+<pre><font color="navy">and in the end it was all 
+for naught.
+
+<b>&lt;h4&gt;</b>header tag<b>&lt;/h4&gt;</b>
+Later, sir Longhorn declared 
+that all makers of cheese would 
+have to be certified before 
+commencing production.</font></pre>
+</td>
+<td valign="top">
+and in the end it was all 
+for naught.
+
+<h4>The New Cheese Edict</h4>
+Later, sir Longhorn declared 
+that all makers of cheese would 
+have to be certified before 
+commencing production.
+</td>
+</tr>
+
+<th colspan="2" bgcolor="#DDFFDD"><font size="+2">Tên đề mục dùng tag <tt>&lt;b&gt;</tt> và <tt>&lt;br&gt;</tt></font></th>
+</tr>
+<tr>
+<th bgcolor="#77FF77">HTML</th>
+<th bgcolor="#77FF77">Kết quả</th>
+</tr>
+<tr>
+<td valign="top">
+<pre><font color="navy">and in the end it was all 
+for naught.
+<b>&lt;p&gt;</b>
+<b>&lt;b&gt;</b>The New Cheese Edict<b>&lt;/b&gt;&lt;br&gt;</b>
+Later, sir Longhorn declared 
+that all makers of cheese would 
+have to be certified before 
+commencing production.
+</font></pre>
+</td>
+<td valign="top">
+and in the end it was all 
+for naught.
+<p>
+<b>The New Cheese Edict</b><br>
+Later, sir Longhorn declared 
+that all makers of cheese would 
+have to be certified before 
+commencing production.
+</td>
+</tr>
+</table>
+Ở đây sự khác nhau có vẻ tầm thường quá, nhưng thực tế điều này tạo ra các khả năng
+để sau này chúng ta học cách tạo ra tiêu đề có màu và kích cỡ khác nhau. Ví dụ như hãy
+xem trang <a HREF="http://www.mcli.dist.maricopa.edu/eye/960506.html">
+Web Pages That Don't Look Like Web Pages</a>
+
+<h2>Kiểm tra lại công việc của bạn</h2>
+Nếu bạn thích, hãy so sánh trang Web bạn đang thực hiện với <a href="tut4_ex.htm">
+ví dụ mẫu</a>. Nếu tài liệu bạn tạo ra khác với ví dụ mẫu, hãy kiểm tra lại cách bạn
+đánh vào các dấu chia đoạn &lt;p&gt;. Hãy chắc chắn rằng bạn đã làm đúng theo sự
+hướng dẫn trong mục <b>Chèn các dấu chia đoạn</b> của bài này.
+
+<h2>Xem lại</h2>
+<ol>
+<li>Tag HTML nào dùng cho việc phân đoạn?
+<li>Những bước nào bạn sử dụng cho việc chèn thêm một sự phân đoạn trong tài liệu
+của bạn?
+<li>Làm thế nào trình bày và nhìn thấy được sự thay đổi đó trong Web browser ?
+<li>Điểm thêm*- Tag &lt;hr&gt; là gì? Tag &lt;br&gt; là gì?
+</ol>
+
+<h2>Thực tập tự do</h2>
+Sử dụng <tt>paragraph</tt>, tag <tt>hard rule</tt>, hay tag <tt>br</tt> để tạo ra các
+đề mục hay đoạn văn trong tài liệu của bạn.
+<hr>
+
+<h2>Đi đến phần tiếp theo....</h2>
+Bạn có nhớ phông chữ đầu tiên không ?<br>
+Làm thế nào để thêm một <b>kiểu mẫu...</b> (style) khác vào văn bản của bạn.
+<p>
+<h5> ĐẾN ....  | <a HREF="lessons.htm">Mục Lục</a> | 
+<a HREF="tut3.htm">Bài trước:  &quot;Sáu mức tiêu đề&quot;</a> |
+<a HREF="tut5.htm">Bài kế tiếp:  &quot;Kiểu mẫu của văn bản&quot;</a> |
+</h5>
+
+<hr>
+<b>Soạn thảo HTML</b> Bài 4: Chia văn bản ra thành nhiều đoạn<br>
+<address>
+©1995, 1996 <a HREF="http://www.mcli.dist.maricopa.edu/">
+Maricopa Center for Learning and Instruction (MCLI)</a><br>
+<a HREF="http://www.mcli.dist.maricopa.edu/mcccd/">Maricopa County Community College District</a>, Arizona<p>
+The Internet Connection at MCLI is 
+<a href="http://www.mcli.dist.maricopa.edu/alan/">Alan Levine --}</a><br>
+Comments to <b><a HREF="mailto:levine@maricopa.edu">levine@maricopa.edu</a></b>
+</address>
+<p>
+<tt>URL: http://www.mcli.dist.maricopa.edu/tut/tut4.html</tt>
+<p>
+</body>
+</html>
+

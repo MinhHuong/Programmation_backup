@@ -1,0 +1,64 @@
+#include <iostream>
+#include <math.h>
+#include <cstdlib>
+#include <unistd.h>
+using namespace std;
+
+
+void afficherMenu() {
+  cout << "MENU A EXECUTER : \n \n"
+       << "1. Exercice sur l'addition" << endl
+       << "2. Exercice sur la soustraction" << endl
+       << "3. Exercice sur la multiplication \n \n";
+}
+
+
+void genOperande(int & a, int & b) {
+  srand(time(NULL));
+  a = (int) (10.0 * rand() / RAND_MAX);
+  b = (int) (10.0 * rand() / RAND_MAX);
+}
+
+
+void devinerResultat(int result) {
+  int resultat;
+
+  cout << "Quel est le resultat : ";
+  cin >> resultat;
+
+  if (result == resultat) 
+    cout << "Gagne" << endl;
+  else
+    cout << "Perdu" << endl;
+}
+  
+
+int main() {
+  afficherMenu();
+
+  int a, b;
+  genOperande(a, b);
+
+  char choix;
+  cout << "Votre choix : ";
+  cin >> choix;  
+
+  int result;
+
+  switch (choix) {
+  case '1' :
+    result = a + b;
+    break;
+  case '2' :
+    result = a - b;
+    break;
+  case '3' :
+    result = a * b;
+    break;
+  default :
+    cout << "Erreur saisie" << endl;
+    break;
+  }
+
+  devinerResultat(result);
+}

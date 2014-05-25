@@ -1,0 +1,185 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>15. &quot;Standard&quot; and &quot;Enhanced&quot; HTML</title>
+</head>
+<body bgcolor="#FFFFFF">
+<h5><i>Soạn thảo HTML</i> |
+<a HREF="index.htm">Giới thiệu</a> | <a HREF="faq.htm">FAQ</a> |
+<a HREF="http://www.mcli.dist.maricopa.edu/cgi-bin/alumni.pl">Alumni</a> |
+<a HREF="tag.htm">Các Tag</a> |
+<a HREF="lessons.htm">Mục Lục</a> |
+<a HREF="tut14.htm">Bài trước</a> | 
+<a HREF="tut16.htm">Bài kế</a> | 
+</h5>
+<h1>15. HTML &quot;tiêu chuẩn&quot; và &quot;nâng cao&quot;</h1>
+Hãy xét đến một thực tế của HTML<br>
+      --nhiều điều bạn có thể thực hiện hơn nhưng chúng cũng làm cho
+HTML trở thành không thỏa &quot;tiêu chuẩn&quot; hơn.
+
+<h2>Mục đích</h2>
+Đây là một bài học ngắn và không cần thực tập gì hết! Sau bài này bạn có khả năng:
+<ul>
+<li>Quyết định khi nào dùng những đặc điểm của HTML mà có thể không hoạt động được
+cho tất cả web browser.
+</ul>
+<hr>
+
+<h2>Bài học</h2>
+Trong <a HREF="tut0.htm">bài 0</a>, chúng ta đã giới thiệu về HTML &quot;tiêu chuẩn&quot;.
+Trong những bài học tiếp theo trong tài liệu này sẽ chỉ cho bạn cách sử dụng một số tag
+HTML khác mà có thể không thấy được trên tất cả các Web browser.
+Ở đây chúng ta chỉ xem qua một vài ý tưởng trước khi bạn bước vào những bài sau. 
+
+<p>
+Trước hết chúng ta hãy xem sơ qua về lịch sử của nó.
+<p>
+Cách đây khá lâu (&quot;trong một thiên hà rất xa?&quot;)... vào khoảng năm 1990,
+World Wide Web là hệ thống được xây dựng trên văn bản có nền tảng
+dựa trên ngôn ngữ HyperText Markup Language. 
+Các tag và sự thông dịch của nó dựa trên những chuẩn (HTML 1.0) đặt bởi một 
+<a HREF="http://www.w3.org/">tổ chức quốc tế</a> (international committee). 
+Đây chính là chìa khóa để cho &quot;Web&quot; trở nên &quot;phổ biến&quot; (world wide) bởi vì theo những
+tiêu chuẩn này, thông tin hoàn toàn độc lập với hệ thống máy tính dùng để xem
+nó. 
+<p>
+Ngay cả khi 
+<a HREF="http://www.ncsa.uiuc.edu/SDG/Software/Mosaic/NCSAMosaicHome.html">
+NCSA Mosaic</a> xuất hiện một cách đột ngột vào năm 1993 như là một web browser
+đồ thị đầu tiên, những tiêu chuẩn vẫn được dựa trên ký tự và được cập nhật thành
+HTML 2.0.
+<p>
+Web trở nên phổ biến,
+<p>
+phổ biến rộng rãi,
+<p>
+phổ biến một cách điên rồ.
+<p>
+Những nhà lập trình bắt đầu xây dựng những Web browser có cung cấp những chức năng
+giống như Mosaic (bởi vì họ phải hổ trợ tất cả các tính chất của HTML có trong 
+tiêu chuẩn quốc tế). Một nhóm người trong đó có các nhà phát triển Mosaic 
+đã thành lập một công ty mới có biểu tượng là &quot;Mozilla&quot; (&quot;Mosaic&quot; + &quot;Godzilla&quot;?) và
+tạo ra một web browser mới tên là <a HREF="http://www.netscape.com/">NetScape</a>.
+<p>
+Netscape đã nhanh hơn so với NCSA Mosaic. Tuy nhiên, nó phát triển trong đại chúng
+vì nó chứa đựng tất cả những tính chất của HTML 2.0 CỘNG với nhiều tag thêm vào
+cho những thứ mà bạn không thể thực hiện được trong HTML 2.0. Phần 
+&quot;<a HREF="http://home.netscape.com/assist/net_sites/html_extensions.html">mở rộng</a>&quot;
+(extensions) hay &quot;nâng cao&quot; này (enhancements) đã là nguyên nhân (và vẫn là
+một nguyên nhân) của sự tranh cãi lớn giữa những người làm ra chuẩn HTML và những
+người thích các đặc điểm mà Netscape thêm vào.
+<p>
+Mozilla Netscape đã hết sức phổ biến và nhanh chóng chiếm lĩnh 3/4 thị trường
+Web browser. Bây giờ, trong HTML, bạn có thể đặt màu nền cho trang của bạn,
+tạo bảng, đặt văn bản quanh hình ảnh, và còn nhiều nữa. Bạn cũng đã từng nhìn thấy
+những trang web có câu <font color="#991199"><b>
+&quot;This page optimized for NetScape&quot;</b></font>. Nhiều Web browser khác đã bắt đầu
+hổ trợ những đặc tính của Netscape &quot;HTML 2.0+&quot;. Cùng với các dịch vụ giúp đỡ trực
+tuyến được mở ra trên Web, thị trường browser ngày càng trở nên đông đúc (và hỗn độn).
+<p>
+Ủy ban quốc tế đã đối đầu với một tình thế lưỡng nan, cùng với việc thị trường trở nên
+rộng lớn là việc đòi hỏi những tag &quot;không chuẩn&quot; trở nên một phần của HTML.
+Khi những qui tắc cho 
+<a HREF="http://www.w3.org/pub/WWW/MarkUp/html3/">HTML 3.0</a> 
+được phát triển, họ bắt đầu đưa vào hầu hết (nhưng không phải là tất cả) những tag 
+đã được Netscape giới thiệu. Tuy vậy, quá trình chuẩn hoá xem ra là quá chậm đối
+với nhiều người.
+<p>
+Và cuộc chiến trở nên lớn hơn khi vào năm 1996 
+<a HREF="http://www.microsoft.com/">Microsoft</a> đã giới thiệu những tag HTML 
+riêng biệt của họ. Như vậy HTML có trở thành một mớ hỗn độn không? Để biết thêm
+thông tin về sự cạnh tranh này, chúng tôi đề nghị bạn tham khảo đến
+<a HREF="http://webreference.com/html3andns/">HTML 3.0 and NetScape.</a>
+Những hoạt động gần đây nhất được đề nghị là của 
+<a HREF="http://www.w3.org/pub/WWW/MarkUp/Wilbur/">HTML 3.2</a>,
+mà trong đó chứa đựng hầu hết các đặc điểm được hổ trợ bởi những nhà sản xuất lớn 
+trên thị trường hiện nay, đó là Netscape và Microsoft. Các 
+<a HREF="http://www.w3.org/pub/WWW/MarkUp/Activity">phát biểu gần đây nhất</a>
+là sự thảo luận về các chuẩn nên được hổ trợ trong tất cả các browser.
+<p>
+Nhưng những điều đó thì có ý nghĩa gì với bạn? Đó là điều quan trọng nhất, khi bạn
+là một nhà thiết kế trang Web, bạn cần phải biết loại browser nào mà người đọc sẽ
+phải sử dụng. Có lẽ bạn là một thầy giáo trong một trường học hoặc bạn đang làm
+việc trong một công ty mà tất cả mọi người đang sử dụng cùng một loại browser nào
+đó. Vậy thì bạn có chắc chắn rằng các tag đặc biệt bạn đang sử dụng là không có 
+vấn đề không.
+<p>
+Tuy nhiên, thông thường bạn vẫn &quot;xuất bản&quot; (publishing) các trang Web vào một Internet
+server mà không có ý kiến gì về loại browser sẽ được sử dụng. Bạn có thể thêm những
+khuyến cáo đặc biệt trong trang Web của bạn. Bạn có thể tuân theo một cách chặt chẽ 
+với những chuẩn được hổ trợ rộng rãi bởi tất cả các Web browser. Ngay cả khi bạn 
+sử dụng những tag đặc biệt, cũng có vài cách thông dụng để không gây ra sự tàn phá
+nào cho những người sử dụng các browser khác.
+
+<p>
+<font size="+1"><b>Điều quan trọng nhất ...</b></font> không phải là việc quan tâm
+đến trang đó trông 
+như thế nào trên hệ thống của bạn! Người đọc có thể có những Web browser khác nhau,
+có những phông chữ khác nhau, sử dụng những tham khảo màu khác nhau, kích cở 
+màn hình khác nhau.. tất cả những thứ đó có thể gây ra sự hiển thị khác nhau về 
+kích thước, về dạng trình bày so với máy của bạn. Nếu bạn có thể thử trang Web 
+trên các máy tính khác nhau, hãy phóng to và thu nhỏ cửa sổ của browser, chuyển
+đổi phông chuẩn.
+<p>
+Thật là may mắn, thiết kế nguyên thủy của HTML rất thoáng và dễ tha thứ cho 
+một số các luật - nếu một browser bắt gặp một tag mà nó không biết xử lý hay trình bày
+như thế nào, nó dễ dàng bỏ qua các tag này.
+<p>
+<p>
+Ví dụ như, xem như là browser của tôi có hổ trợ tag <tt>&lt;drip&gt;...&lt;/drip&gt;</tt>.
+Nghĩa của nó là đoạn văn bên trong sẽ xuất hiện bình thường rồi sau đó từ từ &quot;rơi&quot; xuống
+đáy của trang <b>(người biên tập - TÔI THÌ LÀM CHO NÓ ĐI LÊN!)</b>, một hiệu ứng
+lạ lùng cho trang web của tôi:
+
+<pre><font color="navy">  &lt;drip&gt;&lt;H2 align=center&gt;Welcome&lt;/H2&gt;&lt;/drip&gt;
+  to my sloppy home page!. Look out
+  for the puddles!</font></pre>
+
+hoạt động của nó tạo ra một sự duyên dáng trên browser tự tạo của <b>tôi</b>. 
+Trên browser của bạn không có hổ trợ đặc tính này, bạn sẽ thấy:
+
+<blockquote><blockquote><hr> <drip><h2 align="center">Welcome</h2></drip>
+  to my sloppy home page!. Look out
+  for the puddles!<hr></blockquote></blockquote>
+
+Khi browser của bạn không hổ trợ tag này nó chỉ hoàn toàn băng qua tag mà không tạo
+ra sự phá hủy hay thông báo sai nào. 
+<p>
+Đó là một ý tưởng thông minh, đúng không?
+<p>
+Khi chúng ta tiếp tục các bài học nâng cao này, các hướng dẫn hơi dài và phức tạp hơn. 
+Nhưng bạn sẽ tiếp tục, đồng ý chứ!
+
+<h2>Xem lại</h2>
+<ol>
+<li>Tại sao bạn phải quan tâm đến các tiêu chuẩn của HTML ?
+<li>Trường hợp nào bạn cảm thấy thoải mái khi sử dụng HTML không chuẩn?
+<li>Điều gì xảy ra nếu một web browser bắt gặp một tag mà nó không hiểu ?
+</ol>
+
+<h2>Đến phần tiếp theo....</h2>
+Làm sống động trang <i>bằng cách</i>
+<b><font size="+1" color="#992299">t</font><font size="+1" color="#33BB11">h</font><font size="+1" color="#99FF00">ê</font><font size="+1" color="#00DDEE">m</font><font size="+1" color="#9922FF"> </font><font size="+1" color="#669922">m</font><font size="+1" color="#DD00EE">à</font><font size="+1" color="#0022CC">u</font></b> hay
+một tập tin mảng màu (texture file) vào &quot;phía sau&quot; nội dung.
+<h5> ĐẾN....  | <a HREF="lessons.htm">Mục Lục</a> | 
+<a HREF="tut14.htm">Bài trước:  &quot;Chia đoạn hay Phân mảnh&quot;</a> |
+<a HREF="tut16.htm">Bài kế:  &quot;Màu sắc và Cấu trúc cho Nền&quot;</a> |
+</h5>
+<hr>
+<b>Soạn thảo HTML</b>  Lesson 15: HTML &quot;Tiêu chuẩn&quot; và &quot;Nâng cao&quot;<br>
+<address>
+©1995, 1996 <a HREF="http://www.mcli.dist.maricopa.edu/">
+Maricopa Center for Learning and Instruction (MCLI)</a><br>
+<a HREF="http://www.mcli.dist.maricopa.edu/mcccd/">Maricopa County Community
+College District</a>, Arizona<p>
+The Internet Connection at MCLI is 
+<a href="http://www.mcli.dist.maricopa.edu/alan/">Alan Levine --}</a><br>
+Comments to <b><a HREF="mailto:levine@maricopa.edu">levine@maricopa.edu</a></b>
+</address>
+<p>
+<tt>URL: http://www.mcli.dist.maricopa.edu/tut/tut15.html</tt>
+<p>
+</body>
+</html>
+

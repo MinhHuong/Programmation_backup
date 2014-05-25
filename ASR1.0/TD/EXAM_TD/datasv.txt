@@ -1,0 +1,13 @@
+0001, Le Nguyen Minh Huong, 14/8/1995, CNTT, LINF13
+0002, Nguyen Trong Thanh Tam, 22/11/1995, CNTT, LINF13
+0003, Nguyen Thanh Son Lam, 18/1/1981, CNTT, LINF13
+0004, Luu Minh Trung, 18/12/1993, CNTT, LINF13
+0005, Mai Trung Hieu, 25/3/1995, CNTT, LINF13
+0006, Truong Ba Loc, 25/7/1995, CNTT, LINF13
+0007, Doan Ngoc Long, 30/3/1995, CNTT, LINF13
+0008, Nguyen Phan Hieu Tri, 19/5/1992, CNTT, LINF13
+0009, Tran Trung Thang, 23/1/1995, CNTT, LINF13
+0010, Nguyen Vu Anh Trung, 19/1/1995, CNTT, LINF13
+0011, Nguyen Thi To Nga, 30/8/1995, Kinh te hoc, LEG13F
+0012, Nguyen Tran Le Anh, 3/3/1995, Kinh te hoc, LEG13F
+0013, Do Pham Quang Duy, 5/7/1993, Kinh te hoc, LEG12A

@@ -1,0 +1,10 @@
+0001,minh huong,14/8,CNTT,LINF13
+0002,thanh tam,22/11,CNTT,LINF13
+0003,ba loc,1/1,CNTT,LINF13
+0004,hieu tri,2/2,CNTT,LINF13
+0005,son lam, 3/3,CNTT,LINF13
+0006,ngoc long,4/4,CNTT,LINF13
+0007,luu minh trung,18/12,CNTT,LINF13
+0008,mai trung hieu,6/6,CNTT,LINF13
+0009,nguyen vu anh trung,8/8,CNTT,LINF13
+00010,tran trung thang,9/9,CNTT,LINF13

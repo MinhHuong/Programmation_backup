@@ -1,0 +1,185 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <title>8b. URLs- Pointers to the Internet</title>
+   <meta NAME="GENERATOR" CONTENT="Mozilla/3.0Gold (Win95; I) [Netscape]">
+</head>
+<body BGCOLOR="#FFFFFF">
+
+<h5><i>Soạn thảo HTML</i> |
+<a HREF="index.htm">Giới thiệu</a> | <a HREF="faq.htm">FAQ</a>
+| <a HREF="http://www.mcli.dist.maricopa.edu/cgi-bin/alumni.pl">Alumni</a>
+| <a HREF="tag.htm">Các Tag</a> 
+| <a HREF="lessons.htm">Mục Lục</a> 
+| <a HREF="tut8a.htm">Bài trước</a>
+| <a HREF="tut8c.htm">Bài kế</a> | </h5>
+
+<h1>8b. URLs - Con trỏ đến Internet</h1>
+<font size="+2"><tt>URL? Earl? Yurl? hurl? gyrl? </tt></font> <br> 
+Đến lúc để liên kết đến Big Wide Web sử dụng sơ đồ định địa chỉ của web.
+
+<h2>Mục đích</h2>
+
+<p>Sau khi hoàn tất bài này bạn có thể: </p>
+
+<ul>
+<li>Nhận dạng chức năng của Uniform Resource Locators (URLs).
+<li>Nhân biết cấu trúc của một URL.
+<li>Kiểm tra URL trong liên kết siêu văn bản của bất kỳ trang web nào.
+</ul>
+
+<hr>
+
+<h2>Bài học</h2>
+<b>Chú ý: Trong bài này, bạn sẽ không cần tập tin văn bản HTML của bạn.</b>
+Một bài học không cần gắng sức!
+
+<h3>URL là gì?</h3>
+
+WWW sử dụng <a HREF="http://www.ncsa.uiuc.edu/demoweb/url-primer.html">
+Uniform Resource Locator (URL)</a> để tìm vị trí của những tập tin
+và tài liệu của các máy tính trên Internet. Trên màn hình browser của bạn,
+URL cho tài liệu này được thể hiện ở phần phần trên của cửa sổ browser.
+URL bao gồm:
+
+<ul>
+<li>Một sự định dạng loại Internet server;
+<li>Một địa chỉ Internet; và
+<li>Một đường dẫn tập tin (file path) chỉ tới mục đang xem.
+</ul>
+
+<p>URL là thứ bạn cần để xây dựng một liên kết từ
+trang web bạn tạo ra đến những phần thông tin khác
+trên Internet. Để biết chi tiết hơn, hãy xem
+<a href="http://www.mcli.dist.maricopa.edu/links/Curling-up-2-URLs.html">
+Curling Up To URLs (v0.2)</a>
+
+<h3>Cấu trúc URL như thế nào?</h3>
+
+<p>Cấu trúc của một URL là: </p>
+
+<pre>    type://in.ter.net.address/directory/sub-directory/.../filename</pre>
+
+<tt>&quot;type&quot;</tt> chỉ ra loại của Internet server được truy xuất:
+
+<dl>
+<dt><b>http</b> </dt>
+
+<dd>Một World Wide Web server. &quot;HTTP&quot; tượng
+trưng cho HyperText Transfer Protocol.</dd>
+<p>
+<dt><b>gopher</b> </dt>
+
+<dd>Một Internet Gopher site, thư mục các tập tin và thông tin theo dạng thực đơn.</dd>
+<p>
+
+<dt><b>ftp</b> </dt>
+
+<dd>Một anonymous File Transfer Protocol (FTP) site, truy tìm các tập tin.</dd>
+<p>
+
+<dt><b>telnet</b> </dt>
+<dd>Khởi tạo một trình Telnet để log on từ xa tới một máy tính khác. Khi chọn,
+web browser sẽ khởi động chương trình Telnet và kết nối tới site được chỉ định .</dd>
+<p>
+
+<dt><b>WAIS</b> </dt>
+<dd>Wide Area Indexed Server- một site dò tìm các tài liệu theo chủ đề
+được xác định bằng các từ khóa.</dd>
+<p>
+
+<dt><b>file</b> </dt>
+<dd>Một tập tin trên máy cục bộ (đĩa cứng, đĩa mềm, file server nội bộ).</dd>
+</dl>
+
+<p>Sau <tt>Type</tt> luôn luôn là <tt>&quot;://&quot;</tt> và địa
+chỉ Internet của máy từ xa. Sau đây là cấu trúc của địa chỉ này:
+
+<pre>     host.domain.domain.domain</pre>
+
+Ví dụ như:
+<pre>     machine.department.college.edu
+     123.45.6.78
+     office.company.com
+     agency.branch.gov
+     machine.organization.country     
+</pre>
+
+Nếu URL chỉ đến mức chính của host này (&quot;home page&quot; của nó), thì URL được
+kết thúc bằng một dấu &quot;/&quot;. Nến bạn liên kết tới một thư mục con hoặc
+một tập tin, bạn phải thêm chính xác đường dẫn tới nó bằng cách sử dụng dấu
+&quot;/&quot;.
+
+<blockquote><b>Chú ý: Hầu hết các server đều kiểm tra ngữ pháp! Và cũng
+kiểm tra dạng chữ hoa hay chữ thường! Các tên tập tin trên các máy UNIX có phân biệt
+chữ hoa và chữ thường, điều này có nghĩa là tập tin có tên
+<pre>     SpiffyText.htm</pre>
+
+là khác với tập tin
+<pre>     spiffytext.htm</pre></b>
+</blockquote>
+<p>
+<h3>Tạo kinh nghiệm với URLs</h3>
+Chú ý rằng URL có thể tạo liên kết đến mọi site, thư mục, thư mục con, tập tin văn bản,
+hình ảnh, digital movie, hay tập tin âm thanh trên mọi Internet site đã cài đặt cho phép
+truy xuất tự do. Cách tốt nhất để xem các URL khác nhau là di chuyển chuột của bạn
+qua các liên kết siêu văn bản trong trang web nào đó- nếu bạn nhìn vào bên dưới
+web browser của bạn, nó sẽ trình bày URL mà bạn muốn nối đến khi bạn click
+vào liên kết đó. Bạn có thể vào một site lớn như
+<a HREF="http://www.yahoo.com/">Yahoo</a> và &quot;nhìm trộm&quot; các URL (bạn có
+thấy URL của Yahoo khi bạn di chuyển mouse qua liên kết trong câu vừa rồi không?)
+<p>
+Còn bây giờ là một cách rất dể để chép lại một URL của một liên kết trong một trang
+bất kỳ. Trước hết bạn mở thực đơn &quot;bí mật&quot; từ một liên kết siêu văn bản nào đó trong
+một trang web (Ấn và giữ chuột trong Macintosh; ấn và giữ button phải của chuột
+trong Windows và Unix). Từ thực đơn này, chọn <b>Copy This Link Location</b>
+(hay chức năng tương tự). Sau khi thả button chuột ra, chuyển đến một trình soạn thảo
+văn bản nào đó và chọn <b>Paste</b> từ thực đơn <b>Edit</b>. Hay quá! Bạn đã
+lấy được một URL từ một liên kết trong trang web (với cách này bạn có thể chép một
+URL ngay cả khi bạn chưa tham quan trang mà nó liên kết đến!)
+
+<hr>
+
+<h2>Xem lại</h2>
+
+<ol>
+<li>Mục đích của URL cho World Wide Web?
+<li>Nơi nào thấy được URL trên một màn hình WWW?
+<li>Cấu trúc cơ bản của một URL?
+<li>Làm thế nào để thấy được URL của một liên kết siêu văn bản sẽ nhảy đến?
+</ol>
+<h2>Thực tập tự do</h2>
+Tìm vài site trên Internet mà bạn cảm thấy thích. Với mỗi site, ghi lại URL của nó
+đã được trình bày gần trên đỉnh của cửa sổ browser. Thử xem bạn có thực hiện được
+việc chép và dán (copy and paste) các URL vào một tài liệu văn bản hay không.
+Bạn sẽ sử dụng danh sách này để thêm các liên kết từ các trang web của riêng bạn đến
+các site mà bạn đã tìm thấy.
+
+<hr>
+<h2>Đi đến phần tiếp theo ....</h2>
+
+<p>Bạn sẽ dùng URL trong các tag <tt>anchor</tt> để tạo liên kết đến
+Internet cho trang <i>Volcano Web</i> của bạn.
+
+<h5> ĐẾN.... | <a HREF="lessons.htm">Mục Lục</a> |
+<a HREF="tut8a.htm">Bài trước: &quot;Liên kết đến Tập tin Cục bộ&quot;</a> |
+<a HREF="tut8c.htm">Bài kế: &quot;Liên kết đến Internet&quot;</a> | </h5>
+
+<p>
+<hr><b>Soạn thảo HTML</b> Lesson 8b: URLs - Con trỏ đến Internet<br>
+<address>©1995, 1996 <a HREF="http://www.mcli.dist.maricopa.edu/">Maricopa
+Center for Learning and Instruction (MCLI)<br>
+</a><a HREF="http://www.mcli.dist.maricopa.edu/mcccd/">Maricopa County
+Community College District</a>, Arizona</address>
+
+<p> The Internet Connection at MCLI is <a HREF="http://www.mcli.dist.maricopa.edu/alan/">Alan
+Levine --}<br>
+</a>Comments to <b><a HREF="mailto:levine@maricopa.edu">levine@maricopa.edu</a></b>
+</p>
+
+<p><tt>URL: http://www.mcli.dist.maricopa.edu/tut/tut8b.html</tt> </p>
+
+</body>
+</html>
+

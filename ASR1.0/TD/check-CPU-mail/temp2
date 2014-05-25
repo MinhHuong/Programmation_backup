@@ -1,0 +1,7 @@
+/dev/sda2        70G   11G   56G  17% /
+none            4.0K     0  4.0K   0% /sys/fs/cgroup
+udev            984M  4.0K  984M   1% /dev
+tmpfs           199M  868K  198M   1% /run
+none            5.0M     0  5.0M   0% /run/lock
+none            992M  156K  992M   1% /run/shm
+none            100M   36K  100M   1% /run/user

@@ -1,0 +1,13 @@
+	CLO	
+	MOV 	BL,0
+	MOV 	AL,1
+
+FAC:
+	INC	BL
+	MUL 	AL,BL
+
+	JO 	BREAK
+	JMP 	FAC
+
+BREAK:
+	END

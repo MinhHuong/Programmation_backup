@@ -1,0 +1,305 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <title>8d. Links to Sections of a Page</title>
+   <meta NAME="GENERATOR" CONTENT="Mozilla/3.0Gold (Win95; I) [Netscape]">
+</head>
+<body BGCOLOR="#FFFFFF">
+
+<h5><i>Soạn thảo HTML</i> |
+<a HREF="index.htm">Giới thiệu</a> | <a HREF="faq.htm">FAQ</a>
+| <a HREF="http://www.mcli.dist.maricopa.edu/cgi-bin/alumni.pl">Alumni</a>
+| <a HREF="tag.htm">Các Tag</a> |
+<a HREF="lessons.htm">Mục Lục</a> |
+<a HREF="tut8c.htm">Bài trước</a>
+| <a HREF="tut8e.htm">Bài kế</a> | </h5>
+
+<h1>8d. Liên kết Các phần của một Trang</h1>
+
+<p>Bạn đã biết làm thế nào để liên kết tới những trang web khác là những trang do bạn
+tạo ra hay là những trang có trên Internet. Nếu bạn muốn kết nối tới một phần dược
+chỉ định <b>bên trong</b> một tài liệu thì sao? BẠN CÓ THỂ LÀM ĐƯỢC ĐIỀU NÀY!
+
+<h2>Mục đích </h2>
+
+<p>Sau bài này bạn có thể:
+
+<ul>
+<li>Tạo một dấu hiệu tham khảo ẩn cho một phần riêng biệt bên trong một tập tin HTML.
+<li>Xây dựng một liên kết siêu văn bản để nối đến một phần riêng biệt bên trong
+tập tin HTML.
+<li>Xây dựng một liên kết siêu văn bản để nối đến một phần riêng biệt bên trong
+tập tin HTML khác.
+<li>Tạo một bảng mục lục siêu văn bản cho một trang web.
+</ul>
+
+<hr>
+
+<h2>Bài học</h2>
+
+<b>Lưu ý: Nếu bạn chưa có tài liệu từ bài học trước, bạn có thể
+<a HREF="tut8dget.htm">download</a> lại ngay bây giờ.</b>
+
+<a NAME="na"><h3>Anchor được đặt tên</h3>
+
+<p>Một <b>anchor được đặt tên</b> (named anchor) là một dấu hiệu tham khảo ẩn
+cho một phần đặc biệt
+nào đó của tập tin HTML của bạn. Nó được sử dụng để tạo liên kết tới một phần khác
+của cùng trang khi trang đó dài, hoặc để đánh dấu mục của một trang khác. Lấy
+ví dụ, trong trang bạn đang xem, tôi có thể tạo ra một dấu ẩn gọi là &quot;check&quot;
+để đánh dấu tiêu đề &quot;Kiểm tra lại công việc của bạn&quot; bên dưới. Sau đó,
+tôi viết một liên kết anchor để kết nối tới mục này trong tài liệu này. Một khi
+bạn click trên một liên kết đến anchor được đặt tên này, web browser của bạn sẽ chuyển
+đến chỗ để dòng này nằm trên đỉnh của màn hình.
+
+<p>Sau đây là một ví dụ để bạn có
+thể thử ngay bây giờ. Đi đến <a HREF="tut8d.htm#check">Kiểm tra lại công việc của bạn.</a>
+Khi đến đó, bạn sẽ thấy một liên kết để trở lại mục này.
+<p>Dạng HTML cho việc tạo anchor được đặt tên là:
+
+<pre>
+<font COLOR="#000080">     &lt;a name=&quot;NAME&quot;&gt;Text to Link To&lt;/a&gt; </font>
+</pre>
+hay với liên kết bạn vừa thử ở trên:
+<pre><font color="navy">
+     &lt;a name=&quot;check&quot;&gt;Kiem tra lai cong viec cua ban&lt;/a&gt;
+</font></pre>
+
+Chú ý sự khác biệt với liên kết anchor <tt>&lt;a href=...</tt> chúng ta đã xét trong
+<a HREF="tut8a.htm">bài 8a</a>.
+
+<h3>Viết một liên kết tới một Anchor được đặt tên</h3>
+
+Khi bạn muốn tạo một liên kết siêu văn bản (hay một &quot;liên kết anchor&quot;, xem
+<a HREF="tut8a.htm">bài 8a</a>) tới một anchor được đặt tên, sử dụng
+dạng HTML sau:
+
+<pre>
+<font COLOR="#000080">     &lt;a href=&quot;#xxxxx&quot;&gt;Text to act as hypertext&lt;/a&gt;</font>
+</pre>
+hay liên kết bạn vừa thử để đến phần dưới của tài liệu này:
+<pre><font color="navy">
+     Di den  &lt;a href=&quot;#check&quot;&gt;Kiem tra lai cong viec cua ban&lt;/a&gt;
+</font></pre>
+
+Kí hiệu &quot;#&quot; chỉ cho web browser của bạn tìm trong tài liệu HTML một 
+anchor được đặt tên là <tt>&quot;xxxxxx&quot;</tt> hay trong ví dụ của chúng ta là
+<tt>&quot;check&quot;</tt>. Khi bạn chọn hay click trên siêu văn bản, nó mang phần
+của tài liệu có chứa anchor được đặt tên lên đỉnh của màn hình.
+
+<h3>Thêm Anchor được đặt tên vào bài <i>Volcano Web</i></h3>
+
+Bây giờ chúng ta sẽ xây dựng một bảng mục lục cho bài của chúng ta để nó sẽ xuất hiện
+ở đầu trang <i>Volcano web</i>. Các phần tử trong bảng mục lục sẽ là các tiêu đề mà
+chúng ta đã tạo ra và sẽ hoạt động như một liên kết siêu văn bản đến một
+phần riêng biệt trong bài chúng ta.
+<p>
+Bước đầu tiên là tạo một anchor được đặt tên cho mỗi mục tiêu đề trong bài
+<i>Volcano Web</i>:
+
+<ol>
+<li>Mở tập tin <tt>index.htm</tt> trong trình soạn thảo văn bản
+<li>Tìm tiêu đề <b>Introduction</b>. Chuyển đổi nó từ:
+
+<pre><font COLOR="#000080">&lt;h2&gt;Introduction&lt;/h2&gt;</font></pre>
+
+thành:
+
+<pre>
+<font COLOR="#000080">&lt;h2&gt;&lt;a name=&quot;intro&quot;&gt;Introduction&lt;/a&gt;&lt;/h2&gt;</font>
+</pre>
+<blockquote><b>Chú ý: Bạn vừa đánh dấu dòng chứa mục tiêu đề &quot;Introduction&quot;
+với một dấu tham khảo ẩn có anchor được đặt tên là &quot;intro&quot;</b></blockquote>
+
+<li>Theo cách tương tự, thay đổi tất cả các tags <tt>&lt;h2&gt;</tt> cho các phần khác:
+
+<pre><font color="navy">
+  &lt;h2&gt;&lt;A NAME=&quot;term&quot;&gt;Volcano Terminology&lt;/A&gt;&lt;/h2&gt;
+  
+  &lt;h2&gt;&lt;A NAME=&quot;usa&quot;&gt;Volcanic Places in the USA&lt;/A&gt;&lt;/h2&gt;
+  
+  &lt;h2&gt;&lt;A NAME=&quot;mars&quot;&gt;Volcanic Places on Mars&lt;/A&gt;&lt;/h2&gt;
+  
+  &lt;h2&gt;&lt;A NAME=&quot;project&quot;&gt;Research Project&lt;/A&gt;&lt;/h2&gt;
+</font></pre>
+<li>Nếu bạn <b>Reload</b> liền trong web browser của bạn, bạn sẽ không nhìn thấy
+bất kỳ sự thay đổi nào; các tag anchor được đặt tên thêm vào đều được dấu khi người sử
+dụng xem trang.
+</ol>
+
+<h3>Thêm liên kết tới một Anchor Được đặt tên trong Cùng một Tài liệu</h3>
+
+<p>Bây giờ chúng ta sẽ xây dựng một bảng mục lục sẽ xuất hiện trên đầu màn hình.
+Chúng ta sử dụng một danh sách không có thứ tự (xem lại
+<a HREF="tut6.htm">bài 6</a> về danh sách) để tạo nó:
+
+<ol>
+<li>Nếu chưa mở, hãy mở tập tin <tt>index.htm</tt> trong trình soạn thảo.
+<li>Bên dưới câu đầu tiên trong tiêu đề <b>Volcano Web</b> thêm những dòng sau:
+
+<pre>
+<font COLOR="#000080">&lt;hr&gt;
+&lt;B&gt;In this Lesson...&lt;/B&gt;
+&lt;ul&gt;&lt;i&gt;
+&lt;li&gt;Introduction
+&lt;li&gt;Volcano Terminology
+&lt;li&gt;Volcanic Places in the USA
+&lt;li&gt;Volcanic Places on Mars
+&lt;li&gt;Research Project&lt;/i&gt;
+&lt;/ul&gt;</font>
+</pre>
+<blockquote><b>Chú ý: Bảng mục lục này được đánh dấu trên và dưới bằng tag
+&lt;hr&gt;. Kiểu chữ <i>Nghiêng</i> được dùng cho các mục. Ở đây chúng ta chỉ mới
+đánh vào tên các mục. Sau này chúng ta sẽ thêm vào để các liên kết hoạt động được.
+</b></blockquote>
+
+<li><b>Lưu</b> và <b>Reload</b> trong web browser của bạn.
+</ol>
+
+<p>Cuối cùng , chúng ta muốn làm cho mỗi mục của danh sách hoạt động như một
+liên kết siêu văn bản tới một phần khác của tài liệu. Để làm điều này, chúng ta sẽ
+sử dụng một biến thể của liên kết anchor cơ bản trong <a HREF="tut8a.htm">bài 8a</a>.
+Thay vì liên kết tới một tập tin khác, chúng ta liên kết tới một trong những anchor được
+đặt tên (các dấu ẩn bạn đã tạo ra ở trên) bên trong cùng một tập tin HTML. Chúng
+ta chỉ định một anchor được đặt tên bằng cách đặt kí hiệu &quot;#&quot; trước tên của
+dấu tham khảo:
+
+<ol>
+<li>Mở tập tin <tt>index.htm</tt> trong trình soạn thảo
+<li>Đến mục đầu tiên trong phần mục lục. Thay đổi nó từ:
+
+<pre>
+<font COLOR="#000080">    &lt;li&gt;Introduction</font>
+</pre>
+
+thành:
+
+<pre>
+<font COLOR="#000080">    &lt;li&gt;&lt;A HREF=&quot;#intro&quot;&gt;Introduction&lt;/A&gt;</font>
+</pre>
+
+<li>Bây giờ bạn nên điền các liên kết khác để đoạn văn này trông giống như sau:
+
+<pre>
+<font COLOR="#000080">&lt;hr&gt;
+&lt;B&gt;In this Lesson...&lt;/B&gt;
+&lt;ul&gt;&lt;i&gt;
+&lt;li&gt;&lt;A HREF=&quot;#intro&quot;&gt;Introduction&lt;/A&gt;
+&lt;li&gt;&lt;A HREF=&quot;#term&quot;&gt;Volcano Terminology&lt;/A&gt;
+&lt;li&gt;&lt;A HREF=&quot;#usa&quot;&gt;Volcanic Places in the USA&lt;/A&gt;
+&lt;li&gt;&lt;A HREF=&quot;#mars&quot;&gt;Volcanic Places on Mars&lt;/A&gt;
+&lt;li&gt;&lt;A HREF=&quot;#project&quot;&gt;Research Project&lt;/A&gt;&lt;/i&gt;
+&lt;/ul&gt;</font>
+</pre>
+
+<li><b>Lưu</b> và <b>Reload</b> vào trong web browser của bạn. Khi bạn
+click trên một mục của bản mục lục, phần tương ứng sẽ hiện ra trên đỉnh của màn hình.
+</ol>
+
+<h3>Thêm Liên kết tới Anchor Được đặt tên trong Tài liệu Khác</h3>
+
+<p>Bạn có thể tạo một liên kết nhảy đến một phần được đánh dấu bởi một anchor
+được đặt tên của một tài liệu HTML khác. HTML xây dựng một liên kết tới một
+anchor được đặt tên trong một tài liệu HTML cục bộ khác có dạng:
+
+<pre>
+<font COLOR="#000080">     &lt;a href=&quot;file.htm#NAME&quot;&gt;Text to activate link&lt;/a&gt;</font>
+</pre>
+
+và nếu là tài liệu trên web site khác thì có dạng:
+
+<pre><font COLOR="#000080">    &lt;a href=&quot;http://www.cheese.org/pub/recipe.htm#colby&quot;&gt;
+                                                Colby Cheese&lt;/a&gt;</font>
+</pre>
+
+<p>Trong <a HREF="tut8a.htm">bài 8a</a> chúng ta đã tạo ra một liên kết siêu văn bản
+từ Mount St. Helens đến <tt>msh.htm</tt> là một tập tin riêng biệt. Bây giờ, chúng ta
+sẽ thêm một liên kết trong tài liệu thứ hai để trở lại phần nguyên thủy trong trang
+Volcano chính.
+
+<ol>
+<li>Mở tập tin <tt>msh.htm</tt> trong trình soạn thảo
+<li>Gần cuối trang HTML (nhưng phải trên <tt>&lt;/body&gt;</tt>) thêm như sau:
+
+<pre>
+<font COLOR="#000080">&lt;hr&gt;
+&lt;a href=&quot;index.htm#usa&quot;&gt;Return to &lt;i&gt;Volcano Web&lt;/i&gt;&lt;/a&gt;</font>
+</pre>
+<blockquote><b>Chú ý: Chúng ta có sử dụng kiểu chữ <i>Nghiêng</i> với tag 
+&lt;i&gt;...&lt;/i&gt; bên trong văn bản được đánh dấu bởi anchor được đặt tên là
+&quot;usa&quot;.</b>
+</blockquote>
+
+<p><b>Lưu</b> và <b>Reload</b> vào web browser của bạn. Khi click vào một vị trí
+của siêu văn bản ở cuối trang <tt>msh.htm</tt>, bạn sẽ phải thấy qua trở lại mục
+&quot;Volcanic Plases in the USA&quot; của bài <i>Volcano Web</i>.
+</ol>
+
+Trong trường hợp đang xét liên kết chỉ là tên của một tập tin HTML khác,
+<tt>index.htm</tt>, trong cùng thư mục với tập tin <tt>msh.htm</tt>. Tuy nhiên, bạn có
+thể sử dụng một URL đầy đủ (xem <a HREF="tut7.htm">bài 7</a>) để liên
+kết tới một anchor được đặt tên trong một tập tin HTML có trên một máy khác ở xa.
+Ví dụ như, để tạo một liên kết đến phần &quot;Introduction&quot; của tập tin HTML cất trong
+MCLI WWW server, cách viết nên là:
+<pre><font color="navy">
+   &lt;a href=
+     http://www.mcli.dist.maricopa.edu/tut/final/index.htm#intro&gt;
+      Introduction to Volcano Web&lt;/a&gt;
+</font></pre>
+
+Dấu tham khảo <tt>&quot;#anchor_name&quot;</tt> được gắn thêm vào cuối của URL.
+<hr>
+
+<a NAME="check"><h2>Kiểm tra lại công việc của bạn</h2>
+So sánh công việc của bạn với <a HREF="tut8d_ex/index.htm">ví dụ mẫu</a>
+để biết tài liệu nên xuất hiện như thế nào. Nếu trang web của bạn không giống như
+ví dụ mẫu hay các liên kết anchor được đặt tên không hoạt động đúng, hãy kiểm tra lại
+văn bản bạn đã đánh trong trình soạn thảo.
+<p>
+Ví dụ sử dụng liên kết để <a HREF="tut8d.htm#na">trở lại phần</a> mô tả anchor được đặt tên...
+
+<h2>Xem lại</h2>
+
+<ol>
+<li>Làm thế nào nhận dạng một anchor được đặt tên?
+<li>Những bước nào tạo một liên kết tới một phần khác trong cùng một tài liệu?
+<li>Làm thế nào hiệu chỉnh một liên kết anchor để nối đến một anchor được đặt tên
+trong một tài liệu HTML khác?
+<li>Làm thế nào tạo một bảng mục lục cho một trang web?
+<li>Sự khác nhau giữa tag <tt>&lt;a href=&quot;...&gt;</tt> và tag
+<tt>&lt;a name=&quot;...&gt;</tt> là gì?
+</ol>
+
+<h2>Thực tập tự do</h2>
+Tạo các anchors được đặt tên cho các tiêu đề trong trang web và xây dựng một mục lục
+để liên kết đến những mục con này.
+<hr>
+
+<h2>Đi đến phần tiếp theo ....</h2>
+
+Trong bài kế tiếp bạn sẽ học cách làm một hình ảnh như là một liên kết siêu văn bản.
+
+<h5> ĐẾN.... | <a HREF="lessons.htm">Mục Lục</a>
+| <a HREF="tut8c.htm">Bài trước: &quot;Liên kết đến Internet&quot;</a>
+| <a HREF="tut8e.htm">Bài kế: &quot;Liên kết Siêu Hình ảnh&quot;</a> | </h5>
+
+<p>
+<hr><b>Soạn thảo HTML</b> Bài 8d: Liên kết đến Các phần của một Trang<br>
+</p>
+
+<address>©1995, 1996 <a HREF="http://www.mcli.dist.maricopa.edu/">Maricopa
+Center for Learning and Instruction (MCLI)<br>
+</a><a HREF="http://www.mcli.dist.maricopa.edu/mcccd/">Maricopa County
+Community College District</a>, Arizona</address>
+
+<p> The Internet Connection at MCLI is <a HREF="http://www.mcli.dist.maricopa.edu/alan/">Alan
+Levine --}<br>
+</a>Comments to <b><a HREF="mailto:levine@maricopa.edu">levine@maricopa.edu</a></b>
+</p>
+
+<p><tt>URL: http://www.mcli.dist.maricopa.edu/tut/tut8d.html</tt> </p>
+
+</body>
+</html>
+

@@ -1,0 +1,379 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>20. Extra Alignment</title>
+</head>
+<body bgcolor="#FFFFFF">
+<h5><i>Soạn thảo HTML</i> |
+<a HREF="index.htm">Giới thiệu</a> | <a HREF="faq.htm">FAQ</a> |
+<a HREF="http://www.mcli.dist.maricopa.edu/cgi-bin/alumni.pl">Alumni</a> |
+<a HREF="tag.htm">Các Tag</a> |
+<a HREF="lessons.htm">Mục Lục</a> |
+<a HREF="tut19.htm">Bài trước</a> | 
+<a HREF="tut21.htm">Bài kế</a> | 
+</h5>
+<h1>20. Xét thêm về Sự Chỉnh lề</h1>
+<font size="+1">Tại sao bạn chỉ ở bên <b>trái</b>?
+<div align="right">... khi nào bạn qua bên <b>phải</b>?</div><p>
+<div align="center">hay là để vào giữa?</div>
+</font>
+
+<h2>Mục đích</h2>
+Sau bài học này bạn có thể:
+<ul>
+<li>Tạo văn bản được canh vào giữa trang.
+<li>Sắp xếp chung hình ảnh và văn bản.
+<li>Tạo văn bản được chỉnh lề bên phải.
+</ul>
+<hr>
+
+<h2>Bài học</h2>
+<b>Chú ý: Nếu bạn chưa có tài liệu từ những bài học trước, bạn có thể 
+<a href="tut20get.htm">download </a> bây giờ. Bạn cũng có thể xem qua trang 
+<a HREF="tut20_ex/test.htm">kiểm tra</a> để biết web browser của bạn có hổ trợ 
+những tag được sử dụng trong bài này hay không.
+</b>
+
+<h3>Sự chỉnh lề văn bản</h3>
+Khi mà Web ngày càng phát triển, ngày càng xuất hiện thêm các yêu cầu cho việc 
+điều khiển cách trình bày của trang. Một trong những ý muốn đó là định dạng văn bản 
+sao cho nó được sắp xếp ngay giữa trang, hơn là chỉ được canh lề bên trái.
+<p>
+Đây là một trong những đặc tính khác hẳn giữa NetScape so với HTML &quot;tiêu chuẩn&quot;. 
+NetScape đã giới thiệu tag mở rộng <tt>&lt;center&gt;...&lt;/center&gt;</tt> - 
+tag này sắp xếp mọi thứ bên trong nó ở ngay giữa trang web. Dường như nó gây ra 
+ấn tượng hơn? Vậy thì, bạn hãy nói với một nhà làm chuẩn rằng sự chỉnh lề hàng 
+là một <b>đặc tính</b>. Dạng HTML tổng quát cho sự 
+sắp xếp vào giữa là một sự biến đổi của tag <tt>&lt;p&gt;</tt>:
+<pre><font color="navy">  &lt;p&gt;
+  blah blah blah
+  &lt;img src=&quot;file.gif&quot;&gt;&lt;br&gt;
+  blah blah
+  &lt;/p&gt;</font></pre>
+  
+Lưu ý rằng ở đây có tag đóng <tt>&lt;/p&gt;</tt>. Mỗi lần bạn muốn canh giữa 
+một vài đoạn văn bản, bạn đánh dấu chúng bằng 
+<tt>&lt;p align=center&gt;...&lt;/p&gt;</tt>
+<p>
+Hiện nay, hầu hết các loại browser và chuẩn HTML 3.2 đều hổ trợ tag 
+<tt>&lt;center&gt;...&lt;/center&gt;</tt> của NetScape. Nhớ rằng nếu browser không 
+hổ trợ một tag, nó chỉ việc bỏ qua.
+
+<p>Để thấy được hiệu quả của việc canh giữa, hãy so sánh trong ví dụ dưới đây:<p>
+
+<center>
+<table align="center" border="0" cellpadding="4" cellspacing="8" width="80%">
+<tr>
+<th colspan="2" bgcolor="#77FF77"><font size="+2">Không canh Giữa</font></th>
+</tr>
+<tr>
+<td>
+<h3>Cheese In History</h3>
+<b>Cheese was been there for many major events</b>
+<p>
+When Magellan sailed through the narrow Straits, he was eating cheese. When the Allied troops landed in Europe, cheese was there. When Neil Armstrong stepped onto the moon, he had just had finished a cheese snack.
+<p>
+<img src="pictures/left.gif" WIDTH="60" HEIGHT="60"><br>
+<tt>return to the cheese home page</tt>
+</td>
+</tr>
+<tr>
+<th colspan="2" bgcolor="#77FF77"><font size="+2">Được canh Giữa</font></th>
+</tr>
+
+<tr>
+<td align="center">
+<h3>Cheese In History</h3>
+<b>Cheese was been there for many major events</b>
+<p>
+When Magellan sailed through the narrow Straits, he was eating cheese. When the Allied troops landed in Europe, cheese was there. When Neil Armstrong stepped onto the moon, he had just had finished a cheese snack.
+<p>
+<img src="pictures/left.gif" WIDTH="60" HEIGHT="60"><br>
+<tt>return to the cheese home page</tt>
+</td>
+</tr>
+</table>
+<hr>
+</center>
+<p>
+Giờ đây chúng ta sẽ sửa đổi trang bìa của chúng ta
+(<tt>index.htm</tt>) bằng cách sử dụng tag canh giữa 
+trên danh sách các phần của bài học. 
+Chúng ta cũng sẽ tạo một vài thay đổi để cải thiện sự trình bày của nó.
+<ol>
+<li>Mở tập tin <tt>index.htm</tt> trong trình soạn thảo.
+<li>Tìm phần sau:
+<pre><font color="navy">  &lt;B&gt;In this Lesson...&lt;/B&gt;
+  &lt;ul&gt;
+  &lt;i&gt;
+  &lt;li&gt;&lt;A HREF=&quot;intro.htm&quot;&gt;Introduction&lt;/A&gt;
+  &lt;li&gt;&lt;A HREF=&quot;term.htm&quot;&gt;Volcano Terminology&lt;/A&gt;
+  &lt;li&gt;&lt;A HREF=&quot;usa.htm&quot;&gt;Volcanic Places in the USA&lt;/A&gt;
+  &lt;li&gt;&lt;A HREF=&quot;mars.htm&quot;&gt;Volcanic Places on Mars&lt;/A&gt;
+  &lt;li&gt;&lt;A HREF=&quot;proj.htm&quot;&gt;Research Project&lt;/A&gt;
+  &lt;/i&gt;
+  &lt;/ul&gt;</font></pre>
+  
+và thay thế nó bằng đoạn HTML sau:
+
+  <pre><font color="navy">  &lt;p align=center&gt;
+  &lt;font size=+1&gt;
+  &lt;i&gt;
+  &lt;A HREF=&quot;intro.htm&quot;&gt;Introduction&lt;/A&gt;&lt;br&gt;
+  &lt;A HREF=&quot;term.htm&quot;&gt;Volcano Terminology&lt;/A&gt;&lt;br&gt;
+  &lt;A HREF=&quot;usa.htm&quot;&gt;Volcanic Places in the USA&lt;/A&gt;&lt;br&gt;
+  &lt;A HREF=&quot;mars.htm&quot;&gt;Volcanic Places on Mars&lt;/A&gt;&lt;br&gt;
+  &lt;A HREF=&quot;proj.htm&quot;&gt;Research Project&lt;/A&gt;&lt;br&gt;
+  &lt;/i&gt;
+  &lt;/font&gt;
+  &lt;/p&gt;
+</font></pre>
+<li><b>Lưu trữ</b> và <b>Nạp</b> lại trong Web browser của bạn.
+</ol>
+<blockquote><b>Chú ý: Hãy nhìn một cách cẩn thận những thay đổi mà chúng ta 
+đã thực hiện. Toàn bộ phần này được bao quanh trong tag 
+<tt>&lt;p align=center&gt;..&lt;/p&gt;</tt> của sự chỉnh lề. Danh sách không có 
+thứ tự mà chúng ta đã xây dựng trong <a HREF="tut6.htm">bài 6</a> được canh vào
+giữa một cách lổ chổ - các dấu bullet sẽ bị lộn xộn. Vì thế chúng ta sẽ bỏ đi cấu trúc 
+<tt>&lt;ul&gt; &lt;li&gt; ... &lt;li&gt; ... &lt;/ul&gt;</tt>. Các tag 
+<tt>&lt;br&gt;</tt> ở cuối mỗi dòng sẽ tạo một ngắt dòng. Và cuối cùng, chúng ta 
+thêm một tag 
+<tt>&lt;font&gt;...&lt;/font&gt;</tt> để tăng cỡ văn bản.
+<p>
+Nếu muốn bạn có thể sử dụng tag <tt>&lt;center&gt;...&lt;/center&gt;</tt> thay cho
+tag <tt>&lt;p align=center&gt;...&lt;/p&gt;</tt></b>
+</blockquote>
+
+Bạn có thể muốn so sánh tập tin HTML của bạn đối với ví dụ 
+<a HREF="tut20_ex/test1.txt">mẫu</a> để biết được nó nên xuất hiện như thế nào.
+<p>
+Mọi tag tiêu đề (header) <tt>&lt;hN&gt;...&lt;/hN&gt;</tt> đều có thể canh 
+giữa bằng cách thêm một thuộc tính như sau:
+<pre><font color="navy">  &lt;hN align=center&gt;blah blah blah&lt;/hN&gt;</font></pre>
+Bây giờ chúng ta sẽ sử dụng thuộc tính này để canh giữa tựa đề của mỗi trang Web:
+<ol>
+<li>Mở tất cả file HTML của bạn trong trình soạn thảo.
+<li>Với mỗi một trang, sửa chữa lại văn bản xuất hiện ở gần đỉnh trong tag 
+<tt>&lt;h1&gt;</tt> hay tag <tt>&lt;h2&gt;</tt> theo như ví dụ dưới đây cho tập tin
+<tt>intro.htm</tt>, thay đổi từ:
+<pre><font color="navy">  &lt;h2&gt;Introduction&lt;/h2&gt;</font></pre>
+thành 
+<pre><font color="navy">  &lt;h2 align=center&gt;Introduction&lt;/h2&gt;</font></pre>
+<li><b>Lưu trữ </b> và <b>Reload</b> trong Web browser  của bạn.
+</ol>
+<blockquote><b>Chú ý: Cũng có một thuộc tính chỉnh lề cho tag 
+<tt>&lt;hr&gt;</tt> phù hợp với các thông số khác mà chúng ta đã xem trong 
+<a HREF="tut19.htm">bài 19</a> &quot;Easy Hard Rules&quot;. 
+Khi bạn chỉ định một chiều rộng ngắn hơn cho một hard rule, bạn cũng có thể chỉ định 
+canh lề cho nó về bên phải hay bên trái (theo mặc định các hard rule được canh 
+vào giữa trang):
+</b>
+<pre><font color="navy">  &lt;hr size=8 width=60% align=right&gt;</font></pre> 
+<b>sẽ tạo ra:</b>
+</blockquote>
+<hr size="8" width="60%" align="right">
+<blockquote><b>trong khi sử dụng canh lề trái</b>
+<pre><font color="navy">  &lt;hr size=8 width=60% align=left&gt;</font></pre> 
+<b>sẽ cho kết quả là:</b>
+</blockquote>
+<hr size="8" width="60%" align="left">
+
+<h2>Sự sắp xếp giữa Hình ảnh và Văn bản</h2>
+Trong <a HREF="tut7a.htm">bài 7a</a> chúng ta đã xét cách đặt hình ảnh vào trong 
+trang Web của chúng ta và đã thấy rằng có thể có một dòng văn bản được sắp xếp 
+ở trên hoặc cuối một hình ảnh. Tuy nhiên, cho đến tận bây giờ, 
+chúng ta chưa thể có một khối văn bản và một hình ảnh inline nằm cạnh nhau.
+<p>
+Với việc thêm thuộc tính <tt>align</tt> vào tag <tt>&lt;img&gt;</tt> giờ đây bạn 
+có thể có chỉ định hình ảnh tự sắp về bên trái hay bên phải của trang. Nhưng hơn thế nữa
+chúng ta có thể có các văn bản HTML khác &quot;lấp đầy&quot; những khoảng trống quanh hình. HTML 
+để thực hiện điều này là:
+<pre><font color="navy">  &lt;img src=&quot;filename.gif&quot; align=right&gt;
+  &lt;img src=&quot;filename.gif&quot; align=left&gt;</font></pre>
+  
+Hãy so sánh hai ví dụ sau đây:
+<p>
+<center>
+<table border="0" cellpadding="4" cellspacing="8" width="80%">
+
+<tr>
+<th colspan="2" bgcolor="#77FF77"><font size="+2">không có thuộc tính align</font><br>
+<tt>align=bottom</tt></font></th>
+</tr>
+
+<tr>
+<td>
+<img src="pictures/left.gif" WIDTH="60" HEIGHT="60"><br>
+<h3>Cheese In History</h3>
+<b>Cheese was been there for many major events</b>
+<br>
+When Magellan sailed through the narrow Straits, he was eating cheese. When the Allied troops landed in Europe, cheese was there. When Neil Armstrong stepped onto the moon, he had just had finished a cheese snack.
+<p>
+</td>
+</tr>
+<tr>
+<th colspan="2" bgcolor="#77FF77"><font size="+2">có văn bản đi theo</font><br>
+<tt>align=left</tt></font></th>
+</tr>
+<tr>
+<td>
+<img src="pictures/left.gif" align="left" WIDTH="60" HEIGHT="60">
+<h3>Cheese In History</h3>
+<b>Cheese was been there for many major events</b><br>
+
+When Magellan sailed through the narrow Straits, he was eating cheese. When the Allied troops landed in Europe, cheese was there. When Neil Armstrong stepped onto the moon, he had just had finished a cheese snack.
+</td>
+</tr>
+</table>
+</center>
+<p>
+Hãy co dãn cửa sổ browser của bạn để thấy các hiệu ứng trong trang của bạn 
+với việc sắp xếp hình ảnh/văn bản.
+<p>
+Thêm một điều lưu ý nữa. Có khi văn bản hoặc những mục khác được sắp cùng với 
+hình ảnh khá ngắn và bạn muốn đẩy văn bản kế tiếp xuống bên dưới hình ảnh. 
+Có một thuộc tính cho tag <tt>&lt;br&gt;</tt> để xoá đi sự sắp xếp, ví dụ như:
+<pre><font color="navy">  &lt;br clear=left&gt;
+  &lt;br clear=right&gt;
+  &lt;br clear=all&gt;</font></pre>
+sẽ &quot;xóa&quot; bất kỳ sự sắp xếp nào đã được cài đặt trong tag <tt>&lt;img&gt; </tt> 
+trước đó. 
+Chúng tôi đề nghị bạn luôn luôn sử dụng những tag này bởi vì sự sắp xếp sẽ phụ thuộc
+rất nhiều vào phông chữ trên browser của người đọc và độ rộng cửa sổ browser của họ.
+<p>
+Bây giờ chúng ta sẽ trở lại trang <tt>index.htm</tt> để định dạng lại phần mở đầu. 
+Hình trông có vẻ đẹp, nhưng nó lại chiếm quá nhiều hàng trước khi các văn bản được
+trình bày. Chúng ta sẽ sử dụng sự sắp xếp hình ảnh/văn bản để đặt văn bản kế cận bên
+hình ảnh.
+
+<p>
+<ol>
+<li>Mở tập tin <tt>index.htm</tt> trong trình soạn thảo.
+<li>Tìm phần sau:
+<pre><font color="navy">  &lt;img alt=&quot;A Lesson on:&quot; src=&quot;../pictures/lava.gif&quot;&gt;
+  &lt;p&gt;
+  &lt;B&gt;&lt;font size=+4 color=#FF66FF&gt;V&lt;/font&gt;
+  &lt;font size=+3 color=#DD0055&gt;OLCANO WEB&lt;/font&gt;&lt;/B&gt;
+  &lt;BLOCKQUOTE&gt;
+  &lt;B&gt;&lt;I&gt;&lt;font size=+1&gt;&quot;Nature raves savagely, 
+  threatening the lands&quot;&lt;/font&gt;&lt;/I&gt;&lt;/B&gt;&lt;br&gt;
+  -- &lt;A HREF=&quot;http://magic.geol.ucsb.edu/~fisher/pliny.htm&quot;&gt;
+  Pliny the Elder&lt;/A&gt;, who died of asphyxiation after 
+  observing the destruction of Pompeii by the
+  79 A.D. eruption of Mount Vesuvius.
+  &lt;/BLOCKQUOTE&gt;
+
+  In this lesson you will use the Internet
+  to research information on volcanoes and then 
+  write a report on your
+  results.</font></pre>
+và thay nó bằng:
+<pre><font color="navy">  &lt;img alt=&quot;A Lesson on:&quot;
+     src=&quot;../pictures/lava.gif&quot; align=left&gt;
+  &lt;B&gt;&lt;I&gt;&lt;font size=+1&gt;
+  &quot;Nature raves savagely, threatening the lands&quot;
+  &lt;/font&gt;&lt;/I&gt;&lt;/B&gt;&lt;br&gt;
+  -- &lt;A HREF=&quot;http://magic.geol.ucsb.edu/~fisher/pliny.htm&quot;&gt;
+  Pliny the Elder&lt;/A&gt;, who died of asphyxiation after 
+  observing the destruction of Pompeii by the
+  79 A.D. eruption of Mount Vesuvius.
+  &lt;p&gt;
+  &lt;B&gt;&lt;font size=+4 color=#FF66FF&gt;V&lt;/font&gt;
+  &lt;font size=+3 color=#DD0055&gt;OLCANO WEB&lt;/font&gt;&lt;/B&gt;
+  &lt;p&gt;
+  In this lesson you will use the Internet
+  to research information on volcanoes and then write
+  a report on your results.
+  &lt;br clear=left&gt;</font></pre>
+<li><b>Lưu trữ</b> và <b>Nạp</b> lại trong Web browser của bạn.
+</ol>
+<blockquote><b>Chú ý: Mọi thứ ở giữa tag <tt>&lt;img... align=left&gt;</tt> và 
+tag <tt>&lt;br clear=left&gt;</tt> sẽ được sắp chung với hình ảnh - hình ở bên trái 
+và phần HTML trong các vị trí trống còn lại.<p>
+Chúng ta cũng để câu trích dẫn lên đầu để gây sự chú ý. Với dạng trình bày này, 
+tag <tt>&lt;blockquote&gt;</tt> không còn có hiệu quả nữa, do vậy nó được xóa bỏ.</b>
+</blockquote>
+Nếu muốn, bạn có thể so sánh tập tin HTML của bạn với 
+<a HREF="tut20_ex/test2.txt">ví dụ mẫu</a> để biết tại đây nên trình bày  như thế nào.
+
+<h2>Chỉnh lề (Justification)/Sắp xếp (Alignment) văn bản</h2>
+Chúng ta sẽ thêm một tag sắp xếp nữa là tag &quot;divisions&quot; 
+<tt>&lt;div&gt;...&lt;/div&gt;</tt>, được giới thiệu trong HTML 3.0. Tất cả văn bản
+bên trong tag này được chỉnh lề dựa vào thuộc tính <tt>align</tt>:
+
+<pre><font color="navy">  &lt;div align=left&gt;...&lt;/div&gt;
+  &lt;div align=right&gt;...&lt;/div&gt;
+  &lt;div align=center&gt;...&lt;/div&gt;
+</font></pre>
+Lưu ý rằng thuộc tính center có hiệu quả giống như tag 
+<tt>&lt;center&gt;...&lt;/center&gt;</tt> của NetScape.
+<p>
+Bây giờ chúng ta sẽ sử dụng tag này để làm cho đoạn văn bản trong phần 
+ghi chú mở đầu của trang bìa được chỉnh lề ở bên phải của trang:
+
+<ol>
+<li>Mở tập tin <tt>index.htm</tt> trong trình soạn thảo.
+<li>Thêm tag <tt>&lt;div&gt;</tt> and <tt>&lt;/div&gt;</tt> như dưới đây:
+<pre><font color="navy">  &lt;div align=right&gt;
+  &lt;B&gt;&lt;I&gt;&lt;font size=+1&gt;
+  &quot;Nature raves savagely, threatening the lands&quot;
+  &lt;/font&gt;&lt;/I&gt;&lt;/B&gt;&lt;br&gt;
+  -- &lt;A HREF=&quot;http://magic.geol.ucsb.edu/~fisher/pliny.htm&quot;&gt;
+  Pliny the Elder&lt;/A&gt;, who died of asphyxiation after 
+  observing the destruction of Pompeii by the
+  79 A.D. eruption of Mount Vesuvius.
+  &lt;p&gt;
+  &lt;B&gt;&lt;font size=+4 color=#FF66FF&gt;V&lt;/font&gt;
+  &lt;font size=+3 color=#DD0055&gt;OLCANO WEB&lt;/font&gt;&lt;/B&gt;
+  &lt;/div&gt;</font></pre>
+<li><b>Lưu trữ</b> và <b>Reload</b> trong Web browser của bạn.
+</ol>
+<h2>Kiểm tra lại công việc của bạn</h2>
+So sánh trang Web của bạn với <a href="tut20_ex/index.htm">ví dụ mẫu</a> để xem nó 
+nên xuất hiện như thế nào. Nếu trang của bạn khác với mẫu hay các liên kết 
+siêu văn bản không hoạt động đúng, kiểm tra lại văn bản bạn đánh vào trong trình 
+soạn thảo.
+
+<h2>Xem lại</h2>
+Xem lại những chủ đề sau :
+<ol>
+<li>Làm thế nào để cho một phần nào đó trong trang web của bạn được canh vào 
+giữa?
+<li>Cách nào đúng nhất để làm cho một hình ảnh được sắp xếp bên lề phải của 
+trang Web?
+<li>Làm cách nào bạn tạo ra một văn bản được chỉnh lề phải?
+</ol>
+
+<hr>
+<h2>Đến phần tiếp theo....</h2>
+<center>
+<table border="8" cellpadding="4" cellspacing="4">
+<tr>
+<td bgcolor="purple"><br></td>
+<td bgcolor="yellow"><b><font size="+1">Hãy tạo ra </font></b></td>
+<td bgcolor="silver"><b><font size="+1">một bảng đẹp...</font></b></td>
+<td bgcolor="purple"><br></td>
+</tr>
+</table>
+</center>
+<h5> ĐẾN....  | <a HREF="lessons.htm">Mục Lục</a> | 
+<a HREF="tut19.htm">Bài trước:  &quot;Easy Hard Rules&quot;</a> |
+<a HREF="tut21.htm">Bài kế:  &quot;Bảng&quot;</a> |
+</h5>
+<hr>
+<b>Soạn thảo HTML</b>  Bài 20: Xét thêm về Sự Chỉnh lề<br>
+<address>
+©2095 <a HREF="http://www.mcli.dist.maricopa.edu/">
+Maricopa Center for Learning and Instruction (MCLI)</a><br>
+<a HREF="http://www.mcli.dist.maricopa.edu/mcccd/">Maricopa County Community College District</a>, Arizona<p>
+The Internet Connection at MCLI is 
+<a href="http://www.mcli.dist.maricopa.edu/alan/">Alan Levine --}</a><br>
+Comments to <b><a HREF="mailto:levine@maricopa.edu">levine@maricopa.edu</a></b>
+</address>
+<p>
+<tt>URL: http://www.mcli.dist.maricopa.edu/tut/tut20.html</tt>
+<p>
+</body>
+</html>
+

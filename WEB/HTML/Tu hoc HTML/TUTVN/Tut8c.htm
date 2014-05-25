@@ -1,0 +1,250 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <title>8c. Links to the World- Internet Sites</title>
+   <meta NAME="GENERATOR" CONTENT="Mozilla/3.0Gold (Win95; I) [Netscape]">
+</head>
+<body BGCOLOR="#FFFFFF">
+
+<h5><i>Soạn thảo HTML</i> |
+<a HREF="index.htm">Giới thiệu</a> | <a HREF="faq.htm">FAQ</a>
+| <a HREF="http://www.mcli.dist.maricopa.edu/cgi-bin/alumni.pl">Alumni</a>
+| <a HREF="tag.htm">Các Tag</a> | <a HREF="lessons.htm">Mục lục</a> |
+<a HREF="tut8b.htm">Bài trước</a>
+| <a HREF="tut8d.htm">Bài kế</a> | </h5>
+
+<h1>8c. Liên kết đến các site Internet bên ngoài</h1>
+
+Bạn nên làm tươi lại cỗ máy của bạn bằng cách chạm vào
+<a href="http://www.mcli.dist.maricopa.edu/GIFs/infohwy.gif">Information
+SuperHighway</a>, được không?
+Ở đây chúng ta sẽ mở rộng cách sử dụng của các tag <tt>anchor</tt> để
+tạo ra liên kết đến các tài nguyên có sẵn trên Internet.
+
+<h2>Mục đích</h2>
+Sau bài học này bạn có thể:
+
+<ul>
+<li>Tạo một anchor để liên kết đến một Internet site.
+<li>Chép nhanh URL của một site và sử dụng nó trong tài liệu HTML của bạn.
+</ul>
+
+<hr>
+<h2>Bài học</h2>
+
+<p><b>Lưu ý: Nếu bạn chưa có tài liệu bài học trước, bạn có thể
+<a HREF="tut8cget.htm">download</a> ngay bây giờ.</b>
+
+<h3>HTML cho các Anchor đến Internet</h3>
+
+Tạo liên kết đến một site trên Internet bao gồm những điều chúng ta đã xét trong bài
+<b>Liên kết với tập tin cục bộ</b> (<a href="tut8a.htm">Bài 8a</a>) cùng với bài về
+<b>URLs</b> (<a href="tut8b.htm">Bài 8b</a>). Dạng HTML đầy đủ cho một liên kết
+<tt>anchor</tt> đến một mục trên Internet là:
+
+<pre>
+<font COLOR="#000080">     &lt;a href=&quot;URL&quot;&gt;Text to Activate Link&lt;/a&gt;</font>
+</pre>
+
+Trong đó <b><tt>URL</tt></b> giữa hai dấu nháy là dạng đầy đủ của
+Uniform Resource Locator, cho biết địa chỉ của Internet site mà bạn muốn gởi đến
+người đọc. Chuổi <tt>Text to Activate Link</tt> là dòng chữ sẽ
+được hiển thị như là siêu văn bản trong web browser thường (nhưng không phải luôn luôn)
+có dạng gạch dưới và màu xanh. Khi người đọc click trên siêu văn bản này,
+web browser sẽ liên kết chúng với Internet site được chỉ định bởi URL. Nên nhớ
+rằng một URL có thể là một liên kết đến một World Wide Web (WWW) server khác,
+Gopher server, FTP site, hoặc bất kỳ một tập tin văn bản, hình ảnh, âm thanh, video
+trên các server này.
+
+<p>Bây giờ chúng ta sẽ thêm một liên kết siêu văn bản đến site của NASA là site có
+thông tin về các núi lửa trên Sao hỏa (planet Mars). Theo những chỉ dẫn sau để
+thêm liên kết anchor vào tài liệu HTML của bạn:<p>
+
+<ol>
+<li>Mở tập tin <tt>index.htm</tt> của bạn trong trình soạn thảo văn vản.
+<li>Bên dưới tiêu đề <b>Volcanic Places on Mars</b>, nhập văn bản sau:
+
+<pre>
+<font COLOR="#000080">&lt;a href=&quot;http://bang.lanl.gov/solarsys/mars.htm&quot;&gt;
+Mars&lt;/a&gt; has its fair share of volcanic landforms, 
+including the largest known volcano in the solar system,
+&lt;a href=&quot;http://bang.lanl.gov/solarsys/raw/mars/olympus.gif&quot;&gt;
+Olympus Mons&lt;/a&gt;</font>
+</pre>
+<blockquote><b>Chú ý:  Chúng ta đã tạo sự liên kết đến hai loại thông tin khác
+nhau. Siêu liên kết (hyperlink) đầu tiên nối đến một trang web mô tả thông tin về Sao
+hỏa. Cái thứ hai là liên kết đến một ảnh GIF nhỏ của núi lửa Martian.</b>
+</blockquote>
+
+<li><b>Lưu</b> và <b>Reload</b> trong web browser của bạn.
+</ol>
+
+<h3>Một cách dễ dàng để nhập các URL trong tag Anchor</h3>
+
+Như là bạn đã thấy trong các trang web, URL của trang hiện tại có thể thấy được ở
+phần trên của cửa sổ web browser (bạn có thể tìm kiếm thực đơn để
+<b>Trình bày URL</b>). Ví dụ như, trong tài liệu này, URL trông giống như sau:
+
+<pre>
+<font COLOR="#000080">   http://www.mcli.dist.maricopa.edu/tut/tut8c.html</font>
+</pre>
+
+<p>Bạn có thể sử dụng chuột để chọn và <b>chép lại</b> một URL từ phần trình bày
+trong web browser rồi sau đó dán nó vào trong tag <tt>anchor</tt> của tài liệu HTML.
+Điều này hiệu quả hơn là viết URL ra giấy rất nhiều (đôi lúc khá dài!).
+
+<p>Bây giờ chúng ta sẽ thêm một số liên kết tới các site khác mà chúng ta sẽ liệt kê ra
+trong phần <b>References</b> của bài Volcano. Một trong các site có thể cung cấp
+thông tin liên quan là US Geological Survey.
+
+<p>Theo những bước sau:
+
+<ol>
+<li>Mở tài liệu HTML <tt>index.htm</tt> trong trình soạn thảo
+<li>Dưới tiêu đề &quot;References&quot;, nhập:
+
+<pre>
+<font COLOR="#000080">&lt;ul&gt;
+&lt;li&gt; &lt;a href=&quot;&quot;&gt;Educational Resources from the
+USGS&lt;/a&gt;
+&lt;/ul&gt;</font>
+</pre>
+<blockquote><b>Chú ý: Chúng ta đã tạo ra liên kết siêu văn bản và vẫn cần
+phải thêm vào một URL giữa hai dấu nháy.</b></blockquote>
+
+<li>Nối đến <a HREF="http://info.er.usgs.gov/education/index.html">US
+Geological Survey Education Index</a> trong cửa sổ browser của bạn.
+
+<li>Từ trang web, sử dụng chuột để <b>chọn</b> URL đang được hiển thị
+trong vùng trình bày URL.
+
+<li>Từ thực đơn <b>Edit</b>, chọn <b>Copy</b> URL.
+
+<li>Bây giờ , trở lại tài liệu HTML của bạn <tt>index.htm</tt>
+
+<li>Click mouse vào giữa hai dấu nháy mà bạn đã đánh vào ở bước #2 và <b>Dán</b>
+vào tài liệu bạn đã chép trong bước #5. Tag <tt>anchor</tt> cuối cùng giống như sau:
+
+<pre>
+<font COLOR="#000080">&lt;a href=&quot;http://info.er.usgs.gov/education/index.html&quot;&gt; 
+Educational Resources from the USGS&lt;/a&gt;</font>
+</pre>
+<blockquote><b>Chú ý: Bạn vừa thiết lập xong một cấu trúc HTML sử dụng Danh
+sách Không có thứ tự, với mỗi mục là một liên kết siêu văn bản đến một site có 
+cung cấp thông tin về núi lửa. Để xem lại các danh sách, hãy chọn
+<a href="tut6.htm">Bài 6</a>.</b>
+</blockquote>
+</ol>
+<p>
+Như là phần thực tập thêm, hãy vào các site Internet dưới đây với các tài liệu về
+Địa chất (Geology) và/hay núi lửa (Volcanoes). Chép các URL và xây dựng ít nhất
+hai site trong phần <b>Reference</b>:
+
+<dl>
+<dt><b>Các Site có Thông tin về Núi lửa:</b>
+<dd>
+<a HREF="http://www.avo.alaska.edu/">
+Alaska Volcano Observatory</a>
+ *  <a HREF="http://vulcan.wr.usgs.gov/home.html">
+Cascades Volcano Observatory</a>
+ *  <a HREF="http://www.geo.mtu.edu/volcanoes/">
+Michigan Tech Volcanoes Page</a>
+ *  <a HREF="http://www.geo.mtu.edu/eos/">
+NASA Earth Observing System (EOS) IDS Volcanology Team</a>
+ *  <a HREF="http://spso2.gsfc.nasa.gov/NASA_FACTS/volcanoes/volcano.html">
+NASA Facts: Volcanoes and Global Climate Change</a>
+*  <a HREF="gopher://nmnhgoph.si.edu/11/.gvp">Smithsonian Global Volcanism Program</a>
+ *  <a href="gopher://hoshi.cic.sfu.ca:5555/11/epix/topics/volcano">
+Volcano Listserv</a>
+ *  <a href="http://www.soest.hawaii.edu/hvo/">
+Volcano Watch Newsletter</a>
+ *  <a href="http://seawifs.gsfc.nasa.gov/JASON/HTML/EXPEDITIONS_JASON_6_home.html">
+JASON Project VI: Island Earth</a>
+
+<p>
+<dt><b>Các Site có Thông tin về các Tai họa Tự nhiên (Natural Hazard):</b> 
+<dd>
+<a href="gopher://vita.org/11/disaster">Disaster Information</a> * 
+<a href="gopher://disaster.cprost.sfu.ca:5555/1">Emergency
+Preparedness Information eXchnage (EPIX)</a> *
+<a HREF="http://www.ngdc.noaa.gov/seg/hazard/hazards.html">
+NGDC Natural Hazards Data</a> 
+<p>
+
+<dt><b>Các Site có Thông tin Tổng quát về Địa chất:</b>
+<dd>
+<a HREF="http://edcwww.cr.usgs.gov/eros-home.html">Earth Resources
+Observation Systems (EROS) Data Center</a> *
+<a HREF="http://galaxy.einet.net/galaxy/Science/Geosciences.html">EINet
+Galaxy </a> *
+<a href="gopher://infoserver.ciesin.org/11/catalog/earth">Environmental
+Internet Catalog</a> *
+<a href="http://krakatoa.jsc.nasa.gov/NASAInternetConnection.html">NASA
+Internet Connections</a> *
+<a HREF="gopher://gopher.esdim.noaa.gov/">NOAA Environmental
+Information Server</a> * 
+<a href="http://white.nosc.mil/planet_earth/earth.html">Planet Earth Home
+Page</a> *
+<a href="gopher://riceinfo.rice.edu/11/Subject/Geology">Rice
+University</a> *
+<a href="http://info.er.usgs.gov/network/science/earth/earth.html">
+United States Geological Survey</a> *
+<a HREF="http://gnn.digital.com/gnn/wic/geol.toc.html">Whole
+Internet Catalog</a> *
+<a href="http://www.geo.ucalgary.ca/VL-EarthSciences.html">WWW
+Virtual Library</a>
+
+</dl>
+<hr>
+
+<h2>Kiểm tra lại công việc của bạn</h2>
+
+<p>So sánh trang web của bạn với <a HREF="tut8c_ex/index.htm">ví dụ mẫu</a> để
+biết tài liệu nên xuất hiện như thế nào. Nếu trang web của bạn không giống như
+ví dụ mẫu hay các liên kết không nối đến đúng site ở xa, hãy kiểm tra lại văn bản
+bạn đã đánh trong trình soạn thảo. Chú ý rằng danh sách các tham khảo của bạn
+có thể không giống như trong ví dụ mẫu.
+
+<h2>Xem lại</h2>
+
+<ol>
+<li>Địa chỉ cho một mục trên Internet là gì?
+<li>Những bước nào cần cho việc tạo một liên kết anchor đến NASA Internet
+Site?
+<li>Cách nhanh nào được dùng để đưa một URL vào trong liên kết anchor?
+<li>Hãy nói cho bạn bè về các liên kết khác mà bạn đưa vào tài liệu của bạn.
+</ol>
+<h2>Thực tập tự do</h2>
+Tạo các liên kết anchor từ trang web của bạn để nối đến vài địa chỉ URL
+mà bạn khám phá được.
+<hr>
+
+<h2>Đi đến bài tiếp theo....</h2>
+
+<p>Trong bài kế bạn sẽ tạo liên kết để kết nối những phần khác nhau trong
+một tài liệu HTML .
+
+<h5> ĐẾN.... | <a HREF="lessons.htm">Mục lục</a>
+| <a HREF="tut8b.htm">Bài trước: &quot;URLs&quot;</a>
+| <a HREF="tut8d.htm">Bài kế: &quot;Liên kết đến Những phần của Trang&quot;</a> | </h5>
+
+<p>
+<hr><b>Soạn thảo HTML</b> Bài 8c: Liên kết đến Internet<br>
+</p>
+
+<address>©1995, 1996 <a HREF="http://www.mcli.dist.maricopa.edu/">Maricopa
+Center for Learning and Instruction (MCLI)<br>
+</a><a HREF="http://www.mcli.dist.maricopa.edu/mcccd/">Maricopa County
+Community College District</a>, Arizona</address>
+
+<p> The Internet Connection at MCLI is <a HREF="http://www.mcli.dist.maricopa.edu/alan/">Alan
+Levine --}<br>
+</a>Comments to <b><a HREF="mailto:levine@maricopa.edu">levine@maricopa.edu</a></b>
+</p>
+
+<p><tt>URL: http://www.mcli.dist.maricopa.edu/tut/tut8c.html</tt> </p>
+
+</body>
+</html>
+

@@ -1,0 +1,59 @@
+#!/bin/bash
+
+#---------------------------------------------------------------------------------------
+# 1) ECRIRE 1 SHELL SCRIPT QUI ENUMERE TOUS LES DROITS DE TOUS LES FICHIERS D'UN REPERTOIRE, CE DERNIER EST DECLARE A TRAVERS $1, $2...
+
+#ls -li $1
+
+#---------------------------------------------------------------------------------------
+# 2) ECRIRE 1 SHELL SCRIPT QUI AFFICHE SUR L'ECRAN LES NOMBRES PREMIERS DANS 1 INTERVALLE DETERMINEE
+
+#---------------------------------------------------------------------------------------
+# 3) ECRIRE 1 SHELL SCRIPT QUI RECOIT LE CHEMIN VERS 1 FICHIER ET PUIS AFFICHE LES DROITES DES PROPRIETAIRES SUR CE FICHIER
+
+#if   [ $(ls -li $1 | cut -c 10) = 'r' ]
+#then
+#    R=lire
+#fi
+
+#if [ $(ls -li $1 | cut -c 11) = 'w' ]
+#then
+#    W=modifier
+#fi
+
+#if [ $(ls -li $1 | cut -c 12) = 'x' ]
+#then
+#    X=executer    
+#fi
+
+#echo "L'user peut $R $W $X le fichier $1"
+
+#-------------------------------------------------------
+# 4) UN SHELL SCRIPT QUI DEMANDE A L'UTILISATEUR DE SAISIR LE NOM D'UN REPERTOIRE, PUIS IL EXAMINE SI CE REPERTOIRE EXISTE DEJA OU NON. SI OUI, DEMANDER DE SAISIR UN AUTRE NOM. ENSUITE, IL VA CREER LES SOUS-REPERTOIRES (DONT LES NOMS MAY00, MAY01,...MAY40)
+
+#if [ -e $1 ]
+#then
+#    echo "Veuillez choisir un autre nom"
+#    read nom
+#    name=$nom
+#else
+#    name=$1
+#fi
+#mkdir $name
+#cd $name
+#i=0
+#while [ $i -le 40 ]
+#do
+#    mkdir MAY${i}
+#    let i++
+#done
+#tree
+#echo "Proces fini"
+#cd ..
+#echo "Vous etes a $(pwd)"
+
+a=(mot hai ba bon nam sau)
+n=${#a[@]}
+echo $n
+elem=${a[1]}
+echo $elem

@@ -1,0 +1,4 @@
+europe:france
+europe:italie
+asie:vietnam
+asie:chine

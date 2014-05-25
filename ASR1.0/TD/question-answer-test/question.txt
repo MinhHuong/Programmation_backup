@@ -1,0 +1,60 @@
+01) Ai la ba noi cua lop ?
+    a. Tam
+    b. That ra thi khong ai dam canh tranh voi Tam
+02) Ai bi rot mat nao ?
+    a. Tri
+    b. Hieu
+03) Ai co mau lieu cao nhat lop ?
+    a. Lam
+    b. Long
+04) Lop co mot con meo cut, do la :
+    a. Miu
+    b. Loc
+05) Ai cuoi tuan hay don dia bay ve tham nha :
+    a. Loc
+    b. Anh Trung
+06) Nguoi gia nhat lop :
+    a. Tri
+    b. Lam
+07) Loc con co ten goi khac la :
+    a. Chon Loc
+    b. Khong co biet danh
+08) Thoi diem ma lop LINF13 duoc nghi he :
+    a. Cung luc voi lop LEG
+    b. Giua thang 8 van thay TKB co lich hoc
+09) Lich hoc lop LINF13 thuong ngay nhu the nao ?
+    a. CMN hoc het ca tuan
+    b. Hoc 1 ngay nghi 1 ngay
+10) Cam nghi cua LINF13 ve cac mon Kinh te ?
+    a. Mon nay thiet thu vi
+    b. Hoc het 6 tiet van khong biet minh da hoc cai gi
+11) Than tuong cua Be Long Bong :
+    a. Be Nga Nga
+    b. Elly Tran
+12) Hieu sau vai thang hoc PUF da tro thanh :
+    a. Hieu Beep
+    b. Van con la Hieu LHP
+13) Con vat yeu thich cua Hieu Tri Nguyen Phan :
+    a. Con Bo
+    b. Pikachu
+14) "Nguoi Viet tram lang" cua LINF13 :
+    a. Thang
+    b. Anh Trung
+15) Uoc mo cua LINF13 :
+    a. Co mot tuan hoc hanh thu tha nhu lop LEG
+    b. An choi khong mat tien
+16) Ba Loc se rat vui neu :
+    a. Hang ngay duoc ca lop ghe tham nha
+    b. Bi lop hat hui, khong ngo ngang di den
+17) Giao su nguoi Phap yeu thich cua LINF13 :
+    a. Sylvie Michel
+    b. Michel Billaud
+18) Ai la thanh vien nguy hiem nhat cua lop ?
+    a. Moi nguoi deu doi xu voi nhau an can & tu te
+    b. Dua nao cung nguy CMN hiem
+19) Mang song cua Mihu co gia tri ngang bang :
+    a. Bich banh Poca
+    b. Vo gia tri (khong con gia tri gi ca)
+20) Khi LINF13 nhin duoc nhung cau hoi nay, tac gia se :
+    a. Tiep tuc song binh yen
+    b. Chet chac

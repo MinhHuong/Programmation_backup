@@ -1,0 +1,301 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>6. Lists, Lists, Lists</title>
+</head>
+<body bgcolor="#FFFFFF">
+<h5><i>Soạn thảo HTML</i> |
+<a HREF="index.htm">Giới thiệu</a> | <a HREF="faq.htm">FAQ</a> |
+<a HREF="http://www.mcli.dist.maricopa.edu/cgi-bin/alumni.pl">Alumni</a> |
+<a HREF="tag.htm">Các Tag</a> |
+<a HREF="lessons.htm">Mục Lục</a> |
+<a HREF="tut5.htm">Bài trước</a>   | 
+<a HREF="tut7.htm">Bài kế tiếp</a>   | 
+</h5>
+
+<h1>6. Danh sách, Danh sách, và Danh sách</h1>
+Danh sách được dùng để trình bày các mục thông tin thành một dạng dễ đọc hơn. Chẳng
+hạn như, ngay sau phần tiêu đề kế tiếp dưới đây có một danh sách.
+
+<h2>Mục đích</h2>
+Sau bài học này bạn có khả năng:
+<ul>
+<li>Nhận dạng được mã cho việc tạo thành những danh sách có thứ tự (ordered list),
+không có thứ tự (unordered list) và danh sách lồng nhau (nested list) của một trang web.
+<li>Đặt những loại danh sách khác nhau vào trong tài liệu HTML và nhìn thấy sự thay
+đổi của chúng trong trang Web.
+</ul>
+<hr>
+<h2>Bài học</h2>
+
+Có rất nhiều trang Web trình bày danh sách các mục. Có những mục bắt đầu bằng một
+&quot;bullet&quot; (unordered) hoặc là một danh sách có đánh số theo thứ tự (ordered). Những danh
+sách này được định dạng dễ dàng trong HTML, và chúng cũng có thể được lồng 
+vào nhau (danh sách trong danh sách) tạo thành một dạng phân cấp tài liệu. Danh sách
+cũng được sử dụng cho việc tạo một 
+bảng chỉ mục hay là một bảng nội dung của một dãy các tài liệu hoặc các chương.
+
+<h3>Danh sách không có thứ tự</h3>
+Danh sách không có thứ tự (unordered list) sử dụng tag <tt>ul</tt> được xuất hiện như là
+một danh sách các mục với những dấu &quot;bullet&quot;
+hoặc những ký hiệu đánh dấu ở trước. Ký hiệu dùng để đánh dấu tùy thuộc vào từng loại
+phiên bản của Web browser và phông để trình bày các ký tự thông thường (ví dụ như,
+trong Macintosh các bullet là ký tự option-8 của phông Times có dạng là một hình vuông
+nhỏ, còn trong Geneva nó lại là một dấu chấm tròn lớn).
+<p>
+Sau đây là ví dụ cho một danh sách không có thứ tự:
+<p>
+<b>My Unordered List:</b>
+<ul>
+<li>Item 1
+<li>Item 2
+<li>Item 3
+</ul>
+<p>
+Và dạng HTML cho kết quả trên là:
+<pre><font color="navy">
+     &lt;B&gt;My Unordered List:&lt;/B&gt;
+     &lt;ul&gt;
+     &lt;li&gt;  Item 1
+     &lt;li&gt;  Item 2
+     &lt;li&gt;  Item 3
+     &lt;/ul&gt;
+</font></pre>
+Các tag <tt>&lt;ul&gt;</tt> đánh dấu sự bắt đầu và kết thúc của danh sách,
+còn tag <tt>&lt;li&gt;</tt> chỉ ra từng mục cho một danh sách.
+
+<h4>Danh sách có thứ tự</h4>
+Danh sách có thứ tự là danh sách mà browser sẽ đánh số thứ tự cho mỗi mục trong danh
+sách, thường là bắt đầu 
+bằng &quot;1.&quot; Lưu ý rằng, sự khác nhau đó chính là do một thay đổi nhỏ từ tag <tt>ul</tt>
+thành tag <tt>ol</tt>. Lấy ví dụ tương tự như ví dụ trên:
+<p>
+
+<b>My Ordered List:</b>
+<ol>
+<li>Item 1
+<li>Item 2
+<li>Item 3
+</ol>
+<p>
+Và dạng HTML cho ví dụ trên là:
+<pre><font color="navy">
+     &lt;B&gt;My Ordered List:&lt;/B&gt;
+     &lt;ol&gt;
+     &lt;li&gt;   Item 1
+     &lt;li&gt;   Item 2
+     &lt;li&gt;   Item 3
+     &lt;/ol&gt;
+</font></pre>
+
+<h3>Danh sách lồng nhau</h3>
+Danh sách có thứ tự và danh sách không có thứ tự có thể lồng vào nhau theo nhiều mức độ
+khác nhau tùy thuộc vào từng loại Web browser. Vấn đề bạn cần quan tâm chính ở đây
+là việc kiểm tra rằng mỗi danh sách 
+được kết thúc một cách chính xác và trật tự lồng vào nhau là đúng.
+
+<p>
+Bước đầu bạn có vẻ thấy phức tạp với các tag &lt;ol&gt; &lt;li&gt;
+&lt;/ul&gt; &lt;li&gt;, nhưng hãy cố gắng nhớ cấu trúc cơ bản như sau :
+
+
+<pre><font color="navy">
+      &lt;ul&gt;            &lt;ol&gt;
+          &lt;li&gt;           &lt;li&gt;
+          &lt;li&gt;           &lt;li&gt;
+      &lt;/ul&gt;           &lt;/ol&gt;
+</font></pre>
+<p>
+Sau đây là một ví dụ với một danh sách không có thứ tự với các mức danh sách con
+khác của nó:
+<p>
+<b>Nested Unordered List</b>
+<ul>
+<li>This is the first item
+<li>This is the second item
+<ul>
+<li>This is the first sub item of the second item
+<ul>
+<li>And this is a sub item of a sub item
+<li>Getting lost yet?
+</ul>
+<li>This is the second sub item of the second item
+<li>This is the third sub item of the second item
+</ul>
+<li>This is the third item
+</ul>
+Hãy chú ý sự thay đổi của các dấu đánh dấu cho các mức khác nhau của danh sách.
+<p>
+Và đây là đoạn mã HTML cho ví dụ trên:
+<pre><font color="navy">
+     &lt;ul&gt;&lt;B&gt;Nested Unordered List&lt;/B&gt;
+     &lt;li&gt;This is the first item
+     &lt;li&gt;This is the second item
+     &lt;ul&gt;
+     &lt;li&gt; This is the first sub item of the second item
+     &lt;ul&gt;
+     &lt;li&gt; And this is a sub item of a sub item
+     &lt;li&gt; Getting lost yet?
+     &lt;/ul&gt;
+     &lt;li&gt; This is the second sub item of the second item
+     &lt;li&gt; This is the third sub item of the second item
+     &lt;/ul&gt;
+     &lt;li&gt;This is the third item
+     &lt;/ul&gt;
+</font></pre>
+
+<h3>Những danh sách lồng nhau - Trộn chúng lại với nhau</h3>
+Bạn không những có thể lồng các danh sách có thứ tự vào trong danh sách có thứ tự mà
+còn có thể trộn lẫn các loại danh sách. Đừng quá ngạc nhiên! Bắt đầu HTML trông có
+vẻ hơi ngớ ngẩn, nhưng bạn hãy xem thử cách mà các danh sách lại có những danh sách
+khác bên trong của nó.
+<p>
+
+Lấy ví dụ, danh sách có thứ tự dưới đây bao gồm một danh sách không có thứ tự
+bên trong nó:
+<p>
+
+<b>Nested Unordered List</b>
+<ol>
+<li>This is the first item
+<li>This is the second item
+<ul>
+<li>This is the first sub item of the second item
+<ol>
+<li>An this is a numbered sub item of a sub item
+<li>An this is another numbered subItem of a sub item
+<li>Getting lost yet?
+</ol>
+<li>This is the second sub item of the second item
+<li>This is the third sub item of the second item
+</ul>
+<li>This is the third item
+</ol>
+
+Và đây là đoạn mã HTML cho ví dụ trên. Hãy chú ý sự sắp xếp trong cách viết HTML
+để dễ đọc hơn:
+
+<pre><font color="navy">
+&lt;B&gt;Nested Unordered List&lt;/B&gt;
+  &lt;ol&gt;
+     &lt;li&gt;This is the first item
+     &lt;li&gt;This is the second item
+        &lt;ul&gt;
+        &lt;li&gt; This is the first sub item of the second item
+           &lt;ol&gt;
+           &lt;li&gt; An this is a numbered subItem of a sub item
+           &lt;li&gt; An this is another numbered sub item of a sub item
+           &lt;li&gt; Getting lost yet?
+           &lt;/ol&gt;
+        &lt;li&gt; This is the second sub item of the second item
+        &lt;li&gt; This is the third sub item of the second item
+        &lt;/ul&gt;
+     &lt;li&gt;This is the third item
+  &lt;/ol&gt;
+
+</font></pre>
+
+<h3>Đặt những danh sách vào trong tài liệu HTML của bạn</h3>
+<b>Lưu ý: Nếu bạn chưa có tài liệu từ bài học trước, hãy
+<a href="tut6get.htm">download </a> ngay bây giờ.</b>
+<p>
+Sử dụng tag <tt>list</tt>, bạn sẽ thêm một danh sách 
+có thứ tự và một danh sách không có thứ tự vào trang web <i>Volcano Web</i>
+của bạn.
+<p>
+
+<ol>
+<li>Mở lại workspace của bạn (nếu nó chưa được mở).
+<li>Mở lại tài liệu HTML trong trình soạn thảo.
+<li>Bên dưới đề mục <tt>Volcano Terminology</tt> chúng ta sử dụng một danh sách
+không có thứ tự để trình bày một số thuật ngữ kỹ thuật được sử dụng trong
+việc nghiên cứu núi lửa. Hãy đến mục này trong tài liệu HTML của bạn.
+<li>Trước hết thêm câu sau :
+<pre><font color="navy">
+     How many do you know?
+</font></pre>
+<li>Và bây giờ, hãy đánh vào dạng HTML để tạo ra danh sách các thuật ngữ:
+<pre><font color="navy">
+      &lt;ul&gt;
+          &lt;li&gt;caldera
+          &lt;li&gt;vesicularity
+          &lt;li&gt;pahoehoe
+          &lt;li&gt;rheology
+          &lt;li&gt;lahar
+      &lt;/ul&gt;
+</font></pre>
+<li>Bây giờ chúng ta sử dụng một danh sách có thứ tự 
+để xác định những phần yêu cầu của bài học chúng ta đang xây dựng. 
+Bên dưới đề mục <tt>Research Project</tt>, thêm những dòng sau (Hướng dẫn: 
+lúc này bạn nên sử dụng chức năng cắt và dán từ trong trang web trừ phi bạn có
+thích thú và muốn tự đánh lại đoạn văn bản!):
+
+<pre><font color="navy">
+  Your mission is to find information and report on a 
+  volcano, other than the ones listed above, that has erupted
+  in the last 100 years. Your reports must include:
+  &lt;ol&gt;
+    &lt;li&gt;Type of volcano
+    &lt;li&gt;Geographic location
+    &lt;li&gt;Name, distance, and population of nearest major city
+    &lt;li&gt;Dates of most recent and most destructive eruptions.
+    &lt;li&gt;Other events associated with the recent eruptions  
+    (earthquakes, floods, mudslides, etc)
+  &lt;/ol&gt;
+  &lt;p&gt;
+  Then, write a one page description on the major hazards to
+  humans in the vicinity of this volcano. Speculate on what
+  you would do if you were in charge of minimizing the risk
+  to the population.
+</font></pre>
+<li><b>Lưu trữ</b> và <b>Reload</b> trong Web browser của bạn.
+</ol>
+<hr>
+<h2>Kiểm tra lại công việc của bạn</h2>
+Có thể bạn muốn so sánh tài liệu của bạn với <a href="tut6_ex.htm">ví dụ mẫu</a>
+cho phần bạn vừa làm. Nếu danh sách của bạn khác với danh sách trong ví dụ mẫu,
+hãy kiểm tra lại những gì bạn đã đánh trong trình soạn thảo. Hãy chắc chắn rằng nó
+phù hợp với các hướng dẫn trong mục <b>Đặt những danh sách vào trong tài liệu
+HTML của bạn</b> trong bài này.
+
+<h2>Xem lại</h2>
+<ol>
+<li>Danh sách có giá trị như thế nào trong trang Web ?
+<li>Tag HTML nào được dùng cho danh sách không có thứ tự?
+<li>Tag HTML nào được dùng cho danh sách có thứ tự?
+<li>Phải làm thế nào để tạo ra danh sách lồng nhau ?
+<li>Những bước nào được sử dụng trong việc thêm một danh sách vào tài liệu HTML
+của bạn?
+</ol> 
+<h2>Thực tập tự do</h2>
+Có thể bạn muốn có kinh nghiệm trong việc chuyển đổi một danh sách có thứ tự thành
+một danh sách không có thứ tự. Đồng thời bạn cũng muốn thêm một danh sách có thứ tự
+hay không có thứ tự vào trong tài liệu WWW của bạn. Hãy chắc chắn rằng nó được thể
+hiện đúng trong browser của bạn. Bạn có tạo được các danh sách có danh sách con không ?
+<hr>
+<h2>Đi đến phần tiếp theo ....</h2>
+Hãy làm thêm gì đó để không chỉ có chữ -- thêm hình ảnh vào
+trang Web của bạn.
+<p>
+<h5> ĐẾN....  |  <a HREF="lessons.htm">Mục Lục</a> | 
+<a HREF="tut5.htm">Bài trước:  &quot;Làm việc với Style&quot;</a> |
+<a HREF="tut7.htm">Bài kế tiếp:  &quot;Hình ảnh&quot;</a> |
+</h5>
+<hr>
+<b>Soạn thảo HTML</b>  Bài 6: Danh sách, Danh sách, và Danh sách<br>
+<address>
+©1995, 1996 <a HREF="http://www.mcli.dist.maricopa.edu/">
+Maricopa Center for Learning and Instruction (MCLI)</a><br>
+<a HREF="http://www.mcli.dist.maricopa.edu/mcccd/">Maricopa County Community College District</a>, Arizona<p>
+The Internet Connection at MCLI is 
+<a href="http://www.mcli.dist.maricopa.edu/alan/">Alan Levine --}</a><br>
+Comments to <b><a HREF="mailto:levine@maricopa.edu">levine@maricopa.edu</a></b>
+</address>
+<p>
+<tt>URL: http://www.mcli.dist.maricopa.edu/tut/tut6.html</tt>
+<p>
+</body>
+</html>
+
+
