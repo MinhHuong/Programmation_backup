@@ -153,12 +153,9 @@ int Date::intervalle(const Date & d) const {
       d = temp;
     }
 
-  int distance = ( nombre_jours()-my_jour ) + d.my_jour;
-
-  if ( d.my_annee-my_annee == 0 )
-    {
-      
-      
-
-    }
+  
 }
+
+/*
+  13/2/2008  ---> 30/5/2010
+*/
