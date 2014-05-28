@@ -1,5 +1,4 @@
 	CLO
-	MOV	CL,BC
 
 ASCII_INPUT:			;;; Program : convert decimal to complement by 2 (binary)
 	IN	00		;;; (maximum : 127)
@@ -7,56 +6,32 @@ ASCII_INPUT:			;;; Program : convert decimal to complement by 2 (binary)
 	CMP	AL,0D		;;; Press Enter to stop typing the number
 	JZ	COMPARE
 
-	MOV	[CL],AL
-	INC	CL		
+	PUSH	AL		
 	INC	DL		;;; Count the figures (eg, 123 has 3 figures)
 	
 	JMP	ASCII_INPUT
 
-COMPARE:
-	MOV	AL,0
-	DEC	CL
+;;;===================================
+CONVERT_TO_10:
 
-	CMP	DL,3
-	JZ	_3_NUMBERS
+UNITY:
+	POP	BL
+	ADD	AL,BL
+	DEC	DL
+	MOV	CL,A
+
+MORE_THAN_UNITY:
+	CMP	DL,0
+	JZ	CONVERT_TO_2
+
+	POP	BL
+	MUL	BL,CL
+	ADD	AL,BL
+	MUL	CL,A
+	DEC	DL
+
+	JMP	MORE_THAN_UNITY
 	
-	CMP	DL,2
-	JZ	_2_NUMBERS
-
-	CMP	DL,1
-	JZ	_1_NUMBER
-
-;;;================================	
-_3_NUMBERS:
-	CALL	B2		;;; Calculate the unit
-	ADD	AL,BL
-
-	CALL	B2		;;; Calculate the tens column
-	MUL	BL,A		;;; A(16)=10(10)
-	ADD	AL,BL
-
-	CALL	B2		;;; Calculate the hundreds column
-	MUL	BL,64		;;; 64(16)=100(10)
-	ADD	AL,BL
-
-	JMP	CONVERT_TO_2	;;; After these operations, the final result is saved in AL
-
-_2_NUMBERS:
-	CALL	B2
-	ADD	AL,BL
-
-	CALL	B2
-	MUL	BL,A
-	ADD	AL,BL
-	
-	JMP	CONVERT_TO_2
-
-_1_NUMBER:
-	CALL	B2
-	ADD	AL,BL
-
-	JMP	CONVERT_TO_2
-
 ;;;===================================
 CONVERT_TO_2:
 	MOV	CL,C7
@@ -112,15 +87,7 @@ FINISH_BY_0:
 	MOV	AL,31
 	MOV	[CL],AL
 	JMP	FINISH
-	
-;;;===================================
-	ORG	B2		;;; A program converting from ASCII code to Decimal number
-				;;; ( eg, 31(ASCII) = 1(Decimal) )
-	MOV	BL,[CL]
-	SUB	BL,30
-	DEC	CL
 
-	RET
 ;;;===================================
 FINISH:
 	END

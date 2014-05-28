@@ -10,15 +10,12 @@ class Date {
   int *annee;
 
  public:
-  //Constructeur
   Date();
   Date(int j, int m, int a);
   Date(const Date &d);
 
-  //Destructeur
   ~Date();
 
-  //Accesseur
   void setDate(int j, int m, int a);
   void afficherDate();
   int getJour();
