@@ -16,10 +16,10 @@ INPUT:
 	JZ	PLACE_IN_RAM	
 
 	CMP	AL,39		; Xet xem AL la ky tu 0...9 hay A...F
-	JS	_0_TO_1
+	JS	_0_TO_9
 	JNS	_A_TO_F
 
-_0_TO_1:
+_0_TO_9:
 	SUB	AL,30
 	JMP	CONTINUE
 
@@ -34,7 +34,7 @@ CONTINUE:
 
 ;;;=============================================
 PLACE_IN_RAM:			; Tinh vi tri hien thi tren RAM ( day bit hien thi tu sau ra truoc )
-	MUL	DL,4		
+	MUL	DL,4	
 	SUB	DL,1		
 	MOV	CL,C0
 	ADD	CL,DL

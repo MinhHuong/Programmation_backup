@@ -80,10 +80,10 @@ PRINT:
 	MOV	CL,[AL]		; Gan so dau tien can in vao CL ( [AL] chua dia chi tro den so can in )
 
 	CMP 	CL,A		; So sanh gia tri trong CL voi 10
-	JS 	_0_TO_1		; CL < 10   --> ky tu he 16 nam trong khoang [0,9]
+	JS 	_0_TO_9		; CL < 10   --> ky tu he 16 nam trong khoang [0,9]
 	JNS 	A_TO_F		; Nguoc lai --> ky tu he 16 nam trong khoang [A,F]
 
-_0_TO_1:			
+_0_TO_9:			
 	ADD 	CL,30		; Cong 30 vao CL de hien thi theo ma ASCII so 0...9
 	MOV 	[BL],CL		
 		

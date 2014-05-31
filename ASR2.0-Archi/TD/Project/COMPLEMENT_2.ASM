@@ -46,8 +46,8 @@ CONVERT_AND_INVERT:		; Chuyen tu he so 10 sang he so 2 dong thoi dao nguoc cac b
 	PUSH	AL			
 	POP	BL
 	
-	MOD	BL,2		
-	ADD	BL,30		
+	MOD	BL,2
+	ADD	BL,30
 
 	CMP	BL,30		; So sanh bit de dao nguoc
 	JZ	_0_TO_1
@@ -63,7 +63,7 @@ CONTINUE:
 	MOV	[CL],BL		; Gan gia tri cua BL vao dia chi CL tro toi
 	DEC	CL		; Giam vi tri cua CL
 
-	DIV	AL,2		
+	DIV	AL,2
 
 	DEC	DL		
 	CMP	DL,0		; Qua trinh convert-invert se ngung lai khi 8 bit da duoc xu ly

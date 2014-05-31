@@ -1,0 +1,20 @@
+///////////////////////////////////////////////////////////////////////////////
+// main.cc
+///////////////////////////////////////////////////////////////////////////////
+
+#include <cstdlib>
+#include <iostream>
+#include "Liste.h"
+#include "Etudiant.h"
+#include "gestion.h"
+
+using namespace std;
+
+
+int main()
+{
+  Liste<Etudiant> liste;
+  
+  return EXIT_SUCCESS;
+}
+
