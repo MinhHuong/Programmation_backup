@@ -7,9 +7,92 @@
 
 using namespace std;
 
-// ----------------------------------------------------------------------------
-// Quelques fonctions utiles.
+/*----------------------------- PROTOTYPES -----------------------------*/
 
+//Quelques fonctions utiles :
+void erreur( const string & msg );
+bool estUnOperateur( const string & expr );
+bool estUnNombre( const string & expr );
+float valeur( const string & expr_num );
+int priorite( char op );
+
+void analyseExpr( string expr_complete );
+
+//Exercice 1 :
+float evalExprPost( string expression );
+float oper2( float valg, char op, float vald );
+
+//Exercice 2 :
+float evalSecuriseeExprPost( string expression );
+
+//Exercice 3 :
+string exprInfVersExprPost( string expression );
+
+//Exercice 4 :
+string exprInfVersExprPost2( string expression );
+
+//Fonctions supplementaires :
+void menu();
+void choisir( char & choix );
+void cinExpression( string & expression );
+
+/*------------------------- PROGRAMME PRINCIPAL -------------------------*/
+
+int main()
+{
+  string expression;
+  char choix;
+
+  while(1)
+    {
+      menu();
+      choisir( choix );
+
+      switch ( choix ) 
+	{
+	case '1':
+	  {
+	    cinExpression( expression );
+	    cout << "Resultat = " << evalSecuriseeExprPost( expression ) << endl;
+	    break;
+	  }
+
+	case '2':
+	  {
+	    cinExpression( expression );
+	    cout << "Expression postfixee : " << exprInfVersExprPost2( expression ) << endl;
+	    break;
+	  }
+
+	case '3':
+	  {
+	    string expr_transf;
+
+	    cinExpression( expression );
+	    expr_transf = exprInfVersExprPost2( expression );
+	    cout << "Resultat = " << evalSecuriseeExprPost( expr_transf );
+	    break;
+	  }
+
+	case '4':
+	  {
+	    cout << "Au revoir" << endl;
+	    exit(-1);
+	    break;
+	  }
+
+	default:
+	  {
+	    cout << "Erreur saisie. Veuillez reessayer !" << endl;
+	    break;
+	  }
+	}
+    }
+  
+  return 0;
+}
+
+/*------------------------------ FONCTIONS -----------------------------*/
 
 //- Affiche le message [msg] sur la sortie standard et force l'arret du programme.
 //- @param msg le message a afficher.
@@ -351,13 +434,34 @@ string exprInfVersExprPost( string expression )
    return postfix;
  }
 
- //- Programme principal.
- int main()
- {
-   string expression;
-   getline( cin, expression );
+//--------------------------------------------
+// Fonctions supplementaires
+void menu() 
+{
+  cout << endl << "*---------------------------------------------------------*" << endl
+       << "|                                                         |" << endl
+       << "|    MANUPULATION DES EXPRESSIONS POSTFIXEES / INFIXEES   |" << endl
+       << "|                                                         |" << endl
+       << "|                                                         |" << endl
+       << "|   -1- Calculer la valeur d'une expression postfixee     |" << endl
+       << "|   -2- Transformer une expression infixee en postfixee   |" << endl
+       << "|   -3- Calculer la valeur d'une expression infixee       |" << endl 
+       << "|   -4- Quitter                                           |" << endl
+       << "|                                                         |" << endl
+       << "*---------------------------------------------------------*" << endl;
+}
 
-   cout << exprInfVersExprPost2( expression ) << endl;
 
-  return 0;
+void choisir( char & choix )
+{
+  cout << "Votre choix : ";
+  cin >> choix;
+}
+
+
+void cinExpression( string & expression )
+{
+  cout << "Entrez l'expression : ";
+  cin.ignore();
+  getline( cin, expression );
 }

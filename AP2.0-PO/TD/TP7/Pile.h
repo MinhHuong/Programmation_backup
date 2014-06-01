@@ -1,13 +1,9 @@
-///////////////////////////////////////////////////////////////////////////////
-// Pile.h
-// Version : ID 2008/03/28 modification class<==> typename + include .cxx dans .h
-///////////////////////////////////////////////////////////////////////////////
-
 #ifndef _PILE_H_
 #define _PILE_H_
 
 //- Definit un modele pour manipuler une pile de taille maximale donnee.
 template<typename TInfo>
+
 class Pile
 {
 
