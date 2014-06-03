@@ -1,18 +1,6 @@
-///////////////////////////////////////////////////////////////////////////////
-// Liste.h
-//
-// Author: JOL 2000/10/20
-// Version : MM 2002/02/20 quelques détails de présentation 
-// Version : ID 2002/03/19 prototype insererApres comme en ASD
-// Version : MM 2004/03/05 Liste<Etudiant>,
-//                         suppression de afficher()
-// Version : ID 2008/03/28 modification class<==> typename + include .cxx dans .h
-///////////////////////////////////////////////////////////////////////////////
-
 #ifndef _LISTE_H_
 #define _LISTE_H_
 
-// Utilise la STL.
 #include <list>
 #include <string>
 
@@ -20,8 +8,9 @@ using namespace std;
 
 //- Definit un modele pour manipuler une liste de taille quelconque.
 template<typename TInfo>
+
 class Liste {
-public :
+ public :
   // Alias pour 'TIterator'.
   typedef typename list<TInfo>::iterator TIterator;
   // ------------------------- services standards -----------------------------
@@ -49,7 +38,6 @@ public :
 
  private:
   mutable list<TInfo> m_list;
-
 };
 
 // idem que pour les fichiers Pile

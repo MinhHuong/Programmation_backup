@@ -1,6 +1,4 @@
-###############################################################################
-
-SRC_CXX=Etudiant.cc
+SRC_CXX=Etudiant.cc gestion.cc
 MAIN_CXX=main.cc
 
 BIN_CXX=$(MAIN_CXX:.cc=)
@@ -11,8 +9,6 @@ LDXX=g++
 #------- Mettre en commentaires l'une des deux lignes suivantes --------------
 #OPT_TRACE=
 OPT_TRACE=-DTRACE_LISTE
-
-###############################################################################
 
 OBJ_CXX=$(SRC_CXX:.cc=.o)
 MAIN_OBJ_CXX=$(MAIN_CXX:.cc=.o)

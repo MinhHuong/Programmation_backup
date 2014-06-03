@@ -1,18 +1,6 @@
-///////////////////////////////////////////////////////////////////////////////
-// Liste.cxx
-//
-// Author: JOL 2000/10/20
-// Version : MM 2002/02/20 modifs mineures
-// Version : ID 2002/03/19 prototype insererApres comme en ASD
-// Version : MM 2004/03/05 suppression de afficher()
-// Version : ID 2008/03/28 modification class<==> typename + include .cxx dans .h
-///////////////////////////////////////////////////////////////////////////////
-
 #include <cstdlib>
 #include <iostream>
 
-///////////////////////////////////////////////////////////////////////////////
-// ------------------------- Standard services -----------------------------
 template<typename TInfo>
 Liste<TInfo>::Liste()
   : m_list()
@@ -20,7 +8,7 @@ Liste<TInfo>::Liste()
 #ifdef TRACE_LISTE
   cout << "[Liste()] Liste vide creee." 
        << endl;
-#endif // #ifdef TRACE_LISTE
+#endif
 }
 
 template<typename TInfo>
@@ -30,7 +18,7 @@ Liste<TInfo>::~Liste()
 #ifdef TRACE_LISTE
   cout << "[~Liste()] Liste detruite." 
        << endl;
-#endif // #ifdef TRACE_LISTE
+#endif 
 }
 
 template<typename TInfo>
@@ -55,8 +43,6 @@ Liste<TInfo>::operator=( const Liste & other )
   return *this;
 }
 
-///////////////////////////////////////////////////////////////////////////////
-// ------------------------- List services ---------------------------------
 template<typename TInfo>
 typename Liste<TInfo>::TIterator
 Liste<TInfo>::adressePremier() const
@@ -64,7 +50,7 @@ Liste<TInfo>::adressePremier() const
 #ifdef TRACE_LISTE
   cout << "[adressePremier()] Adresse du premier element retournee." 
        << endl;
-#endif // #ifdef TRACE_LISTE
+#endif 
   return m_list.begin();
 }
 
@@ -79,7 +65,7 @@ Liste<TInfo>::adresseSuivant( TIterator adr ) const
 #ifdef TRACE_LISTE
   cout << "[adresseSuivant( TIterator adr )] Adresse suivante retournee." 
        << endl;
-#endif // #ifdef TRACE_LISTE
+#endif 
   return ++adr;
 }
 
@@ -93,7 +79,7 @@ Liste<TInfo>::valeurElement( TIterator adr ) const
 #ifdef TRACE_LISTE
   cout << "[valeurElement()] Valeur de l'element pointe : " << *adr 
        << endl;
-#endif // #ifdef TRACE_LISTE
+#endif
   return *adr;
 }
 
@@ -170,9 +156,6 @@ Liste<TInfo>::null() const
 {
   return m_list.end();
 }
-
-///////////////////////////////////////////////////////////////////////////////
-// ------------------------- services pour debuguer ----------------------
 
 
 template<typename TInfo>
