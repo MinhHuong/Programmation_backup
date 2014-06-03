@@ -15,6 +15,12 @@ float moyenneNotes( Liste<Etudiant> l );
 // Exercice 37 : ===========================
 void ajouterTrie( Liste<Etudiant> & l, Etudiant etd );
 bool estTrie( Liste<Etudiant> l );
+
+// Fusionner 1 liste
+void trier_insert( Liste<Etudiant> src, TAdresse & adr_src, Liste<Etudiant> & dest, TAdresse & adr_dest );
+
+void insert_rest( Liste<Etudiant> src, TAdresse & adr_src, Liste<Etudiant> dest, TAdresse & adr_desr );
+
 void fusionnerListe( Liste<Etudiant> L1, Liste<Etudiant> L2, Liste<Etudiant> & L3 );
 
 #endif

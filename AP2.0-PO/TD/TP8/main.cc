@@ -26,7 +26,7 @@ int main()
 
   fusionnerListe( liste_1, liste_2, liste_triee );
   
-  cout << "\n====== Affichage de la 2e liste Etudiant ======\n";
+  cout << "\n====== Affichage de la 3e liste Etudiant ======\n";
   afficherListe( liste_triee );
 
   /*

@@ -119,57 +119,49 @@ bool estTrie( Liste<Etudiant> l )
 }
 
 // 37.3 : ===================================
+void trier_insert( Liste<Etudiant> src, TAdresse & adr_src, Liste<Etudiant> & dest, TAdresse & adr_dest )
+{
+  dest.insererApres( *adr_src, adr_dest );
+  adr_src = src.adresseSuivant( adr_src );
+}
+
+void insert_rest( Liste<Etudiant> src, TAdresse & adr_src, Liste<Etudiant> dest, TAdresse & adr_dest )
+{
+  dest.insererApres( *adr_src, adr_dest );
+  adr_src = src.adresseSuivant( adr_src );
+  adr_dest = src.adresseSuivant( adr_dest );
+}
+
 void fusionnerListe( Liste<Etudiant> L1, Liste<Etudiant> L2, Liste<Etudiant> & L3 )
 {
-  TAdresse adr_1 = L1.adressePremier(), adr_2 = L2.adressePremier(), adr_3 = L3.adressePremier();
-
-  float note_1, note_2;
+  TAdresse adr_1 = L1.adressePremier(), adr_2 = L2.adressePremier();
 
   Etudiant fictif;
   L3.insererEnTete( fictif );
+
+  TAdresse adr_3 = L3.adressePremier();
   
   while ( adr_1 != L1.null() && adr_2 != L2.null() )
     {
-      note_1 = adr_1->note();
-      note_2 = adr_2->note();
-
-      if ( note_1 < note_2 ) 
-	{
-	  L3.insererApres( *adr_1, adr_3 );
-	  adr_1 = L1.adresseSuivant( adr_1 );
-	}
-      else if ( note_1 > note_2 )
-	{
-	  L3.insererApres( *adr_2, adr_3 );
-	  adr_2 = L2.adresseSuivant( adr_2 );
-	}
-      else  // note_1 == note_2
-	{
-	  L3.insererApres( *adr_1, adr_3 );
-	  adr_1 = L1.adresseSuivant( adr_1 );
-	  adr_2 = L1.adresseSuivant( adr_2 );
-	}
+      if ( adr_1->note() <= adr_2->note() ) 
+	trier_insert( L1, adr_1, L3, adr_3 );
+      else
+	trier_insert( L2, adr_2, L3, adr_3 );
       
       adr_3 = L3.adresseSuivant( adr_3 );
     }
+  
 
   if ( adr_1 == L1.null() )
     {
       while (adr_2 != L2.null() )
-	{
-	  L3.insererApres( *adr_2, adr_3 );
-	  adr_3 = L3.adresseSuivant( adr_3 );
-	}
+	insert_rest( L2, adr_2, L3, adr_3 );
     }
   else if ( adr_2 == L2.null() )
     {
       while (adr_1 != L1.null() )
-	{
-	  L3.insererApres( *adr_1, adr_3 );
-	  adr_3 = L3.adresseSuivant( adr_3 );
-	}
+	insert_rest( L1, adr_1, L3, adr_3 );
     }
-
+  
   L3.supprimerEnTete();
 }
-
