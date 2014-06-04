@@ -1,7 +1,3 @@
-//////////////////////////////////////////////////////////////////////////////
-/// Etudiant.cc   
-//////////////////////////////////////////////////////////////////////////////
-
 #include <iostream>
 #include <string>
 #include "Etudiant.h"
@@ -65,5 +61,32 @@ ostream & operator<<(ostream &os, const Etudiant &e)
 {
   os << "nom:" << e.nom() << " - note:" << e.note() << endl;
   return os;
+}
+
+void Etudiant::lireFlux( fstream & f ) 
+{
+  string info;
+  int i=0;
+
+  while ( i<2 )
+    {
+      f >> info;
+
+      if ( isdigit( info[0] ) )
+	{
+	  m_note = atof( info.c_str() );  
+	  cout << m_nom << " " << m_note << endl;
+	}
+      else
+	m_nom = info;
+     
+      i++;
+    }
+}
+
+
+void Etudiant::ecrireFlux( fstream & f )
+{
+  f << m_nom << endl << m_note << endl;
 }
 

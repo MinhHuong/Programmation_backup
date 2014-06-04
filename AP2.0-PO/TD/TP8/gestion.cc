@@ -105,6 +105,9 @@ bool estTrie( Liste<Etudiant> l )
 {
   TAdresse adr = l.adressePremier(), next = l.adresseSuivant( adr );
 
+  if ( next==l.null() )
+    return true;
+
   while ( next != l.null() )
     {
       if ( adr->note() > next->note() )

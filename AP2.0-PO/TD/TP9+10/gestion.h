@@ -1,7 +1,3 @@
-///////////////////////////////////////////////////////////////////////////////
-// gestion.h
-///////////////////////////////////////////////////////////////////////////////
-
 #ifndef GESTION_H
 #define GESTION_H
 
@@ -11,19 +7,12 @@
 // Raccourci pour TAdresse
 typedef Liste<Etudiant>::TIterator TAdresse;
 
-
-// comme son nom l'indique...
 void afficherListe( const Liste<Etudiant> & liste );
 
-
 // crée une liste à partir d'un fichier
-// A FAIRE
+void fic2Liste( std::string nom_fic, Liste<Etudiant> & l );
 
-// sauvegarde une liste dans un fichier
-// A FAIRE 
-
-
-// et tout ce qui peut servir...
-// à compléter
+// sauvegarder une liste a un fichier
+void liste2Fix( std::string nom_fic, Liste<Etudiant> l );
 
 #endif

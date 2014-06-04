@@ -15,8 +15,9 @@ void menu()
        << "|     -2- Afficher la liste d'Etudiants                                   |" << endl
        << "|     -3- Renvoyer le rang d'un Etudiant dans la liste (selon son nom)    |" << endl
        << "|     -4- Calculer la moyenne de notes des Etudiants                      |" << endl
-       << "|     -5- Trier la liste d'Etudiants (selon leur note)                    |" << endl
-       << "|     -6- Quitter                                                         |" << endl
+       << "|     -5- Tester si la liste est deja triee                               |" << endl
+       << "|     -6- Trier la liste d'Etudiants (selon leur note)                    |" << endl
+       << "|     -7- Quitter                                                         |" << endl
        << "|                                                                         |" << endl
        << "*****-----------------------------------------------------------------*****" << endl;
 }
@@ -75,14 +76,23 @@ int main()
 	    break;
 	  } 
 
-	case '5': // trier la liste d'Etudiants ( selon la note )
+	case '5':
+	  {
+	    if ( estTrie( liste_etd ) )
+	      cout << "La liste est deja triee" << endl;
+	    else
+	      cout << "La liste n'est pas triee" << endl;
+	    break;
+	  }
+	  
+	case '6': // trier la liste d'Etudiants ( selon la note )
 	  {	    
 	    trierFauxJuste( liste_etd, liste_triee );
 	    afficherListe( liste_triee );
 	    break;
 	  }
 
-	case '6': // quitter
+	case '7': // quitter
 	  {
 	    cout << "Au revoir." << endl;
 	    break;
@@ -94,7 +104,7 @@ int main()
 	    break;
 	  }
 	}
-    } while ( choix != '6' );
+    } while ( choix != '7' );
 
   return EXIT_SUCCESS;
 }

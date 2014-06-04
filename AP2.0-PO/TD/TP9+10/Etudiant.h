@@ -1,12 +1,11 @@
-///////////////////////////////////////////////////////////////////////////////
-// Etudiant.h
-///////////////////////////////////////////////////////////////////////////////
-
 #ifndef ETUDIANT_H
 #define ETUDIANT_H
 
 #include <iostream>
+#include <fstream>
+#include <cstdlib>
 #include <string>
+#include <ctype.h>
 
 using namespace std;
 
@@ -26,8 +25,10 @@ class Etudiant
   string nom() const;
   float note() const;
 
-
   void saisie();
+
+  void lireFlux( fstream & f );
+  void ecrireFlux( fstream & f );
 };
 
 ostream & operator<<(ostream &os, const Etudiant &e);

@@ -1,6 +1,6 @@
 ###############################################################################
 
-SRC_CXX=Etudiant.cc gestion.cc
+SRC_CXX=Etudiant.cc gestion.cc tri.cc
 MAIN_CXX=main.cc
 
 BIN_CXX=$(MAIN_CXX:.cc=)
