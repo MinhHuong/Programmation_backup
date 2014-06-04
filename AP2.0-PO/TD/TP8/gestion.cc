@@ -6,6 +6,7 @@ void saisirListe(Liste<Etudiant> & l)
   int size;
   cout << "Le nombre d'etudiants : ";
   cin >> size;
+  cout << endl;
 
   Etudiant etd;
   l.insererEnTete( etd );
@@ -17,6 +18,7 @@ void saisirListe(Liste<Etudiant> & l)
       etd.saisie();
       l.insererApres( etd, adr );
       adr = l.adresseSuivant( adr );
+      cout << endl;
     }
 
   l.supprimerEnTete();
@@ -29,7 +31,7 @@ void afficherListe(Liste<Etudiant> l)
 
   while ( adr != l.null() )
     {
-      cout << *adr << endl;
+      cout << *adr;
       adr = l.adresseSuivant( adr ); 
     }
 }
@@ -78,7 +80,6 @@ float moyenneNotes( Liste<Etudiant> l )
 void ajouterTrie( Liste<Etudiant> & l, Etudiant etd )
 {
   float note = etd.note();
-  int cpt=0;
 
   TAdresse adr = l.adressePremier(), temp=l.null();
 
@@ -119,6 +120,31 @@ bool estTrie( Liste<Etudiant> l )
 }
 
 // 37.3 : ===================================
+void fusionnerListe( Liste<Etudiant> L1, Liste<Etudiant> L2, Liste<Etudiant> & L3 )
+{
+  TAdresse adr_1 = L1.adressePremier(), adr_2 = L2.adressePremier();
+
+  Etudiant fictif;
+  L3.insererEnTete( fictif );
+
+  TAdresse adr_3 = L3.adressePremier();
+
+  while ( adr_1 != L1.null() )
+    {
+      ajouterTrie( L3, *adr_1 );
+      adr_1 = L1.adresseSuivant( adr_1 );
+    }
+
+  while ( adr_2 != L2.null() )
+    {
+      ajouterTrie( L3, *adr_2 );
+      adr_2 = L2.adresseSuivant( adr_2 );
+    }
+
+  L3.supprimerEnTete();
+}
+
+// sans utiliser des fonctions predefinies
 void trier_insert( Liste<Etudiant> src, TAdresse & adr_src, Liste<Etudiant> & dest, TAdresse & adr_dest )
 {
   dest.insererApres( *adr_src, adr_dest );
@@ -132,10 +158,10 @@ void insert_rest( Liste<Etudiant> src, TAdresse & adr_src, Liste<Etudiant> dest,
   adr_dest = src.adresseSuivant( adr_dest );
 }
 
-void fusionnerListe( Liste<Etudiant> L1, Liste<Etudiant> L2, Liste<Etudiant> & L3 )
+void fusionnerListe_2( Liste<Etudiant> L1, Liste<Etudiant> L2, Liste<Etudiant> & L3 ) 
 {
   TAdresse adr_1 = L1.adressePremier(), adr_2 = L2.adressePremier();
-
+  
   Etudiant fictif;
   L3.insererEnTete( fictif );
 
@@ -164,4 +190,30 @@ void fusionnerListe( Liste<Etudiant> L1, Liste<Etudiant> L2, Liste<Etudiant> & L
     }
   
   L3.supprimerEnTete();
+}
+
+// 38 : ====================================
+void trierFauxJuste( Liste<Etudiant> l, Liste<Etudiant> & l_triee )
+{
+  Liste<Etudiant> l_faux, l_vrai;
+  Etudiant fictif;
+
+  l_faux.insererEnTete( fictif );
+  l_vrai.insererEnTete( fictif );
+  TAdresse adr_faux = l_faux.adressePremier(), adr_vrai = l_vrai.adressePremier();
+
+  TAdresse adr = l.adressePremier();
+
+  while ( adr != l.null() )
+    {
+      if ( adr->note()==0 )
+	trier_insert( l, adr, l_faux, adr_faux );
+      else
+	trier_insert( l, adr, l_vrai, adr_vrai );
+    }
+
+  l_faux.supprimerEnTete();
+  l_vrai.supprimerEnTete();
+
+  fusionnerListe( l_faux, l_vrai, l_triee );
 }

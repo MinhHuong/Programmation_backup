@@ -6,55 +6,96 @@
 
 using namespace std;
 
+void menu()
+{
+  cout << endl 
+       << "*****------------------------------ MENU -----------------------------*****" << endl
+       << "|                                                                         |" << endl
+       << "|     -1- Saisir une liste d'Etudiants                                    |" << endl
+       << "|     -2- Afficher la liste d'Etudiants                                   |" << endl
+       << "|     -3- Renvoyer le rang d'un Etudiant dans la liste (selon son nom)    |" << endl
+       << "|     -4- Calculer la moyenne de notes des Etudiants                      |" << endl
+       << "|     -5- Trier la liste d'Etudiants (selon leur note)                    |" << endl
+       << "|     -6- Quitter                                                         |" << endl
+       << "|                                                                         |" << endl
+       << "*****-----------------------------------------------------------------*****" << endl;
+}
+
+void cinChoice( char & choice )
+{
+  cout << "\n==> Votre choix : ";
+  cin >> choice;
+}
+
 typedef Liste<Etudiant>::TIterator TAdresse;
  
 int main()
 {  
-  Liste<Etudiant> liste_1, liste_2, liste_triee;
-  
-  cout << "\n====== Saisie de la 1ere liste Etudiant ======\n";
-  saisirListe( liste_1 );
+  char choix;
+  Liste<Etudiant> liste_etd, liste_triee;
 
-  cout << "\n====== Affichage de la 1ere liste Etudiant ======\n";
-  afficherListe( liste_1 );
+  do
+    {
+      menu();
+      cinChoice( choix );
+      cout << endl;
+      
+      switch( choix )
+	{
+	case '1': // saisir la liste d'Etudiants
+	  {
+	    saisirListe( liste_etd );
+	    break;
+	  }
 
-  cout << "\n====== Saisie de la 2e liste Etudiant ======\n";
-  saisirListe( liste_2 );
+	case '2': // afficher la liste d'Etudiants
+	  {
+	    cout << "===== Votre liste d'Etudiants =====\n";
+	    afficherListe( liste_etd );
+	    break;
+	  }
 
-  cout << "\n====== Affichage de la 2e liste Etudiant ======\n";
-  afficherListe( liste_2 );
+	case '3': // renvoyer le rang d'un Etudiant dans le liste ( selon le nom )
+	  {
+	    string name;
+	    cout << "Nom de l'etudiant : \n";
+	    cin.ignore();
+	    getline( cin, name );
+	    
+	    if ( rangListe( liste_etd, name )!=0 )
+	      cout << "L'etudiant se trouve au " << rangListe( liste_etd, name ) << " de la liste." << endl;
+	    else
+	      cout << "Cet etudiant n'existe pas dans la liste." << endl;
+	    break;
+	  }
 
-  fusionnerListe( liste_1, liste_2, liste_triee );
-  
-  cout << "\n====== Affichage de la 3e liste Etudiant ======\n";
-  afficherListe( liste_triee );
+	case '4': // calculer la moyenne des notes
+	  {
+	    cout << "La moyenne de notes des Etudiants : " << moyenneNotes( liste_etd ) << endl;
+	    break;
+	  } 
 
-  /*
-  cout << "\n====== Tester si une liste est triee (en fonction des notes) ======\n";
-  if ( estTrie( liste ) )
-    cout << "La liste est triee" << endl;
-  else
-    cout << "La liste n'est pas triee" << endl;
+	case '5': // trier la liste d'Etudiants ( selon la note )
+	  {	    
+	    trierFauxJuste( liste_etd, liste_triee );
+	    afficherListe( liste_triee );
+	    break;
+	  }
 
-  cout << "\n====== Ajout dans une liste trie ======\n";
-  Etudiant etd;
-  cout << "Etudiant : ";
-  etd.saisie();
-  ajouterTrie( liste, etd );
-  afficherListe( liste );
+	case '6': // quitter
+	  {
+	    cout << "Au revoir." << endl;
+	    break;
+	  }
 
+	default:
+	  {
+	    cout << "Erreur saisie. Veuillez ressayer." << endl;
+	    break;
+	  }
+	}
+    } while ( choix != '6' );
 
-  cout << "\n====== Le rang d'un etudiant dans la liste (en fonction de son nom) ======\n";
-  string name;
-  cout << "Entrez le nom : "; cin >> name;
-  cout << "Son rang : " << rangListe( liste, name ) << endl;
-
-  cout << "\n====== Moyenne des notes ======\n";
-  cout << "La moyenne des notes : " << moyenneNotes( liste ) << endl;
-  */
-
-  
-  
   return EXIT_SUCCESS;
 }
 

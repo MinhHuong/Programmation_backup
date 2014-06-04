@@ -49,16 +49,17 @@ float Etudiant::note() const
 
 void Etudiant::saisie()
 {
-  cout << "nom de l'etudiant ?" << endl;
-  cin >> m_nom;
-  cout << "note de l'etudiant ?" << endl;
+  cout << "Nom de l'etudiant : " << endl;
+  cin.ignore();
+  getline(cin, m_nom);
+  cout << "Note de l'etudiant : ";
   cin >> m_note;
 }
 
 
 ostream & operator<<(ostream &os, const Etudiant &e)
 {
-  os << "nom:" << e.nom() << " - note:" << e.note() << endl;
+  os << "Nom : " << e.nom() << " - Note : " << e.note() << endl;
   return os;
 }
 
