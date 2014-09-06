@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>JavaScript : Utilisation des structures de conditions</title>
+    <script>
+		var _mois = prompt("Entrez le mois : ");
+		var mois = eval(_mois);
+		var jour;
+		
+		switch(mois)
+		{
+			case 1:
+			case 3:
+			case 5:
+			case 7:
+			case 8:
+			case 10:
+			case 12:
+			{
+				jour = 31;
+				break;
+			}	
+			
+			case 4:
+			case 6:
+			case 11:
+			{
+				jour = 30;
+				break;
+			}
+			
+			case 2:
+			{
+				var bissextile = prompt("Annee bissextile ? (y/n) : ");
+				if(bissextile == "y")
+					jour = 29;
+				else
+					jour = 28;
+				break;
+			}
+			
+			default:
+			{
+				jour = -1;
+				break;
+			}
+		}
+		
+		if(jour != -1)
+			alert(jour);
+		else
+			alert("Invalide");
+    </script>
+  </head>
+</html>

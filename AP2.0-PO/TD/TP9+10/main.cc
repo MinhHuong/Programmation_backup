@@ -5,6 +5,7 @@
 #include "Liste.h"
 #include "Etudiant.h"
 #include "gestion.h"
+#include "tri.h"
 
 using namespace std;
 
@@ -12,9 +13,12 @@ using namespace std;
 int main()
 {
   Liste<Etudiant> liste;
+  
+  fic2Liste( "liste2", liste );
+  
+  TAdresse debut = liste.adressePremier(), fin = liste;
 
-  fic2Liste( "liste1", liste );
-  liste2Fix( "liste1_copy", liste );
+  //afficherListe( liste );
   
   return EXIT_SUCCESS;
 }

@@ -1,0 +1,38 @@
+<!DOCTYPE>
+
+<html>
+	<head>
+		<script>
+			var sum = 0;
+			
+			function forSomme()
+			{
+				for(i = 1 ; i <= 10 ; i++)
+					sum += i;
+			}
+			
+			function whileSomme()
+			{
+				var count = 1;
+				while(count <= 10)
+				{
+					sum += count;
+					count++;
+				}
+			}
+			
+			function doWhileSomme()
+			{
+				var count = 1;
+				do
+				{
+					sum += count;
+					count++;
+				} while(count <= 10);
+			}
+			
+			forSomme();
+			alert("Somme = " + sum);
+		</script>	
+	</head>
+</html>

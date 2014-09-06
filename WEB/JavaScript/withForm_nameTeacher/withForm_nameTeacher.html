@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Form : remplir les informations d'un enseignant</title>
+    <script>
+      document.write("<b> <font face=Arial size=5pt>");
+	  document.write("Fiche d'informations de l'Enseignant <br><br>");
+    </script>
+  </head>
+
+  <body>
+    <form name="saisir">
+      <input type="text" value="Nom" readonly>
+      <input type="text" name="nom"><br>
+      <input type="text" value="Prenom" readonly>
+      <input type="text" name="prenom"><br>
+      <input type="text" value="Date de naissance" readonly>
+      <input type="text" name="date"><br>
+      <input type="text" value="Lieu de naissance" readonly>
+      <input type="text" name="lieu"><br><br>
+      <input type="button" value="ENREGISTRER" onClick="valider(saisir.nom, saisir.prenom, saisir.date, saisir.lieu)">
+    </form>
+
+    <script src="withForm_nameTeacher.js"></script>
+  </body>
+</html>

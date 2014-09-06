@@ -15,7 +15,7 @@ INPUT:
 	CMP	AL,0D		; Neu nguoi dung nhap ENTER --> chuong trinh ngung nhan input
 	JZ	PLACE_IN_RAM	
 
-	CMP	AL,39		; Xet xem AL la ky tu 0...9 hay A...F
+	CMP	AL,3A		; Xet xem AL la ky tu 0...9 hay A...F
 	JS	_0_TO_9
 	JNS	_A_TO_F
 

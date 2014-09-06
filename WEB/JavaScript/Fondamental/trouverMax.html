@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>JaveScript : Utilisation des structures de conditions</title>
+    <script>
+      function trouverMax()
+      {
+		var _nb1 = prompt("Entrez le 1er nombre : ");
+		var _nb2 = prompt("Entrez le 2e nombre : ");
+		var nb1 = eval(_nb1);
+		var nb2 = eval(_nb2);
+      
+		if(nb1 > nb2)
+			alert(nb1 + " est le nombre maximal");
+		else if(nb2 > nb1)
+			alert(nb2 + " est le nombre maximal");
+		else
+			alert("Les deux nombres sont egaux");
+      }
+
+      trouverMax();
+    </script>
+  </head>
+</html>

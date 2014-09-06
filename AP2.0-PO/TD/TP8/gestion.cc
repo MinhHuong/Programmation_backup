@@ -198,6 +198,22 @@ void fusionnerListe_2( Liste<Etudiant> L1, Liste<Etudiant> L2, Liste<Etudiant> &
 // 38 : ====================================
 void trierFauxJuste( Liste<Etudiant> l, Liste<Etudiant> & l_triee )
 {
+  TAdresse adr = l.adressePremier(), temp;
+  
+  while ( adr!=l.null() )
+    {
+      if ( adr->note()==0 &&
+	   adr!=l.adressePremier() )
+	{
+	  l.insererEnTete( *adr );
+	  l.supprimerApres( temp );
+	}
+      
+      temp = adr;
+      adr = l.adresseSuivant();
+    }
+  
+  /*
   Liste<Etudiant> l_faux, l_vrai;
   Etudiant fictif;
 
@@ -219,4 +235,5 @@ void trierFauxJuste( Liste<Etudiant> l, Liste<Etudiant> & l_triee )
   l_vrai.supprimerEnTete();
 
   fusionnerListe( l_faux, l_vrai, l_triee );
+  */
 }

@@ -1,0 +1,269 @@
+body {
+    background: #F5F5F4;
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+}
+
+.container {
+    margin: 0 auto;
+    width: 950px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    color: red;
+    text-decoration: underline;
+}
+       
+/*----------------------- HEADER ----------------------*/
+
+#header {
+    background: url(../img/bg-header.png) repeat-x center top;
+    height: 100px;
+}
+
+#site-title {
+    color: #FFF;
+    float: left;
+    font-size: 45px;
+    font-weight: bold;
+    padding: 15px 0 0 0;
+}
+
+#header-btns {
+    float: right;
+    padding: 5px;
+}
+
+#header-btns ul {
+    float: left;
+}
+
+#header-btns li a {
+    background: #5C5C55;
+    color: #FFF;
+    display: block;
+    margin: -3px 10px 10px 0;
+    padding: 2px 0;
+    text-align: center;
+    text-decoration: none;
+    width: 120px;
+}
+
+/*---------------------- TEASER -----------------------*/
+
+#teaser {
+    margin: 50px;
+    padding: 20px;
+    background-image: url(../img/bg-teaser.png);
+    width: 600px;
+    text-align: justify;
+}
+
+#teaser span {
+    font-weight: bold;
+}
+
+#teaser-content {
+    line-height: 25px;
+    margin-bottom: 10px;
+}
+
+/*----------------------- COVER -----------------------*/
+
+#cover {
+    margin-left: 50px;
+    clear: both;
+}
+
+.title-bubble {
+    background : #D50023 url(../img/bubble_start.png) no-repeat left top ;
+    float: left;
+    font-size: 18px;
+    height: 42px;
+    text-transform: uppercase;
+    color: white;
+}
+
+.title-bubble-content {
+    background: url(../img/bubble_slide.png ) no-repeat right top;
+    display: block;
+    height: 33px;
+    margin: 0 0 0 23px;
+    padding: 9px 23px 0 0;
+}
+
+.title-bubble-highlight {
+    background-color: red;
+    color: black;
+}
+
+/*------------------- CONSULTATION --------------------*/
+
+#consultation {
+    clear: both;
+    margin-left: 50px;
+    padding-top: 10px;
+}
+
+h3 {
+    border-bottom: 1px dotted black;
+    width: 500px;
+}
+
+#consultation img {
+    float: left;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+#consultation .contenu {
+    width: 630px;
+    line-height: 25px;
+    font-size: 15px;
+    text-align: justify;
+    margin-top: 5px;
+}
+
+
+ul > li:first-child {
+    margin-top: 10px;
+}
+    
+li {
+    line-height: 20px;
+    font-size: 15px;
+}
+
+/*------------ CONSULTATION-BTN-PARTICIPATE -----------*/
+
+.consultation-btn-participate {
+    margin-right: 200px;
+    font-size: 15px;
+    width: 120px;
+    padding: 10px;
+    text-align: center;
+    background: url(../img/btn-grey.png) no-repeat center top;
+    position: absolute;
+    top: 530px;
+    right: 120px;
+}
+
+span.info {
+    color: orange;
+}
+    
+/*------------------ CONSULTATION-TABS ----------------*/
+
+ul.tabs {
+    border-bottom: 1px solid #CE003D ;
+    height: 34px;
+    width: 100%;
+}
+
+ul.tabs li {
+    display: block;
+    float: left ;
+}
+
+ul.tabs li a {
+    display: block ;
+    padding: 10px 30px ;
+}
+
+ul.tabs li a.selected {
+    background: #F5F5F4 ;
+    border: 1px solid #CE003D;
+    border-width: 1px 1px 0;
+    margin : 1px 0 0 0;
+}
+
+/*----------------------- TABLE -----------------------*/
+
+#consutaltion-tabs table {
+    margin-top: 10px;
+    width: 100%;
+}
+
+#consutaltion-tabs th, #consutaltion-tabs td {
+    padding: 10px;
+}
+
+#consutaltion-tabs th {
+    font-weight: bold;
+    text-align: left;
+}
+
+#consutaltion-tabs tr.odd {
+    background: #E9E9E6
+}
+
+/*----------------------- SIDEBAR ---------------------*/
+
+#sidebar {
+    float: right;
+    width: 190px ;
+}
+
+#sidebar-menu {
+ margin: 10px 0 20px ;
+}
+
+#sidebar-menu li a
+ {
+
+background :
+ #003399 url(../img/arrow-right-blue.png) no-repeat 10px center
+display : block ;
+// texte noir
+color : # FFF ;
+// laisser un pixel d ’ ecart avec le prochain element en dessous
+margin-bottom : 1 px ;
+padding : 4 px 0 4 px 25 px ;
+// largeur de la zone de 165 pixels
+width : 165 px ;
+}
+# sidebar - menu li . expanded li {
+border - bottom : 1 px dashed #444;
+}
+// proprietes communes aux liens d ’ un menu etendu
+# sidebar - menu
+ li.expanded a
+ {
+// fond de couleur CE003D et une fleche rouge a la fin du texte
+background :
+ #CE003D url(../img/arrow-down-red.png) no-repeat 170px center
+padding : 4 px 25 px 4 px 10 px ;
+width : 155 px ;
+}
+// proprietes communes aux <li > d ’ un menu etendu
+# sidebar - menu
+ li.expanded li
+ {
+// le bord du haut est un trait discontinu de couleur 444
+border-bottom : 1 px
+ dashed #444 ;
+}
+// proprietes des liens actifs
+# sidebar - menu
+ li.expanded li a
+ {
+// fond transparent et fleche rouge
+background : transparent
+url(../img/arrow-right-grey-on.png) no-repeat 5px center ;
+color : #003399;
+padding : 4 px 0 4 px 20 px ;
+width : 170 px ;
+}
+// proprietes des liens desactives
+# sidebar - menu
+ li.expanded li.disabled a
+ {
+// fleche grise
+background : transparent
+url(../img/arrow-right-grey-off.png) no-repeat 5px center ;
+color : #979797;
+}

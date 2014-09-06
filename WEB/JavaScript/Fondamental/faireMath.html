@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>JavaScript : faire des calculs</title>
+    <script Language="javaScript">
+      faireMaths();
+      function faireMaths() 
+      {
+      var _a = prompt("Entrez a : ");
+      var a = eval(_a);
+      
+      var _b = prompt("Entrez b : ");
+      var b = eval(_b);
+      
+      var somme = a + b;
+      var dif = a - b;
+      var prod = a * b;
+      var quot = a / b;
+      var res = a % b;
+
+      alert("a + b = " + somme);
+      alert("a - b = " + dif);
+      alert("a x b = " + prod);
+      alert("a : b = " + quot);
+      alert("a % b = " + res);
+      }
+    </script>
+  </head>
+</html>

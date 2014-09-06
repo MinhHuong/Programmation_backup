@@ -1,0 +1,91 @@
+body {
+    margin: 70px 0px 70px 70px;
+    background: #BBF9AC;
+}
+
+/*------- Les lignes colores au top de la page --------*/
+
+#decor1, #decor2, #decor3, #decor4 {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background-clip: content-box;
+}
+
+#decor1 {
+    background-color: #07334C;
+    top: 0;
+}
+
+#decor2 {
+    background-color: #3B9677;
+    top: 10px;
+}    
+
+#decor3 {
+    background-color: #62B685;
+    top: 20px;
+}
+
+#decor4 {
+    background-color: #A6E999;
+    top: 30px;
+}
+
+/*------------- accueil, boutique, contact ------------*/
+
+#choix a {
+    text-decoration: none;
+    font-size: 300%;
+    color: #238366;
+}
+
+#choix span {
+    margin-right: 95px;
+    font-size: 130%;
+    margin-bottom: 50px;
+    font-family: "Lucida Console", Monaco, monospace;
+    font-weight: bold;
+    text-shadow: 2px 2px #0B0B61;
+}
+    
+/*---------- Les boites de contenu de la page ---------*/
+
+#bonjour, #corps {
+    border: 2px solid gray;
+    padding: 0px 25px 0px 25px;
+    margin-top: 30px;
+    
+    width: 550px;
+    float: left;
+    
+    font-size: 120%;
+    background-color: white;
+    color: #002333;
+    text-align: justify;
+    font-family: "Arial", Helvetica, sans-serif;
+}
+
+/*----------------- Autres decoration -----------------*/
+
+video {
+    float: right;
+    margin-top: 30px;
+    margin-right: 100px;
+}
+
+#decorText { /* ma belle boutique de surf */
+    color: #052f50;
+    position: absolute;
+    top: 260px;
+    right: -240px;
+
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+
+    font-family: URW Chancery L, cursive;
+    font-size: 400%;
+}
+
+

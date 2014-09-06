@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Form : Verifier le nom complet</title>
+  </head>
+
+  <body>
+    <form name="saisirNom">
+      <p>Entrez le prenom puis le nom</p>
+      <input type="text" name="prenom">
+      <input type="text" name="nom"><br><br>
+      <input type="button" value="Afficher le nom complet" onClick="valider(saisirNom.prenom, saisirNom.nom, saisirNom.nomComplet)"><br><br>
+      <input type="text" name="nomComplet" readonly>
+    </form>
+  </body>
+
+  <script src="form_fullName.js"></script>
+</hmtl>

@@ -73,10 +73,7 @@ void Etudiant::lireFlux( fstream & f )
       f >> info;
 
       if ( isdigit( info[0] ) )
-	{
 	  m_note = atof( info.c_str() );  
-	  cout << m_nom << " " << m_note << endl;
-	}
       else
 	m_nom = info;
      
