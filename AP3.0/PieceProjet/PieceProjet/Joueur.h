@@ -1,4 +1,7 @@
 #pragma once
+#ifndef _JOUEUR_
+#define _JOUEUR_
+
 #include <iostream>
 #include <fstream>
 #include <istream>
@@ -22,3 +25,4 @@ public:
 	int getCompteur() const;
 };
 
+#endif

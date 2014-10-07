@@ -1,4 +1,4 @@
-﻿Build started 07/10/2014 12:17:12 CH.
+﻿Build started 07/10/2014 9:19:47 CH.
      1>Project "D:\ETUDES\EXERCICES\Programmation_backup\AP3.0\PieceProjet\PieceProjet\PieceProjet.vcxproj" on node 2 (Rebuild target(s)).
      1>ClCompile:
          C:\Program Files\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Joueur.cpp main.cpp Piece.cpp
@@ -15,4 +15,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:02.76
+Time Elapsed 00:00:02.66
