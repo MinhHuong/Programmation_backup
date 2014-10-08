@@ -1,12 +1,15 @@
 #include "Piece.h"
 #include "Joueur.h"
+#include "Echiquier.h"
 #include <iostream>
 #include <string>
 
+using namespace std;
+
 int main()
 {
-	Joueur j1("Tam", true);
-	Joueur j2("Mihu", false);
+	Echiquier mon_echiquier;
+	mon_echiquier.affiche();
 	
 	return 0;
 }

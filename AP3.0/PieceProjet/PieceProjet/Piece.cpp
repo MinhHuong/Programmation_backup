@@ -8,9 +8,9 @@ using namespace std;
 
 Piece::Piece()
 {
-	_x = _y = 0;
+	_x = _y = -1;
 	_nom = "";
-	cout << "Constructeur par defaut" << endl;
+	//cout << "Constructeur par defaut" << endl;
 }
 
 Piece::Piece(int x, int y, string n, bool white)
@@ -24,7 +24,7 @@ Piece::Piece(int x, int y, string n, bool white)
 
 Piece::~Piece()
 {
-	cout << "Destructeur" << endl;
+	//cout << "Destructeur de la pièce" << endl;
 }
 
 void Piece::afficher()
@@ -38,9 +38,19 @@ int Piece::getY() const
 	return _y;
 }
 
-int Piece::getX() const
+int Piece::getX() 
 {
 	return _x;
+}
+
+bool Piece::isWhite() const
+{
+	return _isWhite;
+}
+
+string Piece::getNom() const
+{
+	return _nom;
 }
 
 void Piece::setX(int x)
@@ -56,4 +66,9 @@ void Piece::setY(int y)
 void Piece::setNom(string n)
 {
 	_nom = n;
+}
+
+bool Piece::validerEndroit() const
+{
+	return ( _x >= 1 && _x <= 8 && _y >= 1 && _y <= 8 );
 }

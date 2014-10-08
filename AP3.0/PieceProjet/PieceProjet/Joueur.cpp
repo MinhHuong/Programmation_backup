@@ -1,4 +1,6 @@
 #include "Joueur.h"
+#include <cstdlib>
+#include <stdio.h>
 
 Joueur::Joueur()
 {
@@ -8,7 +10,8 @@ Joueur::Joueur()
 
 Joueur::Joueur(string n, bool white)
 {
-	cout << "Contructeur avec paramètres" << endl;
+	Piece tabPieces[16];
+	cout << "Contructeur avec paramètres::Joueur" << endl;
 
 	_nom = n;
 	_isWhite = white;
@@ -27,7 +30,7 @@ Joueur::Joueur(string n, bool white)
 
 	int num = 0, compteur = 2;
 	int y = complement;
-	// affecter les abcisses
+	// affecter les ordonnées
 	while(compteur > 0)
 	{
 		for(int x = 0 ; x < 8 ; x++)
@@ -57,11 +60,19 @@ Joueur::Joueur(string n, bool white)
 		ptr_name++;
 	}
 
-	tabPieces[11].setNom("Reine");
+	tabPieces[11].setNom("Dame");
 	tabPieces[12].setNom("Roi");
+
+	for( int i = 0 ; i < 16 ; i++ )
+	{
+		if( echiq->placer(&tabPieces[i]) )
+		{
+			
+		}
+	}
 }
 
 Joueur::~Joueur()
 {
-	cout << "Destructeur" << endl;
+	cout << "Destructeur du Joueur" << endl;
 }

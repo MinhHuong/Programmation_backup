@@ -20,10 +20,14 @@ public:
 
 	void afficher();
 	int getY() const;
-	int getX() const;
+	int getX() ;
+	string getNom() const;
+	bool isWhite() const;
 	void setX(int);
 	void setY(int);
 	void setNom(string);
+
+	bool validerEndroit() const;
 };
 
 #endif

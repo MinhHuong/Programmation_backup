@@ -21,6 +21,9 @@
     <ClInclude Include="Joueur.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Echiquier.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Piece.cpp">
@@ -30,6 +33,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Joueur.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Echiquier.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
