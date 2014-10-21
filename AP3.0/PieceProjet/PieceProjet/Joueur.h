@@ -3,25 +3,38 @@
 #define _JOUEUR_
 
 #include <iostream>
-#include <fstream>
-#include <istream>
+#include <stdexcept>
 #include <string>
+
 #include "Piece.h"
+#include "Roi.h"
+#include "Dame.h"
+#include "Cavalier.h"
+#include "Fou.h"
+#include "Tour.h"
+#include "Pion.h"
+
 #include "Echiquier.h"
 
 using namespace std;
 
 class Joueur
 {
-private:
-	string _nom;
-	bool _isWhite;
-	Echiquier* echiq;
+ protected:
+  Piece* tabPieces[16];
+  bool _isWhite;
+  static int _nbJoueur;
 
-public:
-	Joueur();
-	Joueur(string, bool);
-	~Joueur();
+ public:
+  Joueur();
+  Joueur(bool, Echiquier*);
+  ~Joueur();
+
+  bool getPart() const;
+  void setPart(bool);
+  virtual void Init() = 0;
+
+  void afficher() const;
 };
 
 #endif

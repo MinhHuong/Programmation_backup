@@ -1,15 +1,24 @@
-﻿Build started 09/10/2014 12:24:03 SA.
+﻿Build started 09/10/2014 10:52:30 SA.
      1>Project "D:\ETUDES\EXERCICES\Programmation_backup\AP3.0\PieceProjet\PieceProjet\PieceProjet.vcxproj" on node 2 (Rebuild target(s)).
      1>ClCompile:
-         C:\Program Files\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Echiquier.cpp Joueur.cpp main.cpp Piece.cpp
+         C:\Program Files\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Echiquier.cpp Joueur.cpp JoueurBlanc.cpp JoueurNoir.cpp main.cpp Piece.cpp
          Piece.cpp
          main.cpp
+         JoueurNoir.cpp
+         JoueurBlanc.cpp
          Joueur.cpp
          Echiquier.cpp
-     1>d:\etudes\exercices\programmation_backup\ap3.0\pieceprojet\pieceprojet\echiquier.cpp(44): error C2440: 'return' : cannot convert from 'int' to 'Piece *&'
          Generating Code...
-     1>Done Building Project "D:\ETUDES\EXERCICES\Programmation_backup\AP3.0\PieceProjet\PieceProjet\PieceProjet.vcxproj" (Rebuild target(s)) -- FAILED.
+       Link:
+         C:\Program Files\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\ETUDES\EXERCICES\Programmation_backup\AP3.0\PieceProjet\Debug\PieceProjet.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\ETUDES\EXERCICES\Programmation_backup\AP3.0\PieceProjet\Debug\PieceProjet.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\ETUDES\EXERCICES\Programmation_backup\AP3.0\PieceProjet\Debug\PieceProjet.lib" /MACHINE:X86 Debug\Echiquier.obj
+         Debug\Joueur.obj
+         Debug\JoueurBlanc.obj
+         Debug\JoueurNoir.obj
+         Debug\main.obj
+         Debug\Piece.obj
+         PieceProjet.vcxproj -> D:\ETUDES\EXERCICES\Programmation_backup\AP3.0\PieceProjet\Debug\PieceProjet.exe
+     1>Done Building Project "D:\ETUDES\EXERCICES\Programmation_backup\AP3.0\PieceProjet\PieceProjet\PieceProjet.vcxproj" (Rebuild target(s)).
 
-Build FAILED.
+Build succeeded.
 
-Time Elapsed 00:00:03.19
+Time Elapsed 00:00:04.81

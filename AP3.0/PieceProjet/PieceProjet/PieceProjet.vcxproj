@@ -78,11 +78,15 @@
   <ItemGroup>
     <ClInclude Include="Echiquier.h" />
     <ClInclude Include="Joueur.h" />
+    <ClInclude Include="JoueurBlanc.h" />
+    <ClInclude Include="JoueurNoir.h" />
     <ClInclude Include="Piece.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Echiquier.cpp" />
     <ClCompile Include="Joueur.cpp" />
+    <ClCompile Include="JoueurBlanc.cpp" />
+    <ClCompile Include="JoueurNoir.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Piece.cpp" />
   </ItemGroup>

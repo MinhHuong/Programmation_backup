@@ -7,11 +7,15 @@
 #if !defined Echiquier_h
 #define Echiquier_h
 
-#include "Piece.h"
+#include <string>
+#include <iostream>
+#include <fstream>
 
 /**
  * Declaration d'une classe modélisant une piece de jeu d'echec.
  */
+class Piece;
+
 class Echiquier 
 {
 private:
@@ -39,7 +43,8 @@ public:
    * vers une piece sinon.
    */
   Piece* getPiece( int x, int y );
-  
+
+  Piece* getPiece( int num );
   /**
    * Place une piece sur l'echiquier, aux coordonnees specifiees dans la piece.
    *
@@ -50,6 +55,7 @@ public:
    */
   bool placer( Piece* p );
 
+  void placerPiece( Piece* p );
   /**
    * Deplace une piece sur l'echiquier, des coordonnees specifiees
    * dans la piece aux coordonnees x,y. 
@@ -64,6 +70,8 @@ public:
    */
   bool deplacer( Piece* p, int x, int y );
 
+  void deplacerPiece( Piece* p, int x, int y );
+
   /**
    * Enleve la piece situee sur une case (qui devient vide).
    *
@@ -75,6 +83,8 @@ public:
    */
   Piece* enleverPiece( int x, int y );
 
+  void enlever( int x, int y );
+
   /**
    * Affiche l'echiquier avec des # pour les cases noires et . pour
    * les blanches si elles sont vides, et avec B pour les pieces
@@ -82,6 +92,7 @@ public:
    */
   void affiche();
   
+  void affiche_bis();
 };
 
 #endif // !defined Echiquier_h

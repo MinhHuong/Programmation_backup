@@ -1,78 +1,80 @@
 #include "Joueur.h"
 #include <cstdlib>
 #include <stdio.h>
+#include <stdexcept>
+
+int Joueur::_nbJoueur = 0;
 
 Joueur::Joueur()
 {
-	_nom = "non défini";
-	_isWhite = false;
+  _isWhite = false;
+  _nbJoueur++;
 }
 
-Joueur::Joueur(string n, bool white)
+Joueur::Joueur(bool w, Echiquier* echiq)
 {
-	Piece tabPieces[16];
-	cout << "Contructeur avec paramètres::Joueur" << endl;
+  _nbJoueur++;
+  
+  if( _nbJoueur > 2 )
+    {
+      logic_error annonce("Impossible de creer de plus de 2 Joueurs");
+      throw annonce;
+    }
+  else
+    {
+      _isWhite = w;
 
-	_nom = n;
-	_isWhite = white;
-	
-	int complement, change;
-	if(_isWhite)
-	{
-		complement = 1;
-		change = 1;
-	}
-	else
-	{
-		complement = 6;
-		change = -1;
-	}
+      int lignePion = _isWhite ? 2 : 7;
+      int ligneRoi = _isWhite ? 1 : 8;
 
-	int num = 0, compteur = 2;
-	int y = complement;
-	// affecter les ordonnées
-	while(compteur > 0)
+      for( int i = 0 ; i < 8 ; i++ )
 	{
-		for(int x = 0 ; x < 8 ; x++)
-		{
-			tabPieces[num].setX(x);
-			tabPieces[num].setY(y);
-			num++;
-		}
-		y -= change;
-		compteur--;
-	}
-	
-	// affecter le nom des Pièces à des positions correspondantes
-	// les Pions
-	for(int i = 0 ; i < 8 ; i++)
-		tabPieces[i].setNom("Pion");
-
-	// Fou, Cavalier, Tour
-	int temp = 7; // les distance entre 2 Pièces identiques
-	int ptr_name = 0; // pointeur vers les positions dans le tableau name[]
-	string name[] = { "Fou", "Cavalier", "Tour" };
-	for(int i = 8 ; ptr_name <= 2 ; i++)
-	{
-		tabPieces[i].setNom(name[ptr_name]);
-		tabPieces[i + temp].setNom(name[ptr_name]);
-		temp -= 2;
-		ptr_name++;
+	  tabPieces[i] = new Pion( i+1, lignePion, _isWhite );
 	}
 
-	tabPieces[11].setNom("Dame");
-	tabPieces[12].setNom("Roi");
-
-	for( int i = 0 ; i < 16 ; i++ )
+      for( int i = 8 ; i < 16 ; i++ )
 	{
-		if( echiq->placer(&tabPieces[i]) )
-		{
-			
-		}
+	  if( i == 8 || i == 15 )
+	    tabPieces[i] = new Tour( i-7, ligneRoi, _isWhite );
+	  if( i == 9 || i == 14 )
+	    tabPieces[i] = new Cavalier( i-7, ligneRoi, _isWhite );
+	  if( i == 10 || i == 13 )
+	    tabPieces[i] = new Fou( i-7, ligneRoi, _isWhite );
+	  if( i == 11 )
+	    tabPieces[i] = new Dame( i-7, ligneRoi, _isWhite );
+	  if( i == 12 )
+	    tabPieces[i] = new Roi( i-7, ligneRoi, _isWhite );
 	}
+
+      for(int i = 0 ; i < 16 ; i++ )
+	{
+	  tabPieces[i]->setPart(_isWhite);
+      
+	  if( echiq->placer( tabPieces[i]) )
+	    echiq->placerPiece( tabPieces[i]);
+	}
+    }
 }
+
 
 Joueur::~Joueur()
 {
-	cout << "Destructeur du Joueur" << endl;
+  //cout << "Destructeur du Joueur" << endl;
+  _nbJoueur--;
+}
+
+bool Joueur::getPart() const
+{
+  return _isWhite;
+}
+
+void Joueur::setPart(bool w)
+{
+  _isWhite = w;
+}
+
+void Joueur::afficher() const
+{
+  string part = _isWhite ? "Blanc" : "Noir";
+  cout << "Je suis le " << _nbJoueur << "e joueur" << " et je choisis la couleur " << part << endl;
 }

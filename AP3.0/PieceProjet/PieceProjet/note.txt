@@ -1,0 +1,16 @@
+TACHES A FAIRE :
+
++ Tester le cas d'echec et MAT
+
++ Transformer un Pion quand celui-ci arrive jusqu'a l'autre bout de l'Echiquier 
+  --> ne marche pas encore
+
++ A un certain moment aucune Piece du Joueur Noir ne peut se deplacer ??? ( erreur : Mouvement invalide )
+
++ Afficher un message qui precise les erreurs au cours du jeu ( mouvement invalide, pourquoi... )
+
+===================================
+
+NOTE :
+
+- Sites a consulter : OpenClassRoom
