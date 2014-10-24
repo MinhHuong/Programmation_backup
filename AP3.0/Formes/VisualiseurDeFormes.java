@@ -1,7 +1,9 @@
 import java.util.*;
 import java.awt.*;
 import java.awt.event.*;
+
 import javax.swing.*;
+import javax.swing.event.MouseInputAdapter;
 
 /*
  * Created on 6 sept. 2005
@@ -25,6 +27,8 @@ public class VisualiseurDeFormes extends JFrame
 	 * Référence l'objet servant à générer des nombres aléatoires.
 	 */
 	private Random m_random;
+	static int num = 0;
+	private String title = "";
 	
 	/**
 	 * Référence la liste des formes à dessiner.
@@ -56,16 +60,13 @@ public class VisualiseurDeFormes extends JFrame
 		/**
 		 * Référence l'application qui a créé ce bouton.
 		 */
-		private VisualiseurDeFormes m_visualiseur;
 		
 		/**
 		 * Constructeur.
 		 * @param visu est l'application relié à ce bouton.
 		 */
-		BoutonCercleAction( VisualiseurDeFormes visu )
-		{
-			m_visualiseur = visu;
-		 }
+		BoutonCercleAction()
+		{}
 		 
 		/**
 		 * Crée un nouveau cercle de coordonnées et rayon aléatoire.
@@ -75,29 +76,25 @@ public class VisualiseurDeFormes extends JFrame
 		 */
 		public void actionPerformed( ActionEvent e)
 		{
-			Random r = m_visualiseur.getRandom();
+			Random r = getRandom();
 			Cercle c = new Cercle(
 				r.nextInt( 200 ),
 				r.nextInt( 200 ),
 			    r.nextInt( 40 )+ 20,
 			    Color.red );
-			m_visualiseur.getFormes().add( c );
-			m_visualiseur.repaint();
+			getFormes().add( c );
+			repaint();
 		}
 	}
 	
 	class BoutonRectangleAction implements ActionListener
 	{
-		private VisualiseurDeFormes m_visu;
-		
-		BoutonRectangleAction(VisualiseurDeFormes visu)
-		{
-			m_visu = visu;
-		}
+		BoutonRectangleAction()
+		{}
 		
 		public void actionPerformed( ActionEvent e )
 		{
-			Random r = m_visu.getRandom();
+			Random r =getRandom();
 			
 			Rectangle rect = new Rectangle (
 					r.nextInt( 300 ) + 1, // de 1 à 300
@@ -106,27 +103,23 @@ public class VisualiseurDeFormes extends JFrame
 					r.nextInt( 100 ) + 1,
 					Color.blue
 					);
-			m_visu.getFormes().add( rect );
-			m_visu.repaint();
+			getFormes().add( rect );
+			repaint();
 		}
 	}
 	
 	class BoutonReset implements ActionListener
-	{
-		private VisualiseurDeFormes m_visu;
-		
-		BoutonReset(VisualiseurDeFormes visu)
-		{
-			m_visu = visu;
-		}
+	{		
+		BoutonReset()
+		{}
 		
 		/* (non-Javadoc)
 		 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
 		 */
 		public void actionPerformed( ActionEvent e )
 		{
-			m_visu.getFormes().clear();
-			m_visu.repaint();
+			getFormes().clear();
+			repaint();
 		}
 	}
 	
@@ -134,29 +127,75 @@ public class VisualiseurDeFormes extends JFrame
 	{
 		private BoutonCercleAction b_cercle;
 		private BoutonRectangleAction b_rect;
-		private VisualiseurDeFormes m_visu;
 		
-		BoutonAleatoire( VisualiseurDeFormes visu )
-		{
-			m_visu = visu;
-		}
+		BoutonAleatoire()
+		{}
 		
 		public void actionPerformed( ActionEvent e )
 		{
-			Random r = m_visu.getRandom();
+			Random r = getRandom();
 			int number = r.nextInt(2); // 0 -> 1
 			
 			if( number == 0 ) // Cercle
 			{
-				b_cercle = new BoutonCercleAction( m_visu );
+				b_cercle = new BoutonCercleAction();
 				b_cercle.actionPerformed(e);
 			}
 			else // Rectangle
 			{
-				b_rect = new BoutonRectangleAction( m_visu );
+				b_rect = new BoutonRectangleAction();
 				b_rect.actionPerformed(e);
 			}
 		}
+	}
+	
+	class BoutonChangeCouleur implements ActionListener
+	{	
+		BoutonChangeCouleur()
+		{}
+		
+		public void actionPerformed( ActionEvent e )
+		{
+			Vector<Color> m_couleur = new Vector<Color>();
+			m_couleur.add(Color.black);
+			m_couleur.add(Color.magenta);
+			m_couleur.add(Color.green);
+			m_couleur.add(Color.cyan);
+			m_couleur.add(Color.yellow);
+			m_couleur.add(Color.gray);
+			m_couleur.add(Color.pink);
+			m_couleur.add(Color.orange);
+			
+			Random r = getRandom();
+			int _index = r.nextInt( m_couleur.size() );
+			
+			if( !m_formes.isEmpty() )	
+				getLastForme().setColour( m_couleur.elementAt(_index) );
+			
+			repaint();
+		}
+	}
+	
+	public String testTitle( int n )
+	{
+		String info = "";
+		
+		switch( n )
+		{
+			case 1:
+			{
+				info = "première";
+				break;
+			}
+		
+			case 2:
+			{
+				info = "deuxième";
+				break;
+			}
+		}
+		
+		return info;
 	}
 	
 	/**
@@ -167,16 +206,22 @@ public class VisualiseurDeFormes extends JFrame
 	/**
 	 * @param title
 	 */
-	public VisualiseurDeFormes(String title)
+	public VisualiseurDeFormes()
 	{
-		super( title );
+		super( "" );
+		
+		num++;
+		String title = testTitle( num );
+		setTitle( title );
+		
 		m_formes = new Vector<FormeColoree>();
 		m_random = new Random();
 		
-		setPreferredSize( new Dimension( 400, 400 ) ); 
+		setPreferredSize( new Dimension( 700, 400 ) ); 
 		setLayout( new BorderLayout() );
 		
 		m_panneau_dessin = new ZoneDeDessin();
+		m_panneau_dessin.setBackground(Color.yellow);
 		m_panneau_dessin.setFormes( m_formes );
 		m_panneau_boutons = new JPanel();
 		JLabel label = new JLabel("Visualiseur de Formes");
@@ -184,25 +229,30 @@ public class VisualiseurDeFormes extends JFrame
 		getContentPane().add( m_panneau_boutons, BorderLayout.SOUTH );
 		getContentPane().add( m_panneau_dessin, BorderLayout.CENTER );
 		
-		BoutonCercleAction action_cercle = new BoutonCercleAction( this );
+		BoutonCercleAction action_cercle = new BoutonCercleAction();
 		JButton b1 = new JButton( "Cercle" );
 		b1.addActionListener( action_cercle );
 		m_panneau_boutons.add( b1 );
 		
-		BoutonRectangleAction action_rect = new BoutonRectangleAction( this );
+		BoutonRectangleAction action_rect = new BoutonRectangleAction();
 		JButton b2 = new JButton( "Rectangle" );
 		b2.addActionListener( action_rect );
 		m_panneau_boutons.add( b2 );
 		
-		BoutonReset action_reset = new BoutonReset( this );
+		BoutonReset action_reset = new BoutonReset();
 		JButton b3 = new JButton( "Reset" );
 		b3.addActionListener( action_reset );
 		m_panneau_boutons.add( b3 );
 		
-		BoutonAleatoire action_aleatoire = new BoutonAleatoire( this );
+		BoutonAleatoire action_aleatoire = new BoutonAleatoire();
 		JButton b4 = new JButton( "Aléatoire" );
 		b4.addActionListener( action_aleatoire );
 		m_panneau_boutons.add( b4 );
+		
+		BoutonChangeCouleur action_changeCouleur = new BoutonChangeCouleur();
+		JButton b5 = new JButton( "Couleur" );
+		b5.addActionListener( action_changeCouleur );
+		m_panneau_boutons.add( b5 );
 				
 		// Indique ce qu'il faut faire si on clic sur "fermer la fenetre".
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -214,8 +264,9 @@ public class VisualiseurDeFormes extends JFrame
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		VisualiseurDeFormes visu = new VisualiseurDeFormes("prems");
-		//VisualiseurDeFormes visu_sec = new VisualiseurDeFormes("deuze");
+		VisualiseurDeFormes visu = new VisualiseurDeFormes();
+		//VisualiseurDeFormes visu_sec = new VisualiseurDeFormes();
+		
 		//Display the window.
 		visu.pack();
 		visu.setVisible(true);	
@@ -230,6 +281,17 @@ public class VisualiseurDeFormes extends JFrame
 		return m_formes;
 	}
 
+	/**
+	 * @return la dernière forme ajoutée
+	 */
+	public FormeColoree getLastForme()
+	{
+		if ( !m_formes.isEmpty() )
+			return m_formes.lastElement();
+		else 
+			return null;
+	}
+	
 	/**
 	 * @return l'objet permettant de générer des nombres aléartoires.
 	 */

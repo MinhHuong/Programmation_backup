@@ -1,0 +1,51 @@
+import java.awt.Color;
+import java.awt.Point;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+
+public class RectangleParDragSouris implements MouseListener {
+	private Point m_src;
+	private Point m_dest;
+	//private Rectangle rect;
+	private ZoneDeDessin m_zone;
+	
+	public RectangleParDragSouris( ZoneDeDessin z )
+	{
+		m_zone = z;
+	}
+	
+	public void mousePressed( MouseEvent e )
+	{
+		m_src = e.getLocationOnScreen();
+	}
+	
+	public void mouseReleased( MouseEvent e )
+	{
+		m_dest = e.getLocationOnScreen();
+		//Rectangle rect = new Rectangle( (int)m_src.getX(), (int)m_src.getY(),
+				//(int)m_dest.getX(), (int)m_dest.getY(), Color.black );
+		Rectangle rect = new Rectangle(100, 100, 200, 300, Color.black);
+		m_zone.getFormes().add( rect );
+		m_zone.update(null);
+	}
+
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

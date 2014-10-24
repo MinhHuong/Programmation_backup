@@ -1,0 +1,37 @@
+import java.awt.Color;
+import java.awt.Point;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
+public class RectangleParDragSouris extends MouseAdapter {
+	private Point m_src;
+	private Point m_dest;
+	//private Rectangle rect;
+	private ZoneDeDessin m_zone;
+	
+	public RectangleParDragSouris( ZoneDeDessin z )
+	{
+		m_zone = z;
+	}
+	
+	public void mousePressed( MouseEvent e )
+	{
+		m_src = e.getLocationOnScreen();
+	}
+	
+	public void mouseReleased( MouseEvent e )
+	{
+		m_dest = e.getLocationOnScreen();
+		Rectangle rect = new Rectangle( (int)m_src.getX(), (int)m_src.getY(),
+				(int)m_dest.getX(), (int)m_dest.getY(), Color.black );
+		m_zone.getFormes().add( rect );
+	}
+
+	public Rectangle getRectangle() {
+		return rect;
+	}
+
+	public void setRectangle(Rectangle rect) {
+		this.rect = rect;
+	}
+}

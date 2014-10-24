@@ -1,0 +1,70 @@
+import java.awt.Color;
+import java.awt.Point;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
+
+public class RectangleParDragSouris implements MouseListener {
+	private Point m_src;
+	private Point m_dest;
+	//private Rectangle rect;
+	private ZoneDeDessin m_zone;
+	
+	public RectangleParDragSouris( ZoneDeDessin z )
+	{
+		m_zone = z;
+	}
+	
+	public void mousePressed( MouseEvent e )
+	{
+		m_src = e.getPoint();
+	}
+	
+	public void mouseReleased( MouseEvent e )
+	{
+		m_dest = e.getPoint();
+		int src_x = (int)m_dest.getX() - (int)m_src.getX();
+		int src_y = (int)m_dest.getY() - (int)m_src.getY();
+		int w = Math.abs(src_x);
+		int h = Math.abs(src_y);
+		Rectangle rect = new Rectangle( src_x, src_y, w, h, Color.black );
+		m_zone.getFormes().add( rect );
+		m_zone.repaint();
+		
+		m_src = null;
+		m_dest = null;
+	}
+
+	public void mouseClicked(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	/*
+	public void mouseDragged(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseMoved(MouseEvent e) {
+		// TODO Auto-generated method stub
+		//m_dest = e.getPoint();
+		//Rectangle rect = new Rectangle( (int)m_src.getX(), (int)m_src.getY(),
+				//(int)m_dest.getX(), (int)m_dest.getY(), Color.black );
+		//m_zone.getFormes().add( rect );
+		//m_zone.repaint();
+	}
+*/
+}
