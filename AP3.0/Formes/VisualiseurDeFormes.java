@@ -29,7 +29,7 @@ public class VisualiseurDeFormes extends JFrame
 	/**
 	 * Référence la liste des formes à dessiner.
 	 */
-	private Vector m_formes;
+	private Vector<FormeColoree> m_formes;
 	
 	/**
 	 * Référence l'objet où les formes se dessinent.
@@ -79,7 +79,8 @@ public class VisualiseurDeFormes extends JFrame
 			Cercle c = new Cercle(
 				r.nextInt( 200 ),
 				r.nextInt( 200 ),
-			    r.nextInt( 40 )+ 20 );
+			    r.nextInt( 40 )+ 20,
+			    Color.red );
 			m_visualiseur.getFormes().add( c );
 			m_visualiseur.repaint();
 		}
@@ -102,7 +103,8 @@ public class VisualiseurDeFormes extends JFrame
 					r.nextInt( 300 ) + 1, // de 1 à 300
 					r.nextInt( 300 ) + 1, // si r.nextInt( 300 ) --> 0 à 299
 					r.nextInt( 100 ) + 1,
-					r.nextInt( 100 ) + 1
+					r.nextInt( 100 ) + 1,
+					Color.blue
 					);
 			m_visu.getFormes().add( rect );
 			m_visu.repaint();
@@ -128,6 +130,35 @@ public class VisualiseurDeFormes extends JFrame
 		}
 	}
 	
+	class BoutonAleatoire implements ActionListener
+	{
+		private BoutonCercleAction b_cercle;
+		private BoutonRectangleAction b_rect;
+		private VisualiseurDeFormes m_visu;
+		
+		BoutonAleatoire( VisualiseurDeFormes visu )
+		{
+			m_visu = visu;
+		}
+		
+		public void actionPerformed( ActionEvent e )
+		{
+			Random r = m_visu.getRandom();
+			int number = r.nextInt(2); // 0 -> 1
+			
+			if( number == 0 ) // Cercle
+			{
+				b_cercle = new BoutonCercleAction( m_visu );
+				b_cercle.actionPerformed(e);
+			}
+			else // Rectangle
+			{
+				b_rect = new BoutonRectangleAction( m_visu );
+				b_rect.actionPerformed(e);
+			}
+		}
+	}
+	
 	/**
 	 * Constructeur par défaut. 
 	 * Crée une fenêtre avec un nom, une zone de dessin 
@@ -139,7 +170,7 @@ public class VisualiseurDeFormes extends JFrame
 	public VisualiseurDeFormes(String title)
 	{
 		super( title );
-		m_formes = new Vector();
+		m_formes = new Vector<FormeColoree>();
 		m_random = new Random();
 		
 		setPreferredSize( new Dimension( 400, 400 ) ); 
@@ -167,6 +198,11 @@ public class VisualiseurDeFormes extends JFrame
 		JButton b3 = new JButton( "Reset" );
 		b3.addActionListener( action_reset );
 		m_panneau_boutons.add( b3 );
+		
+		BoutonAleatoire action_aleatoire = new BoutonAleatoire( this );
+		JButton b4 = new JButton( "Aléatoire" );
+		b4.addActionListener( action_aleatoire );
+		m_panneau_boutons.add( b4 );
 				
 		// Indique ce qu'il faut faire si on clic sur "fermer la fenetre".
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -190,7 +226,7 @@ public class VisualiseurDeFormes extends JFrame
 	/**
 	 * @return le vecteur des formes
 	 */
-	public Vector getFormes() {
+	public Vector<FormeColoree> getFormes() {
 		return m_formes;
 	}
 

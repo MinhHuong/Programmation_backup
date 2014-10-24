@@ -1,0 +1,7 @@
+import java.awt.*;
+
+public abstract class FormeColoree {
+	protected Color col;
+	
+	public void redessiner( Graphics g );
+}

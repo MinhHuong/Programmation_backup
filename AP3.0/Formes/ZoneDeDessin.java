@@ -16,12 +16,12 @@ import javax.swing.JPanel;
  * Window&gt;Preferences&gt;Java&gt;Code Generation&gt;Code and Comments
  */
 public class ZoneDeDessin extends JPanel {
-	private Vector m_formes;
+	private Vector<FormeColoree> m_formes;
 	
 	public ZoneDeDessin()
 	{}
 	
-	public void setFormes( Vector formes )
+	public void setFormes( Vector<FormeColoree> formes )
 	{
 		m_formes = formes;
 	}
@@ -33,7 +33,7 @@ public class ZoneDeDessin extends JPanel {
 		{
 			for ( int i = 0; i < m_formes.size(); i++ )
 			{
-				Forme f = (Forme) m_formes.get( i );
+				FormeColoree f = (FormeColoree) m_formes.get( i );
 				f.redessiner( g );
 			}
 		}
