@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Encapsulate field &apos;RectangleParDragSouris.rect&apos; in &apos;RectangleParDragSouris&apos;&#x0D;&#x0A;- Original project: &apos;Forme2&apos;&#x0D;&#x0A;- Original element: &apos;RectangleParDragSouris.rect&apos;&#x0D;&#x0A;- Getter method name: &apos;getRectangle&apos;&#x0D;&#x0A;- Setter method name: &apos;setRectangle&apos;&#x0D;&#x0A;- Field visibility: &apos;public&apos;&#x0D;&#x0A;- Use getter and setter methods in declaring type" comments="false" declaring="true" description="Encapsulate field &apos;rect&apos;" flags="589830" getter="getRectangle" id="org.eclipse.jdt.ui.self.encapsulate" input="/&lt;{RectangleParDragSouris.java[RectangleParDragSouris^rect" insertion="2" setter="setRectangle" stamp="1414133211704" version="1.0" visibility="1"/>
-</session>

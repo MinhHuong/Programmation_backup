@@ -1,5 +1,0 @@
-import java.awt.Graphics;
-
-public class Rectangle implements Forme {
-	protected 
-}
