@@ -3,7 +3,7 @@ import java.awt.*;
 import java.awt.event.*;
 
 import javax.swing.*;
-import javax.swing.event.MouseInputAdapter;
+//import javax.swing.event.MouseInputAdapter;
 
 /*
  * Created on 6 sept. 2005
@@ -13,8 +13,8 @@ import javax.swing.event.MouseInputAdapter;
  */
 
 /**
- * Cette classe modélise une application graphique de visualisation
- * de formes. Elle dérive de JFrame, qui est une fenêtre SWING "light".
+ * Cette classe modÃ©lise une application graphique de visualisation
+ * de formes. Elle dÃ©rive de JFrame, qui est une fenÃªtre SWING "light".
  * 
  * @author lachaud
  *
@@ -24,30 +24,29 @@ import javax.swing.event.MouseInputAdapter;
 public class VisualiseurDeFormes extends JFrame 
 {
 	/**
-	 * Référence l'objet servant à générer des nombres aléatoires.
+	 * RÃ©fÃ©rence l'objet servant Ã  gÃ©nÃ©rer des nombres alÃ©atoires.
 	 */
 	private Random m_random;
 	static int num = 0;
-	private String title = "";
 	
 	/**
-	 * Référence la liste des formes à dessiner.
+	 * RÃ©fÃ©rence la liste des formes Ã  dessiner.
 	 */
 	private Vector<FormeColoree> m_formes;
 	
 	/**
-	 * Référence l'objet où les formes se dessinent.
+	 * RÃ©fÃ©rence l'objet oÃ¹ les formes se dessinent.
 	 */
 	private ZoneDeDessin m_panneau_dessin;
 	
 	/**
-	 * Référence l'objet où sont placés les boutons.
+	 * RÃ©fÃ©rence l'objet oÃ¹ sont placÃ©s les boutons.
 	 */
 	private JPanel m_panneau_boutons;
 	
 	/**
-	 * Cette classe modélise la réaction de création d'un cercle suite
-	 * à un clic sur un bouton. C'est une classe interne à 
+	 * Cette classe modÃ©lise la rÃ©action de crÃ©ation d'un cercle suite
+	 * Ã  un clic sur un bouton. C'est une classe interne Ã  
 	 * VisualiseurDeFormes.
 	 * 
 	 * @author lachaud
@@ -58,21 +57,21 @@ public class VisualiseurDeFormes extends JFrame
 	class BoutonCercleAction implements ActionListener	
 	{
 		/**
-		 * Référence l'application qui a créé ce bouton.
+		 * RÃ©fÃ©rence l'application qui a crÃ©Ã© ce bouton.
 		 */
 		
 		/**
 		 * Constructeur.
-		 * @param visu est l'application relié à ce bouton.
+		 * @param visu est l'application reliÃ© Ã  ce bouton.
 		 */
 		BoutonCercleAction()
 		{}
 		 
 		/**
-		 * Crée un nouveau cercle de coordonnées et rayon aléatoire.
-		 * suite à l'action [e].
+		 * CrÃ©e un nouveau cercle de coordonnÃ©es et rayon alÃ©atoire.
+		 * suite Ã  l'action [e].
 		 * 
-		 * @param e l'action qui a déclenchée l'appel à cette méthode.
+		 * @param e l'action qui a dÃ©clenchÃ©e l'appel Ã  cette mÃ©thode.
 		 */
 		public void actionPerformed( ActionEvent e)
 		{
@@ -97,8 +96,8 @@ public class VisualiseurDeFormes extends JFrame
 			Random r =getRandom();
 			
 			Rectangle rect = new Rectangle (
-					r.nextInt( 300 ) + 1, // de 1 à 300
-					r.nextInt( 300 ) + 1, // si r.nextInt( 300 ) --> 0 à 299
+					r.nextInt( 300 ) + 1, // de 1 Ã  300
+					r.nextInt( 300 ) + 1, // si r.nextInt( 300 ) --> 0 Ã  299
 					r.nextInt( 100 ) + 1,
 					r.nextInt( 100 ) + 1,
 					Color.blue
@@ -184,13 +183,13 @@ public class VisualiseurDeFormes extends JFrame
 		{
 			case 1:
 			{
-				info = "première";
+				info = "premiÃ¨re";
 				break;
 			}
 		
 			case 2:
 			{
-				info = "deuxième";
+				info = "deuxiÃ¨me";
 				break;
 			}
 		}
@@ -199,8 +198,8 @@ public class VisualiseurDeFormes extends JFrame
 	}
 	
 	/**
-	 * Constructeur par défaut. 
-	 * Crée une fenêtre avec un nom, une zone de dessin 
+	 * Constructeur par dÃ©faut. 
+	 * CrÃ©e une fenÃªtre avec un nom, une zone de dessin 
 	 * et une zone pour placer des boutons.
 	 */
 	/**
@@ -245,7 +244,7 @@ public class VisualiseurDeFormes extends JFrame
 		m_panneau_boutons.add( b3 );
 		
 		BoutonAleatoire action_aleatoire = new BoutonAleatoire();
-		JButton b4 = new JButton( "Aléatoire" );
+		JButton b4 = new JButton( "AlÃ©atoire" );
 		b4.addActionListener( action_aleatoire );
 		m_panneau_boutons.add( b4 );
 		
@@ -259,7 +258,7 @@ public class VisualiseurDeFormes extends JFrame
 	}
 	
 	/**
-	 * Crée une application "Visualiseur de Formes".
+	 * CrÃ©e une application "Visualiseur de Formes".
 	 * 
 	 * @param args
 	 */
@@ -282,7 +281,7 @@ public class VisualiseurDeFormes extends JFrame
 	}
 
 	/**
-	 * @return la dernière forme ajoutée
+	 * @return la derniÃ¨re forme ajoutÃ©e
 	 */
 	public FormeColoree getLastForme()
 	{
@@ -293,7 +292,7 @@ public class VisualiseurDeFormes extends JFrame
 	}
 	
 	/**
-	 * @return l'objet permettant de générer des nombres aléartoires.
+	 * @return l'objet permettant de gÃ©nÃ©rer des nombres alÃ©artoires.
 	 */
 	public Random getRandom() {
 		return m_random;
