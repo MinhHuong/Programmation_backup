@@ -71,29 +71,8 @@ public class RectangleParDragSouris implements MouseInputListener {
 		int h = (int)m_dest.getY() - (int)m_src.getY();	
 		int x_debut = 0, y_debut = 0;
 		
-		if( w > 0 && h > 0 )
-		{
-			x_debut = (int)m_src.getX();
-			y_debut = (int)m_src.getY();
-		}
-		
-		if( w > 0 && h < 0 )
-		{
-			x_debut = (int)m_src.getX();
-			y_debut = (int)m_src.getY() + h;
-		}
-		
-		if( w < 0 && h > 0 )
-		{
-			x_debut = (int)m_src.getX() + w;
-			y_debut = (int)m_src.getY();
-		}
-		
-		if( w < 0 && h < 0 )
-		{
-			x_debut = (int)m_src.getX() + w;
-			y_debut = (int) m_src.getY() + h;
-		}
+		x_debut = ( w > 0 ) ? (int)m_src.getX() : (int)m_src.getX() + w;
+		y_debut = ( h > 0 ) ? (int)m_src.getY() : (int)m_src.getY() + h;
 		
 		Rectangle rect = new Rectangle( x_debut, y_debut, Math.abs(w), Math.abs(h),
 										Color.magenta );
