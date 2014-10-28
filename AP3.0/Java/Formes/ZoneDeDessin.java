@@ -22,7 +22,8 @@ public class ZoneDeDessin extends JPanel {
 	public ZoneDeDessin()
 	{
 		rect_drag = new RectangleParDragSouris( this );
-		addMouseListener(rect_drag);
+		addMouseMotionListener(rect_drag);
+		addMouseListener( rect_drag );
 	}
 	
 	public void setFormes( Vector<FormeColoree> formes )
@@ -44,6 +45,16 @@ public class ZoneDeDessin extends JPanel {
 			for ( int i = 0; i < m_formes.size(); i++ )
 			{
 				FormeColoree f = (FormeColoree) m_formes.get( i );
+				f.redessiner( g );
+			}
+		}
+		
+		Vector<Rectangle> v_rect = rect_drag.getRectDragged();
+		if( v_rect != null )
+		{
+			for( int i = 0 ; i < v_rect.size() ; i++ )
+			{
+				FormeColoree f = (FormeColoree) v_rect.get(i);
 				f.redessiner( g );
 			}
 		}
