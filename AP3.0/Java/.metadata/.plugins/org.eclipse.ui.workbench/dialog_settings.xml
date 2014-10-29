@@ -22,6 +22,8 @@
 		<item value="false" key="WizardFileSystemResourceImportPage1.STORE_CREATE_CONTAINER_STRUCTURE_ID"/>
 		<item value="false" key="WizardFileSystemResourceImportPage1.STORE_OVERWRITE_EXISTING_RESOURCES_ID"/>
 		<list key="WizardFileSystemResourceImportPage1.STORE_SOURCE_NAMES_ID">
+			<item value="F:\INFORMATIQUE\Programmation_backup\AP3.0\Java\FactoryPattern\src\Main"/>
+			<item value="F:\INFORMATIQUE\Programmation_backup\AP3.0\Java\FactoryPattern\src\ShapeLibrary"/>
 			<item value="F:\INFORMATIQUE\Programmation_backup\AP3.0\Java\Formes"/>
 		</list>
 	</section>
