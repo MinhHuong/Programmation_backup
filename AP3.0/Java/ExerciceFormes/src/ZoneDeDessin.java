@@ -22,8 +22,8 @@ public class ZoneDeDessin extends JPanel {
 	public ZoneDeDessin()
 	{
 		rect_drag = new RectangleParDragSouris( this );
-		addMouseMotionListener(rect_drag);
-		addMouseListener( rect_drag );
+		addMouseMotionListener(rect_drag); // enable MouseDragged & MouseMoved
+		addMouseListener( rect_drag ); // enable MousePressed, MouseReleased, MouseEntered, MouseExited
 	}
 	
 	public void setFormes( Vector<FormeColoree> formes )
