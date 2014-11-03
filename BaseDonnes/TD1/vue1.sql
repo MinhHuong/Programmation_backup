@@ -1,4 +1,8 @@
+drop view ActeursFrancais;
+
 create	view	ActeursFrancais	as
-select	nom_acteur
+select	*
 from	acteur
-where	nation_acteur = 'FRANCAISE';
+where	nation_acteur = 'FRANCAISE'
+with check option; 
+--pour éviter le cas òu l'utilisateur ajoute un acteur d'autres nationalités dans la vue
