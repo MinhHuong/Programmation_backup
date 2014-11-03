@@ -1,0 +1,11 @@
+SELECT 	Nom, Prenom
+FROM	INDIVIDU
+WHERE	NumInd NOT IN
+( 
+SELECT 	NumInd
+FROM 	ACTEUR 
+UNION
+SELECT 	NumInd
+FROM 	FILM F, INDIVIDU I
+WHERE	F.Realisateur = I.NumInd
+);

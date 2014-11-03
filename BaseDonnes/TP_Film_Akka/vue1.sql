@@ -1,0 +1,6 @@
+CREATE VIEW FILMS_COMEDIE AS
+SELECT	F.NumFilm, Titre
+FROM	FILM F, FILM_GENRE FG, GENRE G
+WHERE	F.NumFilm = FG.NumFilm
+AND		G.CodeGenre = FG.CodeGenre
+AND		G.CodeGenre = 'C';

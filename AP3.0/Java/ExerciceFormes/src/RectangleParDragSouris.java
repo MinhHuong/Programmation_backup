@@ -6,9 +6,10 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionListener;
 import java.util.Vector;
 
+import javax.swing.event.MouseInputAdapter;
 import javax.swing.event.MouseInputListener;
 
-public class RectangleParDragSouris implements MouseInputListener {
+public class RectangleParDragSouris extends MouseInputAdapter {
 	private Point m_src;
 	private Point m_dest;
 	private ZoneDeDessin m_zone;
@@ -36,26 +37,6 @@ public class RectangleParDragSouris implements MouseInputListener {
 		rect_final.setColour( Color.black );
 		m_zone.getFormes().add( rect_final );
 		m_zone.repaint();
-	}
-
-	public void mouseClicked(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public void mouseEntered(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public void mouseExited(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-	
-	public void mouseMoved(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
 	}
 
 	public void mouseDragged(MouseEvent e) {

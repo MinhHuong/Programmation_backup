@@ -224,6 +224,7 @@ public class VisualiseurDeFormes extends JFrame
 		m_panneau_dessin.setFormes( m_formes );
 		m_panneau_boutons = new JPanel();
 		JLabel label = new JLabel("Visualiseur de Formes");
+		//getContentPane() : référence à la partie contenu de JFrame VisualiseurDeFormes
 		getContentPane().add( label, BorderLayout.NORTH );
 		getContentPane().add( m_panneau_boutons, BorderLayout.SOUTH );
 		getContentPane().add( m_panneau_dessin, BorderLayout.CENTER );

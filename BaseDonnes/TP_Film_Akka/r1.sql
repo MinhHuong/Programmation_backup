@@ -1,0 +1,3 @@
+SELECT	Nom, Prenom
+FROM	ACTEUR A, INDIVIDU I
+WHERE	A.NumInd = I.NumInd;
