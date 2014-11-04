@@ -64,13 +64,16 @@ create table ROLE
 
 alter table FILM
     add constraint fk1_film foreign key (NUMERO_REALISATEUR)
-       references REALISATEUR (NUMERO_REALISATEUR);
+       references REALISATEUR (NUMERO_REALISATEUR)
+	   on delete cascade;
 
 alter table ROLE
     add constraint fk1_role foreign key (NUMERO_ACTEUR)
-       references ACTEUR (NUMERO_ACTEUR);
+       references ACTEUR (NUMERO_ACTEUR)
+	   on delete cascade;
 
 alter table ROLE
     add constraint fk2_role foreign key (NUMERO_FILM)
-       references FILM (NUMERO_FILM);
+       references FILM (NUMERO_FILM)
+	   on delete cascade;
 
