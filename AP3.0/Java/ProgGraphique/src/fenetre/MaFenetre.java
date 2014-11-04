@@ -1,40 +1,20 @@
 package fenetre;
 
 import java.awt.*;
-import java.awt.event.*;
 import javax.swing.*;
 
 @SuppressWarnings("serial")
 public class MaFenetre extends JFrame {	
-	private JButton bt_create;
-	
 	public MaFenetre()
 	{
-		setTitle("Création des boutons");
+		setTitle("Ma fenêtre");
 		setSize(500, 500);
-		Container contenu = getContentPane();
-		contenu.setLayout(new FlowLayout());
+		//setLayout(new BorderLayout());
 		
-		bt_create = new JButton("CREATE");
-		contenu.add(bt_create);
-		ButtonEvent bt_event = new ButtonEvent(contenu);
-		bt_create.addActionListener(bt_event);
+		JPanel pan = new JPanel();
+		pan.setBackground(Color.yellow);
+		getContentPane().add(pan, BorderLayout.EAST);
+		pan.setPreferredSize(new Dimension(300,300));
 	}
 	
-	class ButtonEvent implements ActionListener
-	{
-		private Container ctn;
-		
-		ButtonEvent(Container c) 
-		{
-			ctn = c;
-		}
-		
-		public void actionPerformed(ActionEvent ev)
-		{
-			JButton bt_nouveau = new JButton("Bouton");
-			ctn.add(bt_nouveau);
-			ctn.validate();
-		}
-	}
 }
