@@ -1,5 +1,5 @@
 select 	nom_realisateur, prenom_realisateur
-from	realisateur, role, film
-where	realisateur.numero_realisateur = film.numero_realisateur
-and		film.numero_film = role.numero_film
-and		role.numero_acteur = 7;
+from	realisateur re, role ro, film f
+where	re.numero_realisateur = f.numero_realisateur
+and		f.numero_film = ro.numero_film
+and		ro.numero_acteur = 7;
