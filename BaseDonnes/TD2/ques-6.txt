@@ -1,0 +1,1 @@
+Les résultats s'affichent normalement comme au début, car tous les nouveaux formats ont été effacés par le script login.sql

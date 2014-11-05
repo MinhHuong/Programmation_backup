@@ -1,0 +1,35 @@
+a. REMARK : utilisé pour écrire des commentaires
+
+b. SET (PAUSE, PAGESIZE, LINESIZE) : affectation des valeurs
+	+ SET PAUSE 'text' : l'utilisateur doit appuyer sur Entrée pour continuer l'exécution du programme, dans ce cas la phrase '...' s'affichant le bouton Entrée
+	+ SET PAUSE ON : afficher le texte encadré dans '...' chaque fois que le système SQL s'arrête
+	+ SET PAGESIZE : préciser le nombre de lignes affichées sur chaque page
+	+ SET LINESIZE : préciser le nombre de caractères affichés sur une ligne avant d'en passe à une autre
+
+c. TTITLE, BTITLE, SKIP, CENTER, RIGHT, FORMAT, SQL.PNO, COLUMN, HEADING,JUSTIFY
+	+ TTITLE	: top title de chaque page
+	+ BTITLE 	: bottom title de chaque page ( utilisation idem TTITLE )
+	+ CENTER, RIGHT, LEFT : la position de chaque texte, utilisés par TTITLE | BTITILE
+	+ SKIP 		: sauter à une nouvelle ligne 
+	+ FORMAT	: formatter des éléments
+	+ SQL.PNO	: compter le nombre de pages (?)
+	+ COLUMN 	: la colonne dans la table
+	+ HEADING	: le titre de la colonne ( l'entête ) ( '|' pour sauter à la ligne suivante )
+	+ JUSTIFY 	: l'alignement du texte
+	
+d. BREAK ON … ON REPORT, COMPUTE NUM OF … ON … :
+	+ BREAK ON [colonne] ON REPORT : spécifier la place òu la commande BREAK s'exécute
+		BREAK ON GENRE ON REPORT : BREAK exécute des commandes spécifiées dans COMPUTE avant de passer à une autre valeur sur la colonne GENRE ; ON REPORT affiche le résultat (généralement à la fin de la page | à chaque fois qu'1 BREAK s'exécute)
+	+ COMPUTE [fonction d'agrégat] OF [colonne] ON REPORT : exécuter la fonction spécifié ( NUM, SUM, AVG... ) en utilisant des données de la colonne indiquée, ON REPORT affiche le résultat
+	+ Dans certains cas, BREAK ON & COMPUTE sont utlisés ensemble
+
+
+e. CLEAR (BREAKS, COMPUTES, SCREEN)
+	+ CLEAR BREAKS, CLEAR COMPUTES : supprimer toutes les commandes BREAK et COMPUTE
+	+ CLEAR SCREEN : effacer l'écran
+
+
+
+
+
+

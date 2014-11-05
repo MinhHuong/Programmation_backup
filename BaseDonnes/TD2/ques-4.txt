@@ -1,0 +1,1 @@
+Les informations des acteurs sont affichées plus clairement, parce que les commandes dans le script de la question 3 a formatté l'affichage des résultats.
