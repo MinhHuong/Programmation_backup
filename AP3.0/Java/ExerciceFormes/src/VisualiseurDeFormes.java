@@ -21,6 +21,7 @@ import javax.swing.*;
  * To change the template for this generated type comment go to
  * Window&gt;Preferences&gt;Java&gt;Code Generation&gt;Code and Comments
  */
+@SuppressWarnings("serial")
 public class VisualiseurDeFormes extends JFrame 
 {
 	/**
@@ -155,6 +156,7 @@ public class VisualiseurDeFormes extends JFrame
 		
 		public void actionPerformed( ActionEvent e )
 		{
+			/*
 			Vector<Color> m_couleur = new Vector<Color>();
 			m_couleur.add(Color.black);
 			m_couleur.add(Color.magenta);
@@ -170,6 +172,17 @@ public class VisualiseurDeFormes extends JFrame
 			
 			if( !m_formes.isEmpty() )	
 				getLastForme().setColour( m_couleur.elementAt(_index) );
+			
+			repaint();
+			*/
+			if( !m_formes.isEmpty() )
+			{
+				Color c = JColorChooser.showDialog(null, "Choisir 1 couleur", Color.black);
+				if( c != null )
+				{
+					m_formes.lastElement().setColour(c);
+				}
+			}
 			
 			repaint();
 		}

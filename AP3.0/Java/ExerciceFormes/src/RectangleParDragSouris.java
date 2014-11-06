@@ -1,13 +1,8 @@
 import java.awt.Color;
 import java.awt.Point;
-//import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-//import java.awt.event.MouseListener;
-import java.awt.event.MouseMotionListener;
 import java.util.Vector;
-
 import javax.swing.event.MouseInputAdapter;
-import javax.swing.event.MouseInputListener;
 
 public class RectangleParDragSouris extends MouseInputAdapter {
 	private Point m_src;
@@ -21,11 +16,6 @@ public class RectangleParDragSouris extends MouseInputAdapter {
 		v_rect = new Vector<Rectangle>();
 	}
 	
-	public Vector<Rectangle> getRectDragged()
-	{
-		return v_rect;
-	}
-	
 	public void mousePressed( MouseEvent e )
 	{
 		m_src = e.getPoint();
@@ -37,10 +27,11 @@ public class RectangleParDragSouris extends MouseInputAdapter {
 		rect_final.setColour( Color.black );
 		m_zone.getFormes().add( rect_final );
 		m_zone.repaint();
+		v_rect.clear();
 	}
 
 	public void mouseDragged(MouseEvent e) {
-		if( !v_rect.isEmpty() )
+		if( !v_rect.isEmpty() ) 
 		{
 			v_rect.remove( v_rect.lastElement() );
 			m_zone.repaint();
@@ -59,5 +50,9 @@ public class RectangleParDragSouris extends MouseInputAdapter {
 										Color.magenta );
 		v_rect.add( rect );
 		m_zone.repaint();
+	}
+
+	public Vector<Rectangle> getRectDragged() {
+		return v_rect;
 	}
 }

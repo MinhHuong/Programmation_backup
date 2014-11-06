@@ -1,5 +1,6 @@
 import java.util.Vector;
 import java.awt.Graphics;
+
 import javax.swing.JPanel;
 
 /*
@@ -15,6 +16,7 @@ import javax.swing.JPanel;
  * To change the template for this generated type comment go to
  * Window&gt;Preferences&gt;Java&gt;Code Generation&gt;Code and Comments
  */
+@SuppressWarnings("serial")
 public class ZoneDeDessin extends JPanel {
 	private Vector<FormeColoree> m_formes;
 	private RectangleParDragSouris rect_drag;
