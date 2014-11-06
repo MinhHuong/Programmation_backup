@@ -9,4 +9,9 @@ public abstract class FormeColoree {
 	{
 		col = c;
 	}
+	
+	public Color getColor()
+	{
+		return col;
+	}
 }

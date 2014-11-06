@@ -156,7 +156,25 @@ public class VisualiseurDeFormes extends JFrame
 		
 		public void actionPerformed( ActionEvent e )
 		{
-			/*
+			if( !m_formes.isEmpty() )
+			{
+				Color c = JColorChooser.showDialog(VisualiseurDeFormes.this, "Choisir 1 couleur", m_formes.lastElement().getColor());
+				if( c != null )
+				{
+					m_formes.lastElement().setColour(c);
+				}
+			}
+			
+			repaint();
+		}
+	}
+	
+	class BoutonRandomCouleur implements ActionListener
+	{
+		BoutonRandomCouleur(){}
+		
+		public void actionPerformed(ActionEvent a)
+		{
 			Vector<Color> m_couleur = new Vector<Color>();
 			m_couleur.add(Color.black);
 			m_couleur.add(Color.magenta);
@@ -171,18 +189,7 @@ public class VisualiseurDeFormes extends JFrame
 			int _index = r.nextInt( m_couleur.size() );
 			
 			if( !m_formes.isEmpty() )	
-				getLastForme().setColour( m_couleur.elementAt(_index) );
-			
-			repaint();
-			*/
-			if( !m_formes.isEmpty() )
-			{
-				Color c = JColorChooser.showDialog(null, "Choisir 1 couleur", Color.black);
-				if( c != null )
-				{
-					m_formes.lastElement().setColour(c);
-				}
-			}
+				m_formes.lastElement().setColour( m_couleur.elementAt(_index) );
 			
 			repaint();
 		}
@@ -233,7 +240,6 @@ public class VisualiseurDeFormes extends JFrame
 		setLayout( new BorderLayout() );
 		
 		m_panneau_dessin = new ZoneDeDessin();
-		m_panneau_dessin.setBackground(Color.yellow);
 		m_panneau_dessin.setFormes( m_formes );
 		m_panneau_boutons = new JPanel();
 		JLabel label = new JLabel("Visualiseur de Formes");
@@ -263,9 +269,14 @@ public class VisualiseurDeFormes extends JFrame
 		m_panneau_boutons.add( b4 );
 		
 		BoutonChangeCouleur action_changeCouleur = new BoutonChangeCouleur();
-		JButton b5 = new JButton( "Couleur" );
+		JButton b5 = new JButton( "Couleur (dialog)" );
 		b5.addActionListener( action_changeCouleur );
 		m_panneau_boutons.add( b5 );
+		
+		BoutonRandomCouleur action_randomCouleur = new BoutonRandomCouleur();
+		JButton b6 = new JButton("Couleur (random)");
+		b6.addActionListener(action_randomCouleur);
+		m_panneau_boutons.add(b6);
 				
 		// Indique ce qu'il faut faire si on clic sur "fermer la fenetre".
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -278,13 +289,10 @@ public class VisualiseurDeFormes extends JFrame
 	 */
 	public static void main(String[] args) {
 		VisualiseurDeFormes visu = new VisualiseurDeFormes();
-		//VisualiseurDeFormes visu_sec = new VisualiseurDeFormes();
 		
 		//Display the window.
 		visu.pack();
 		visu.setVisible(true);	
-		//visu_sec.pack();
-		//visu_sec.setVisible(true);
 	}
 	
 	/**
@@ -304,7 +312,7 @@ public class VisualiseurDeFormes extends JFrame
 		else 
 			return null;
 	}
-	
+
 	/**
 	 * @return l'objet permettant de générer des nombres aléartoires.
 	 */

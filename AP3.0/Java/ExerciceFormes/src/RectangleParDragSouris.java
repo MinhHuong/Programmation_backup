@@ -23,11 +23,14 @@ public class RectangleParDragSouris extends MouseInputAdapter {
 	
 	public void mouseReleased( MouseEvent e )
 	{
-		Rectangle rect_final = v_rect.lastElement();
-		rect_final.setColour( Color.black );
-		m_zone.getFormes().add( rect_final );
-		m_zone.repaint();
-		v_rect.clear();
+		if( !v_rect.isEmpty() )
+		{
+			Rectangle rect_final = v_rect.lastElement();
+			rect_final.setColour( Color.black );
+			m_zone.getFormes().add( rect_final );
+			m_zone.repaint();
+			v_rect.clear();
+		}
 	}
 
 	public void mouseDragged(MouseEvent e) {
@@ -52,7 +55,8 @@ public class RectangleParDragSouris extends MouseInputAdapter {
 		m_zone.repaint();
 	}
 
-	public Vector<Rectangle> getRectDragged() {
+	public Vector<Rectangle> getRectDragged() 
+	{
 		return v_rect;
 	}
 }
