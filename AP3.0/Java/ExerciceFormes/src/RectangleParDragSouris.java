@@ -5,6 +5,11 @@ import java.awt.event.MouseEvent;
 import java.util.Vector;
 
 // ou bien on peut utiliser MouseInputAdapter (MouseInputListener <-- MouseListener & MouseMotionListener)
+/**
+ * La classe qui sert à gérer l'événement de dessin d'un rectangle par la souris
+ * @author MiHu
+ *
+ */
 public class RectangleParDragSouris extends MouseAdapter {
 	private Point m_src;
 	private Point m_dest;

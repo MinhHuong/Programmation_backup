@@ -6,6 +6,14 @@ public class Rectangle extends FormeColoree {
 	protected int width;
 	protected int height;
 	
+	/**
+	 * Créer un nouveau rectangle avec 5 paramètres
+	 * @param x l'abcisse du point (haut-gauche)
+	 * @param y l'ordonnée du point (haut-gauche)
+	 * @param w la longueur
+	 * @param h la largeur
+	 * @param c la couleur
+	 */
 	public Rectangle( int x, int y, int w, int h, Color c )
 	{
 		m_x = x;

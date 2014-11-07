@@ -22,11 +22,19 @@ public class ZoneDeDessin extends JPanel {
 	private RectangleParDragSouris rect_drag;
 	private VisualiseurDeFormes m_visu;
 	
+	/**
+	 * 
+	 * @return l'objet VisualiseurDeFomes
+	 */
 	public VisualiseurDeFormes getVisualiseur()
 	{
 		return m_visu;
 	}
 	
+	/**
+	 * Constructeur avec paramètres
+	 * @param v l'objet VisualiseurDeFormes
+	 */
 	public ZoneDeDessin(VisualiseurDeFormes v)
 	{
 		m_visu = v;
@@ -35,16 +43,27 @@ public class ZoneDeDessin extends JPanel {
 		addMouseListener( rect_drag ); // enable MousePressed, MouseReleased, MouseEntered, MouseExited
 	}
 	
+	/**
+	 * 
+	 * @param le vecteur qui contient des objets de classe FormeColorée
+	 */
 	public void setFormes( Vector<FormeColoree> formes )
 	{
 		m_formes = formes;
 	}
 	
+	/**
+	 * 
+	 * @return le vecteur qui contient des objets de classe FormeColorée
+	 */
 	public Vector<FormeColoree> getFormes()
 	{
 		return m_formes;
 	}
 	
+	/**
+	 * méthodes servant à dessiner des formes
+	 */
 	public void paintComponent( Graphics g )
 	{
 		super.paintComponent(g);

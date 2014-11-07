@@ -28,6 +28,10 @@ public class VisualiseurDeFormes extends JFrame
 	 * Référence l'objet servant à générer des nombres aléatoires.
 	 */
 	private Random m_random;
+	
+	/**
+	 * La variable statique utilisée pour affecter au titre de la fenêtre principale
+	 */
 	static int num = 0;
 	
 	/**
@@ -45,12 +49,11 @@ public class VisualiseurDeFormes extends JFrame
 	 */
 	private JPanel m_panneau_boutons;
 	
+	/**
+	 * La variable qui stocke la couleur des formes
+	 */
 	private Color m_couleur = Color.black;
 	
-	public Color getCouleur()
-	{
-		return m_couleur;
-	}
 	
 	/**
 	 * Cette classe modélise la réaction de création d'un cercle suite
@@ -94,6 +97,13 @@ public class VisualiseurDeFormes extends JFrame
 		}
 	}
 	
+	/**
+	 * Cette classe modélise la réaction de création d'un rectangle suite
+	 * à un clic sur un bouton. C'est une classe interne à 
+	 * VisualiseurDeFormes.
+	 * 
+	 * @author MiHu
+	 */
 	class BoutonRectangleAction implements ActionListener
 	{
 		BoutonRectangleAction()
@@ -115,6 +125,12 @@ public class VisualiseurDeFormes extends JFrame
 		}
 	}
 	
+	/**
+	 * Cette classe modélise la réaction sur la suppression de toutes les formes dessinées 
+	 * 
+	 * @author MiHu
+	 *
+	 */
 	class BoutonReset implements ActionListener
 	{		
 		BoutonReset()
@@ -130,6 +146,13 @@ public class VisualiseurDeFormes extends JFrame
 		}
 	}
 	
+	/**
+	 * Cette classe modélise la réaction de la création aléatoire d'une forme 
+	 * ( soit un cercle, soit un rectangle )
+	 * 
+	 * @author MiHu
+	 *
+	 */
 	class BoutonAleatoire implements ActionListener
 	{
 		private BoutonCercleAction b_cercle;
@@ -156,6 +179,14 @@ public class VisualiseurDeFormes extends JFrame
 		}
 	}
 	
+	/**
+	 * Cette classe modélise la réaction du changement de couleur des formes
+	 * au moyen d'un dialog 
+	 * (après avoir choisi une couleur, des formes suivantes auront cette couleur)
+	 * 
+	 * @author MiHu
+	 *
+	 */
 	class BoutonChangeCouleur implements ActionListener
 	{	
 		BoutonChangeCouleur()
@@ -170,6 +201,13 @@ public class VisualiseurDeFormes extends JFrame
 		}
 	}
 	
+	/**
+	 * Cette classe modélise la réaction du changement de couleur de la dernière forme dessinée
+	 * (les couleurs changent de facon aléatoire)
+	 * 
+	 * @author MiHu
+	 *
+	 */
 	class BoutonRandomCouleur implements ActionListener
 	{
 		BoutonRandomCouleur(){}
@@ -196,6 +234,13 @@ public class VisualiseurDeFormes extends JFrame
 		}
 	}
 	
+	/**
+	 * Manipuler le titre de la fenêtre principale
+	 * 
+	 * @param n un nombre entier positif
+	 * @return une chaine de caractères qui sera affectée au titre de la fenêtre principale
+	 * 
+	 */
 	public String testTitle( int n )
 	{
 		String info = "";
@@ -321,4 +366,11 @@ public class VisualiseurDeFormes extends JFrame
 		return m_random;
 	}
 
+	/**
+	 * @return la couleur de la forme
+	 */
+	public Color getCouleur()
+	{
+		return m_couleur;
+	}
 }

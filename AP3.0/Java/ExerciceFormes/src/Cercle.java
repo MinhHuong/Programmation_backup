@@ -18,6 +18,13 @@ public class Cercle extends FormeColoree {
 	protected int m_y;
 	protected int m_r;
 	
+	/**
+	 * Créer un nouveau cercle avec 4 paramètres
+	 * @param x l'abcisse 
+	 * @param y l'ordonnée
+	 * @param r le rayon
+	 * @param c la couleur
+	 */
 	public Cercle( int x, int y, int r, Color c )
 	{
 		m_x = x;
