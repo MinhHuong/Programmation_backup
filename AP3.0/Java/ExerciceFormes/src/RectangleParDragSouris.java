@@ -1,10 +1,11 @@
 import java.awt.Color;
 import java.awt.Point;
+import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.Vector;
-import javax.swing.event.MouseInputAdapter;
 
-public class RectangleParDragSouris extends MouseInputAdapter {
+// ou bien on peut utiliser MouseInputAdapter (MouseInputListener <-- MouseListener & MouseMotionListener)
+public class RectangleParDragSouris extends MouseAdapter {
 	private Point m_src;
 	private Point m_dest;
 	private ZoneDeDessin m_zone;
@@ -26,7 +27,7 @@ public class RectangleParDragSouris extends MouseInputAdapter {
 		if( !v_rect.isEmpty() )
 		{
 			Rectangle rect_final = v_rect.lastElement();
-			rect_final.setColour( Color.black );
+			rect_final.setColour( m_zone.getVisualiseur().getCouleur() );
 			m_zone.getFormes().add( rect_final );
 			m_zone.repaint();
 			v_rect.clear();

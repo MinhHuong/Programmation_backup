@@ -45,6 +45,13 @@ public class VisualiseurDeFormes extends JFrame
 	 */
 	private JPanel m_panneau_boutons;
 	
+	private Color m_couleur = Color.black;
+	
+	public Color getCouleur()
+	{
+		return m_couleur;
+	}
+	
 	/**
 	 * Cette classe modélise la réaction de création d'un cercle suite
 	 * à un clic sur un bouton. C'est une classe interne à 
@@ -81,7 +88,7 @@ public class VisualiseurDeFormes extends JFrame
 				r.nextInt( 200 ),
 				r.nextInt( 200 ),
 			    r.nextInt( 40 )+ 20,
-			    Color.red );
+			    m_couleur );
 			getFormes().add( c );
 			repaint();
 		}
@@ -101,7 +108,7 @@ public class VisualiseurDeFormes extends JFrame
 					r.nextInt( 300 ) + 1, // si r.nextInt( 300 ) --> 0 à 299
 					r.nextInt( 100 ) + 1,
 					r.nextInt( 100 ) + 1,
-					Color.blue
+					m_couleur
 					);
 			getFormes().add( rect );
 			repaint();
@@ -158,14 +165,8 @@ public class VisualiseurDeFormes extends JFrame
 		{
 			if( !m_formes.isEmpty() )
 			{
-				Color c = JColorChooser.showDialog(VisualiseurDeFormes.this, "Choisir 1 couleur", m_formes.lastElement().getColor());
-				if( c != null )
-				{
-					m_formes.lastElement().setColour(c);
-				}
+				m_couleur = JColorChooser.showDialog(VisualiseurDeFormes.this, "Choisir 1 couleur", m_couleur);
 			}
-			
-			repaint();
 		}
 	}
 	
@@ -239,7 +240,7 @@ public class VisualiseurDeFormes extends JFrame
 		setPreferredSize( new Dimension( 700, 400 ) ); 
 		setLayout( new BorderLayout() );
 		
-		m_panneau_dessin = new ZoneDeDessin();
+		m_panneau_dessin = new ZoneDeDessin(this);
 		m_panneau_dessin.setFormes( m_formes );
 		m_panneau_boutons = new JPanel();
 		JLabel label = new JLabel("Visualiseur de Formes");

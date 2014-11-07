@@ -1,8 +1,5 @@
-select		numero_realisateur as num_real, nom_realisateur as nom_real
-from		realisateur
-where		numero_realisateur not in
-(
-	select		re.numero_realisateur
-	from		realisateur re, film f
-	where		re.numero_realisateur = f.numero_realisateur
-);
+select	re.numero_realisateur, nom_realisateur
+from	realisateur re
+left outer join film f
+on		re.numero_realisateur = f.numero_realisateur
+where	f.numero_realisateur is null;
