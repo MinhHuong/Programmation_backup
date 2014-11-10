@@ -30,6 +30,7 @@ grant all 	 on film 	to role_directrice;
 grant all 	 on tarif 	to role_directrice;
 
 grant all	 on seance 	to role_program;
+grant all 	 on place	to role_program;
 
 
 

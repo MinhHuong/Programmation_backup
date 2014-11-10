@@ -1,7 +1,7 @@
-select	distinct	nom_acteur
+select	distinct	prenom_acteur
 from	acteur
 union
 (
-	select distinct	nom_realisateur
+	select distinct	prenom_realisateur
 	from	realisateur
 );

@@ -1,7 +1,7 @@
-select	nom_acteur
+select	prenom_acteur
 from	acteur
 intersect
 (
-	select	nom_realisateur
+	select	prenom_realisateur
 	from	realisateur
 );
