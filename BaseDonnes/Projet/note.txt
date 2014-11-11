@@ -1,0 +1,12 @@
+1) CRÉATION DE LA BASE :
+	- nosem 	number(6) 	: 
+		+ une année a 52 semaines --> on a besoin 2 chiffres pour préciser la semaine
+		+ pourtant, nosem est une clé primaire, alors les valeurs de nosem ne peuvent pas être pareilles --> il faut ajouter 4 chiffres pour indiquer l'année
+		+ par exemple : 492010 désigne la 49e semaine de l'année 2010 
+		+ Par convention, nosem indique le numéro de la semaine òu se trouve la date de début !
+		
+	- codpays 	char(3)		: 
+		+ le code standard de chaque pays dans le monde entier, composé de 3 lettres 
+		
+	- nompays				: 
+		+ pas nécessaire d'être non nul, car on peut savoir quel pays grâce à son code de pays (codpays)
