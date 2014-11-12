@@ -1,0 +1,37 @@
+﻿Les cas qui arrivent après une attaque ( entre pièce 1 p1 et pièce 2 p2 ) :
+	- p1 gagne 			--> p1 reste, p2 perd
+	- p2 gagne 			--> p1 perd, p2 reste
+	- tie 				--> p1 & p2 perdent
+	- bombe >< démineur	--> démineur reste, bombe perd
+	- bombe >< autre	--> autre perd, bombe reste
+	- drapeau >< autre	--> l'autre joueur perd
+
+- Plateau chỉ dịch chuyển Pièce, còn việc tấn công hay không Pièce phải tự biết có tấn công hay không.
+
+void Plateau::deplacerPiece( Case c1 )
+{
+	Nếu c1 không phải là Lac
+	{
+		Xét từ c1 có những vị trí nào valide dựa theo Piece chứa trong c1 --> Case phải biết được mảng m_cases trong Plateau
+		Hiện gợi ý
+		Để người chơi lựa chọn vị trí đến ( nhập x, y )
+		Đúng gợi ý : dời Piece từ c1 sang Case ở vị trí x, y mới nhập
+		Sai gợi ý  : báo lỗi, cho nhập lại
+	}
+	Nếu c1 là Lac
+	{
+		Báo lỗi, cho chọn lại Case
+	}
+}
+
+public Plateau //constructeur
+{
+	Tạo 92 Terrain
+	Tạo 8  Lac
+}
+
+
+
+
+
+
