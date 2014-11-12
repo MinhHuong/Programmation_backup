@@ -1,0 +1,13 @@
+1. JOUEUR :
+	- Placer des Pièces sur le Plateau : 
+		+ valider si ses Pièces se positionnent dans ses 4 lignes
+		+ valider si les coordonnées (x, y) ne déborde pas la taille du Plateau
+
+2. PLATEAU :
+	- Optimiser l'affichage du Plateau (avec les bords entre des Cases, les numéros de coordonnées de 1 à 10)
+	- Trouver un moyen pour distinguer les Pièces du JoueurRouge et JoueurBleu
+	- Déplacer les Pièces --> proposer des mouvements valides pour la Pièce choisie --> Case
+	
+3. PIÈCE :
+	- La fonction servant à l'attaque (gagné / tie)
+	- Drapeau : ajouter le boolean drapeauCapte

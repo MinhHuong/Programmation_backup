@@ -1,4 +1,4 @@
-package Plateau;
+package plateau;
 
 import pieces.Piece;
 import caseTerrainLac.*;
@@ -44,7 +44,7 @@ public class Plateau {
 				{
 					Piece p = ((Terrain) m_cases[i][j]).getPiece();
 					if( p != null ) System.out.print(p.getNom());
-					else System.out.print(" T ");
+					else System.out.print("   ");
 				}
 			}
 			
