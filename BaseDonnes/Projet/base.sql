@@ -2,7 +2,7 @@
 -- DROP ALL TABLES
 --=====================================
 
-drop table	TARIF;
+drop table	TARIFS;
 
 drop table	CALENDRIER;
 
@@ -37,7 +37,7 @@ create table SEJOURS (
 --=====================================
 
 create table CALENDRIER (
-	no_sem						number(6)						,
+	no_sem						char(6)							,
 	date_deb					date			not null		,
 	date_fin					date			not null		,
 	constraint	pk_calendrier	primary key (no_sem)
@@ -47,10 +47,10 @@ create table CALENDRIER (
 -- TARIF
 --=====================================
 
-create table TARIF (
+create table TARIFS (
 	code_sejour					char(10)							,
-	no_sem						number(6)							,
-	prix_ttc					number			not null			,
+	no_sem						char(6)								,
+	prix_ttc					number(7,2)			not null		,
 	constraint	pk_tarif		primary key (code_sejour, no_sem)
 );
 
@@ -59,16 +59,16 @@ create table TARIF (
 --=====================================
 
 alter table SEJOURS
-	add constraint	fk_sejours			foreign key (cod_pays)
+	add constraint	fk_sejours				foreign key (cod_pays)
 		references	PAYS (cod_pays)
 			on delete cascade ;
 		
-alter table TARIF
-	add constraint	fk_tarif_sejour 	foreign key (code_sejour)
+alter table TARIFS
+	add constraint	fk_tarifs_sejour 		foreign key (code_sejour)
 		references	SEJOURS (code_sejour)
 			on delete cascade ;
 
-alter table TARIF	
-	add constraint	fk_tarif_calendrier	foreign key (no_sem)
+alter table TARIFS	
+	add constraint	fk_tarifs_calendrier	foreign key (no_sem)
 		references	CALENDRIER (no_sem)
 			on delete cascade ;

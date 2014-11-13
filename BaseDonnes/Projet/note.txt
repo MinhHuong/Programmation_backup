@@ -10,3 +10,5 @@
 		
 	- nompays				: 
 		+ pas nécessaire d'être non nul, car on peut savoir quel pays grâce à son code de pays (codpays)
+		
+	- prix_ttc	number(7,2) : un nombre de 5 chiffres, avec 2 chiffres après le point décimal

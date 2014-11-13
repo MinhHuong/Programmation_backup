@@ -1,3 +1,5 @@
+clear 	screen
+
 column	cod_pays			heading 'Code|pays' justify center
 column	nom_pays			heading 'Pays' justify center
 
@@ -12,7 +14,7 @@ column	date_fin			heading 'Date de|fin' justify center
 column	prix_ttc 			heading 'Prix TTC' justify center 
 
 set pagesize 50
-set linesize 200 
+set linesize 150 
 
 ttitle -
 	skip -
