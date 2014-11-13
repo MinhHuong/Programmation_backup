@@ -4,8 +4,6 @@
 		+ valider si les coordonnées (x, y) ne déborde pas la taille du Plateau
 
 2. PLATEAU :
-	- Optimiser l'affichage du Plateau (avec les bords entre des Cases, les numéros de coordonnées de 1 à 10)
-	- Trouver un moyen pour distinguer les Pièces du JoueurRouge et JoueurBleu
 	- Déplacer les Pièces --> proposer des mouvements valides pour la Pièce choisie --> Case
 	
 3. PIÈCE :

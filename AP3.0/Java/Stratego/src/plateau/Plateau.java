@@ -30,22 +30,41 @@ public class Plateau {
 		}
 	}
 	
+	// ligne paire (selon i) : +---
+	// ligne impaire 		 : |
 	public void afficher()
 	{
-		for(int i = 0 ; i < 10 ; i ++)
+		System.out.println("	  1   2   3   4   5   6   7   8   9  10");
+
+		for(int i = 0 ; i <= 20 ; i++)
 		{
-			for(int j = 0 ; j < 10 ; j++)
+			if( i%2 == 1 )	System.out.print( (i+1)/2 );
+			System.out.print("	");
+			
+			for(int j = 0 ; j <= 10 ; j++)
 			{
-				if(m_cases[i][j] instanceof Lac)
+				if( i%2 == 0 )
 				{
-					System.out.print(" L ");
+					if( j < 9 )			System.out.print("+----");
+					else if( j == 9 )	System.out.print("+----+");
 				}
-				else if(m_cases[i][j] instanceof Terrain)
+				else
+					System.out.print("|");
+				
+				if( j < 10 )
 				{
-					Piece p = ((Terrain) m_cases[i][j]).getPiece();
-					if( p != null ) System.out.print(p.getNom());
-					else System.out.print("   ");
-				}
+					if( i%2 == 1 )
+						if(m_cases[(i-1)/2][j] instanceof Lac)
+						{
+							System.out.print(" LL ");
+						}
+						else if(m_cases[(i-1)/2][j] instanceof Terrain)
+						{
+							Piece p = ((Terrain) m_cases[(i-1)/2][j]).getPiece();
+							if( p != null ) System.out.print( p.getNom() );
+							else			System.out.print("    ");
+						}
+				}		
 			}
 			
 			System.out.println();

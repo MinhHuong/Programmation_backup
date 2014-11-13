@@ -10,10 +10,10 @@ public class JeuStratego {
 		Plateau plateau = new Plateau();
 		Scanner input = new Scanner(System.in);
 		
+		System.out.print("JOUEUR ROUGE :");
 		JoueurRouge jr = new JoueurRouge(false, plateau, input);
-		jr.afficher();
+		System.out.print("JOUEUR BLEU :");
 		JoueurBleu jb = new JoueurBleu(true, plateau, input);
-		jb.afficher();
 		
 		input.close();
 		

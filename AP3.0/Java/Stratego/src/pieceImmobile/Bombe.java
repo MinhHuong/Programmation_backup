@@ -8,6 +8,7 @@ public class Bombe extends PieceImmobile {
 
 	public String getNom()
 	{
-		return " B ";
+		if( m_part )	return " bB ";
+		else			return " rB ";
 	}
 }

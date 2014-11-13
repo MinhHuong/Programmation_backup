@@ -10,6 +10,7 @@ public class Eclaireur extends PieceSpeciale {
 
 	public String getNom()
 	{
-		return " E ";
+		if( m_part )	return " bE ";
+		else			return " rE ";
 	}
 }

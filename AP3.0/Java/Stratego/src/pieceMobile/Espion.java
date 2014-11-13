@@ -9,6 +9,7 @@ public class Espion extends PieceNormale {
 	
 	public String getNom()
 	{
-		return " e ";
+		if( m_part )	return " be ";
+		else			return " re ";
 	}
 }

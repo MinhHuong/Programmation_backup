@@ -9,6 +9,7 @@ public class General extends PieceNormale {
 	
 	public String getNom()
 	{
-		return " G ";
+		if( m_part )	return " bG ";
+		else			return " rG ";
 	}
 }

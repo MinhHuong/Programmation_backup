@@ -10,6 +10,7 @@ public class Marechal extends PieceNormale {
 	
 	public String getNom()
 	{
-		return " M ";
+		if( m_part )	return " bM ";
+		else			return " rM ";
 	}
 }

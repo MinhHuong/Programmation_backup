@@ -8,6 +8,7 @@ public class Drapeau extends PieceImmobile {
 
 	public String getNom()
 	{
-		return " D ";
+		if( m_part )	return " bD ";
+		else			return " rD ";
 	}
 }

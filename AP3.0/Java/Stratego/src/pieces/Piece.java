@@ -1,9 +1,9 @@
 package pieces;
 
 public abstract class Piece {
-	private boolean m_part;
-	private int m_x;
-	private int m_y;
+	protected boolean m_part;
+	protected int m_x;
+	protected int m_y;
 	
 	public Piece(boolean p, int x, int y)
 	{

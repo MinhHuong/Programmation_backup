@@ -9,6 +9,7 @@ public class Demineur extends PieceNormale {
 	
 	public String getNom()
 	{
-		return " d ";
+		if( m_part ) 	return " bd ";
+		else			return " rd ";
 	}
 }
