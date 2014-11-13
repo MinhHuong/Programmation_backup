@@ -11,8 +11,9 @@
 <fullyQualifiedTypeName name="pieceImmobile.Bombe"/>
 <fullyQualifiedTypeName name="Plateau.Plateau"/>
 <fullyQualifiedTypeName name="pieceMobile.Marechal"/>
-<fullyQualifiedTypeName name="caseTerrainLac.Case"/>
 <fullyQualifiedTypeName name="pieces.Piece"/>
 <fullyQualifiedTypeName name="pieceMobile.General"/>
 <fullyQualifiedTypeName name="java.util.Scanner"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="caseTerrainLac.Case"/>
 </qualifiedTypeNameHistroy>

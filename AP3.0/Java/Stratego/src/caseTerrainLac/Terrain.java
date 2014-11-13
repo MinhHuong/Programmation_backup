@@ -18,4 +18,9 @@ public class Terrain extends Case {
 	{
 		m_piece = p;
 	}
+	
+	public void enleverPiece()
+	{
+		m_piece = null;
+	}
 }

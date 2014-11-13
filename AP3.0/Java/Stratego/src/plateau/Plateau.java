@@ -30,8 +30,6 @@ public class Plateau {
 		}
 	}
 	
-	// ligne paire (selon i) : +---
-	// ligne impaire 		 : |
 	public void afficher()
 	{
 		System.out.println("	  1   2   3   4   5   6   7   8   9  10");
@@ -71,9 +69,18 @@ public class Plateau {
 		}
 	}
 	
-	public void deplacerPiece(Case c)
+	public void deplacerPiece(Case src, Case dest)
 	{
-		
+		if( src instanceof Lac || dest instanceof Lac )
+		{
+			System.out.println("Impossible de choisir une Pièce dans un Lac !");
+		}
+		else
+		{
+			Piece p = ((Terrain) src).getPiece();
+			((Terrain) dest).setPiece(p);
+			((Terrain) src).enleverPiece();
+		}
 	}
 
 	public Case[][] getCases()

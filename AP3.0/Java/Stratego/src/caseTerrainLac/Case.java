@@ -11,4 +11,7 @@ public abstract class Case {
 	public void setPiece(Piece p)
 	{}
 	
+	public void enleverPiece()
+	{}
+	
 }
