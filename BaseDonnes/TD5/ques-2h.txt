@@ -1,0 +1,1 @@
+Il faut absolument exécuter l'instruction COMMIT après chaque nouvelle modification dans la base, sinon les autres sessions de la base ne remarquent pas ces changements.

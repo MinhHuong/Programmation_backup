@@ -1,0 +1,1 @@
+update etudiants set annee_etu = annee_etu + 2 where num_etu = 1;

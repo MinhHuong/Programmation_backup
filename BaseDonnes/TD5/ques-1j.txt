@@ -1,0 +1,3 @@
+COMMIT : enregistrer les nouveaux changements dans la base
+
+ROLLBACK : enlever tous les nouveaux changements dans la base si ceux-ci n'ont pas été admis par l'instruction COMMIT

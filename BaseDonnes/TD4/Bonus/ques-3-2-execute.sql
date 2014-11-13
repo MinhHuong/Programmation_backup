@@ -1,0 +1,1 @@
+delete from etudiants where num_etu = 3;
