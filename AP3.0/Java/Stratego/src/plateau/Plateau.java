@@ -126,8 +126,107 @@ public class Plateau {
 					if( j+1 < 10 )
 						m_cases[i][j+1].setEtatPosition(true);
 				}
+				else
+				{
+					// haut --> bas
+					for( int m = i+1 ; m < 10 ; m++ )
+					{
+						m_cases[m][j].setEtatPosition(true);
+						
+						if( m_cases[m][j] instanceof Lac ||
+								( m_cases[m][j] instanceof Terrain && 
+										((Terrain)m_cases[m][j]).getPiece() != null) )
+							break;
+					}
+					
+					// bas --> haut
+					for( int m = i-1 ; m >= 0 ; m-- )
+					{
+						m_cases[m][j].setEtatPosition(true);
+						
+						if( m_cases[m][j] instanceof Lac ||
+								( m_cases[m][j] instanceof Terrain && 
+								  ((Terrain)m_cases[m][j]).getPiece() != null) )
+								break;
+					}
+					
+					// gauche --> droite
+					for( int m = j+1 ; m < 10 ; m++ )
+					{
+						m_cases[i][m].setEtatPosition(true);
+						
+						if( m_cases[i][m] instanceof Lac ||
+								( m_cases[i][m] instanceof Terrain && 
+								  ((Terrain)m_cases[i][m]).getPiece() != null) )
+								break;
+					}
+					
+					// droite --> gauche
+					for( int m = j-1 ; m >= 0 ; m-- )
+					{
+						m_cases[i][m].setEtatPosition(true);
+						
+						if( m_cases[i][m] instanceof Lac ||
+								( m_cases[i][m] instanceof Terrain && 
+								  ((Terrain)m_cases[i][m]).getPiece() != null) )
+								break;
+					}
+				}
 			}
 		}
+	}
+
+	public boolean estValide(Case src, Case dest)
+	{
+		Piece p = ((Terrain) src).getPiece();
+
+		if( p != null )
+		{
+			int i = src.getX() - 1;
+			int j = src.getY() - 1;
+			int _x = dest.getX() - 1;
+			int _y = dest.getY() - 1;
+
+			if( !(p instanceof Eclaireur) )
+			{
+				return ( (_x == i+1 && _y == j) ||
+						 (_x == i-1 && _y == j) ||
+						 (_x == i && _y == j-1) ||
+						 (_x == i && _y == j+1) );
+				/*if( i+1 < 10 )	return ( _x == i+1 && _y == j );
+				if( i-1 >= 0 )	return ( _x == i-1 && _y == j );
+				if( j-1 >= 0 )	return ( _x == i && _y == j-1 );
+				if( j+1 < 10 )	return ( _x == i && _y == j+1 );*/
+			}
+			else
+			{
+				// haut --> bas
+				for( int m = i+1 ; m < 10 ; m++ )
+				{
+					if( _x == m && _y == j )	return true;
+				}
+
+				// bas --> haut
+				for( int m = i-1 ; m >= 0 ; m-- )
+				{
+					if( _x == m && _y == j )	return true;
+				}
+
+				// gauche --> droite
+				for( int m = j+1 ; m < 10 ; m++ )
+				{
+					if( _x == i && _y == m )	return true;
+				}
+
+				// droite --> gauche
+				for( int m = j-1 ; m >= 0 ; m-- )
+				{
+					if( _x == i && _y == m )	return true;
+				}
+			}
+		}
+		
+		return false;
 	}
 	
 	public Case[][] getCases()
@@ -144,5 +243,10 @@ public class Plateau {
 				m_cases[i][j].setEtatPosition(false);
 			}
 		}
+	}
+
+	public boolean checkCaseValide(Case c)
+	{
+		return ( c.getX() >= 1 && c.getX() <= 10 && c.getY() >= 1 && c.getY() <= 10 );
 	}
 }

@@ -1,11 +1,12 @@
 1. JOUEUR :
 	- Placer des Pièces sur le Plateau : 
 		+ valider si ses Pièces se positionnent dans ses 4 lignes
-		+ valider si les coordonnées (x, y) ne déborde pas la taille du Plateau
 
 2. PLATEAU :
-	- Déplacer les Pièces --> proposer des mouvements valides pour la Pièce choisie --> Case
-	( deplacerPiece : erreur --> il ne remarque pas que dest / src soit un Lac )
+	- deplacerPiece :
+		+ tester si Case source / Case destination est un Lac
+		+ tester si Case source a une Piece ?
+		+ tester si Case destination valide ( pas un Lac, position déterminée dans mouvementValide )
 	
 3. PIÈCE :
 	- La fonction servant à l'attaque (gagné / tie)

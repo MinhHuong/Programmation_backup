@@ -5,11 +5,12 @@ import plateau.Plateau;
 import pieceMobile.*;
 
 public class Terrain extends Case {
-	private Piece m_piece = null;
+	private Piece m_piece;
 	private Case[][] m_cases;
 	
 	public Terrain(int x, int y) {
 		super(x, y);
+		m_piece = null;
 	}
 
 	public Piece getPiece()
@@ -29,8 +30,6 @@ public class Terrain extends Case {
 		else
 		{
 			m_piece = p;
-			p.setX(p.getX());
-			p.setY(p.getY());
 		}
 	}
 	

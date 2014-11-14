@@ -63,11 +63,15 @@ public abstract class Joueur {
 	
 	public Case choisirPiece(int x, int y, Scanner inp, Plateau plat)
 	{
-		System.out.println("Choisir une Case : ");
-		System.out.print(" | x = ");
-		x = inp.nextInt();
-		System.out.print(" | y = ");
-		y = inp.nextInt();
+		do
+		{
+			System.out.println("Choisir une Case ( si x et y invalides, veuillez refaire le positionnement : ");
+			System.out.print(" | x = ");
+			x = inp.nextInt();
+			System.out.print(" | y = ");
+			y = inp.nextInt();
+		}
+		while ( x < 1 || x > 10 || y < 1 || y > 10 );
 		
 		return (plat.getCases())[x-1][y-1];
 		
