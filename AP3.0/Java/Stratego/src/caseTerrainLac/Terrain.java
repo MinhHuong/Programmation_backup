@@ -2,13 +2,14 @@ package caseTerrainLac;
 
 import pieces.Piece;
 import plateau.Plateau;
+import pieceMobile.*;
 
 public class Terrain extends Case {
-	private Piece m_piece;
+	private Piece m_piece = null;
 	private Case[][] m_cases;
 	
-	public Terrain() {
-		super();
+	public Terrain(int x, int y) {
+		super(x, y);
 	}
 
 	public Piece getPiece()
@@ -18,7 +19,7 @@ public class Terrain extends Case {
 	
 	public void setPiece(Piece p, Plateau plat)
 	{
-		m_cases = plat.getCases();
+		//m_cases = plat.getCases();
 		
 		// attaquer
 		if( m_piece != null )
@@ -28,6 +29,8 @@ public class Terrain extends Case {
 		else
 		{
 			m_piece = p;
+			p.setX(p.getX());
+			p.setY(p.getY());
 		}
 	}
 	
@@ -35,4 +38,5 @@ public class Terrain extends Case {
 	{
 		m_piece = null;
 	}
+	
 }

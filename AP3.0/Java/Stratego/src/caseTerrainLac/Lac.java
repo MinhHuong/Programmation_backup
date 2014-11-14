@@ -2,8 +2,8 @@ package caseTerrainLac;
 
 public class Lac extends Case {
 
-	public Lac() {
-		super();
+	public Lac(int x, int y) {
+		super(x, y);
 	}
 	
 }

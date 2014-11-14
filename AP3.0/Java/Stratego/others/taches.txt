@@ -10,3 +10,6 @@
 3. PIÈCE :
 	- La fonction servant à l'attaque (gagné / tie)
 	- Drapeau : ajouter le boolean drapeauCapte
+	
+4. JOUEUR :
+	- Distinguer la tour pour chaque Joueur ( cacher les Pièces de l'autre )
