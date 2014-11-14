@@ -34,7 +34,7 @@ public class JoueurRouge extends Joueur {
 		{
 			int l = m_pieces[i].getX() - 1;
 			int c = m_pieces[i].getY() - 1;
-			cases[l][c].setPiece(m_pieces[i]);
+			cases[l][c].setPiece(m_pieces[i], plateau);
 		}
 	}
 

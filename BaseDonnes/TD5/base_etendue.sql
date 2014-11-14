@@ -184,7 +184,7 @@ create table TARIF
     CATEGORIE_DE_LA_PLACE           CHAR(1)                not null,
     CATEGORIE_DE_LA_SEANCE          CHAR(1)                not null,
     PRIX                            NUMBER(3)                      ,
-    constraint pk_tarif primary key (CATEGORIE_DE_LA_PLACE, CATEGORIE_DE_LA_SEANCE)
+    constraint pk_tarif_TD primary key (CATEGORIE_DE_LA_PLACE, CATEGORIE_DE_LA_SEANCE)
 );
 
 -- Commente pour des raisons pedagogiques :
@@ -229,4 +229,3 @@ alter table TARIF
 alter table TARIF
     add constraint fk2_tarif foreign key (CATEGORIE_DE_LA_SEANCE)
        references CATEGORIE_SEANCE (CATEGORIE_DE_LA_SEANCE);
-

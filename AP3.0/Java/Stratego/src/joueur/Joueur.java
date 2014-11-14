@@ -69,12 +69,7 @@ public abstract class Joueur {
 		System.out.print(" | y = ");
 		y = inp.nextInt();
 		
-		Case m_case = (plat.getCases())[x-1][y-1];
-		
-		if( m_case == null || m_case instanceof Lac )
-			return null;
-		else
-			return m_case;
+		return (plat.getCases())[x-1][y-1];
 		
 	}
 }

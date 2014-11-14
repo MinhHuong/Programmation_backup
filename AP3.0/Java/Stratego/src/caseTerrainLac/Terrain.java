@@ -1,9 +1,11 @@
 package caseTerrainLac;
 
 import pieces.Piece;
+import plateau.Plateau;
 
 public class Terrain extends Case {
 	private Piece m_piece;
+	private Case[][] m_cases;
 	
 	public Terrain() {
 		super();
@@ -14,9 +16,19 @@ public class Terrain extends Case {
 		return m_piece;
 	}
 	
-	public void setPiece(Piece p)
+	public void setPiece(Piece p, Plateau plat)
 	{
-		m_piece = p;
+		m_cases = plat.getCases();
+		
+		// attaquer
+		if( m_piece != null )
+		{
+			
+		}
+		else
+		{
+			m_piece = p;
+		}
 	}
 	
 	public void enleverPiece()

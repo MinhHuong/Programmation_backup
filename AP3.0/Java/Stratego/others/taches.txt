@@ -5,6 +5,7 @@
 
 2. PLATEAU :
 	- Déplacer les Pièces --> proposer des mouvements valides pour la Pièce choisie --> Case
+	( deplacerPiece : erreur --> il ne remarque pas que dest / src soit un Lac )
 	
 3. PIÈCE :
 	- La fonction servant à l'attaque (gagné / tie)

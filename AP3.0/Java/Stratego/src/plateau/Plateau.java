@@ -32,7 +32,7 @@ public class Plateau {
 	
 	public void afficher()
 	{
-		System.out.println("	  1   2   3   4   5   6   7   8   9  10");
+		System.out.println("	   1    2    3    4    5    6    7    8    9   10");
 
 		for(int i = 0 ; i <= 20 ; i++)
 		{
@@ -78,7 +78,7 @@ public class Plateau {
 		else
 		{
 			Piece p = ((Terrain) src).getPiece();
-			((Terrain) dest).setPiece(p);
+			((Terrain) dest).setPiece(p, this);
 			((Terrain) src).enleverPiece();
 		}
 	}
