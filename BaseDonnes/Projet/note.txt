@@ -14,6 +14,13 @@
 	- prix_ttc	number(7,2) : un nombre de 5 chiffres, avec 2 chiffres après le point décimal
 	
 ==========================================================================
+2) CRÉATION DE LA NOUVELLE BASE :
+	- Mieux utiliser CHAR que VARCHAR au cas òu le nombre de caractères ne varie pas considérablement et que la chaine de caractère ne contient que des chiffres / des caractères ( pas des caractères spéciaux )
+	
+	- Éviter de déclarer NUMBER afin d'économiser de l'espace mémoire
 
-2) TÂCHES :
-	- Ajouter des données dans la base ( suffisant pour des tests de la question 3 )
+	
+==========================================================================
+
+3) TÂCHES :
+	- Recréer la base ( question 4 )

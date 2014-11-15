@@ -27,7 +27,7 @@ create table PAYS (
 create table SEJOURS (
 	code_sejour					char(10)						,
 	cod_pays					char(3)			not null		,
-	nom_sejour					char(25)		not null		,
+	nom_sejour					varchar(25)		not null		,
 	description_sejour			varchar(100)					,
 	constraint	pk_sejours		primary key (code_sejour)
 );
@@ -72,3 +72,5 @@ alter table TARIFS
 	add constraint	fk_tarifs_calendrier	foreign key (no_sem)
 		references	CALENDRIER (no_sem)
 			on delete cascade ;
+			
+alter session set nls_date_format = 'DD-MM-YYYY';
