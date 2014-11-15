@@ -8,9 +8,6 @@
 	- codpays 	char(3)		: 
 		+ le code standard de chaque pays dans le monde entier, composé de 3 lettres 
 		
-	- nompays				: 
-		+ pas nécessaire d'être non nul, car on peut savoir quel pays grâce à son code de pays (codpays)
-		
 	- prix_ttc	number(7,2) : un nombre de 5 chiffres, avec 2 chiffres après le point décimal
 	
 ==========================================================================
@@ -18,6 +15,8 @@
 	- Mieux utiliser CHAR que VARCHAR au cas òu le nombre de caractères ne varie pas considérablement et que la chaine de caractère ne contient que des chiffres / des caractères ( pas des caractères spéciaux )
 	
 	- Éviter de déclarer NUMBER afin d'économiser de l'espace mémoire
+	
+	- Il y a des champs dont la valeur doit être précisée pour garantir la validité de données ( éviter les cas òu la requête ne renvoie aucun résultat, ou la suppression par accident des données, le prix est nul : le pris est-il égal à 0, ou la valeur n'est pas encore précisée ? )
 
 	
 ==========================================================================
