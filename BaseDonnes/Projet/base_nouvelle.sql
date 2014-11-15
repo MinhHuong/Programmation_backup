@@ -73,6 +73,7 @@ create table SEJOURS (
 	nb_nuits					number(3)		not null		,
 	type_heberg					number(2)		not null		,
 	nb_sejours					number(4)		not null		,
+	nb_reserv					number(4)		not null		,
 	constraint	pk_sejours		primary key (code_sejour) 
 );
 
@@ -160,10 +161,12 @@ create table RESERVATIONS (
 	ville_pers				varchar(20)			not null		,
 	tel_pers				varchar(15) 		not null		,
 	date_reserv				date				not null		,
-	nb_adults				number(2)			not null		,
-	nb_enf					number(2)			not null		,
+	nb_adults				number(3)			not null		,
+	nb_enf					number(3)			not null		,
+	nb_pers_ch_seule		number(3)			not null		,
 	somme_versee			number(7,2)			not null		,
 	date_vers				date				not null		,
+	mont_reserv				number(8,2)			not null		,
 	constraint	pk_reserv	primary key (code_res)
 );
 

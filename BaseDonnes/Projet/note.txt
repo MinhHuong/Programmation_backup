@@ -20,9 +20,35 @@
 	
 	- NUMBER avec précision et scale : si l'on ne déclare que NUMBER, il va prend tout résultat que l'on insère, d'òu une flexibilité, pourtant ce sera pénible quand on change d'une base de données à une autre ( Oracle à SQL Server, par exemple ), le type NUMBER ne sera pas compréhensible par SQL Server
 
-	
 ==========================================================================
 
 3) TÂCHES :
 	- Insérer des données
 	- Format l'affichage des données 
+	
+==========================================================================
+
+4) TRIGGER :
+	a. tester s'il y a encore de places pour un séjour donné avant d'effectuer la réservation
+		--> éviter l'insertion de données
+	
+	b. chaque fois qu'une réservation pour un séjour effectuée, incrémenter le nombre de réservations ( table SEJOURS )
+	
+	c. calculer automatiquement le montant de réservation into montant_resrv :
+		montant_resrv = 	prix_ttc_adult * nb_adult 
+						+ 	prix_ttc_enf * nb_enf * ( 1 - reduc_enf )
+						+	suppl_ch_seule * nb_pers_ch_seule
+						-	prix_sem_sup
+						
+	d. HOTEL_RESIDENCE pas CIRCUITS, mais un CIRCUIT peut se composer de quelques séjours en HOTEL_RESIDENCE
+
+
+
+
+
+
+
+
+
+
+

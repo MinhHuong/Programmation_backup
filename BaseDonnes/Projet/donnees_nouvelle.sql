@@ -55,25 +55,46 @@ delete from PAYS;
 -- 1 	PAYS
 --====================================
 
+insert into PAYS values ('SEN', 'SENEGAL');
+
 --====================================
 -- 2	VILLES_ETAPES
 --====================================
+
+insert into VILLES_ETAPES values (1, 'SEN', 'DAKAR');
 
 --====================================
 -- 3	HEBERGEMENT
 --====================================
 
+insert into HEBERGEMENT values (1, 'PENSION COMPLETE'	);
+insert into HEBERGEMENT values (2, 'DEMI-PENSION'		);
+insert into HEBERGEMENT values (3, 'HEBERGEMENT SEUL'	);
+
 --====================================
 -- 4	SEJOURS
 --====================================
 
+insert into SEJOURS values ('SSND07', 
+							'CLUB DAKAR SOMONE', 
+							'La Somonne, sa baie, ses plages, sa vie locale, sa petite riviere, Parc Ornithologique', 
+							8, 7, 
+							1,
+							3, 0 );
+							
 --====================================
 -- 5 	HOTEL_RESIDENCE
 --====================================
 
+insert into HOTEL_RESIDENCE values ('SSND07', 1, 'FOUR SEASONS', 4, '151 CUSSET, VICHY', '00 63 81 92 56 78' );
+
 --====================================
 -- 6	TRANSPORT
 --====================================
+
+insert into TRANSPORT values (1, 'AUTOCAR'		);
+insert into TRANSPORT values (2, 'BATEAU'		);
+insert into TRANSPORT values (3, 'VEHICULE 4X4'	);
 
 --====================================
 -- 7	CIRCUITS
