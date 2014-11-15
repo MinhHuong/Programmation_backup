@@ -48,7 +48,7 @@ create table PAYS (
 
 create table VILLES_ETAPES (
 	cod_ville					number(3)						,
-	cod_pays					char(3)							,
+	cod_pays					char(3)			not null		,
 	nom_ville					varchar(20)		not null		,
 	constraint	pk_villes		primary key (cod_ville)
 );
@@ -73,7 +73,7 @@ create table SEJOURS (
 	description_sejour			varchar(100)					,
 	nb_jours					number(3)		not null		,
 	nb_nuits					number(3)		not null		,
-	type_heberg					number(2)						,
+	type_heberg					number(2)		not null		,
 	nb_sejours					number(4)		not null		,
 	constraint	pk_sejours		primary key (code_sejour) 
 );
@@ -84,7 +84,7 @@ create table SEJOURS (
 
 create table HOTEL_RESIDENCE (
 	code_sejour					char(10)						,
-	cod_ville					number(3)						,
+	cod_ville					number(3)		not null		,
 	nom_hotel					varchar(20)		not null		,
 	nb_etoiles					number(1)		not null		,
 	adres_hotel					varchar(50)		not null		,
@@ -108,7 +108,7 @@ create table TRANSPORT (
 	
 create table CIRCUITS (
 	code_sejour				char(10)							,
-	type_transport			number(2)							,
+	type_transport			number(2)			not null		,
 	constraint	pk_circuits	primary key (code_sejour)	
 );
 
@@ -119,7 +119,7 @@ create table CIRCUITS (
 create table ETAPES_SEJOUR (
 	code_sejour				char(10)							,
 	rang_pas				number(2)							,
-	cod_ville				number(3)							,
+	cod_ville				number(3)			not null		,
 	nb_jours_etap			number(2)			not null		,
 	constraint	pk_etp_sej	primary key (code_sejour, rang_pas) 
 );
@@ -142,7 +142,7 @@ create table CALENDRIER (
 create table TARIF (
 	no_sem					char(6)								,
 	code_sejour				char(10)							,
-	prix_ttec				number(7,2)			not null		,
+	prix_ttc				number(7,2)			not null		,
 	reduc_enf				number(7,2)			not null		,
 	prix_sem_sup			number(7,2)			not null		,
 	suppl_ch_seule			number(7,2)			not null		,
@@ -191,7 +191,7 @@ end trg_auto_incre_reserv;
 create table DETAIL_RESERV (
 	no_sem					char(6)								,
 	code_res				number(5)							,
-	code_sejour				char(10)							,
+	code_sejour				char(10)			not null		,
 	prix_ttc_adult			number(7,2)			not null		,
 	prix_ttc_enf			number(7,2)			not null		,
 	constraint	pk_det_resv	primary key (no_sem, code_res)
