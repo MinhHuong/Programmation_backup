@@ -17,9 +17,12 @@
 	- Éviter de déclarer NUMBER afin d'économiser de l'espace mémoire
 	
 	- Il y a des champs dont la valeur doit être précisée pour garantir la validité de données ( éviter les cas òu la requête ne renvoie aucun résultat, ou la suppression par accident des données, le prix est nul : le pris est-il égal à 0, ou la valeur n'est pas encore précisée ? )
+	
+	- NUMBER avec précision et scale : si l'on ne déclare que NUMBER, il va prend tout résultat que l'on insère, d'òu une flexibilité, pourtant ce sera pénible quand on change d'une base de données à une autre ( Oracle à SQL Server, par exemple ), le type NUMBER ne sera pas compréhensible par SQL Server
 
 	
 ==========================================================================
 
 3) TÂCHES :
-	- Recréer la base ( question 4 )
+	- Insérer des données
+	- Format l'affichage des données 

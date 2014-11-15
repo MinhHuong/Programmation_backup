@@ -6,8 +6,6 @@ drop table DETAIL_RESERV;
 
 drop table RESERVATIONS;
 
-drop sequence seq_reservation;
-
 drop table TARIF;
 
 drop table CALENDRIER;
@@ -150,7 +148,7 @@ create table TARIF (
 );
 
 --====================================
--- 11	RESERVATIONS, SEQUENCE & TRIGGER pour auto-incrémenter le code_res
+-- 11	RESERVATIONS
 --====================================
 	
 create table RESERVATIONS (
@@ -168,21 +166,6 @@ create table RESERVATIONS (
 	date_vers				date				not null		,
 	constraint	pk_reserv	primary key (code_res)
 );
-
-create sequence seq_reservation 
-	start with 		1
-	increment by 	1
-	cache			5 ; 
-	
-create or replace trigger trg_auto_incre_reserv
-before insert on RESERVATIONS
-for each row
-begin
-	select 	seq_reservation.nextVal
-	into 	:new.code_res
-	from 	dual;
-end trg_auto_incre_reserv;
-/
 
 --====================================
 -- 12	DETAIL_RESERV
