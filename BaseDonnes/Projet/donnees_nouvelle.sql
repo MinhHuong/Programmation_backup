@@ -78,7 +78,7 @@ insert into HEBERGEMENT values (3, 'HEBERGEMENT SEUL'	);
 insert into SEJOURS values ('SSND07', 
 							'CLUB DAKAR SOMONE', 
 							'La Somonne, sa baie, ses plages, sa vie locale, sa petite riviere, Parc Ornithologique', 
-							8, 7, 
+							12, 11, 
 							1,
 							1, 0 );
 
@@ -140,12 +140,12 @@ insert into TARIF values ('042011', 'SSND07', 799, 10, 12, 130 );
 insert into RESERVATIONS values ( 	null, 'LE', 'ELISE', 
 									'RUE MINH PHUNG, QUARTIER 10, DISTRICT 11', '00084',
 									'HO CHI MINH', '090 8989 361', '24-DEC-2010',
-									3, 2, 1, 250, '24-DEC-2010', 0 );
+									3, 2, 1, 0, null, 0 );
 									
 insert into RESERVATIONS values (	null, 'HIEU', 'MICHEL',
 									'RUE NGUYEN DINH CHIEU, DISTRICT 3', '00084',
 									'HO CHI MINH', '098 336 5270', '10-JAN-2011',
-									5, 3 , 0, 600, '13-JAN-2011', 0 );
+									5, 3 , 0, 0, null, 0 );
 
 --====================================
 -- 12	DETAIL_RESERV

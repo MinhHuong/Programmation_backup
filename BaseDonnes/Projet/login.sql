@@ -32,7 +32,7 @@ column	no_sem				heading 'No. de|semaine' justify center
 column	date_debut			heading 'Date de|debut' justify center
 column	date_fin			heading 'Date de|fin' justify center
 
-column 	reduc_enf			heading 'Reduction|enfant' justify center
+column 	reduc_enf			heading 'Reduction|enfant (%)' justify center
 column 	prix_sem_sup 		heading 'Prix semaine|supplementaire' justify center
 column 	suppl_ch_seule		heading	'Chambre|supplementaire' justify center
 column	prix_ttc 			heading 'Prix TTC' justify center 
@@ -47,10 +47,13 @@ column 	tel_pers			heading	'Telephone|client' justify center
 column 	date_reserv			heading 'Date|reservation' justify center
 column 	nb_adults			heading 'Nb|Adults' justify center
 column 	nb_enf				heading	'Nb|Enfants' justify center
-column 	nb_pers_ch_seule	heading	'Nb|Ch.seule' justify center
+column 	nb_seule			heading	'Nb|Ch.seule' justify center
 column 	somme_versee		heading 'Somme|versee' justify center
 column 	date_vers			heading	'Date|versement' justify center
 column 	mont_reserv			heading	'Montant|total' justify center	
+
+column 	prix_ttc_adult		heading 'Prix TTC|Adult' justify center
+column 	prix_ttc_enf		heading 'Prix TTC|Enfant' justify center
 
 set pagesize 50
 set linesize 150 

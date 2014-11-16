@@ -20,14 +20,18 @@
 	
 	- NUMBER avec précision et scale : si l'on ne déclare que NUMBER, il va prend tout résultat que l'on insère, d'òu une flexibilité, pourtant ce sera pénible quand on change d'une base de données à une autre ( Oracle à SQL Server, par exemple ), le type NUMBER ne sera pas compréhensible par SQL Server
 	
-	- reduc_enf : le pourcentage de réduction --> quand il y a des enfants, le montant total sera réduit d'un taux de reduc_enf %
+	- reduc_enf : le pourcentage de réduction --> quand il y a des enfants, le montant total sera réduit d'un taux de reduc_enf (%)
+	
+	- au cas òu (nb_jours, nb_nuits) ne correspondrait pas à une semaine ( à une semaine et quelques jours de plus), alors ce prix_sem_sup sera appliqué pour cette semaine supplémentaire
+	Par convention : un séjour qui se dure une semaine prend 8 jours, 7 nuits
+					( idem, un séjour qui se dure 2 semaines prend 15 jours, 14 nuits )
+					
+	- (nb_jours, nb_nuits) : quand on enregistre une réservation pour un séjour qui dure plus d'une semaine, on enregistre seulement no_sem qui concerne la date de début (date_debut)
 
 ==========================================================================
 
 3) TÂCHES :
 	- Insérer des données
-	- Créer des triggers
-	- Format l'affichage des données 
 	
 ==========================================================================
 
@@ -46,13 +50,11 @@
 						 + 	prix_ttc_enf * nb_enf 
 						 +	suppl_ch_seule * nb_pers_ch_seule
 						 -	prix_sem_sup ) * ( 1 - reduc_enf )
-						
-	e. HOTEL_RESIDENCE pas CIRCUITS, mais un CIRCUIT peut se composer de quelques séjours en HOTEL_RESIDENCE
 	
-	f. date_reser < date_debut
-	   date_vers < date_debut 
-	   somme_versee >= 1/2 montant_resrv
-
+	e. date_reser < date_debut ( insert on reservations )
+	   date_vers < date_debut  ( update on reservations )
+	   date_reserv <= date_vers < date_debut
+	   somme_versee >= 1/2 montant_resrv ( update on reservations )
 
 
 

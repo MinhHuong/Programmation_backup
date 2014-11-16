@@ -142,7 +142,7 @@ create table TARIF (
 	no_sem					char(6)								,
 	code_sejour				char(10)							,
 	prix_ttc				number(7,2)			not null		,
-	reduc_enf				number(7,2)			not null		,
+	reduc_enf				number(2)			not null		,
 	prix_sem_sup			number(7,2)			not null		,
 	suppl_ch_seule			number(7,2)			not null		,
 	constraint	pk_tarif	primary key (no_sem, code_sejour)
@@ -163,9 +163,9 @@ create table RESERVATIONS (
 	date_reserv				date				not null		,
 	nb_adults				number(3)			not null		,
 	nb_enf					number(3)			not null		,
-	nb_pers_ch_seule		number(3)			not null		,
+	nb_seule				number(3)			not null		,
 	somme_versee			number(7,2)			not null		,
-	date_vers				date				not null		,
+	date_vers				date								,
 	mont_reserv				number(8,2)			not null		,
 	constraint	pk_reserv	primary key (code_res)
 );
@@ -284,4 +284,4 @@ alter table DETAIL_RESERV
 -- 					  AUTRES MODIFICATIONS						--	
 --==============================================================--
 
-alter session set nls_date_format = 'DD-MM-YYYY'; 
+alter session set nls_date_format = 'DD-MON-YYYY'; 

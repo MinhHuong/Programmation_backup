@@ -73,4 +73,4 @@ alter table TARIFS
 		references	CALENDRIER (no_sem)
 			on delete cascade ;
 			
-alter session set nls_date_format = 'DD-MM-YYYY';
+alter session set nls_date_format = 'DD-MON-YYYY';
