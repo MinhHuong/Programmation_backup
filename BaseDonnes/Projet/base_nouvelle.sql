@@ -57,7 +57,7 @@ create table VILLES_ETAPES (
 
 create table HEBERGEMENT (
 	type_heberg					number(2)						,
-	nom_type					varchar(20)		not null		,
+	nom_heberg					varchar(20)		not null		,
 	constraint	pk_heberg		primary key (type_heberg)
 );
 
@@ -87,7 +87,7 @@ create table HOTEL_RESIDENCE (
 	nom_hotel					varchar(20)		not null		,
 	nb_etoiles					number(1)		not null		,
 	adres_hotel					varchar(50)		not null		,
-	tel_hotel					varchar(15)		not null		,
+	tel_hotel					varchar(20)		not null		,
 	constraint	pk_hotel_resi	primary key (code_sejour)		
 );
 	
@@ -97,7 +97,7 @@ create table HOTEL_RESIDENCE (
 	
 create table TRANSPORT (
 	type_transport				number(2) 						,
-	nom_type					varchar(30)		not null		,
+	nom_transport				varchar(30)		not null		,
 	constraint	pk_transport	primary key (type_transport)
 );
 
@@ -248,7 +248,7 @@ alter table ETAPES_SEJOUR
 			on delete cascade;
 
 --====================================
--- TARIF ref CALENDRIER
+-- TARIF ref CALENDRIER, ref SEJOURS
 --====================================
 
 alter table	TARIF
@@ -256,8 +256,13 @@ alter table	TARIF
 		references	CALENDRIER(no_sem)
 			on delete cascade;
 			
+alter table TARIF	
+	add constraint	fk_tarif_sejour				foreign key (code_sejour)
+		references 	SEJOURS(code_sejour)
+			on delete cascade;
+			
 --====================================
--- DETAIL_RESERV ref RESERVATIONS, ref CALENDRIER
+-- DETAIL_RESERV ref RESERVATIONS, ref CALENDRIER, ref SEJOURS
 --====================================
 
 alter table DETAIL_RESERV
@@ -270,8 +275,13 @@ alter table DETAIL_RESERV
 		references	RESERVATIONS(code_res)
 			on delete cascade;
 
+alter table DETAIL_RESERV
+	add constraint	fk_detail_reserv_sejours	foreign key (code_sejour)
+		references	SEJOURS(code_sejour)
+			on delete cascade;
+			
 --==============================================================--
 -- 					  AUTRES MODIFICATIONS						--	
 --==============================================================--
 
-alter session set nls_date_format = 'DD-MM-YYYY';
+alter session set nls_date_format = 'DD-MM-YYYY'; 

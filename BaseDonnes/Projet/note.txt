@@ -19,11 +19,14 @@
 	- Il y a des champs dont la valeur doit être précisée pour garantir la validité de données ( éviter les cas òu la requête ne renvoie aucun résultat, ou la suppression par accident des données, le prix est nul : le pris est-il égal à 0, ou la valeur n'est pas encore précisée ? )
 	
 	- NUMBER avec précision et scale : si l'on ne déclare que NUMBER, il va prend tout résultat que l'on insère, d'òu une flexibilité, pourtant ce sera pénible quand on change d'une base de données à une autre ( Oracle à SQL Server, par exemple ), le type NUMBER ne sera pas compréhensible par SQL Server
+	
+	- reduc_enf : le pourcentage de réduction --> quand il y a des enfants, le montant total sera réduit d'un taux de reduc_enf %
 
 ==========================================================================
 
 3) TÂCHES :
 	- Insérer des données
+	- Créer des triggers
 	- Format l'affichage des données 
 	
 ==========================================================================
@@ -32,18 +35,23 @@
 	a. tester s'il y a encore de places pour un séjour donné avant d'effectuer la réservation
 		--> éviter l'insertion de données
 	
-	b. chaque fois qu'une réservation pour un séjour effectuée, incrémenter le nombre de réservations ( table SEJOURS )
+	b. chaque fois qu'une réservation pour un séjour est effectuée, incrémenter le nombre de réservations ( table SEJOURS ) ( réservation ajoutée dans DETAIL_RESERV )
+
+	c. chaque fois qu'une réservation pour un séjour est supprimée, décrémenter le nombre de réservations ( SEJOURS ) ( réservation supprimée absolument )
 	
-	c. calculer automatiquement le montant de réservation into montant_resrv :
-		montant_resrv = 	prix_ttc_adult * nb_adult 
-						+ 	prix_ttc_enf * nb_enf * ( 1 - reduc_enf )
-						+	suppl_ch_seule * nb_pers_ch_seule
-						-	prix_sem_sup
+	d. forcer l'insertion de données dans DETAIL_RESERV chaque fois qu'une nouvelle réservation est ajoutée dans RESERVATION ( annoncer un message )
+	
+	d. calculer automatiquement le montant de réservation into montant_resrv :
+		montant_resrv = (	prix_ttc_adult * nb_adult 
+						 + 	prix_ttc_enf * nb_enf 
+						 +	suppl_ch_seule * nb_pers_ch_seule
+						 -	prix_sem_sup ) * ( 1 - reduc_enf )
 						
-	d. HOTEL_RESIDENCE pas CIRCUITS, mais un CIRCUIT peut se composer de quelques séjours en HOTEL_RESIDENCE
-
-
-
+	e. HOTEL_RESIDENCE pas CIRCUITS, mais un CIRCUIT peut se composer de quelques séjours en HOTEL_RESIDENCE
+	
+	f. date_reser < date_debut
+	   date_vers < date_debut 
+	   somme_versee >= 1/2 montant_resrv
 
 
 
