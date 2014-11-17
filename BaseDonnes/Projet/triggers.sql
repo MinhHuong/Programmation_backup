@@ -67,8 +67,7 @@ end trg_dec_reserv;
 /
 	
 --==============================================================
--- Calculer le montant total d'une réservation et 
--- automatiquement l'insérer dans la table RESERVATIONS
+-- Calculer automatiquement le montant total d'une réservation
 --==============================================================
 
 create or replace trigger trg_montant_total
@@ -76,19 +75,15 @@ after insert on detail_reserv
 for each row 
 declare
 	total			number(8,2);
-	
+	prix_ttc_sem	number(7,2);
 	prix_adult		number(7,2);
 	nb_adu			number(3);
-	
 	prix_enf		number(7,2);
 	nb_e			number(3);
-	
 	prix_seule		number(7,2);
 	nb_s			number(3);
-	
 	red_enf			number(2);
 	red_sem			number(7,2);
-	
 	date_reelle_fin	date;
 	sem_ayant_reduc char(6);
 begin
@@ -99,6 +94,11 @@ begin
 	select 	nb_enf 		into nb_e		from reservations	where code_res = :new.code_res;
 	select	nb_seule	into nb_s		from reservations	where code_res = :new.code_res;
 	select 	mont_reserv into total		from reservations 	where code_res = :new.code_res;
+	
+	select 	prix_ttc into prix_ttc_sem
+	from	tarif t, calendrier c
+	where	t.no_sem = c.no_sem
+	and		c.no_sem = :new.no_sem;
 	
 	select 	suppl_ch_seule into prix_seule	
 	from 	tarif t, calendrier c
@@ -123,15 +123,19 @@ begin
 	select	prix_sem_sup into red_sem
 	from	tarif
 	where	no_sem = sem_ayant_reduc;
-	
-	total := (    prix_adult * nb_adu 
+
+	total := (    prix_ttc_sem
+				+ prix_adult * nb_adu 
 				+ prix_enf * nb_e 
 				+ prix_seule * nb_s 
 				- red_sem ) * ( 1 - red_enf/100 );
 	
 	dbms_output.put_line('Total montant = '|| total);
+	dbms_output.put_line('	');
+	dbms_output.put_line('Il faut immediatement affecter ce montant dans RESERVATIONS !');
+	dbms_output.put_line('	');
+	dbms_output.put_line('A la fois, il faut mettre a jour ces 3 informations : somme versee, date de versement, montant total');
 	
-	update reservations set mont_reserv = total where code_res = :new.code_res;
 end trg_montant_total;
 /
 
@@ -158,6 +162,8 @@ begin
 	and		c.no_sem = :new.no_sem;
 	
 	if ( date_reservation >= date_de_debut ) then 
+		dbms_output.put_line('Date de debut du sejour : ' || date_de_debut);
+		dbms_output.put_line('Date de reservation : ' || date_reservation);
 		raise_application_error(-20102, 'Une reservation doit etre effectuee avant la date de debut du sejour !');
 	end if;
 	
@@ -166,7 +172,7 @@ end trg_valide_reserv;
 
 --==============================================================
 -- Tester la validité du payement à une réservation 
--- ( somme_versee, date_vers )
+-- ( date_vers )
 -- sinon non valide, empêche l'utilisateur à mettre à jour
 --==============================================================
 
@@ -181,8 +187,6 @@ declare
 	date_reservation	date;
 begin
 	date_versement := :new.date_vers;
-	somme_vers := :new.somme_versee;
-	total := :new.mont_reserv;
 	date_reservation := :new.date_reserv;
 	
 	select	date_debut	into date_de_debut
@@ -197,6 +201,9 @@ begin
 	if( date_versement < date_reservation ) then
 		raise_application_error(-20104, 'Invalide : la date de versement doit avoir lieu en meme temps ou apres la date de reservation !');
 	end if;
+
+	somme_vers := :new.somme_versee;
+	total := :new.mont_reserv;
 	
 	if ( somme_vers < total/2 ) then
 		raise_application_error(-20105, 'Il faut verser une moitie du montant pour effectuer une reservation valide !');
