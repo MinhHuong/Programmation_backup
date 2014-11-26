@@ -25,16 +25,11 @@ public class JeuStratego {
 		
 		do
 		{
-			Case source = jr.choisirPiece(abs, ord, input, plateau);
+			Case source = jr.choisirPiece(abs, ord, input, plateau, "SOURCE");
 			plateau.mouvementValide(source);
 			plateau.afficher();
 			
-			Case destination = jr.choisirPiece(abs, ord, input, plateau);
-			if( plateau.estValide(source, destination) ) 
-			{
-				System.out.print("Erreur ( destination )");
-				continue;
-			}
+			Case destination = jr.choisirPiece(abs, ord, input, plateau, "DESTINATION");
 			plateau.deplacerPiece(source, destination);
 			plateau.afficher();
 			

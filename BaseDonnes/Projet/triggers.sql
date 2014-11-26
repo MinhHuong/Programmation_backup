@@ -87,28 +87,27 @@ declare
 	date_reelle_fin	date;
 	sem_ayant_reduc char(6);
 begin
-	prix_adult 	:= :new.prix_ttc_adult;
-	prix_enf 	:= :new.prix_ttc_enf;
-	
 	select	nb_adults 	into nb_adu 	from reservations 	where code_res = :new.code_res;
 	select 	nb_enf 		into nb_e		from reservations	where code_res = :new.code_res;
 	select	nb_seule	into nb_s		from reservations	where code_res = :new.code_res;
-	select 	mont_reserv into total		from reservations 	where code_res = :new.code_res;
 	
 	select 	prix_ttc into prix_ttc_sem
 	from	tarif t, calendrier c
 	where	t.no_sem = c.no_sem
-	and		c.no_sem = :new.no_sem;
+	and		c.no_sem = :new.no_sem
+	and		t.code_sejour = :new.code_sejour;
 	
 	select 	suppl_ch_seule into prix_seule	
 	from 	tarif t, calendrier c
 	where	t.no_sem = c.no_sem
-	and		c.no_sem = :new.no_sem;
+	and		c.no_sem = :new.no_sem
+	and		t.code_sejour = :new.code_sejour;
 	
 	select 	reduc_enf into red_enf
 	from 	tarif t, calendrier c
 	where	t.no_sem = c.no_sem
-	and		c.no_sem = :new.no_sem;
+	and		c.no_sem = :new.no_sem
+	and		t.code_sejour = :new.code_sejour;
 	
 	select	(date_debut + nb_jours) into date_reelle_fin
 	from	calendrier c, sejours s
@@ -122,27 +121,61 @@ begin
 	
 	select	prix_sem_sup into red_sem
 	from	tarif
-	where	no_sem = sem_ayant_reduc;
+	where	no_sem = sem_ayant_reduc
+	and		code_sejour = :new.code_sejour;
 
-	total := (    prix_ttc_sem
-				+ prix_adult * nb_adu 
-				+ prix_enf * nb_e 
-				+ prix_seule * nb_s 
-				- red_sem ) * ( 1 - red_enf/100 );
+	prix_adult := prix_ttc_sem * nb_adu;
+	prix_enf := prix_ttc_sem * nb_e * ( 1 - red_enf/100 );
+	total := func_total_montant(prix_ttc_sem, nb_adu, red_enf, nb_e, prix_seule, nb_s, 0);
 	
-	dbms_output.put_line('Total montant = '|| total);
+	dbms_output.put_line('Total montant = '|| total || ', dont le prix d''adultes = ' || prix_adult || ' et le prix d''enfants = ' || prix_enf);
+	
+	insert into valeur_temp values ( total, prix_adult, prix_enf );
+	
 	dbms_output.put_line('	');
-	dbms_output.put_line('Il faut immediatement affecter ce montant dans RESERVATIONS !');
-	dbms_output.put_line('	');
-	dbms_output.put_line('A la fois, il faut mettre a jour ces 3 informations : somme versee, date de versement, montant total');
+	dbms_output.put_line('Ensuite, veuillez executer la procedure complete_prix(no_sem, code_res) pour completer ces 3 nouveau montants (total, adult, enfant) !');
 	
 end trg_montant_total;
 /
 
 --==============================================================
--- Tester la validité d'une nouvelle réservation
--- ( date de réservation )
--- sinon non valide, empêche l'utilisateur à en insérer
+-- Recalculer automatiquement le montant total d'une réservation
+-- apres une mise a jour ( prix TTC, nombre d'adultes... )
+--==============================================================
+
+create or replace trigger trg_maj_tarif_montant
+after update on tarif
+for each row
+declare
+	prix_adult	number(7,2);
+	prix_enf	number(7,2);
+	total 		number(8,2);
+	cursor cs_nb is
+		select 	nb_adults, nb_enf, nb_seule
+		from	reservations r, detail_reserv dr
+		where	r.code_res = dr.code_res
+		and		dr.no_sem = :new.no_sem;
+begin
+	for l in cs_nb
+	loop
+		prix_adult := :new.prix_ttc * l.nb_adults;
+		prix_enf   := :new.prix_ttc * l.nb_enf * ( 1 - :new.reduc_enf/100 );
+	
+		total := func_total_montant(:new.prix_ttc, l.nb_adults, :new.reduc_enf, l.nb_enf, :new.suppl_ch_seule, l.nb_seule, :new.prix_sem_sup);
+	end loop;
+	
+	delete from valeur_temp;
+	insert into valeur_temp values (total, prix_adult, prix_enf);
+	
+	dbms_output.put_line('	');
+	dbms_output.put_line('Ensuite, il vous faut executer la fonction change_prix(no_sem, code_res) pour changer les prix dans des tables convenantes');
+end trg_maj_tarif_montant;
+/
+
+--==============================================================
+--Tester la validité d'une nouvelle réservation
+--( date de réservation )
+--sinon non valide, empêche l'utilisateur à en insérer
 --==============================================================
 
 create or replace trigger trg_valide_reserv
@@ -152,14 +185,15 @@ declare
 	date_de_debut		date;
 	date_reservation	date;
 begin
+	dbms_output.put_line(:new.no_sem);
+	dbms_output.put_line(:new.code_res);
 	select 	date_debut 	into date_de_debut
 	from	calendrier
 	where	no_sem = :new.no_sem;
 	
 	select 	date_reserv into date_reservation
-	from	reservations r, calendrier c
-	where	r.code_res = :new.code_res
-	and		c.no_sem = :new.no_sem;
+	from	reservations
+	where	code_res = :new.code_res;
 	
 	if ( date_reservation >= date_de_debut ) then 
 		dbms_output.put_line('Date de debut du sejour : ' || date_de_debut);
@@ -191,8 +225,10 @@ begin
 	
 	select	date_debut	into date_de_debut
 	from 	calendrier c, detail_reserv dr
-	where	dr.code_res = :new.code_res
-	and		c.no_sem = dr.no_sem;
+	where	dr.code_res = 1
+	and		c.no_sem = dr.no_sem
+	and 	id_detail = 
+	( select max(id_detail) from detail_reserv );
 	
 	if ( date_versement >= date_de_debut ) then
 		raise_application_error(-20103, 'Il faut verser une partie du montant total avant la date de debut du sejour !');
@@ -205,18 +241,22 @@ begin
 	somme_vers := :new.somme_versee;
 	total := :new.mont_reserv;
 	
-	if ( somme_vers < total/2 ) then
-		raise_application_error(-20105, 'Il faut verser une moitie du montant pour effectuer une reservation valide !');
+	if ( :old.mont_reserv != :new.mont_reserv ) then
+		if ( somme_vers > :new.mont_reserv ) then
+			dbms_output.put_line('Montant = ' || total || ', Somme versee = ' || somme_vers);
+			dbms_output.put_line('Somme versee > Montant total');
+		end if;
+	end if;
+	
+	if ( total != 0 ) and ( :old.somme_versee != 0 ) then
+		if ( somme_vers < total/2 ) then
+			dbms_output.put_line('Montant = ' || total || '	, Somme versee = ' || somme_vers);
+			raise_application_error(-20105, 'Il faut verser une moitie du montant pour effectuer une reservation valide !');
+		end if;
+	end if;
+	
+	if ( total = 0 ) then
+		raise_application_error(-20109, 'Veuillez execute la procedure complete_prix(no_sem, code_res) pour avoit le montant total.');
 	end if;
 end trg_valide_versement;
 /
-
-
-
-
-
-
-
-
-
-

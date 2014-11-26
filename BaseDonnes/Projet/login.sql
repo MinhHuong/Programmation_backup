@@ -29,6 +29,7 @@ column	rang_pas			heading 'Rang|passage' justify center
 column  nb_jours_etap		heading 'Jours|etape' justify center
 
 column	no_sem				heading 'No. de|semaine' justify center
+column	date_deb			heading 'Date de|debut' justify center
 column	date_debut			heading 'Date de|debut' justify center
 column	date_fin			heading 'Date de|fin' justify center
 

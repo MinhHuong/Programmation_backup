@@ -13,7 +13,6 @@ public abstract class Joueur {
 	
 	public Joueur(boolean p, Plateau plateau, Scanner input)
 	{
-		/*
 		int[] x_abs = new int[10];
 		int[] y_ord = new int[10];
 		String[] nomPiece = { "MARECHAL"	, 
@@ -46,26 +45,16 @@ public abstract class Joueur {
 		m_pieces[7] =     new Bombe(p, x_abs[7], y_ord[7]);
 		m_pieces[8] =     new Bombe(p, x_abs[8], y_ord[8]);
 		m_pieces[9] =   new Drapeau(p, x_abs[9], y_ord[9]);
-		
-			
-		Case[][] cases = plateau.getCases();
-		
-		for(int i = 0 ; i < 10 ; i++)
-		{
-			int l = m_pieces[i].getX() - 1;
-			int c = m_pieces[i].getY() - 1;
-			cases[l][c].setPiece(m_pieces[i]);
-		}
-		*/
 	}		
 	
 	public void afficher() {}
 	
-	public Case choisirPiece(int x, int y, Scanner inp, Plateau plat)
+	public Case choisirPiece(int x, int y, Scanner inp, Plateau plat, String quelPoint)
 	{
+		System.out.println(quelPoint + " : ");
 		do
 		{
-			System.out.println("Choisir une Case ( si x et y invalides, veuillez refaire le positionnement : ");
+			System.out.println("Choisir une Case (si x et y invalides, veuillez refaire le positionnement) : ");
 			System.out.print(" | x = ");
 			x = inp.nextInt();
 			System.out.print(" | y = ");

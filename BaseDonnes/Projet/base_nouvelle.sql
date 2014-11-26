@@ -26,6 +26,10 @@ drop table VILLES_ETAPES;
 
 drop table PAYS;
 
+drop table VALEUR_TEMP;
+
+commit;
+
 --==============================================================--
 -- 						CREER DES TABLES						--	
 --==============================================================--
@@ -74,7 +78,8 @@ create table SEJOURS (
 	type_heberg					number(2)		not null		,
 	nb_sejours					number(4)		not null		,
 	nb_reserv					number(4)		not null		,
-	constraint	pk_sejours		primary key (code_sejour) 
+	constraint	pk_sejours		primary key (code_sejour) 		,
+	constraint 	valid_nb_j_n	check (abs(nb_jours - nb_nuits)=1 or abs(nb_jours - nb_nuits)=0)
 );
 
 --====================================
@@ -88,7 +93,8 @@ create table HOTEL_RESIDENCE (
 	nb_etoiles					number(1)		not null		,
 	adres_hotel					varchar(50)		not null		,
 	tel_hotel					varchar(20)		not null		,
-	constraint	pk_hotel_resi	primary key (code_sejour)		
+	constraint	pk_hotel_resi	primary key (code_sejour)		,
+	constraint	valide_etoiles	check (nb_etoiles >= 1 and nb_etoiles <= 5)
 );
 	
 --====================================
@@ -131,7 +137,8 @@ create table CALENDRIER (
 	no_sem					char(6)								,
 	date_debut				date				not null 		,
 	date_fin				date				not null		,
-	constraint	pk_calen	primary key (no_sem)
+	constraint	pk_calen	primary key (no_sem)				,
+	constraint	valid_jour	check ( date_debut + 7 = date_fin )
 );
 
 --====================================
@@ -164,10 +171,12 @@ create table RESERVATIONS (
 	nb_adults				number(3)			not null		,
 	nb_enf					number(3)			not null		,
 	nb_seule				number(3)			not null		,
-	somme_versee			number(7,2)			not null		,
+	somme_versee			number(7,2)							,
 	date_vers				date								,
 	mont_reserv				number(8,2)			not null		,
-	constraint	pk_reserv	primary key (code_res)
+	constraint	pk_reserv	primary key (code_res)				,
+	constraint 	nb_pers_se	check (nb_adults+nb_enf >= nb_seule),
+	constraint	valid_vers	check (date_reserv <= date_vers )	
 );
 
 --====================================
@@ -178,9 +187,20 @@ create table DETAIL_RESERV (
 	no_sem					char(6)								,
 	code_res				number(5)							,
 	code_sejour				char(10)			not null		,
-	prix_ttc_adult			number(7,2)			not null		,
-	prix_ttc_enf			number(7,2)			not null		,
+	prix_ttc_adult			number(7,2)							,
+	prix_ttc_enf			number(7,2)							,
+	id_detail				number(5)			not null		, 
 	constraint	pk_det_resv	primary key (no_sem, code_res)
+);
+
+--====================================
+-- *** VALEUR_TEMP
+--====================================
+
+create table VALEUR_TEMP (
+	temp_mont_reserv 		number(8,2)							,
+	temp_prix_ttc_adult		number(7,2)							,
+	temp_prix_ttc_enf		number(7,2)							
 );
 
 --==============================================================--
@@ -279,7 +299,7 @@ alter table DETAIL_RESERV
 	add constraint	fk_detail_reserv_sejours	foreign key (code_sejour)
 		references	SEJOURS(code_sejour)
 			on delete cascade;
-			
+
 --==============================================================--
 -- 					  AUTRES MODIFICATIONS						--	
 --==============================================================--

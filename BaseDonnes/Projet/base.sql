@@ -40,7 +40,8 @@ create table CALENDRIER (
 	no_sem						char(6)							,
 	date_deb					date			not null		,
 	date_fin					date			not null		,
-	constraint	pk_calendrier	primary key (no_sem)
+	constraint	pk_calendrier	primary key (no_sem)			,
+	constraint	date_valide 	check ( date_deb + 7 = date_fin )
 );
 
 --=====================================

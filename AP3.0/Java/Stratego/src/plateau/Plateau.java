@@ -1,7 +1,6 @@
 package plateau;
 
 import pieceMobile.*;
-import pieceImmobile.*;
 import pieces.Piece;
 import caseTerrainLac.*;
 
@@ -91,13 +90,21 @@ public class Plateau {
 		else
 		{
 			Piece p = ((Terrain) src).getPiece();
-			int new_x = dest.getX();
-			int new_y = dest.getY();
-			p.setX(new_x);
-			p.setY(new_y);
-			((Terrain) dest).setPiece(p, this);
-			((Terrain) src).enleverPiece();
-			resetCases();
+			
+			if( p instanceof PieceMobile )
+			{
+				int new_x = dest.getX();
+				int new_y = dest.getY();
+				((Terrain) dest).setPiece(p, this);
+				p.setX(new_x);
+				p.setY(new_y);
+				//((Terrain) src).enleverPiece();
+				resetCases();
+			}
+			else
+			{
+				System.out.println("Impossible de deplacer 1 Piece Immobile !");
+			}
 		}
 	}
 
@@ -193,10 +200,6 @@ public class Plateau {
 						 (_x == i-1 && _y == j) ||
 						 (_x == i && _y == j-1) ||
 						 (_x == i && _y == j+1) );
-				/*if( i+1 < 10 )	return ( _x == i+1 && _y == j );
-				if( i-1 >= 0 )	return ( _x == i-1 && _y == j );
-				if( j-1 >= 0 )	return ( _x == i && _y == j-1 );
-				if( j+1 < 10 )	return ( _x == i && _y == j+1 );*/
 			}
 			else
 			{
