@@ -18,7 +18,6 @@
 <fullyQualifiedTypeName name="pieceImmobile.PieceImmobile"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="javax.swing.JFrame"/>
-<fullyQualifiedTypeName name="java.awt.image.BufferedImage"/>
 <fullyQualifiedTypeName name="javax.swing.JPanel"/>
 <fullyQualifiedTypeName name="javax.imageio.ImageIO"/>
 <fullyQualifiedTypeName name="java.io.IOException"/>
@@ -29,4 +28,10 @@
 <fullyQualifiedTypeName name="java.awt.Graphics2D"/>
 <fullyQualifiedTypeName name="javax.swing.JFileChooser"/>
 <fullyQualifiedTypeName name="javax.swing.filechooser.FileNameExtensionFilter"/>
+<fullyQualifiedTypeName name="java.awt.event.MouseListener"/>
+<fullyQualifiedTypeName name="java.awt.Color"/>
+<fullyQualifiedTypeName name="java.awt.image.BufferedImageOp"/>
+<fullyQualifiedTypeName name="java.awt.image.ConvolveOp"/>
+<fullyQualifiedTypeName name="java.awt.image.Kernel"/>
+<fullyQualifiedTypeName name="java.awt.image.BufferedImage"/>
 </qualifiedTypeNameHistroy>
