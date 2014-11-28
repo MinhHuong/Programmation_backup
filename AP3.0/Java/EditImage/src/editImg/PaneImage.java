@@ -5,6 +5,8 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.geom.AffineTransform;
+import java.awt.image.AffineTransformOp;
 import java.awt.image.BufferedImage;
 import java.awt.image.BufferedImageOp;
 import java.awt.image.ConvolveOp;
@@ -50,7 +52,7 @@ public class PaneImage extends JPanel implements MouseListener {
 	@Override
 	public void mouseClicked(MouseEvent e) 
 	{
-		cropImg();
+		scaleImg();
 	}
 
 	@Override
@@ -135,6 +137,45 @@ public class PaneImage extends JPanel implements MouseListener {
 		{}
 	}
 
+	public void blendImg()
+	{
+		Color c = null;
+		int rgb = 0, red = 0, green = 0, blue = 0;
+		
+		for(int i = 0 ; i < m_bi.getWidth() ; i++)
+		{
+			for(int j = 0 ; j < m_bi.getHeight() ; j++)
+			{
+				rgb = m_bi.getRGB(i, j);
+				red = (rgb >> 16) & 0xFF;
+				green = (rgb >> 8) & 0xFF;
+				blue = rgb & 0xFF;
+				
+				if (red - 20 >= 0) 		red = red - 20;
+				if (green + 50 <= 255)	green = green + 50;
+				if (blue - 10 >= 0)		blue = blue - 10;
+				
+				c = new Color(red, green, blue);
+				
+				m_bi.setRGB(i, j, c.getRGB());
+			}
+		}
+		
+		repaint();
+	}
+
+	public void scaleImg()
+	{
+		int w = m_bi.getWidth();
+		int h = m_bi.getHeight();
+		BufferedImage after = new BufferedImage(w, h, BufferedImage.TYPE_INT_ARGB);
+		AffineTransform at = new AffineTransform();
+		at.scale(0.5, 0.25);
+		AffineTransformOp scaleOp = new AffineTransformOp(at, AffineTransformOp.TYPE_BILINEAR);
+		after = scaleOp.filter(m_bi, after);
+		m_bi = after;
+		repaint();
+	}
 }
 
 

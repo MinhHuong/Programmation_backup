@@ -34,4 +34,7 @@
 <fullyQualifiedTypeName name="java.awt.image.ConvolveOp"/>
 <fullyQualifiedTypeName name="java.awt.image.Kernel"/>
 <fullyQualifiedTypeName name="java.awt.image.BufferedImage"/>
+<fullyQualifiedTypeName name="java.awt.Image"/>
+<fullyQualifiedTypeName name="java.awt.geom.AffineTransform"/>
+<fullyQualifiedTypeName name="java.awt.image.AffineTransformOp"/>
 </qualifiedTypeNameHistroy>
