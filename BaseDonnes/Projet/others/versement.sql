@@ -1,0 +1,1 @@
+update reservations set somme_versee = 10000, date_vers = to_date('25-DEC-2010', 'DD-MON-YYYY') where code_res = 1;

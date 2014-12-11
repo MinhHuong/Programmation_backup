@@ -1,0 +1,19 @@
+package editImg;
+
+import java.awt.Dimension;
+import java.awt.image.BufferedImage;
+
+import javax.swing.JFrame;
+
+@SuppressWarnings("serial")
+public class FenPrincipale extends JFrame {
+	private PaneImage m_pn_img;
+	
+	public FenPrincipale()
+	{
+		setTitle("My test program");
+		setPreferredSize(new Dimension(600, 600));
+		m_pn_img = new PaneImage();
+	}
+	
+}

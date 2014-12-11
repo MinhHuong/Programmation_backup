@@ -1,0 +1,1 @@
+delete from detail_reserv where code_res = 1 and no_sem = '022011';

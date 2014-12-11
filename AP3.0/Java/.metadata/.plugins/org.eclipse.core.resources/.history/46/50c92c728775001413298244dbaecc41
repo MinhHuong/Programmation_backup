@@ -1,0 +1,7 @@
+package editImg;
+
+import javax.swing.JFrame;
+
+public class FenPrincipale extends JFrame {
+	private BufferedImage m_bi;
+}

@@ -1,0 +1,10 @@
+package editImg;
+
+import java.awt.image.BufferedImage;
+
+import javax.swing.JFrame;
+
+public class FenPrincipale extends JFrame {
+	
+	
+}
