@@ -12,7 +12,7 @@
 #define SYMBOL_SIZE 10
 
 char* getSymbol(int i);
-void  calculerPoint(int pidArray[], int pointArray[], int symbolArray[], int size, int fois);
+void  calculerPoint(int pidArray[], int pointArray[], int symbolArray[], int size);
 
 /*==================================
 ** PROGRAMME PRINCIPAL
@@ -21,8 +21,6 @@ void  calculerPoint(int pidArray[], int pointArray[], int symbolArray[], int siz
 int main(int argc, char *argv[])
 {
   int nb_joueurs = 0;
-
-  int fois = 3;
   
   if(argc == 2)
     {
@@ -35,49 +33,64 @@ int main(int argc, char *argv[])
       exit(-1);
     }
 
+  int fd[nb_joueurs][2];
+  int i;
+  
+  for(i = 0 ; i < nb_joueurs ; i++)
+    {
+      if(pipe(fd[i]) != 0)
+	{
+	  printf("Pipe open with errors\n"); fflush(stdout);
+	} 
+    }
+
   int alea = 0;
   float max = 3;
-  int i;
   int n;
   int pid, code;
   
-  int nb_symbol[nb_joueurs*fois];
-  int points[nb_joueurs*fois];
-  int tab_pid[nb_joueurs*fois];
+  int nb_symbol[nb_joueurs];
+  int points[nb_joueurs];
+  int tab_pid[nb_joueurs];
   
-  for(i = 0 ; i < nb_joueurs*fois; i++)
+  for(i = 0 ; i < nb_joueurs ; i++)
     {
       points[i] = 0;	
     }
 
-  for(i = 0 ; i < nb_joueurs*fois ; i++)
+  for(i = 0 ; i < nb_joueurs ; i++)
     {
       if( (n = fork()) == 0 )
-		{	 
-			srand(time(NULL) + getpid());
-			alea = (int) (max * rand() / RAND_MAX);
-			exit(alea);
-		}
+	{ 
+	  close(fd[i][0]);
+	  srand(time(NULL) + getpid());
+
+	  alea = (int) (max * rand() / RAND_MAX);
+	  write(fd[i][1], &alea, sizeof(int));
+
+	  pid = getpid();
+	  write(fd[i][1], &pid, sizeof(int));
+
+	  close(fd[i][1]);
+	  exit(i);
+	}
     }
 
-  for(i = 0 ; i < nb_joueurs*fois ; i++)
+  for(i = 0 ; i < nb_joueurs ; i++)
     {
-      pid = wait(&code);
-      
-		if(WIFEXITED(code) == 1)
-		{
-			nb_symbol[i] = WEXITSTATUS(code);
-			tab_pid[i] = pid;
-		}
+      close(fd[i][1]);
     }
 
-  for(i = 0 ; i < nb_joueurs*fois ; i++)
-  {
-	  printf("Joueur %d - Symbol : %s\n", i/fois + 1, getSymbol(nb_symbol[i]));
-	  if(i % 3 == 2) printf("\n");
-  }
-  
-  calculerPoint(tab_pid, points, nb_symbol, nb_joueurs, fois);
+  for(i = 0 ; i < nb_joueurs ; i++)
+    {
+      wait(NULL);
+      read(fd[i][0], &code, sizeof(int));
+      read(fd[i][0], &pid, sizeof(int));
+      nb_symbol[i] = code;
+      tab_pid[i] = pid;
+    }
+
+  calculerPoint(tab_pid, points, nb_symbol, nb_joueurs);
 
   printf("\n=====================\n"); fflush(stdout);
 
@@ -122,39 +135,26 @@ char* getSymbol(int i)
   return resultat;
 }
 
-void calculerPoint(int pidArray[], int pointArray[], int symbolArray[], int size, int fois)
+void calculerPoint(int pidArray[], int pointArray[], int symbolArray[], int size)
 {
-	int f;
-	int j;
-	int i;
+  int i;
+  int j;
 
-  for(f = 0 ; f < fois ; f++)
-  {
-	  for(j = 0 ; j < size ; j++)
-	  {
-		  for(i = 0 ; i < size ; i++)
-		  {
-			  if((j*fois+f != i*fois+f) && (symbolArray[j*fois+f] != symbolArray[i*fois+f]))
-			  {
-				  printf("Position a comparer : %d\n", j*fois+f);
-				  if(estGagne(symbolArray[j*fois+f], symbolArray[i*fois+f]) == 0) pointArray[j*fois+f]++;
-			  }
-		  }
-	  }
-  }
-
-  int sum = 0;
-  int count = 0;
-  for(i = 0 ; i < size*fois ; i++)
+  for(i = 0 ; i < size ; i++)
     {
-      sum += pointArray[i];
-      printf("Point : %d\n", pointArray[i]);
-      if(i%3 == 2)
+      for(j = 0 ; j < size ; j++)
 	{
-	  count++;
-	  //printf("Joueur %d - Sum = %d\n", count, sum);
-	  sum = 0;
+	  if(symbolArray[i] != symbolArray[j])
+	    {
+	      if(estGagne(symbolArray[i], symbolArray[j]) == 0) pointArray[i]++;
+	    }
 	}
+    }
+
+  for(i = 0 ; i < size ; i++)
+    {
+      printf("Processus %d joue %s, point %d\n", pidArray[i], getSymbol(symbolArray[i]), pointArray[i]);
+      fflush(stdout);
     }
 }
 

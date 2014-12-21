@@ -1,0 +1,27 @@
+	JMP	START
+	DB	30
+	DB	50
+
+START:
+	STI
+	MOV	BL,A0
+	
+	INT	02	
+	INT	03
+	
+	ORG	30
+	IRET
+
+	ORG	50
+CIN:	
+	OUT	07
+	IN	07
+	MOV	[BL],AL
+	INC	BL
+	CMP	AL,0D
+	JNZ	CIN
+	CLI
+	IRET
+
+END
+	

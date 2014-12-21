@@ -4,50 +4,89 @@
 #include <pthread.h>
 
 #define MAX 256
+
+#define NB_THREAD 3
+#define READ 0
+#define WRITE 1
+
 char tube[MAX];
+pthread_mutex_t m;
+
+char c;
+int i;
+int rw;
 
 void* producteur(void* arg) 
 {
-	printf("producteur\n");
-	int i=0;
-	char c='a';
-	for(i=0;i<MAX;i++) 
+  while(i < MAX)
+    {
+      pthread_mutex_lock(&m);
+      if(rw == WRITE)
 	{
-		tube[i]=c;
-		c++;
-		if(c>'z')
-			c='a';
-		sleep(1);
+	  i++;
+	  tube[i]=c;
+	  printf("producteur lu : %c\n", tube[i]);
+	  c++;
+	  
+	  if(c>'z')
+	    c='a';
+
+	  rw = READ; 
 	}
-	return NULL;
+      pthread_mutex_unlock(&m);
+      sleep(1);
+    }
+ 
+  return NULL;
 }
 
 void* consommateur(void* arg)
 {
-	printf("consommateur\n");
-	char c;
-	int i;
-	for(i=0;i<MAX; i++)
+  while(i < MAX)
+    {
+      pthread_mutex_lock(&m);
+      if(rw == READ)
 	{
-		while(tube[i] == 0);
-		printf("conso : lu : %c\n", tube[i]);
-		tube[i]=0;
+	  if(tube[i] != 0)
+	    {
+	      printf("conso lu : %c numero %d\n", tube[i], i);
+	      tube[i]=0;
+	    }
+	  rw = WRITE;
 	}
+      pthread_mutex_unlock(&m);
+    }
 
-	return NULL;
+  return NULL;
 }
 
 int main(int argc, char** argv) 
 {
-	pthread_t prod, cons;
-	memset(tube, 0, MAX);
-	
+  i = -1;
+  c = 'a';
+  rw = WRITE;
 
-	pthread_create(&prod, NULL, producteur, NULL);
+  pthread_t prod[NB_THREAD];
+  pthread_t cons[NB_THREAD];
+  memset(tube, 0, MAX);
 
-	pthread_create(&cons, NULL, consommateur, NULL);
-	pthread_join(prod, NULL);
-	pthread_join(cons, NULL);
+  pthread_mutex_init(&m, NULL);
+  int j;
+  int val;
+  for(j = 0 ; j < NB_THREAD ; j++)
+    {
+      pthread_create(&prod[j], NULL, producteur, NULL);
+      pthread_create(&cons[j], NULL, consommateur, NULL);
+    }
 
-	return 0;
+  int ret;
+  for(j = 0 ; j < NB_THREAD ; j++)
+    {
+      ret = pthread_join(prod[j], NULL);
+      ret = pthread_join(cons[j], NULL);
+    }
+
+  pthread_mutex_destroy(&m);
+
+  return 0;
 }

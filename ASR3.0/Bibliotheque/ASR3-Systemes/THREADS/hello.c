@@ -20,7 +20,7 @@ int main(int argc, char**argv)
   {
     int ret = pthread_create(&tid[i], NULL, f_thread, (void*)i);
     if(ret) {
-      fprintf(stderr, "Impossible de créer le thread %d\n", i);
+      fprintf(stderr, "Impossible de creer le thread %d\n", i);
       return 1;
     }
   }
@@ -33,7 +33,7 @@ int main(int argc, char**argv)
       fprintf(stderr, "Erreur lors de l'attente du thread %d\n", i);
       return 1;
     }
-    printf("Le thread %d s'est terminé avec le code %d\n", i, (int)ret_val);
+    printf("Le thread %d s'est termine avec le code %d\n", i, (int)ret_val);
   }
   return 0;
 }

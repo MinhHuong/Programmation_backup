@@ -1,0 +1,209 @@
+package userInterface.mainProgram;
+
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+
+import javax.swing.*;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
+
+@SuppressWarnings("serial")
+public class TabPaneImage extends JTabbedPane {
+	public static int nb_tabs = 0;
+/*	private PanelOrigin pn_imgOrg;
+	private PanelModify pn_imgMod;*/
+	private PanelOrigin pn_imgOrg[];
+	private PanelModify pn_imgMod[];
+	private TabChanged tab_changed_event = new TabChanged();
+	
+	public PanelOrigin getPanelOrg(int index)
+	{
+		return pn_imgOrg[index];
+	}
+	
+	public PanelModify getPanelMod(int index)
+	{
+		return pn_imgMod[index];
+	}
+	
+	public TabPaneImage()
+	{
+		super();
+		this.addChangeListener(tab_changed_event);
+		
+		/*pn_imgOrg = new PanelOrigin();
+		pn_imgMod = new PanelModify();*/
+		
+		pn_imgOrg = new PanelOrigin[10];
+		pn_imgMod = new PanelModify[10];
+		
+		for(int i = 0 ; i < 10 ; i++)
+		{
+			pn_imgOrg[i] = new PanelOrigin();
+			pn_imgMod[i] = new PanelModify();
+		}
+		
+		//createTab(null);
+	}
+	
+	public int getNbTabs()
+	{
+		return nb_tabs;
+	}
+	
+	public void createTab(BufferedImage bi)
+	{
+		nb_tabs++;
+		
+		// cr�er le label (nom du tab) et un bouton utilis� pour fermer un tab
+		JPanel pn_tab = new JPanel();
+		JLabel lb_tab = new JLabel("Tab " + nb_tabs);
+		lb_tab.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 20));
+		JButton bt_rmv = new JButton();
+		bt_rmv.setBackground(Color.blue);
+		bt_rmv.setPreferredSize(new Dimension(15, 15));
+		bt_rmv.addActionListener(new BoutonClose());
+		
+		pn_tab.setLayout(new FlowLayout(FlowLayout.LEFT));
+		pn_tab.setOpaque(false);
+		pn_tab.add(lb_tab);
+		pn_tab.add(bt_rmv);
+		
+		// créer le panneau principal d'un tab
+		JPanel pnBig = new JPanel();
+		pnBig.setLayout(new FlowLayout(FlowLayout.CENTER, 20, 0));
+		pnBig.setPreferredSize(new Dimension(1170, 620));
+		
+		Dimension dim = pnBig.getPreferredSize();
+		int w = (int) ((dim.getWidth())/2 - 40);
+		int h = (int) (dim.getHeight() - 20);
+		
+		// 2 panneaux servent à afficher 2 images � la fois ( image originale & image modifi� )
+		int index = nb_tabs - 1;
+/*		pn_imgOrg.setPreferredSize(new Dimension(w - 3, h - 3));
+		pn_imgMod.setPreferredSize(new Dimension(w - 3, h - 3));*/
+		pn_imgOrg[index].setPreferredSize(new Dimension(w - 3, h - 3));
+		pn_imgMod[index].setPreferredSize(new Dimension(w - 3, h - 3));
+		
+		// un séparateur entre 2 panneaux ( une vision plus claire offerte à l'utilisateur )
+		JSeparator sep = new JSeparator(SwingConstants.VERTICAL);
+		Dimension d = pnBig.getPreferredSize();
+		sep.setBackground(Color.black);
+		sep.setPreferredSize(new Dimension(1, d.height));
+		
+		// 2 scroll pane pour remplacer à 2 pannaux avec des scroll bar
+		JScrollPane scr_imgOrg = new JScrollPane(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+		JScrollPane scr_imgMod = new JScrollPane(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+		scr_imgOrg.setPreferredSize(new Dimension(w, h));
+		scr_imgMod.setPreferredSize(new Dimension(w, h));
+/*		scr_imgOrg.setViewportView(pn_imgOrg[index]);
+		scr_imgMod.setViewportView(pn_imgMod[index]);*/
+		scr_imgOrg.setViewportView(pn_imgOrg[index]);
+		scr_imgMod.setViewportView(pn_imgMod[index]);
+		
+		pnBig.add(scr_imgOrg);
+		pnBig.add(sep);
+		pnBig.add(scr_imgMod);
+		
+		addTab("Tab 1", pnBig);
+		setTabComponentAt(nb_tabs - 1, pn_tab);
+		setSelectedIndex(nb_tabs-1);
+		
+/*		(tab_changed_event.getImgOrg())[nb_tabs-1] = bi;
+		(tab_changed_event.getImgMod())[nb_tabs-1] = bi;*/
+	}
+
+	class BoutonClose implements ActionListener
+	{
+		public void actionPerformed(ActionEvent e) {
+			int pos = getSelectedIndex();
+			
+			if(pos != -1 && nb_tabs != 1)
+			{
+				remove(pos);
+				nb_tabs--;
+			}
+		}
+	}
+	
+	class TabChanged implements ChangeListener
+	{
+		private BufferedImage img_org[];
+		private BufferedImage img_mod[];
+		private int old_nb_tabs;
+		private int pre_tab_selected;
+		
+		public BufferedImage[] getImgOrg()
+		{
+			return img_org;
+		}
+		
+		public BufferedImage[] getImgMod()
+		{
+			return img_mod;
+		}
+		
+		public TabChanged()
+		{
+			old_nb_tabs = 0;
+			pre_tab_selected = 0;
+			img_org = new BufferedImage[10];
+			img_mod = new BufferedImage[10];
+		}
+		
+		@Override
+		public void stateChanged(ChangeEvent e) 
+		{
+			if(old_nb_tabs == nb_tabs)
+			{
+				/*int index = (TabPaneImage.this).getSelectedIndex();
+				
+				JPanel pn_big = (JPanel) (TabPaneImage.this).getSelectedComponent();
+				JScrollPane scr_pane_org = (JScrollPane) pn_big.getComponent(0);
+				JScrollPane scr_pane_mod = (JScrollPane) pn_big.getComponent(2);
+				
+				System.out.println("From index " + pre_tab_selected + " to index " + index);
+				
+				img_org[pre_tab_selected] = pn_imgOrg.getImage();
+				
+				if(img_org[index] != null)
+				{
+					System.out.println("Image not null");
+					pn_imgOrg.setImage(img_org[index]);
+					pn_imgOrg.repaint();
+				}
+				else
+				{
+					System.out.println("Image null");
+				}		
+				
+				img_mod[pre_tab_selected] = pn_imgMod.getImage();
+				
+				if(img_mod[index] != null)
+				{
+					System.out.println("Image not null");
+					pn_imgMod.setImage(img_mod[index]);
+					pn_imgMod.repaint();
+				}
+				else
+				{
+					System.out.println("Image null");
+				}		
+				
+				scr_pane_org.setViewportView(pn_imgOrg);
+				scr_pane_mod.setViewportView(pn_imgMod);
+				
+				pre_tab_selected = index;*/
+			}
+			else
+			{
+				old_nb_tabs++;
+				pre_tab_selected = (TabPaneImage.this).getSelectedIndex();
+			}
+
+		}
+		
+	}
+}
