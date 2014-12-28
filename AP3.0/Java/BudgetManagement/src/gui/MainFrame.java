@@ -1,0 +1,26 @@
+package gui;
+
+import java.awt.BorderLayout;
+
+import gui.depense.TabDepense;
+
+import javax.swing.JFrame;
+
+@SuppressWarnings("serial")
+public class MainFrame extends JFrame {
+	
+	public MainFrame()
+	{
+		super();
+		
+		setTitle("Budget Management");
+		setSize(700, 550);
+		setLocation(300, 100);
+		setLayout(new BorderLayout());
+		
+		TabDepense tabDepense = new TabDepense();
+		add(tabDepense);
+		
+		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+	}
+}

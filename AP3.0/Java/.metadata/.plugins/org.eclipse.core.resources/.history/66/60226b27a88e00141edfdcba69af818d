@@ -1,0 +1,22 @@
+package gui;
+
+import gui.depense.TabDepense;
+
+import javax.swing.JFrame;
+
+@SuppressWarnings("serial")
+public class MainFrame extends JFrame {
+	
+	public MainFrame()
+	{
+		super();
+		
+		setTitle("Budget Management");
+		setSize(700, 550);
+		setLocation(300, 100);
+		
+		TabDepense tabDepense = new TabDepense();
+		
+		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+	}
+}

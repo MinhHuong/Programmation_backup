@@ -1,0 +1,7 @@
+package gui.depense;
+
+import javax.swing.JPanel;
+
+public class TabDepense extends JPanel {
+
+}

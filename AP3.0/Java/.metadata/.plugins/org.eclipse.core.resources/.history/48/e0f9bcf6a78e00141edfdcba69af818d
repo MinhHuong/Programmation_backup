@@ -1,0 +1,30 @@
+package gui.depense;
+
+import java.awt.Dimension;
+import java.awt.GridLayout;
+
+import javax.swing.JPanel;
+import javax.swing.JTable;
+
+@SuppressWarnings("serial")
+public class TabDepense extends JPanel {
+	
+	public TabDepense()
+	{
+		super(new GridLayout(1, 0));
+		
+		String[] columnNames = { "Intitulé", "Montant" };
+		
+		Object[][] data = {
+				{ "Prendre des bus", new Integer(4000) },
+				{ "Essence", new Integer(40000) },
+				{ "Nourriture", new Integer(50000) },
+				{ "Livres", new Integer(85600) }
+		};
+		
+		JTable table = new JTable(data, columnNames);
+		table.setPreferredScrollableViewportSize(new Dimension(600, 100));
+		table.setFillsViewportHeight(true);
+	}
+
+}
