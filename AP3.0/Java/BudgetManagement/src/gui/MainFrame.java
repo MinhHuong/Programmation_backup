@@ -1,8 +1,7 @@
 package gui;
 
 import java.awt.BorderLayout;
-
-import gui.depense.TabDepense;
+import java.awt.Dimension;
 
 import javax.swing.JFrame;
 
@@ -14,13 +13,17 @@ public class MainFrame extends JFrame {
 		super();
 		
 		setTitle("Budget Management");
-		setSize(700, 550);
+		setPreferredSize(new Dimension(700, 550));
 		setLocation(300, 100);
 		setLayout(new BorderLayout());
 		
-		TabDepense tabDepense = new TabDepense();
-		add(tabDepense);
+		TabPane tabPane = new TabPane();
+		add(tabPane, BorderLayout.CENTER);
+		
+		PanelButtons pn_buttons = new PanelButtons();
+		add(pn_buttons, BorderLayout.SOUTH);
 		
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 	}
+	
 }

@@ -1,0 +1,44 @@
+package gui;
+
+import java.awt.Dimension;
+import java.awt.FlowLayout;
+
+import javax.swing.JButton;
+import javax.swing.JPanel;
+
+@SuppressWarnings("serial")
+public class PanelButtons extends JPanel {
+
+	private JButton m_bt_ajouter;
+	private JButton m_bt_modifier;
+	private JButton m_bt_sauvegarder;
+	private JButton m_bt_annuler;
+	
+	public PanelButtons()
+	{
+		super();
+		
+		setPreferredSize(new Dimension(700, 80));
+		setLayout(new FlowLayout(FlowLayout.CENTER, 20, 20));
+		
+		m_bt_ajouter = new JButton("Ajouter");
+		m_bt_modifier = new JButton("Modifier");
+		m_bt_sauvegarder = new JButton("Sauvegarder");
+		m_bt_annuler = new JButton("Annuler");
+		
+		m_bt_ajouter.setPreferredSize(new Dimension(110, 30));
+		m_bt_modifier.setPreferredSize(new Dimension(110, 30));
+		m_bt_sauvegarder.setPreferredSize(new Dimension(110, 30));
+		m_bt_annuler.setPreferredSize(new Dimension(110, 30));
+		
+		add(m_bt_ajouter);
+		add(m_bt_modifier);
+		add(m_bt_sauvegarder);
+		add(m_bt_annuler);
+		
+		m_bt_modifier.setVisible(false);
+		//m_bt_sauvegarder.setVisible(false);
+		m_bt_annuler.setVisible(false);
+	}
+	
+}

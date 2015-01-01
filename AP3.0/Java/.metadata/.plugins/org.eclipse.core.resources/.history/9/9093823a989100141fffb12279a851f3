@@ -1,0 +1,11 @@
+package gui;
+
+import javax.swing.JButton;
+
+public class PanelButtons {
+
+	private JButton m_bt_ajouter;
+	private JButton m_bt_modifier;
+	private JButton m_bt_sauvegarder;
+	private JButton m_bt_annuler;
+}

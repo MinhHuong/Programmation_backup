@@ -1,5 +1,0 @@
-package gui.depense;
-
-public class TabDepense extends JPanel {
-
-}

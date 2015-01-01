@@ -1,0 +1,23 @@
+package gui.depense;
+
+public class MyData {
+
+	private String m_nom;
+	private Integer m_somme;
+	
+	public MyData(String nom, Integer somme)
+	{
+		m_nom = nom;
+		m_somme = somme;
+	}
+	
+	public String getIntitule()
+	{
+		return m_nom;
+	}
+	
+	public Integer getSomme()
+	{
+		return m_somme;
+	}
+}

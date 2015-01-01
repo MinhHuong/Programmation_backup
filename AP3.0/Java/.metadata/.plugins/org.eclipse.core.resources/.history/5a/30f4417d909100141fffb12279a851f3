@@ -1,0 +1,10 @@
+package gui;
+
+import javax.swing.JTabbedPane;
+
+@SuppressWarnings("serial")
+public class TabPane extends JTabbedPane {
+	
+	
+
+}

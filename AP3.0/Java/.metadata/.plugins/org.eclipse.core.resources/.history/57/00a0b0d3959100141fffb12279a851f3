@@ -1,0 +1,33 @@
+package gui;
+
+import java.awt.Dimension;
+
+import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
+import javax.swing.JPanel;
+import javax.swing.JTabbedPane;
+
+@SuppressWarnings("serial")
+public class TabPane extends JTabbedPane {
+	
+	public TabPane()
+	{
+		super();
+		
+		ImageIcon icon_depense = new ImageIcon(getClass().getResource("/depense.png"));
+		JPanel pn_depense = new JPanel();
+		addTab("Dépense quotidienne", icon_depense, pn_depense, "Dépense");
+		
+		ImageIcon icon_flux = new ImageIcon(getClass().getResource("/flux.png"));
+		JPanel pn_flux = new JPanel();
+		addTab("Emprunt - Prêt", icon_flux, pn_flux, "Flux");
+		
+		ImageIcon icon_eco = new ImageIcon(getClass().getResource("/economise.png"));
+		JPanel pn_eco = new JPanel();
+		addTab("Éconmise", icon_eco, pn_eco, "Éco");
+		
+		setBorder(BorderFactory.createEmptyBorder(10, 20, 20, 20));
+		
+	}
+
+}

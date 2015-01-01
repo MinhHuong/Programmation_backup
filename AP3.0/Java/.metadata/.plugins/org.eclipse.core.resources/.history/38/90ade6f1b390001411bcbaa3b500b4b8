@@ -1,0 +1,52 @@
+package gui;
+
+import java.awt.BorderLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import gui.depense.MyData;
+import gui.depense.TabDepense;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+
+@SuppressWarnings("serial")
+public class MainFrame extends JFrame {
+	
+	public MainFrame()
+	{
+		super();
+		
+		setTitle("Budget Management");
+		setSize(700, 550);
+		setLocation(300, 100);
+		setLayout(new BorderLayout());
+		
+		TabDepense tabDepense = new TabDepense();
+		
+		add(tabDepense);
+		
+		JButton bt = new JButton("New row");
+		bt.addActionListener(new BoutonAdd(tabDepense));
+		add(bt, BorderLayout.SOUTH);
+		
+		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+	}
+	
+	class BoutonAdd implements ActionListener 
+	{
+		private TabDepense m_tab_dep;
+		
+		public BoutonAdd(TabDepense td)
+		{
+			m_tab_dep = td;
+		}
+		
+		@Override
+		public void actionPerformed(ActionEvent e) 
+		{
+			m_tab_dep.getTableModel().addRow(new MyData("Bus", 4000));
+		}
+		
+	}
+}

@@ -9,8 +9,6 @@
 ** VARIABLES GLOBALES & PROTOTYPES
 ====================================*/
 
-#define SYMBOL_SIZE 10
-
 char* getSymbol(int i);
 void  calculerPoint(int pidArray[], int pointArray[], int symbolArray[], int size);
 
@@ -51,10 +49,8 @@ int main(int argc, char *argv[])
   for(i = 0 ; i < nb_joueurs ; i++)
     {
       if( (n = fork()) == 0 )
-	{	 
-	  srand(time(NULL) + getpid());
-	  alea = (int) (max * rand() / RAND_MAX);
-	  exit(alea);
+	{
+	  execl("shifumi_child", "shifumi_child", NULL);
 	}
     }
 
@@ -68,7 +64,7 @@ int main(int argc, char *argv[])
 	  tab_pid[i] = pid;
 	}
     }
-
+  
   calculerPoint(tab_pid, points, nb_symbol, nb_joueurs);
 
   printf("\n=====================\n"); fflush(stdout);

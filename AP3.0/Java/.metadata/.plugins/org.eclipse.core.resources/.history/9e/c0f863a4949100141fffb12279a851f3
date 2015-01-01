@@ -1,0 +1,20 @@
+package gui;
+
+import javax.swing.ImageIcon;
+import javax.swing.JPanel;
+import javax.swing.JTabbedPane;
+import javax.swing.SwingConstants;
+
+@SuppressWarnings("serial")
+public class TabPane extends JTabbedPane {
+	
+	public TabPane()
+	{
+		super(SwingConstants.LEFT);
+		
+		
+				
+		JPanel pn_depense = new JPanel();
+	}
+
+}

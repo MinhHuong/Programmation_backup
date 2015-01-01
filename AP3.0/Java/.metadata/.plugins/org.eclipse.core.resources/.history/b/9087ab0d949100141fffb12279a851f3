@@ -1,0 +1,16 @@
+package gui;
+
+import javax.swing.JTabbedPane;
+import javax.swing.SwingConstants;
+
+@SuppressWarnings("serial")
+public class TabPane extends JTabbedPane {
+	
+	public TabPane()
+	{
+		super(SwingConstants.LEFT);
+		
+		
+	}
+
+}
