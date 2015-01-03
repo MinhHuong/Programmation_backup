@@ -1,0 +1,121 @@
+package gui;
+
+import java.awt.Dimension;
+import java.util.Vector;
+
+import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTabbedPane;
+import javax.swing.JTable;
+import javax.swing.table.AbstractTableModel;
+
+import dataInVector.DataDepQuoti;
+
+@SuppressWarnings("serial")
+public class TabPane extends JTabbedPane {
+	
+	public TabPane()
+	{
+		super();
+		
+		ImageIcon icon_depense = new ImageIcon(getClass().getResource("/depense.png"));
+		//JPanel pn_depense = new JPanel();
+		PanelTab pn_depense = new PanelTab();
+		addTab("Dépense quotidienne", icon_depense, pn_depense, "Gérer des dépenses quotidiennes");
+		
+		ImageIcon icon_flux = new ImageIcon(getClass().getResource("/flux.png"));
+		JPanel pn_flux = new JPanel();
+		addTab("Emprunt - Prêt", icon_flux, pn_flux, "Gérer des flux monétaires (emprunt/prêt)");
+		
+		ImageIcon icon_eco = new ImageIcon(getClass().getResource("/economise.png"));
+		JPanel pn_eco = new JPanel();
+		addTab("Économise", icon_eco, pn_eco, "Gérer le budget");
+		
+		setBorder(BorderFactory.createEmptyBorder(10, 15, 10, 15));
+	}
+
+	class PanelTab<S> extends JPanel {
+		
+		private MyTableModel<S> m_table_model;
+		
+		public MyTableModel<S> getTableModel()
+		{
+			return m_table_model;
+		}
+		
+		public PanelTab()
+		{
+			super();
+			
+			JTable table = new JTable(m_table_model);
+			table.setPreferredScrollableViewportSize(new Dimension(500, 70));
+			table.setFillsViewportHeight(true);
+			
+			JScrollPane scrollPane = new JScrollPane(table);
+			
+			add(scrollPane);
+		}
+		
+		class MyTableModel<T> extends AbstractTableModel
+		{
+			private Vector<String> m_columns;
+			
+			private Vector<T> m_data;
+			
+			public MyTableModel()
+			{
+				super();
+				
+				m_columns = new Vector<String>();
+				m_data = new Vector<T>();
+			}
+			
+			public void setColumns(Vector<String> col)
+			{
+				m_columns = col;
+			}
+			
+			public void setData(Vector<T> data)
+			{
+				m_data = data;
+			}
+			
+	        @SuppressWarnings({ "rawtypes", "unchecked" })
+			public Class getColumnClass(int c) {
+	            return getValueAt(0, c).getClass();
+	        }
+			
+			@Override
+			public int getRowCount() 
+			{
+				return m_data.size();
+			}
+
+			@Override
+			public int getColumnCount() 
+			{
+				return m_columns.size();
+			}
+
+			@Override
+			public Object getValueAt(int rowIndex, int columnIndex) {
+				T temp_data = m_data.get(rowIndex);
+				
+				if(temp_data instanceof DataDepQuoti)
+				{
+					DataDepQuoti my_data = (DataDepQuoti) temp_data;
+					return my_data.getElementAt(columnIndex);
+				}
+				else
+				{
+					return null;
+				}
+				
+			}
+			
+		}
+		
+	}
+}

@@ -1,0 +1,10 @@
+package utils;
+
+public class Date {
+
+	private int m_day;
+	private int m_month;
+	private int m_year;
+	
+	
+}

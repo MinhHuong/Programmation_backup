@@ -1,0 +1,39 @@
+package dataInVector;
+
+import utils.Date;
+
+public class DataDepQuoti {
+
+	private String m_intitule;
+	private int m_montant;
+	private boolean estEmprunt;
+	private boolean estPret;
+	
+	public DataDepQuoti(String inti, int montant, boolean emp, boolean pret)
+	{
+		m_intitule = inti;
+		m_montant = montant;
+		estEmprunt = emp;
+		estPret = pret;
+	}
+	
+	public String getIntitule()
+	{
+		return m_intitule;
+	}
+	
+	public int getMontant()
+	{
+		return m_montant;
+	}
+	
+	public boolean isEmprunt()
+	{
+		return estEmprunt;
+	}
+	
+	public boolean isPret()
+	{
+		return estPret;
+	}
+}

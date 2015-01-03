@@ -1,0 +1,14 @@
+package main;
+
+import gui.MainFrame;
+
+public class MainProgram {
+
+	public static void main(String[] args) 
+	{	
+		MainFrame my_frame = new MainFrame();
+		my_frame.pack();
+		my_frame.setVisible(true);
+	}
+
+}
