@@ -1,0 +1,15 @@
+package controller;
+
+public class Context {
+
+	private Gestion m_gestion;
+	
+	private String m_operation;
+	
+	public Context() {}
+	
+	public void setGestion(Gestion g)
+	{
+		
+	}
+}

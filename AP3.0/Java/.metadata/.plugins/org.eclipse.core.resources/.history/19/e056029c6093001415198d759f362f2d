@@ -1,0 +1,25 @@
+package controller;
+
+public class Context {
+
+	private Gestion m_gestion;
+	
+	private String m_operation;
+	
+	public Context() {}
+	
+	public void setGestion(Gestion g)
+	{
+		m_gestion = g;
+	}
+	
+	public void setOperation(String op)
+	{
+		m_operation = op;
+	}
+	
+	public void execute()
+	{
+		m_gestion.doOperation(op);
+	}
+}

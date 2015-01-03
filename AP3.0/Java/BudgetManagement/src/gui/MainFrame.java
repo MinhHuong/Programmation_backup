@@ -20,8 +20,8 @@ public class MainFrame extends JFrame {
 		TabPane tabPane = new TabPane();
 		add(tabPane, BorderLayout.CENTER);
 		
-		PanelButtons pn_buttons = new PanelButtons(tabPane);
-		add(pn_buttons, BorderLayout.SOUTH);
+		//PanelButtons pn_buttons = new PanelButtons(tabPane);
+		//add(pn_buttons, BorderLayout.SOUTH);
 		
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 	}

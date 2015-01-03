@@ -1,0 +1,37 @@
+package controller;
+
+public class DepenseQuoti implements Gestion {
+
+	@Override
+	public void ajouter() {
+		System.out.println("Ajouter dans Dépense quotidienne");
+	}
+
+	@Override
+	public void supprimer() {
+		System.out.println("Supprimer record(s) dans Dépense quotidienne");
+	}
+
+	@Override
+	public void supprimerTout() {
+		System.out.println("Tout supprimer dans Dépense quotidienne");
+	}
+
+	@Override
+	public void sauvegarder() {
+		System.out.println("Sauvegarder dans Dépense quotidienne");
+	}
+
+	@Override
+	public void annuler() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void doOperation(String op) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,16 @@
+package controller;
+
+public abstract class Gestion {
+
+	public abstract void ajouter();
+	
+	public abstract void supprimer();
+	
+	public abstract void supprimerTout();
+	
+	public abstract void sauvegarder();
+	
+	public abstract void annuler();
+	
+	public abstract void doOperation(String op);
+}

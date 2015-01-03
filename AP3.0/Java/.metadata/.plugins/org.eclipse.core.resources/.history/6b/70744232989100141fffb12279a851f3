@@ -1,8 +1,0 @@
-package gui;
-
-import javax.swing.JButton;
-
-public class PanelButtons {
-
-	private JButton m_bt_ajouter;
-}

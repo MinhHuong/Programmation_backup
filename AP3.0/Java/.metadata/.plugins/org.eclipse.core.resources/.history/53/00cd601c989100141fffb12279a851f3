@@ -1,6 +1,0 @@
-package gui;
-
-public class PanelButtons {
-
-	private JButton m_bt_ajouter;
-}
