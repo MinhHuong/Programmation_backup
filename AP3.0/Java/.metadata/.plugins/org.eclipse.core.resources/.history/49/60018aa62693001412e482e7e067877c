@@ -1,9 +1,0 @@
-package dataInVector;
-
-import utils.Date;
-
-public class DataDepQuoti {
-
-	private String m_intitule;
-	private int m_montant;
-}

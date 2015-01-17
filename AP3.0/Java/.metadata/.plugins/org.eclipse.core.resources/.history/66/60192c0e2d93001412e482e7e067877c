@@ -1,5 +1,0 @@
-package tableModel;
-
-public class TableModelDepQuoti extends AbstractTableModel {
-
-}

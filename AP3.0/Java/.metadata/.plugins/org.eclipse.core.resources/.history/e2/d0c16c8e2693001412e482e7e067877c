@@ -1,8 +1,0 @@
-package dataInVector;
-
-import utils.Date;
-
-public class DataDepQuoti {
-
-	private Date m_date;
-}

@@ -31,7 +31,6 @@
 <fullyQualifiedTypeName name="javax.swing.table.TableModel"/>
 <fullyQualifiedTypeName name="gui.MainFrame"/>
 <fullyQualifiedTypeName name="gui.depense.MyData"/>
-<fullyQualifiedTypeName name="javax.swing.event.TableModelListener"/>
 <fullyQualifiedTypeName name="gui.depense.TabDepense.MyTableModel.TableListener"/>
 <fullyQualifiedTypeName name="javax.swing.JTabbedPane"/>
 <fullyQualifiedTypeName name="javax.swing.SwingConstants"/>
@@ -60,4 +59,5 @@
 <fullyQualifiedTypeName name="controller.FluxMonetaire"/>
 <fullyQualifiedTypeName name="controller.Economise"/>
 <fullyQualifiedTypeName name="controller.Context"/>
+<fullyQualifiedTypeName name="javax.swing.event.TableModelListener"/>
 </qualifiedTypeNameHistroy>
