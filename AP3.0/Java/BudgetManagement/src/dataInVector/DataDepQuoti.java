@@ -15,6 +15,14 @@ public class DataDepQuoti {
 		estPret = pret;
 	}
 	
+	public DataDepQuoti()
+	{
+		m_intitule = "non défini";
+		m_montant = 0;
+		estEmprunt = false;
+		estPret = false;
+	}
+	
 	public Object getElementAt(int index)
 	{
 		switch(index)

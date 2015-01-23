@@ -81,7 +81,30 @@ public class TabPane extends JTabbedPane {
 	
 	public void addLineTab()
 	{
-		m_pn_dep.getModel().addLine();
+		Object myObj = null;
+		
+		switch(getSelectedIndex())
+		{
+		case 0:
+			myObj = new DataDepQuoti();
+			break;
+		case 1:
+			break;
+		case 2:
+			break;
+		}
+		
+		m_pn_dep.getModel().addLine(myObj);
+	}
+	
+	public void removeLines()
+	{
+		m_pn_dep.getModel().delLines(m_pn_dep.getSelectedRows());
+	}
+	
+	public void removeAllLines()
+	{
+		m_pn_dep.getModel().delAll();
 	}
 
 	/**
@@ -95,17 +118,24 @@ public class TabPane extends JTabbedPane {
 
 		private MyTableModel<S> m_tab_model;
 		
+		private JTable m_table;
+		
+		public int[] getSelectedRows()
+		{
+			return m_table.getSelectedRows();
+		}
+		
 		public PanelTab(MyTableModel<S> table_model)
 		{
 			super(new FlowLayout(FlowLayout.CENTER, 0, 10));
 
 			m_tab_model = table_model;
-			JTable table = new JTable(m_tab_model);
-			table.setPreferredScrollableViewportSize(new Dimension(630, 280));
-			table.setFillsViewportHeight(true);
-			table.setRowHeight(30);
+			m_table = new JTable(m_tab_model);
+			m_table.setPreferredScrollableViewportSize(new Dimension(630, 280));
+			m_table.setFillsViewportHeight(true);
+			m_table.setRowHeight(30);
 
-			JScrollPane scrollPane = new JScrollPane(table);
+			JScrollPane scrollPane = new JScrollPane(m_table);
 
 			add(scrollPane);
 			
@@ -158,10 +188,41 @@ public class TabPane extends JTabbedPane {
 			m_data = data;
 		}
 		
-		public void addLine()
+		public void delLines(int[] line)
 		{
-			m_data.addElement(null);
+			Vector<T> rem = new Vector<T>();
+			
+			for(int i = 0 ; i < line.length ; i++)
+			{
+				rem.add(m_data.get(line[i]));
+			}
+			
+			for(int i = 0 ; i < rem.size() ; i++)
+			{
+				m_data.remove(rem.get(i));
+			}
+			
+			int firstR = 0, lastR = 0;
+			for(int i = 0 ; i < line.length ; i++)
+			{
+				if(firstR > line[i]) firstR = line[i];
+				if(lastR  < line[i]) lastR = line[i];
+			}
+			
+			fireTableRowsDeleted(firstR, lastR);
+		}
+		
+		public void delAll()
+		{
+			m_data.removeAllElements();
 			fireTableDataChanged();
+		}
+		
+		@SuppressWarnings("unchecked")
+		public void addLine(Object myObj) 
+		{
+			m_data.addElement((T)myObj);
+			fireTableRowsInserted(m_data.size()-1, m_data.size());
 		}
 
 		@SuppressWarnings({ "rawtypes", "unchecked" })
@@ -194,6 +255,7 @@ public class TabPane extends JTabbedPane {
 		@Override
 		public Object getValueAt(int rowIndex, int columnIndex) 
 		{
+			// Une classe abstraite au lieu d'un type générique ? Peut-être ?
 			T temp_data = m_data.get(rowIndex);
 
 			if(temp_data instanceof DataDepQuoti)

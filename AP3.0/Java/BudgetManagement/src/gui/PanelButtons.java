@@ -173,16 +173,19 @@ public class PanelButtons extends JPanel {
 			if(e.getSource() == m_bt_ajout_ligne)
 			{
 				op = "ajouterligne";
+				m_tab_pane.addLineTab();
 			}
 			
 			if(e.getSource() == m_bt_supp_ligne)
 			{
 				op = "supprimerligne";
+				m_tab_pane.removeLines();
 			}
 			
 			if(e.getSource() == m_bt_supp_tout)
 			{
 				op = "supprimertout";
+				m_tab_pane.removeAllLines();
 			}
 			
 			m_context.setOperation(op);
