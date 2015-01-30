@@ -13,7 +13,7 @@ public class MainFrame extends JFrame {
 		super();
 		
 		setTitle("Budget Management");
-		setPreferredSize(new Dimension(700, 550));
+		setPreferredSize(new Dimension(700, 600));
 		setLocation(300, 100);
 		setLayout(new BorderLayout());
 		

@@ -1,0 +1,1 @@
+- Create the corresponding panel for other types of data (DataFlux, DataEco)

@@ -1,0 +1,37 @@
+package gui;
+
+import java.awt.Dimension;
+
+import javax.swing.JTable;
+
+@SuppressWarnings("serial")
+public class TableData<S> extends JTable {
+
+	private MyTableModel<S> m_tab_model;
+	
+	public TableData(MyTableModel<S> tabModel)
+	{
+		super(tabModel);
+		
+		m_tab_model = tabModel;
+		setPreferredScrollableViewportSize(new Dimension(630, 280));
+		setFillsViewportHeight(true);
+		setRowHeight(30);
+	}
+	
+	public void addLineTab(Object myObj)
+	{
+		m_tab_model.addLine(myObj);
+	}
+	
+	public void removeLinesTab()
+	{
+		m_tab_model.delLines(getSelectedRows());
+	}
+	
+	public void removeAllTab()
+	{
+		m_tab_model.delAll();
+	}
+
+}
