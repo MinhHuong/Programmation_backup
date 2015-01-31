@@ -53,7 +53,7 @@ public class TabPane extends JTabbedPane {
 		return null;
 	}
 	
-	public void addLineTab()
+	public void addLine()
 	{
 		Object myObj = null;
 		
@@ -68,17 +68,17 @@ public class TabPane extends JTabbedPane {
 			break;
 		}
 		
-		m_pn_dep.addLinePanel(myObj);
+		m_pn_dep.addLine(myObj);
 	}
 	
 	public void removeLines()
 	{
-		m_pn_dep.removeLinesPanel();
+		m_pn_dep.removeLines();
 	}
 	
-	public void removeAllLines()
+	public void removeAll()
 	{
-		m_pn_dep.removeAllPanel();
+		m_pn_dep.removeAll();
 	}
 
 }

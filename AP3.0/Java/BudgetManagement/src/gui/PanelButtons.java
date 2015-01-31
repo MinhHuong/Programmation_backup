@@ -125,7 +125,7 @@ public class PanelButtons extends JPanel {
 				m_bt_annuler.setVisible(true);
 				
 				op = "ajouternouveau";
-				m_tab_pane.addLineTab();
+				m_tab_pane.addLine();
 			}
 			
 			if(e.getSource() == m_bt_modifier)
@@ -173,7 +173,7 @@ public class PanelButtons extends JPanel {
 			if(e.getSource() == m_bt_ajout_ligne)
 			{
 				op = "ajouterligne";
-				m_tab_pane.addLineTab();
+				m_tab_pane.addLine();
 			}
 			
 			if(e.getSource() == m_bt_supp_ligne)
@@ -185,7 +185,7 @@ public class PanelButtons extends JPanel {
 			if(e.getSource() == m_bt_supp_tout)
 			{
 				op = "supprimertout";
-				m_tab_pane.removeAllLines();
+				m_tab_pane.removeAll();
 			}
 			
 			m_context.setOperation(op);

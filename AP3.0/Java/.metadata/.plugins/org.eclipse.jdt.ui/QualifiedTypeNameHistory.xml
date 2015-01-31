@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="java.awt.Graphics2D"/>
 <fullyQualifiedTypeName name="javax.swing.JFileChooser"/>
 <fullyQualifiedTypeName name="javax.swing.filechooser.FileNameExtensionFilter"/>
 <fullyQualifiedTypeName name="java.awt.event.MouseListener"/>
@@ -26,7 +25,6 @@
 <fullyQualifiedTypeName name="java.awt.event.ActionListener"/>
 <fullyQualifiedTypeName name="gui.PanelButtons.FunctionsListener"/>
 <fullyQualifiedTypeName name="java.util.Vector"/>
-<fullyQualifiedTypeName name="utils.Date"/>
 <fullyQualifiedTypeName name="javax.swing.table.AbstractTableModel"/>
 <fullyQualifiedTypeName name="java.awt.Dimension"/>
 <fullyQualifiedTypeName name="javax.swing.UIManager"/>
@@ -42,13 +40,11 @@
 <fullyQualifiedTypeName name="controller.FluxMonetaire"/>
 <fullyQualifiedTypeName name="controller.Economise"/>
 <fullyQualifiedTypeName name="controller.Context"/>
-<fullyQualifiedTypeName name="javax.swing.event.TableModelListener"/>
 <fullyQualifiedTypeName name="javax.swing.JTable"/>
 <fullyQualifiedTypeName name="javax.swing.JPanel"/>
 <fullyQualifiedTypeName name="dataInVector.DataDepQuoti"/>
 <fullyQualifiedTypeName name="javax.swing.JScrollPane"/>
 <fullyQualifiedTypeName name="javax.swing.SpinnerModel"/>
-<fullyQualifiedTypeName name="java.util.Date"/>
 <fullyQualifiedTypeName name="javax.swing.SpinnerDateModel"/>
 <fullyQualifiedTypeName name="javax.swing.JSpinner"/>
 <fullyQualifiedTypeName name="org.jdatepicker.impl.UtilDateModel"/>
@@ -60,4 +56,8 @@
 <fullyQualifiedTypeName name="java.text.ParseException"/>
 <fullyQualifiedTypeName name="java.util.Calendar"/>
 <fullyQualifiedTypeName name="java.awt.FlowLayout"/>
+<fullyQualifiedTypeName name="javax.swing.event.TableModelListener"/>
+<fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="utils.Date"/>
 </qualifiedTypeNameHistroy>

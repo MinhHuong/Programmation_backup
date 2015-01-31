@@ -19,17 +19,17 @@ public class TableData<S> extends JTable {
 		setRowHeight(30);
 	}
 	
-	public void addLineTab(Object myObj)
+	public void addLine(Object myObj)
 	{
 		m_tab_model.addLine(myObj);
 	}
 	
-	public void removeLinesTab()
+	public void removeLines()
 	{
 		m_tab_model.delLines(getSelectedRows());
 	}
 	
-	public void removeAllTab()
+	public void removeAll()
 	{
 		m_tab_model.delAll();
 	}

@@ -2,6 +2,9 @@ package gui;
 
 import java.util.Vector;
 
+import javax.swing.JOptionPane;
+import javax.swing.event.TableModelEvent;
+import javax.swing.event.TableModelListener;
 import javax.swing.table.AbstractTableModel;
 
 import dataInVector.DataDepQuoti;
@@ -26,8 +29,14 @@ class MyTableModel<T> extends AbstractTableModel
 
 		m_columns = new Vector<String>();
 		m_data = new Vector<T>();
+		addTableModelListener(new MyTableListener<T>(this));
 	}
 
+	public Vector<T> getData()
+	{
+		return m_data;
+	}
+	
 	public void setColumns(Vector<String> col)
 	{
 		m_columns = col;
@@ -105,7 +114,6 @@ class MyTableModel<T> extends AbstractTableModel
 	@Override
 	public Object getValueAt(int rowIndex, int columnIndex) 
 	{
-		// Une classe abstraite au lieu d'un type générique ? Peut-être ?
 		T temp_data = m_data.get(rowIndex);
 
 		if(temp_data instanceof DataDepQuoti)
@@ -140,4 +148,40 @@ class MyTableModel<T> extends AbstractTableModel
 		}
 	}
 
+	class MyTableListener<S> implements TableModelListener
+	{
+		private MyTableModel<S> m_tab_model;
+		
+		public MyTableListener(MyTableModel<S> tabModel)
+		{
+			m_tab_model = tabModel;
+		}
+		
+		@Override
+		public void tableChanged(TableModelEvent e) 
+		{
+			if(e.getType() == TableModelEvent.UPDATE)
+			{
+				S temp_data = m_tab_model.getData().get(e.getFirstRow());
+				
+				if(temp_data instanceof DataDepQuoti)
+				{
+					DataDepQuoti depQuoti = (DataDepQuoti) temp_data;
+					
+					if( (depQuoti.isEmprunt() == true) && (depQuoti.isPret() == true) )
+					{
+						JOptionPane.showMessageDialog(null, 
+								"An amount can't be considered lent and borrowed at the same time !", 
+								"Invalid data",
+								JOptionPane.ERROR_MESSAGE);
+						depQuoti.setEmprunt(false);
+						depQuoti.setPret(false);
+						fireTableRowsUpdated(e.getFirstRow(), e.getLastRow());
+					}
+				}
+			}
+			
+		}
+		
+	}
 }
