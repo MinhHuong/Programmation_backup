@@ -33,5 +33,21 @@ public class TableData<S> extends JTable {
 	{
 		m_tab_model.delAll();
 	}
+	
+	public void save(String date)
+	{
+		m_tab_model.clearDataStored();
+		
+		if(date != null) m_tab_model.setDateToAll(date);
+	}
+	
+	public void cancel()
+	{
+		m_tab_model.restoreData();
+	}
 
+	public void copyAllData()
+	{
+		m_tab_model.copyAllData(m_tab_model.getData(), m_tab_model.getDataStored());
+	}
 }

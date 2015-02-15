@@ -1,7 +1,0 @@
-package gui;
-
-import javax.swing.JTable;
-
-public class TableData<T> extends JTable {
-
-}

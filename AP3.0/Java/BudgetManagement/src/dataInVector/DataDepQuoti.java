@@ -1,22 +1,29 @@
 package dataInVector;
 
-import utils.Date;
-
 public class DataDepQuoti {
 
 	private String m_intitule;
 	private int m_montant;
 	private boolean estEmprunt;
 	private boolean estPret;
-	private Date m_date;
+	private String m_date;
 	
-	public DataDepQuoti(String inti, int montant, boolean emp, boolean pret, Date date)
+	public DataDepQuoti(String inti, int montant, boolean emp, boolean pret, String date)
 	{
 		m_intitule = inti;
 		m_montant = montant;
 		estEmprunt = emp;
 		estPret = pret;
 		m_date = date;
+	}
+	
+	public DataDepQuoti(String inti, int montant, boolean emp, boolean pret)
+	{
+		m_intitule = inti;
+		m_montant = montant;
+		estEmprunt = emp;
+		estPret = pret;
+		m_date = "";
 	}
 	
 	public DataDepQuoti()
@@ -84,7 +91,7 @@ public class DataDepQuoti {
 		return estPret;
 	}
 	
-	public Date getDate()
+	public String getDate()
 	{
 		return m_date;
 	}
@@ -109,11 +116,8 @@ public class DataDepQuoti {
 		estPret = pret;
 	}
 	
-	public void setDate(int dayW, int dateM, int m, int y)
+	public void setDate(String date)
 	{
-		m_date.setDayWeek(dayW);
-		m_date.setDay(dateM);
-		m_date.setMonth(m);
-		m_date.setYear(y);
+		m_date = date;
 	}
 }

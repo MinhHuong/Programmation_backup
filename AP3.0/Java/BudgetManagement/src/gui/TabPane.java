@@ -81,4 +81,19 @@ public class TabPane extends JTabbedPane {
 		m_pn_dep.removeAll();
 	}
 
+	public void save()
+	{
+		m_pn_dep.save();
+	}
+	
+	public void cancel()
+	{
+		m_pn_dep.cancel();
+	}
+	
+	public void copyAllData()
+	{
+		m_pn_dep.copyAllData();
+	}
+
 }

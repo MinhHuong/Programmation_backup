@@ -15,7 +15,7 @@ import controller.Context;
 @SuppressWarnings("serial")
 public class PanelButtons extends JPanel {
 
-	private JButton m_bt_ajouter;
+	//private JButton m_bt_ajouter;
 	private JButton m_bt_modifier;
 	private JButton m_bt_sauvegarder;
 	private JButton m_bt_annuler;
@@ -61,18 +61,18 @@ public class PanelButtons extends JPanel {
 		m_pn_bt_mod.add(m_bt_supp_ligne);
 		m_pn_bt_mod.add(m_bt_supp_tout);
 		
-		m_bt_ajouter = new JButton("Ajouter");
+		//m_bt_ajouter = new JButton("Ajouter");
 		m_bt_modifier = new JButton("Modifier");
 		m_bt_sauvegarder = new JButton("Sauvegarder");
 		m_bt_annuler = new JButton("Annuler");
 		
-		m_bt_ajouter.setPreferredSize(new Dimension(110, 30));
+		//m_bt_ajouter.setPreferredSize(new Dimension(110, 30));
 		m_bt_modifier.setPreferredSize(new Dimension(110, 30));
 		m_bt_sauvegarder.setPreferredSize(new Dimension(110, 30));
 		m_bt_annuler.setPreferredSize(new Dimension(110, 30));
 		
 		FunctionsListener funcListener = new FunctionsListener(tabPane);
-		m_bt_ajouter.addActionListener(funcListener);
+		//m_bt_ajouter.addActionListener(funcListener);
 		m_bt_modifier.addActionListener(funcListener);
 		m_bt_ajout_ligne.addActionListener(funcListener);
 		m_bt_supp_ligne.addActionListener(funcListener);
@@ -81,12 +81,12 @@ public class PanelButtons extends JPanel {
 		m_bt_annuler.addActionListener(funcListener);
 		
 		add(m_pn_bt_mod);
-		add(m_bt_ajouter);
+		//add(m_bt_ajouter);
 		add(m_bt_modifier);
 		add(m_bt_sauvegarder);
 		add(m_bt_annuler);
 		
-		m_bt_modifier.setVisible(false);
+		m_bt_modifier.setVisible(true);
 		m_bt_ajout_ligne.setVisible(false);
 		m_bt_supp_ligne.setVisible(false);
 		m_bt_supp_tout.setVisible(false);
@@ -113,7 +113,7 @@ public class PanelButtons extends JPanel {
 		
 			String op = "";
 			
-			if(e.getSource() == m_bt_ajouter)
+			/*if(e.getSource() == m_bt_ajouter)
 			{
 				//System.out.println("Ajouter la première ligne pour instancier les tables");
 				m_bt_ajouter.setVisible(false);
@@ -126,12 +126,13 @@ public class PanelButtons extends JPanel {
 				
 				op = "ajouternouveau";
 				m_tab_pane.addLine();
-			}
+			}*/
 			
 			if(e.getSource() == m_bt_modifier)
 			{
+				m_tab_pane.copyAllData();
 				//System.out.println("Modifier des données");
-				m_bt_ajouter.setVisible(false);
+				//m_bt_ajouter.setVisible(false);
 				m_bt_modifier.setVisible(false);
 				m_bt_ajout_ligne.setVisible(true);
 				m_bt_supp_ligne.setVisible(true);
@@ -144,8 +145,10 @@ public class PanelButtons extends JPanel {
 			
 			if(e.getSource() == m_bt_sauvegarder)
 			{
+				m_tab_pane.save();
+				
 				//System.out.println("Sauvegarder des nouvelles données");
-				m_bt_ajouter.setVisible(false);
+				//m_bt_ajouter.setVisible(false);
 				m_bt_modifier.setVisible(true);
 				m_bt_ajout_ligne.setVisible(false);
 				m_bt_supp_ligne.setVisible(false);
@@ -158,8 +161,9 @@ public class PanelButtons extends JPanel {
 			
 			if(e.getSource() == m_bt_annuler)
 			{
+				m_tab_pane.cancel();
 				//System.out.println("Annuler tous les changements");
-				m_bt_ajouter.setVisible(false);
+				//m_bt_ajouter.setVisible(false);
 				m_bt_modifier.setVisible(true);
 				m_bt_ajout_ligne.setVisible(false);
 				m_bt_supp_ligne.setVisible(false);
