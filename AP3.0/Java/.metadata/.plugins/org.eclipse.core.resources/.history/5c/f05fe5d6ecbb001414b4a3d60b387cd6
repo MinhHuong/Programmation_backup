@@ -1,0 +1,20 @@
+package utils;
+
+import java.util.Vector;
+
+import dataInVector.DataDepQuoti;
+
+/**
+ * A class simulated as Database, therefore it only contains static methods and varaibles
+ * @author MiHu
+ */
+
+public class DatabaseSim {
+
+	private static Vector<DataDepQuoti> m_vt_depQuoti;
+	
+	private DatabaseSim()
+	{
+		m_vt_depQuoti = new Vector<DataDepQuoti>();
+	}
+}

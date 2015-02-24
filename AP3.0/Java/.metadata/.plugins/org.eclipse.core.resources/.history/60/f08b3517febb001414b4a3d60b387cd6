@@ -1,0 +1,9 @@
+- REMEMBER : when using Database Simulator, I don't really have to write real shit, all I need is just some codes to make it work, and to understand the principle.
+- ANOTHER  : without real Database, I use object and vector to save traces, but when I apply a database, I just have to save INSTRUCTIONS SQL, like
+"insert ... to..."'
+"del...from..."
+"update...set...where..."
+
+Just that. And everything will be fine. 
+
+- Create the corresponding panel for other types of data (DataFlux, DataEco)

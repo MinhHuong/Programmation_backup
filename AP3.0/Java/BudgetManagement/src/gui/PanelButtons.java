@@ -130,7 +130,7 @@ public class PanelButtons extends JPanel {
 			
 			if(e.getSource() == m_bt_modifier)
 			{
-				m_tab_pane.copyAllData();
+				m_tab_pane.modifyEntry();
 				//System.out.println("Modifier des données");
 				//m_bt_ajouter.setVisible(false);
 				m_bt_modifier.setVisible(false);
@@ -189,7 +189,7 @@ public class PanelButtons extends JPanel {
 			if(e.getSource() == m_bt_supp_tout)
 			{
 				op = "supprimertout";
-				m_tab_pane.removeAll();
+				m_tab_pane.removeAllData();
 			}
 			
 			m_context.setOperation(op);

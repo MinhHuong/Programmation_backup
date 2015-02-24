@@ -14,7 +14,7 @@ import dataInVector.DataDepQuoti;
 @SuppressWarnings("serial")
 public class TabPane extends JTabbedPane {
 
-	private PanelDepQuoti m_pn_dep;
+	private PanelDepQuoti m_pnDep;
 	
 	public TabPane()
 	{
@@ -22,8 +22,8 @@ public class TabPane extends JTabbedPane {
 
 		// Initialiser l'onglet DÉPENSE QUOTIDIENNE
 		ImageIcon icon_depense = new ImageIcon(getClass().getResource("/depense.png"));
-		m_pn_dep = new PanelDepQuoti(this);
-		addTab("Dépense quotidienne", icon_depense, m_pn_dep, "Gérer des dépenses quotidiennes");
+		m_pnDep = new PanelDepQuoti(this);
+		addTab("Dépense quotidienne", icon_depense, m_pnDep, "Gérer des dépenses quotidiennes");
 
 		// Initialiser l'onglet FLUX MONÉTAIRE
 		ImageIcon icon_flux = new ImageIcon(getClass().getResource("/flux.png"));
@@ -53,6 +53,12 @@ public class TabPane extends JTabbedPane {
 		return null;
 	}
 	
+	public void modifyEntry()
+	{
+		m_pnDep.copyAllDataToStore();
+		m_pnDep.hideButtonFind();
+	}
+	
 	public void addLine()
 	{
 		Object myObj = null;
@@ -68,32 +74,27 @@ public class TabPane extends JTabbedPane {
 			break;
 		}
 		
-		m_pn_dep.addLine(myObj);
+		m_pnDep.addLine(myObj);
 	}
 	
 	public void removeLines()
 	{
-		m_pn_dep.removeLines();
+		m_pnDep.removeLines();
 	}
 	
-	public void removeAll()
+	public void removeAllData()
 	{
-		m_pn_dep.removeAll();
+		m_pnDep.removeAllData();
 	}
 
 	public void save()
 	{
-		m_pn_dep.save();
+		m_pnDep.save();
 	}
 	
 	public void cancel()
 	{
-		m_pn_dep.cancel();
-	}
-	
-	public void copyAllData()
-	{
-		m_pn_dep.copyAllData();
+		m_pnDep.cancel();
 	}
 
 }

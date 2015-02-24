@@ -4,6 +4,9 @@ import java.awt.Dimension;
 
 import javax.swing.JTable;
 
+import utils.DatabaseSim;
+
+
 @SuppressWarnings("serial")
 public class TableData<S> extends JTable {
 
@@ -29,16 +32,18 @@ public class TableData<S> extends JTable {
 		m_tab_model.delLines(getSelectedRows());
 	}
 	
-	public void removeAll()
+	public void removeAllData()
 	{
 		m_tab_model.delAll();
 	}
 	
 	public void save(String date)
 	{
-		m_tab_model.clearDataStored();
-		
+		m_tab_model.clearDataStored();		
 		if(date != null) m_tab_model.setDateToAll(date);
+		m_tab_model.copyToDB();
+		DatabaseSim.showDataInDB();
+		//m_tab_model.showAllData();
 	}
 	
 	public void cancel()
@@ -46,7 +51,7 @@ public class TableData<S> extends JTable {
 		m_tab_model.restoreData();
 	}
 
-	public void copyAllData()
+	public void copyAllDataToStore()
 	{
 		m_tab_model.copyAllData(m_tab_model.getData(), m_tab_model.getDataStored());
 	}

@@ -120,4 +120,28 @@ public class DataDepQuoti {
 	{
 		m_date = date;
 	}
+	
+	public String toString()
+	{
+		String info = "Intitulé : " + m_intitule 
+				+ ", Montant : " + m_montant 
+				+ ", Prêté ? " + estPret 
+				+ ", Emprunté ? " + estEmprunt 
+				+ ", Date = " + m_date ;
+		return info;
+	}
+	
+	public boolean compare(DataDepQuoti obj)
+	{
+		if  (
+				m_intitule.equalsIgnoreCase(obj.getIntitule()) &&
+				m_montant == obj.getMontant() &&
+				estEmprunt == obj.isEmprunt() &&
+				estPret == obj.isPret() &&
+				m_date.equalsIgnoreCase(obj.getDate())
+			)
+			return true;
+			
+		return false;
+	}
 }

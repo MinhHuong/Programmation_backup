@@ -1,6 +1,8 @@
 package gui;
 
 import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -8,6 +10,7 @@ import java.util.Date;
 import java.util.Properties;
 import java.util.Vector;
 
+import javax.swing.JButton;
 import javax.swing.JFormattedTextField.AbstractFormatter;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -16,6 +19,7 @@ import org.jdatepicker.impl.JDatePanelImpl;
 import org.jdatepicker.impl.JDatePickerImpl;
 import org.jdatepicker.impl.UtilDateModel;
 
+import utils.DatabaseSim;
 import dataInVector.DataDepQuoti;
 
 @SuppressWarnings("serial")
@@ -24,6 +28,8 @@ public class PanelDepQuoti extends JPanel {
 	private TableData<DataDepQuoti> m_tab_data;
 	
 	private JDatePickerImpl m_datePicker;
+	
+	private JButton m_buttonFind;
 	
 	private String m_oldDate;
 
@@ -41,13 +47,13 @@ public class PanelDepQuoti extends JPanel {
 		tabModel.setColumns(col);
 
 		Vector<DataDepQuoti> data = new Vector<DataDepQuoti>();
-		/*
+		
 		data.add(new DataDepQuoti("Bus", 4000, false, false));
 		data.add(new DataDepQuoti("Livres", 85600, false, true));
 		data.add(new DataDepQuoti("Essence", 40000, false, false));
 		data.add(new DataDepQuoti("Vétérinaire", 22000, true, false));
 		data.add(new DataDepQuoti("Nourriture", 25000, true, false));
-		 */
+		 
 		tabModel.setData(data);
 
 		/*		Calendar calendar = Calendar.getInstance();
@@ -73,14 +79,18 @@ public class PanelDepQuoti extends JPanel {
 		m_datePicker = new JDatePickerImpl(datePanel, new DateLabelFormatter());
 		add(m_datePicker);
 		
+		m_buttonFind = new JButton("FIND ENTRY");
+		m_buttonFind.addActionListener(new ButtonListener(tabModel));
+		this.add(m_buttonFind);
+		
 		m_oldDate = getDateFromPicker();
 
 		m_tab_data = new TableData<DataDepQuoti>(tabModel);
 		JScrollPane scrollPane = new JScrollPane(m_tab_data);
-		add(scrollPane);
+		this.add(scrollPane);
 
 		PanelButtons pn_buttons = new PanelButtons(tabPane);
-		add(pn_buttons);
+		this.add(pn_buttons);
 	}
 	
 	public void addLine(Object myObj)
@@ -93,25 +103,29 @@ public class PanelDepQuoti extends JPanel {
 		m_tab_data.removeLines();
 	}
 
-	public void removeAll()
+	public void removeAllData()
 	{
 		m_tab_data.removeAll();
 	}
 	
 	public void save()
 	{
+		dateChanged();
 		m_tab_data.save(getDateFromPicker());
 		m_oldDate = getDateFromPicker();
+		m_buttonFind.setVisible(true);
 	}
 	
 	public void cancel()
 	{
 		m_tab_data.cancel();
+		m_buttonFind.setVisible(true);
 	}
 	
-	public void copyAllData()
+	public void copyAllDataToStore()
 	{
-		m_tab_data.copyAllData();
+		m_tab_data.copyAllDataToStore();
+		m_buttonFind.setVisible(true);
 	}
 	
 	public String getDateFromPicker()
@@ -133,10 +147,22 @@ public class PanelDepQuoti extends JPanel {
 	
 	public void dateChanged()
 	{
-		if(m_oldDate != getDateFromPicker())
+		//System.out.println("Old date = " + m_oldDate + ", New date = " + getDateFromPicker());
+		
+		if(!m_oldDate.equalsIgnoreCase(getDateFromPicker()))
 		{
 			System.out.println("Change of the date !");
 		}
+	}
+	
+	public void hideButtonFind()
+	{
+		m_buttonFind.setVisible(false);
+	}
+	
+	public void displayButtonFind()
+	{
+		m_buttonFind.setVisible(true);
 	}
 	
 	class DateLabelFormatter extends AbstractFormatter {
@@ -159,5 +185,23 @@ public class PanelDepQuoti extends JPanel {
 	        return "";
 	    }
 
+	}
+	
+	class ButtonListener implements ActionListener
+	{
+
+		private MyTableModel<DataDepQuoti> m_tabModel;
+		
+		public ButtonListener(MyTableModel<DataDepQuoti> tabModel)
+		{
+			m_tabModel = tabModel;
+		}
+		
+		@Override
+		public void actionPerformed(ActionEvent e) 
+		{
+			DatabaseSim.findEntry((PanelDepQuoti.this).getDateFromPicker(), m_tabModel);
+		}
+		
 	}
 }

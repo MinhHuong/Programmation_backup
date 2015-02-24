@@ -1,0 +1,10 @@
+package utils;
+
+/**
+ * A class simulated as Database, therefore it only contains static methods and varaibles
+ * @author MiHu
+ */
+
+public class DatabaseSim {
+
+}

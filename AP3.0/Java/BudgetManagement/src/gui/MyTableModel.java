@@ -7,6 +7,7 @@ import javax.swing.event.TableModelEvent;
 import javax.swing.event.TableModelListener;
 import javax.swing.table.AbstractTableModel;
 
+import utils.DatabaseSim;
 import dataInVector.DataDepQuoti;
 
 /**
@@ -17,7 +18,7 @@ import dataInVector.DataDepQuoti;
  * @param <T> Le type de données convenable (DataDepQuoti, DataFlux, DataEco...)
  */
 @SuppressWarnings("serial")
-class MyTableModel<T> extends AbstractTableModel
+public class MyTableModel<T> extends AbstractTableModel
 {
 	private Vector<String> m_columns;
 
@@ -44,7 +45,7 @@ class MyTableModel<T> extends AbstractTableModel
 	{
 		return m_data_store;
 	}
-	
+
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public Class getColumnClass(int c) {
 		return getValueAt(0, c).getClass();
@@ -97,7 +98,7 @@ class MyTableModel<T> extends AbstractTableModel
 			return null;
 		}
 	}
-	
+
 	@Override
 	public void setValueAt(Object obj, int rowIndex, int columnIndex)
 	{
@@ -117,7 +118,7 @@ class MyTableModel<T> extends AbstractTableModel
 			System.out.println("Unexpected exception");
 		}
 	}
-	
+
 	public void setDateToAll(String date)
 	{
 		for(int i = 0 ; i < m_data.size() ; i++)
@@ -129,14 +130,14 @@ class MyTableModel<T> extends AbstractTableModel
 			}
 		}
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	public void copyAllData(Vector<T> src, Vector<T> dest)
 	{
 		for(int i = 0 ; i < src.size() ; i++)
 		{
 			T temp_data = src.get(i);
-			
+
 			if(temp_data instanceof DataDepQuoti)
 			{
 				DataDepQuoti depQuoti = new DataDepQuoti
@@ -147,6 +148,38 @@ class MyTableModel<T> extends AbstractTableModel
 								((DataDepQuoti)temp_data).isPret()
 						);
 				dest.addElement((T)depQuoti);
+			}
+
+			//dest.addElement(src.get(i));
+			// Ce code ne marche pas quand on modifie des données, 
+			// même s'il va bien si l'on ne fait que la suppression
+		}
+	}
+
+	public void copyToDB()
+	{
+		if(m_data.size() != 0 && m_data.get(0) instanceof DataDepQuoti)
+		{
+			for(int i = 0 ; i < m_data.size() ; i++)
+			{
+				T temp_data = m_data.get(i);
+
+				if(temp_data instanceof DataDepQuoti)
+				{
+					DataDepQuoti depQuoti = new DataDepQuoti
+							(
+									((DataDepQuoti)temp_data).getIntitule(),
+									((DataDepQuoti)temp_data).getMontant(),
+									((DataDepQuoti)temp_data).isEmprunt(),
+									((DataDepQuoti)temp_data).isPret(),
+									((DataDepQuoti)temp_data).getDate()
+							);
+					
+					if(!DatabaseSim.checkOccurence(depQuoti))
+					{
+						DatabaseSim.addToDB(depQuoti);
+					}
+				}
 			}
 		}
 	}
@@ -200,7 +233,15 @@ class MyTableModel<T> extends AbstractTableModel
 		m_data.addElement((T)myObj);
 		fireTableRowsInserted(m_data.size()-1, m_data.size());
 	}
-	
+
+	public void showAllData()
+	{
+		for(int i = 0 ; i < m_data.size() ; i++)
+		{
+			System.out.println(m_data.get(i).toString());
+		}
+	}
+
 	class MyTableListener<S> implements TableModelListener
 	{
 		private MyTableModel<S> m_tab_model;
