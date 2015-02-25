@@ -1,0 +1,8 @@
+ID MOOC Robotics QUT
+
+b6e710870acb098e584277457ba89d68
+
+License number: 1066622 
+Activation type: Total Academic Headcount Student - Standalone Named User 
+Activated by: huong.le14895@gmail.com 
+Windows User Name: MiHu

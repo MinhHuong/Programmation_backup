@@ -59,6 +59,11 @@ public class TabPane extends JTabbedPane {
 		m_pnDep.hideButtonFind();
 	}
 	
+	public boolean canBeModified()
+	{
+		return m_pnDep.isPressedFind() || (!m_pnDep.isDateChanged());
+	}
+	
 	public void addLine()
 	{
 		Object myObj = null;

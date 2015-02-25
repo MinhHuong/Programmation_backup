@@ -17,22 +17,13 @@ public class DataDepQuoti {
 		m_date = date;
 	}
 	
-	public DataDepQuoti(String inti, int montant, boolean emp, boolean pret)
-	{
-		m_intitule = inti;
-		m_montant = montant;
-		estEmprunt = emp;
-		estPret = pret;
-		m_date = "";
-	}
-	
 	public DataDepQuoti()
 	{
 		m_intitule = "non défini";
 		m_montant = 0;
 		estEmprunt = false;
 		estPret = false;
-		m_date = null;
+		m_date = "";
 	}
 	
 	public Object getElementAt(int index)

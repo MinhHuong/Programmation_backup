@@ -8,6 +8,7 @@ import java.awt.event.ActionListener;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import controller.Context;
@@ -130,17 +131,29 @@ public class PanelButtons extends JPanel {
 			
 			if(e.getSource() == m_bt_modifier)
 			{
-				m_tab_pane.modifyEntry();
-				//System.out.println("Modifier des données");
-				//m_bt_ajouter.setVisible(false);
-				m_bt_modifier.setVisible(false);
-				m_bt_ajout_ligne.setVisible(true);
-				m_bt_supp_ligne.setVisible(true);
-				m_bt_supp_tout.setVisible(true);
-				m_bt_sauvegarder.setVisible(true);
-				m_bt_annuler.setVisible(true);
+				if(m_tab_pane.canBeModified())
+				{
+					m_tab_pane.modifyEntry();
+					
+					m_bt_modifier.setVisible(false);
+					m_bt_ajout_ligne.setVisible(true);
+					m_bt_supp_ligne.setVisible(true);
+					m_bt_supp_tout.setVisible(true);
+					m_bt_sauvegarder.setVisible(true);
+					m_bt_annuler.setVisible(true);
 				
-				op = "modifier";
+					op = "modifier";
+				}
+				else
+				{
+					JOptionPane.showMessageDialog
+					(
+							null, 
+							"Please, make sure that you have already found an entry on that date by clicking on the button \"FIND ENTRY\" before doing modifications.", 
+							"Warning", 
+							JOptionPane.WARNING_MESSAGE
+					);
+				}
 			}
 			
 			if(e.getSource() == m_bt_sauvegarder)

@@ -25,6 +25,11 @@ public class DatabaseSim {
 		return dbSim;
 	}
 	
+	public static void setDatas(Vector<DataDepQuoti> vt)
+	{
+		m_vt_depQuoti = vt;
+	}
+	
 	public static void addToDB(DataDepQuoti obj)
 	{
 		m_vt_depQuoti.addElement(obj);
@@ -70,4 +75,24 @@ public class DatabaseSim {
 		tabModel.fireTableDataChanged();
 	}
 
+	public static void eraseAllOnDate(String date)
+	{
+		Vector<DataDepQuoti> vt_erase = new Vector<DataDepQuoti>();
+		// on doit faire la suppression des données indirectement, sinon le compileur lance l'exception
+		// ConcurrentModification : cannot remove an element after creating an iterator, while we're using
+		// that iterator to search in the list
+		
+		for(DataDepQuoti dep : m_vt_depQuoti)
+		{
+			if(date.equalsIgnoreCase(dep.getDate()))
+			{
+				vt_erase.add(dep);
+			}
+		}
+		
+		for(DataDepQuoti dep : vt_erase)
+		{
+			m_vt_depQuoti.remove(dep);
+		}
+	}
 }

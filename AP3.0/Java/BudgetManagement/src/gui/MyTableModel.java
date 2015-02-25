@@ -145,7 +145,8 @@ public class MyTableModel<T> extends AbstractTableModel
 								((DataDepQuoti)temp_data).getIntitule(),
 								((DataDepQuoti)temp_data).getMontant(),
 								((DataDepQuoti)temp_data).isEmprunt(),
-								((DataDepQuoti)temp_data).isPret()
+								((DataDepQuoti)temp_data).isPret(),
+								((DataDepQuoti)temp_data).getDate()
 						);
 				dest.addElement((T)depQuoti);
 			}
@@ -160,6 +161,10 @@ public class MyTableModel<T> extends AbstractTableModel
 	{
 		if(m_data.size() != 0 && m_data.get(0) instanceof DataDepQuoti)
 		{
+			// first, erase all datas of that chosen date only (already precised in the vector m_data
+			DataDepQuoti example = (DataDepQuoti)m_data.get(0);
+			DatabaseSim.eraseAllOnDate(example.getDate());
+			
 			for(int i = 0 ; i < m_data.size() ; i++)
 			{
 				T temp_data = m_data.get(i);
@@ -263,15 +268,17 @@ public class MyTableModel<T> extends AbstractTableModel
 					if(temp_data instanceof DataDepQuoti)
 					{
 						DataDepQuoti depQuoti = (DataDepQuoti) temp_data;
-
+						boolean old_emprunt = depQuoti.isEmprunt();
+						boolean old_pret = depQuoti.isPret();
+						
 						if( (depQuoti.isEmprunt() == true) && (depQuoti.isPret() == true) )
 						{
 							JOptionPane.showMessageDialog(null, 
 									"An amount can't be considered lent and borrowed at the same time !", 
 									"Invalid data",
 									JOptionPane.ERROR_MESSAGE);
-							depQuoti.setEmprunt(false);
-							depQuoti.setPret(false);
+							depQuoti.setEmprunt(old_emprunt);
+							depQuoti.setPret(old_pret);
 							fireTableRowsUpdated(e.getFirstRow(), e.getLastRow());
 						}
 					}
