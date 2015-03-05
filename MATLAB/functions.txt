@@ -1,0 +1,11 @@
+rand(m, n)			: random a matrix m rows n columns, value from 0 to 1
+ones 				: create a matrix all values = 1 
+eye(n)				: identity matrix (matrice unite) n : nb of rows / columns
+randi([a,b], m, n)	: random integers from a to b, m rows, n columns
+randn(m, n)			: random a matrix m rows n columns, random values ( # rand )
+zeros(m, n)			: matrix of zero (matrice nulle) m : rows / n : columns
+toeplitz
+vander
+diag([a1, a2...an])	: create a diagonagal matrix (matrice diagonale) (param : value of the diagonale)
+magic
+hilb

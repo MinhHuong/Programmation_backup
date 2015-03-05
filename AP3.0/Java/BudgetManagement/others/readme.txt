@@ -1,3 +1,5 @@
+- Create the corresponding panel for other types of data (DataFlux, DataEco)
+
 - REMEMBER : when using Database Simulator, I don't really have to write real shit, all I need is just some codes to make it work, and to understand the principle.
 - ANOTHER  : without real Database, I use object and vector to save traces, but when I apply a database, I just have to save SQL INSTRUCTIONS, such as
 "insert ... to..."'
@@ -12,5 +14,3 @@ Just that. And everything will be fine.
 	--> WAIT !!! Actually I CAN download the source code, edit some portions needed TO BE EDITED and build everything into a runnable jar again.
 	
 - Next step : connection to Database (VERY IMPORTANT AND I BET 150% EVERYTHING WILL MESSED UP)
-
-- Create the corresponding panel for other types of data (DataFlux, DataEco)

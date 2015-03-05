@@ -1,0 +1,10 @@
+package databaseController;
+
+/**
+ * This class creates a connection to JavaDB
+ * @author MiHu
+ *
+ */
+public class DBUtilities {
+
+}

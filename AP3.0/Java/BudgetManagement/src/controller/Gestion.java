@@ -2,6 +2,10 @@ package controller;
 
 public interface Gestion {
 
+	void createTable();
+	
+	void dropTable();
+	
 	void ajouter();
 
 	void supprimer();

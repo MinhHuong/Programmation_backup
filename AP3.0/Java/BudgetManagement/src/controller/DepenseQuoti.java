@@ -2,23 +2,29 @@ package controller;
 
 /**
  * singleton
+ * This class handles the connection between Application and Database<p>
+ * At least I will prepare SQL statement here
  * @author MiHu
  *
  */
 public class DepenseQuoti implements Gestion {
+	
+	public DepenseQuoti() 
+	{}
+	
+	@Override
+	public void createTable() 
+	{}
 
-	private static DepenseQuoti m_depense_quoti = new DepenseQuoti();
-	
-	private DepenseQuoti() {}
-	
-	public static DepenseQuoti getDepenseQuotiContext()
-	{
-		return m_depense_quoti;
+	@Override
+	public void dropTable() {
+		// TODO Auto-generated method stub
+		
 	}
 	
 	@Override
 	public void ajouter() {
-		System.out.println("Ajouter dans Dépense quotidienne");
+		System.out.println("Ajouter une ligne dans Dépense quotidienne");
 	}
 
 	@Override

@@ -9,6 +9,7 @@ import javax.swing.table.AbstractTableModel;
 
 import utils.DatabaseSim;
 import dataInVector.DataDepQuoti;
+import dataInVector.DataFlux;
 
 /**
  * Le modèle de la table dans chaque onglet
@@ -93,7 +94,11 @@ public class MyTableModel<T> extends AbstractTableModel
 			DataDepQuoti my_data = (DataDepQuoti) temp_data;
 			return my_data.getElementAt(columnIndex);
 		}
-		else
+		else if(temp_data instanceof DataFlux)
+		{
+			DataFlux my_data = (DataFlux) temp_data;
+			return my_data.getElementAt(columnIndex);
+		}
 		{
 			return null;
 		}
@@ -109,6 +114,10 @@ public class MyTableModel<T> extends AbstractTableModel
 			if(temp_data instanceof DataDepQuoti)
 			{
 				((DataDepQuoti)temp_data).setElementAt(columnIndex, obj);
+			}
+			else if(temp_data instanceof DataFlux)
+			{
+				((DataFlux)temp_data).setElementAt(columnIndex, obj);
 			}
 
 			fireTableCellUpdated(rowIndex, columnIndex);

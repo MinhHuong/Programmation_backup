@@ -6,15 +6,8 @@ package controller;
  *
  */
 public class Economise implements Gestion {
-
-	private static Economise m_econo = new Economise();
 	
-	private Economise() {}
-	
-	public static Economise getEconomiseContext()
-	{
-		return m_econo;
-	}
+	public Economise() {}
 	
 	@Override
 	public void ajouter() {
@@ -44,6 +37,18 @@ public class Economise implements Gestion {
 	@Override
 	public void doOperation(String op) {
 		System.out.println("L'Économise fait l'opération " + op);
+	}
+
+	@Override
+	public void createTable() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void dropTable() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

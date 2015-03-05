@@ -124,15 +124,13 @@ public class DataDepQuoti {
 	
 	public boolean compare(DataDepQuoti obj)
 	{
-		if  (
+		return
+			(
 				m_intitule.equalsIgnoreCase(obj.getIntitule()) &&
 				m_montant == obj.getMontant() &&
 				estEmprunt == obj.isEmprunt() &&
 				estPret == obj.isPret() &&
 				m_date.equalsIgnoreCase(obj.getDate())
-			)
-			return true;
-			
-		return false;
+			);
 	}
 }

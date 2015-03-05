@@ -1,0 +1,25 @@
+package gui;
+
+import java.awt.FlowLayout;
+import java.util.Vector;
+
+import javax.swing.JPanel;
+
+import dataInVector.DataFlux;
+
+@SuppressWarnings("serial")
+public class PanelFlux extends JPanel {
+	
+	private TableData<DataFlux> tableFlux;
+	
+	public PanelFlux(TabPane tabPane)
+	{
+		super(new FlowLayout(FlowLayout.CENTER, 0, 15));
+		
+		MyTableModel<DataFlux> tabModel = new MyTableModel<DataFlux>();
+		
+		Vector<String> col = new Vector<String>();
+		col.add(e);
+	}
+
+}

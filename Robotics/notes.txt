@@ -1,0 +1,43 @@
+DEFINITION :
+A robot : a machin that moves from location A  to B, has a goal to achieve, can sense, plan, act, programmable machine
+
+CHARACTERISTICS :
+- consistent (always pay attention)
+- accurate
+- reliable 
+- do things that ppl cannot do (dangerous/risky/boring/dull job)
+(dirtry dull dangerous --> jobs ppl dont want to do)
+
+HUMANOID :
+- create a machin that combines all necessary functions but also is affordable, reliable
+
+- Robots can make ppl more strong (do strong things) (wearable robots)
+
+========================
+
+THINGS IN 2-D
+
+- location --> position & orientation (compare the relative position of 2 coordinate frames)
+
+- pose(x, y, theta)
++ x, y : offset
++ theta : angle (rotation)
+
+- anti-clockwise rotation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

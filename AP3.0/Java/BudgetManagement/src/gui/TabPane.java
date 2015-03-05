@@ -19,21 +19,21 @@ public class TabPane extends JTabbedPane {
 	public TabPane()
 	{
 		super();
-
+		
 		// Initialiser l'onglet DÉPENSE QUOTIDIENNE
 		ImageIcon icon_depense = new ImageIcon(getClass().getResource("/depense.png"));
 		m_pnDep = new PanelDepQuoti(this);
-		addTab("Dépense quotidienne", icon_depense, m_pnDep, "Gérer des dépenses quotidiennes");
+		addTab("DAILY EXPENSES", icon_depense, m_pnDep, "Manage daily expenses");
 
 		// Initialiser l'onglet FLUX MONÉTAIRE
 		ImageIcon icon_flux = new ImageIcon(getClass().getResource("/flux.png"));
-		JPanel pn_flux = new JPanel();
-		addTab("Emprunt - Prêt", icon_flux, pn_flux, "Gérer des flux monétaires (emprunt/prêt)");
-
+		PanelFlux pn_flux = new PanelFlux(this);
+		addTab("BORROWED - LENT", icon_flux, pn_flux, "Manage flux (borrewed/lent)");
+		
 		// Initialiser l'onglet ÉCONOMISE
 		ImageIcon icon_eco = new ImageIcon(getClass().getResource("/economise.png"));
 		JPanel pn_eco = new JPanel();
-		addTab("Économise", icon_eco, pn_eco, "Gérer le budget");
+		addTab("SAVING", icon_eco, pn_eco, "Manage the saving amount");
 
 		setBorder(BorderFactory.createEmptyBorder(10, 15, 10, 15));
 	}
@@ -43,11 +43,11 @@ public class TabPane extends JTabbedPane {
 		switch(getSelectedIndex())
 		{
 		case 0:
-			return DepenseQuoti.getDepenseQuotiContext();
+			return new DepenseQuoti();
 		case 1:
-			return FluxMonetaire.getFluxContext();
+			return new FluxMonetaire();
 		case 2:
-			return Economise.getEconomiseContext();
+			return new Economise();
 		}
 		
 		return null;

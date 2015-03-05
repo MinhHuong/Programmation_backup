@@ -95,7 +95,7 @@ public class PanelDepQuoti extends JPanel {
 
 	public void removeAllData()
 	{
-		m_tab_data.removeAll();
+		m_tab_data.removeAllData();
 	}
 	
 	public void save()

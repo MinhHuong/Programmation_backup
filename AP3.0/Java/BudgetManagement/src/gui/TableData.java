@@ -43,7 +43,6 @@ public class TableData<S> extends JTable {
 		if(date != null) m_tab_model.setDateToAll(date);
 		m_tab_model.copyToDB();
 		DatabaseSim.showDataInDB();
-		//m_tab_model.showAllData();
 	}
 	
 	public void cancel()

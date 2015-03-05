@@ -7,14 +7,7 @@ package controller;
  */
 public class FluxMonetaire implements Gestion {
 
-	private static FluxMonetaire m_flux = new FluxMonetaire();
-	
-	private FluxMonetaire() {}
-	
-	public static FluxMonetaire getFluxContext()
-	{
-		return m_flux;
-	}
+	public FluxMonetaire() {}
 	
 	@Override
 	public void ajouter() {
@@ -44,6 +37,18 @@ public class FluxMonetaire implements Gestion {
 	@Override
 	public void doOperation(String op) {
 		System.out.println("Le Flux monétaire (emprunter - prêter) fait l'opération " + op);
+	}
+
+	@Override
+	public void createTable() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void dropTable() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

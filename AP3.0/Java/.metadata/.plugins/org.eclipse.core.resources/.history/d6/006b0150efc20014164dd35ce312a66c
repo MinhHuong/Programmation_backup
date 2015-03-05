@@ -1,0 +1,10 @@
+package gui;
+
+import javax.swing.JPanel;
+
+@SuppressWarnings("serial")
+public class PanelFlux extends JPanel {
+	
+	private TableData<DataFlux> tableFlux;
+
+}
