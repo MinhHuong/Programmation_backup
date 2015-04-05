@@ -1,5 +1,8 @@
 package controller;
 
+import dataInVector.DataFlux;
+import gui.PanelFlux;
+
 /**
  * singleton
  * @author MiHu
@@ -7,48 +10,75 @@ package controller;
  */
 public class FluxMonetaire implements Gestion {
 
-	public FluxMonetaire() {}
+	private PanelFlux pnFlux;
+	
+	public FluxMonetaire(PanelFlux pnF) 
+	{
+		pnFlux = pnF;
+	}
 	
 	@Override
-	public void ajouter() {
+	public void createTable() 
+	{}
+
+	@Override
+	public void dropTable() 
+	{}
+
+	@Override
+	public void modify() 
+	{}
+
+	@Override
+	public boolean modifiable() 
+	{
+		return true;
+	}
+	
+	@Override
+	public void ajouter() 
+	{
 		System.out.println("Ajouter dans le Flux monétaire (emprunter - prêter)");
+		
+		pnFlux.addLine(new DataFlux());
 	}
 
 	@Override
-	public void supprimer() {
+	public void supprimer() 
+	{
 		System.out.println("Supprimer record(s) dans le Flux monétaire (emprunter - prêter)");
+		
+		pnFlux.removeLines();
 	}
 
 	@Override
-	public void supprimerTout() {
+	public void supprimerTout() 
+	{
 		System.out.println("Supprimer tout dans le Flux monétaire (emprunter - prêter)");
+		
+		pnFlux.removeAllData();
 	}
 
 	@Override
-	public void sauvegarder() {
+	public void sauvegarder() 
+	{
 		System.out.println("Sauvegarder dans le Flux monétaire (emprunter - prêter)");
+		
+		pnFlux.save();
 	}
 
 	@Override
-	public void annuler() {
+	public void annuler() 
+	{
 		System.out.println("Annuler tout changement dans le Flux monétaire (emprunter - prêter)");
+		
+		pnFlux.cancel();
 	}
 
 	@Override
-	public void doOperation(String op) {
+	public void doOperation(String op) 
+	{
 		System.out.println("Le Flux monétaire (emprunter - prêter) fait l'opération " + op);
-	}
-
-	@Override
-	public void createTable() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void dropTable() {
-		// TODO Auto-generated method stub
-		
 	}
 
 }

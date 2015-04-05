@@ -1,9 +1,0 @@
-package dataInVector;
-
-public class DataFlux {
-
-	private String m_date;
-	private String m_title;
-	private int m_amount;
-
-}

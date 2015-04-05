@@ -1,0 +1,98 @@
+package utils;
+
+import gui.MyTableModel;
+
+import java.util.Vector;
+
+import dataInVector.DataDepQuoti;
+
+/**
+ * A singleton class simulated as Database, therefore it only contains static methods and variables
+ * @author MiHu
+ */
+
+public class DatabaseSim {
+	
+	private static DatabaseSim dbSim = new DatabaseSim();
+
+	private static Vector<Object> m_vt_depQuoti = new Vector<Object>();
+	
+	private DatabaseSim()
+	{}
+	
+	public static DatabaseSim getInstance()
+	{
+		return dbSim;
+	}
+	
+	public static void setDatas(Vector<DataDepQuoti> vt)
+	{
+		m_vt_depQuoti = vt;
+	}
+	
+	public static void addToDB(DataDepQuoti obj)
+	{
+		m_vt_depQuoti.addElement(obj);
+	}
+	
+	public static boolean checkOccurence(DataDepQuoti obj)
+	{
+		for(DataDepQuoti dep : m_vt_depQuoti)
+		{
+			if(dep.compare(obj))
+			{
+				return true;
+			}
+		}
+		
+		return false;
+	}
+	
+	public static void showDataInDB()
+	{
+		for(DataDepQuoti dep : m_vt_depQuoti)
+		{
+			System.out.println(dep.toString());
+		}
+	}
+	
+	public static void findEntry(String date, MyTableModel<DataDepQuoti> tabModel)
+	{
+		Vector<DataDepQuoti> vt_result = new Vector<DataDepQuoti>();
+
+		if(m_vt_depQuoti.size() != 0)
+		{
+			for(DataDepQuoti dep : m_vt_depQuoti)
+			{
+				if(date.equalsIgnoreCase(dep.getDate()))
+				{
+					vt_result.add(dep);
+				}
+			}
+		}
+		
+		tabModel.setData(vt_result);
+		tabModel.fireTableDataChanged();
+	}
+
+	public static void eraseAllOnDate(String date)
+	{
+		Vector<DataDepQuoti> vt_erase = new Vector<DataDepQuoti>();
+		// on doit faire la suppression des données indirectement, sinon le compileur lance l'exception
+		// ConcurrentModification : cannot remove an element after creating an iterator, while we're using
+		// that iterator to search in the list
+		
+		for(DataDepQuoti dep : m_vt_depQuoti)
+		{
+			if(date.equalsIgnoreCase(dep.getDate()))
+			{
+				vt_erase.add(dep);
+			}
+		}
+		
+		for(DataDepQuoti dep : vt_erase)
+		{
+			m_vt_depQuoti.remove(dep);
+		}
+	}
+}

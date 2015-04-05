@@ -29,10 +29,9 @@ public class PanelFlux extends JPanel {
 		tabModel.setColumns(col);
 		
 		Vector<DataFlux> data = new Vector<DataFlux>();
-/*		data.add(new DataFlux("Book", 52000, 1, "Classmate", "Monday, 25/02/2015", false));
+		data.add(new DataFlux("Book", 52000, 1, "Classmate", "Monday, 25/02/2015", false));
 		data.add(new DataFlux("Bus ticket", 2000, 2, "Tam", "Monday, 25/02/2015", true));
-		data.add(new DataFlux("Photo English book", 47000, 1, "Loc", "Monday, 25/02/2015", false));*/
-		data.add(new DataFlux());
+		data.add(new DataFlux("Photo English book", 47000, 1, "Loc", "Monday, 25/02/2015", false));
 		tabModel.setData(data);
 		
 		this.tableFlux = new TableData<DataFlux>(tabModel);
@@ -43,4 +42,28 @@ public class PanelFlux extends JPanel {
 		this.add(pn_buttons);
 	}
 
+	public void addLine(DataFlux myObj)
+	{
+		this.tableFlux.addLine(myObj);
+	}
+	
+	public void removeLines()
+	{
+		this.tableFlux.removeLines();
+	}
+	
+	public void removeAllData()
+	{
+		this.tableFlux.removeAllData();
+	}
+	
+	public void save()
+	{
+		this.tableFlux.save(null);
+	}
+	
+	public void cancel()
+	{
+		this.tableFlux.cancel();
+	}
 }

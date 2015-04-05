@@ -1,5 +1,8 @@
 package controller;
 
+import dataInVector.DataDepQuoti;
+import gui.PanelDepQuoti;
+
 /**
  * singleton
  * This class handles the connection between Application and Database<p>
@@ -9,46 +12,77 @@ package controller;
  */
 public class DepenseQuoti implements Gestion {
 	
-	public DepenseQuoti() 
-	{}
+	private PanelDepQuoti pnDepQuoti;
+	
+	public DepenseQuoti(PanelDepQuoti pnDep) 
+	{
+		pnDepQuoti = pnDep;
+	}
 	
 	@Override
 	public void createTable() 
 	{}
 
 	@Override
-	public void dropTable() {
-		// TODO Auto-generated method stub
-		
+	public void dropTable() 
+	{}
+	
+	@Override
+	public void modify() 
+	{
+		pnDepQuoti.copyAllDataToStore();
+		pnDepQuoti.hideButtonFind();
 	}
 	
 	@Override
-	public void ajouter() {
+	public boolean modifiable() 
+	{
+		return pnDepQuoti.isPressedFind() || (!pnDepQuoti.isDateChanged());
+	}
+	
+	@Override
+	public void ajouter() 
+	{
 		System.out.println("Ajouter une ligne dans Dépense quotidienne");
+		
+		pnDepQuoti.addLine(new DataDepQuoti());
 	}
 
 	@Override
-	public void supprimer() {
+	public void supprimer() 
+	{
 		System.out.println("Supprimer record(s) dans Dépense quotidienne");
+		
+		pnDepQuoti.removeLines();
 	}
 
 	@Override
-	public void supprimerTout() {
+	public void supprimerTout() 
+	{
 		System.out.println("Tout supprimer dans Dépense quotidienne");
+		
+		pnDepQuoti.removeAllData();
 	}
 
 	@Override
-	public void sauvegarder() {
+	public void sauvegarder() 
+	{
 		System.out.println("Sauvegarder dans Dépense quotidienne");
+		
+		pnDepQuoti.save();
 	}
 
 	@Override
-	public void annuler() {
+	public void annuler() 
+	{
 		System.out.println("Annuler dans Dépense quotidienne");
+		
+		pnDepQuoti.cancel();
 	}
 
 	@Override
-	public void doOperation(String op) {
+	public void doOperation(String op) 
+	{
 		System.out.println("Dépense quotidienne fait l'opération " + op);
 	}
 

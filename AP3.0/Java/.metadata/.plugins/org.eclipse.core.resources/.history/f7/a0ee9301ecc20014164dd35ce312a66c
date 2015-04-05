@@ -1,8 +1,0 @@
-package dataInVector;
-
-public class DataFlux {
-
-	private String m_date;
-	private Stirng m_intitule;
-
-}

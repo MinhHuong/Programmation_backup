@@ -130,11 +130,10 @@ public class MyTableModel<T> extends AbstractTableModel
 
 	public void setDateToAll(String date)
 	{
-		for(int i = 0 ; i < m_data.size() ; i++)
+		if(m_data.get(0) instanceof DataDepQuoti)
 		{
-			if(m_data.get(i) instanceof DataDepQuoti)
+			for(int i = 0 ; i < m_data.size() ; i++)
 			{
-				//System.out.println(date.toString());
 				((DataDepQuoti)m_data.get(i)).setDate(date);
 			}
 		}
@@ -241,10 +240,9 @@ public class MyTableModel<T> extends AbstractTableModel
 		fireTableDataChanged();
 	}
 
-	@SuppressWarnings("unchecked")
-	public void addLine(Object myObj) 
+	public void addLine(T myObj) 
 	{
-		m_data.addElement((T)myObj);
+		m_data.addElement(myObj);
 		fireTableRowsInserted(m_data.size()-1, m_data.size());
 	}
 

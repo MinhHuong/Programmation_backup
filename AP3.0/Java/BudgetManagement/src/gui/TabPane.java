@@ -5,34 +5,49 @@ import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 
+import controller.Context;
 import controller.DepenseQuoti;
 import controller.Economise;
 import controller.FluxMonetaire;
 import controller.Gestion;
-import dataInVector.DataDepQuoti;
 
 @SuppressWarnings("serial")
 public class TabPane extends JTabbedPane {
 
-	private PanelDepQuoti m_pnDep;
+	//private PanelDepQuoti m_pnDep;
+	
+	//private PanelFlux pnFlux;
+	
+	private Context currContext;
+	
+	private DepenseQuoti gestDep;
+	
+	private FluxMonetaire gestFlux;
+	
+	private Economise gestEco;
 	
 	public TabPane()
 	{
 		super();
 		
+		currContext = new Context();
+		
 		// Initialiser l'onglet DÉPENSE QUOTIDIENNE
 		ImageIcon icon_depense = new ImageIcon(getClass().getResource("/depense.png"));
-		m_pnDep = new PanelDepQuoti(this);
+		PanelDepQuoti m_pnDep = new PanelDepQuoti(this);
+		gestDep = new DepenseQuoti(m_pnDep);
 		addTab("DAILY EXPENSES", icon_depense, m_pnDep, "Manage daily expenses");
 
 		// Initialiser l'onglet FLUX MONÉTAIRE
 		ImageIcon icon_flux = new ImageIcon(getClass().getResource("/flux.png"));
-		PanelFlux pn_flux = new PanelFlux(this);
-		addTab("BORROWED - LENT", icon_flux, pn_flux, "Manage flux (borrewed/lent)");
+		PanelFlux pnFlux = new PanelFlux(this);
+		gestFlux = new FluxMonetaire(pnFlux);
+		addTab("BORROWED - LENT", icon_flux, pnFlux, "Manage flux (borrewed/lent)");
 		
 		// Initialiser l'onglet ÉCONOMISE
 		ImageIcon icon_eco = new ImageIcon(getClass().getResource("/economise.png"));
 		JPanel pn_eco = new JPanel();
+		gestEco = new Economise();
 		addTab("SAVING", icon_eco, pn_eco, "Manage the saving amount");
 
 		setBorder(BorderFactory.createEmptyBorder(10, 15, 10, 15));
@@ -43,63 +58,31 @@ public class TabPane extends JTabbedPane {
 		switch(getSelectedIndex())
 		{
 		case 0:
-			return new DepenseQuoti();
+			return gestDep;
 		case 1:
-			return new FluxMonetaire();
+			return gestFlux;
 		case 2:
-			return new Economise();
+			return gestEco;
 		}
 		
 		return null;
 	}
 	
-	public void modifyEntry()
+	public void doOperation(String op)
 	{
-		m_pnDep.copyAllDataToStore();
-		m_pnDep.hideButtonFind();
+		currContext.setGestion(this.getGestion());
+		currContext.setOperation(op);
+		currContext.execute();
 	}
 	
-	public boolean canBeModified()
+	public void setCurrentGestion()
 	{
-		return m_pnDep.isPressedFind() || (!m_pnDep.isDateChanged());
+		currContext.setGestion(this.getGestion());
 	}
 	
-	public void addLine()
+	public boolean modifiable()
 	{
-		Object myObj = null;
-		
-		switch(getSelectedIndex())
-		{
-		case 0:
-			myObj = new DataDepQuoti();
-			break;
-		case 1:
-			break;
-		case 2:
-			break;
-		}
-		
-		m_pnDep.addLine(myObj);
+		return currContext.getGestion().modifiable();
 	}
 	
-	public void removeLines()
-	{
-		m_pnDep.removeLines();
-	}
-	
-	public void removeAllData()
-	{
-		m_pnDep.removeAllData();
-	}
-
-	public void save()
-	{
-		m_pnDep.save();
-	}
-	
-	public void cancel()
-	{
-		m_pnDep.cancel();
-	}
-
 }

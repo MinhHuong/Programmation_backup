@@ -8,6 +8,11 @@ public class Context {
 	
 	public Context() {}
 	
+	public Gestion getGestion()
+	{
+		return m_gestion;
+	}
+	
 	public void setGestion(Gestion g)
 	{
 		m_gestion = g;
@@ -22,7 +27,39 @@ public class Context {
 	{
 		try 
 		{
-			m_gestion.doOperation(m_operation);
+			switch(m_operation)
+			{
+				case "modifier":
+				{
+					m_gestion.modify();
+					break;
+				}
+				case "sauvegarder":
+				{
+					m_gestion.sauvegarder();
+					break;
+				}
+				case "annuler":
+				{
+					m_gestion.annuler();
+					break;
+				}
+				case "ajouterligne":
+				{
+					m_gestion.ajouter();
+					break;
+				}
+				case "supprimerligne":
+				{
+					m_gestion.supprimer();
+					break;
+				}
+				case "supprimertout":
+				{
+					m_gestion.supprimerTout();
+					break;
+				}
+			}
 		} 
 		catch(NullPointerException e) 
 		{

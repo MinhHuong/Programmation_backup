@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="java.awt.BorderLayout"/>
-<fullyQualifiedTypeName name="gui.depense.TabDepense.MyTableModel"/>
 <fullyQualifiedTypeName name="javax.swing.table.TableModel"/>
 <fullyQualifiedTypeName name="gui.MainFrame"/>
 <fullyQualifiedTypeName name="gui.depense.MyData"/>
@@ -18,11 +16,8 @@
 <fullyQualifiedTypeName name="javax.swing.ImageIcon"/>
 <fullyQualifiedTypeName name="java.awt.GridLayout"/>
 <fullyQualifiedTypeName name="java.awt.Color"/>
-<fullyQualifiedTypeName name="controller.Gestion"/>
-<fullyQualifiedTypeName name="controller.DepenseQuoti"/>
 <fullyQualifiedTypeName name="controller.FluxMonetaire"/>
 <fullyQualifiedTypeName name="controller.Economise"/>
-<fullyQualifiedTypeName name="controller.Context"/>
 <fullyQualifiedTypeName name="javax.swing.JTable"/>
 <fullyQualifiedTypeName name="javax.swing.JScrollPane"/>
 <fullyQualifiedTypeName name="javax.swing.SpinnerModel"/>
@@ -41,7 +36,6 @@
 <fullyQualifiedTypeName name="java.util.Date"/>
 <fullyQualifiedTypeName name="java.util.GregorianCalendar"/>
 <fullyQualifiedTypeName name="java.util.Calendar"/>
-<fullyQualifiedTypeName name="dataInVector.DataDepQuoti"/>
 <fullyQualifiedTypeName name="javax.swing.event.ChangeListener"/>
 <fullyQualifiedTypeName name="javax.swing.JButton"/>
 <fullyQualifiedTypeName name="java.awt.event.ActionListener"/>
@@ -59,5 +53,11 @@
 <fullyQualifiedTypeName name="java.sql.Statement"/>
 <fullyQualifiedTypeName name="javax.swing.JPanel"/>
 <fullyQualifiedTypeName name="java.util.Vector"/>
+<fullyQualifiedTypeName name="controller.DepenseQuoti"/>
+<fullyQualifiedTypeName name="gui.PanelDepQuoti"/>
+<fullyQualifiedTypeName name="controller.Gestion"/>
+<fullyQualifiedTypeName name="controller.Context"/>
+<fullyQualifiedTypeName name="dataInVector.DataDepQuoti"/>
+<fullyQualifiedTypeName name="gui.PanelFlux"/>
 <fullyQualifiedTypeName name="dataInVector.DataFlux"/>
 </qualifiedTypeNameHistroy>

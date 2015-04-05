@@ -1,0 +1,64 @@
+package controller;
+
+/**
+ * singleton
+ * This class handles the connection between Application and Database<p>
+ * At least I will prepare SQL statement here
+ * @author MiHu
+ *
+ */
+public class DepenseQuoti implements Gestion {
+	
+	private PanelDepQuoti pnDepQuoti;
+	
+	public DepenseQuoti() 
+	{}
+	
+	@Override
+	public void createTable() 
+	{}
+
+	@Override
+	public void dropTable() 
+	{
+		// TODO Auto-generated method stub
+		
+	}
+	
+	@Override
+	public void ajouter() 
+	{
+		System.out.println("Ajouter une ligne dans Dépense quotidienne");
+	}
+
+	@Override
+	public void supprimer() 
+	{
+		System.out.println("Supprimer record(s) dans Dépense quotidienne");
+	}
+
+	@Override
+	public void supprimerTout() 
+	{
+		System.out.println("Tout supprimer dans Dépense quotidienne");
+	}
+
+	@Override
+	public void sauvegarder() 
+	{
+		System.out.println("Sauvegarder dans Dépense quotidienne");
+	}
+
+	@Override
+	public void annuler() 
+	{
+		System.out.println("Annuler dans Dépense quotidienne");
+	}
+
+	@Override
+	public void doOperation(String op) 
+	{
+		System.out.println("Dépense quotidienne fait l'opération " + op);
+	}
+
+}
