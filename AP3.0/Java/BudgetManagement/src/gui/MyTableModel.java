@@ -99,9 +99,8 @@ public class MyTableModel<T> extends AbstractTableModel
 			DataFlux my_data = (DataFlux) temp_data;
 			return my_data.getElementAt(columnIndex);
 		}
-		{
-			return null;
-		}
+
+		return null;
 	}
 
 	@Override
@@ -158,6 +157,20 @@ public class MyTableModel<T> extends AbstractTableModel
 						);
 				dest.addElement((T)depQuoti);
 			}
+			
+			if(temp_data instanceof DataFlux)
+			{
+				DataFlux flux = new DataFlux
+						(
+								((DataFlux)temp_data).getTitle(),
+								((DataFlux)temp_data).getAmount(),
+								((DataFlux)temp_data).getType(),
+								((DataFlux)temp_data).getPerson(),
+								((DataFlux)temp_data).getDate(),
+								((DataFlux)temp_data).isPaid()
+						);
+				dest.addElement((T)flux);
+			}
 
 			//dest.addElement(src.get(i));
 			// Ce code ne marche pas quand on modifie des données, 
@@ -167,18 +180,18 @@ public class MyTableModel<T> extends AbstractTableModel
 
 	public void copyToDB()
 	{
-		if(m_data.size() != 0 && m_data.get(0) instanceof DataDepQuoti)
+		if(m_data.size() != 0)
 		{
-			// first, erase all datas of that chosen date only (already precised in the vector m_data
-			DataDepQuoti example = (DataDepQuoti)m_data.get(0);
-			DatabaseSim.eraseAllOnDate(example.getDate());
-			
-			for(int i = 0 ; i < m_data.size() ; i++)
+			if(m_data.get(0) instanceof DataDepQuoti)
 			{
-				T temp_data = m_data.get(i);
+				// first, erase all datas of that chosen date only (already precised in the vector m_data)
+				DataDepQuoti example = (DataDepQuoti)m_data.get(0);
+				DatabaseSim.eraseAllOnDate(example.getDate());
 
-				if(temp_data instanceof DataDepQuoti)
+				for(int i = 0 ; i < m_data.size() ; i++)
 				{
+					T temp_data = m_data.get(i);
+
 					DataDepQuoti depQuoti = new DataDepQuoti
 							(
 									((DataDepQuoti)temp_data).getIntitule(),
@@ -187,10 +200,33 @@ public class MyTableModel<T> extends AbstractTableModel
 									((DataDepQuoti)temp_data).isPret(),
 									((DataDepQuoti)temp_data).getDate()
 							);
-					
-					if(!DatabaseSim.checkOccurence(depQuoti))
+
+					if(!DatabaseSim.checkOccurenceDepQuoti(depQuoti))
 					{
-						DatabaseSim.addToDB(depQuoti);
+						DatabaseSim.addDepQuotiToDB(depQuoti);
+					}
+				}
+			}
+			
+			if(m_data.get(0) instanceof DataFlux)
+			{
+				for(int i = 0 ; i < m_data.size() ; i++)
+				{
+					T temp_data = m_data.get(i);
+					
+					DataFlux flux = new DataFlux
+							(
+									((DataFlux)temp_data).getTitle(),
+									((DataFlux)temp_data).getAmount(),
+									((DataFlux)temp_data).getType(),
+									((DataFlux)temp_data).getPerson(),
+									((DataFlux)temp_data).getDate(),
+									((DataFlux)temp_data).isPaid()
+							);
+					
+					if(!DatabaseSim.checkOccurenceFlux(flux))
+					{
+						DatabaseSim.addFluxToDB(flux);
 					}
 				}
 			}

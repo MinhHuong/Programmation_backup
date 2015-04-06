@@ -116,6 +116,50 @@ public class DataFlux {
 	}
 	
 	/**
+	 * Get the title of this Flux
+	 * @return title
+	 */
+	public String getTitle()
+	{
+		return this.title;
+	}
+	
+	/**
+	 * Get the amount of this Flux
+	 * @return amount
+	 */
+	public int getAmount()
+	{
+		return this.amount;
+	}
+	
+	/**
+	 * Verify if this flux has been paid or not
+	 */
+	public boolean isPaid()
+	{
+		return this.isPaid;
+	}
+	
+	/**
+	 * Get the name of the involved person
+	 * @return name of the person
+	 */
+	public String getPerson()
+	{
+		return this.person;
+	}
+	
+	/**
+	 * Get the type of this Flux (borrowed/lent)
+	 * @return type
+	 */
+	public int getType()
+	{
+		return this.type;
+	}
+	
+	/**
 	 * Get the date where this flux was made
 	 * @return date
 	 */
@@ -150,4 +194,22 @@ public class DataFlux {
 				);
 	}
 	
+	/**
+	 * Return the String that represents this Flux
+	 */
+	@Override
+	public String toString()
+	{
+		String type = this.type == 0 ? "borrowed" : "lent";
+		
+		String info = 
+				"Title : " + this.title + ", "
+				+ "Amount : " + this.amount + ", "
+				+ "Type : " + type + ", "
+				+ "From : " + this.person + ", "
+				+ "Paid ? " + this.isPaid + ", "
+				+ "Data : " + this.date;
+		
+		return info;
+	}
 }

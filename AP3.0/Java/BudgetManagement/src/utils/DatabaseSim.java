@@ -5,6 +5,7 @@ import gui.MyTableModel;
 import java.util.Vector;
 
 import dataInVector.DataDepQuoti;
+import dataInVector.DataFlux;
 
 /**
  * A singleton class simulated as Database, therefore it only contains static methods and varaibles
@@ -17,6 +18,8 @@ public class DatabaseSim {
 
 	private static Vector<DataDepQuoti> m_vt_depQuoti = new Vector<DataDepQuoti>();
 	
+	private static Vector<DataFlux> m_vt_flux = new Vector<DataFlux>();
+	
 	private DatabaseSim()
 	{}
 	
@@ -25,17 +28,27 @@ public class DatabaseSim {
 		return dbSim;
 	}
 	
-	public static void setDatas(Vector<DataDepQuoti> vt)
+	public static void setDataDepQuoti(Vector<DataDepQuoti> vt)
 	{
 		m_vt_depQuoti = vt;
 	}
 	
-	public static void addToDB(DataDepQuoti obj)
+	public static void setDataFlux(Vector<DataFlux> vt)
+	{
+		m_vt_flux = vt;
+	}
+	
+	public static void addDepQuotiToDB(DataDepQuoti obj)
 	{
 		m_vt_depQuoti.addElement(obj);
 	}
 	
-	public static boolean checkOccurence(DataDepQuoti obj)
+	public static void addFluxToDB(DataFlux obj)
+	{
+		m_vt_flux.addElement(obj);
+	}
+	
+	public static boolean checkOccurenceDepQuoti(DataDepQuoti obj)
 	{
 		for(DataDepQuoti dep : m_vt_depQuoti)
 		{
@@ -48,11 +61,30 @@ public class DatabaseSim {
 		return false;
 	}
 	
+	public static boolean checkOccurenceFlux(DataFlux obj)
+	{
+		for(DataFlux flux : m_vt_flux)
+		{
+			if(flux.compare(obj))
+			{
+				return true;
+			}
+		}
+		
+		return false;
+	}
+	
+	
 	public static void showDataInDB()
 	{
 		for(DataDepQuoti dep : m_vt_depQuoti)
 		{
 			System.out.println(dep.toString());
+		}
+		
+		for(DataFlux flux : m_vt_flux)
+		{
+			System.out.println(flux.toString());
 		}
 	}
 	

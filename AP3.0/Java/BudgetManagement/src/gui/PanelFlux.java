@@ -66,4 +66,9 @@ public class PanelFlux extends JPanel {
 	{
 		this.tableFlux.cancel();
 	}
+	
+	public void copyAllDataToStore()
+	{
+		this.tableFlux.copyAllDataToStore();
+	}
 }

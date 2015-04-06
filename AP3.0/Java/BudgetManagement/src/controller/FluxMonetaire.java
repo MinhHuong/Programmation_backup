@@ -27,7 +27,9 @@ public class FluxMonetaire implements Gestion {
 
 	@Override
 	public void modify() 
-	{}
+	{
+		pnFlux.copyAllDataToStore();
+	}
 
 	@Override
 	public boolean modifiable() 
