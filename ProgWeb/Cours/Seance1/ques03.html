@@ -1,0 +1,56 @@
+<!-- ACCES AUX ELEMENTS PAR ID OU NAME-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calcul</title>
+	<script type="text/javascript">
+	function add() 
+	{
+		var x = parseInt(document.getElementById("Op1").value);
+		var y = parseInt(document.getElementById("Op2").value);
+		var r = document.getElementById("Resultat");
+		r.value = x + y;
+	}
+
+	function minus()
+	{
+		var x = parseInt(document.getElementById("Op1").value);
+		var y = parseInt(document.getElementById("Op2").value);
+		var r = document.getElementById("Resultat");
+		r.value = x - y;
+	}
+
+	function mul()
+	{
+		var x = parseInt(document.getElementById("Op1").value);
+		var y = parseInt(document.getElementById("Op2").value);
+		var r = document.getElementById("Resultat");
+		r.value = x * y;
+	}
+
+	function div() 
+	{
+		var x = parseInt(document.getElementById("Op1").value);
+		var y = parseInt(document.getElementById("Op2").value);
+		var r = document.getElementById("Resultat");
+		if(y != 0) 
+		{
+			r.value = x / y;
+		}
+		else
+		{
+			r.value = "Impossible. Division par 0."
+		}
+	}
+	</script>
+</head>
+<body>
+	<input type="text" id="Op1" />&nbsp;<input type="text" id="Op2" /><br/>
+	<input type="text" id="Resultat" />
+	<input type="button" value="+" onclick=" add(); " />
+	<input type="button" value="-" onclick=" minus(); ">
+	<input type="button" value="*" onclick=" mul(); ">
+	<input type="button" value="/" onclick=" div(); " />
+</body>
+</html

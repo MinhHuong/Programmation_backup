@@ -1,0 +1,47 @@
+<!-- DÉPLACEMENT D'UN OBJET -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Déplacement</title>
+	<script type="text/javascript">
+	var dragged = null;
+	function start_drag(objet)
+	{
+		dragged = objet;
+	}
+	function drag_onmousemove(event){
+		var x = event.clientX;
+		var y = event.clientY;
+		document.getElementById('coordonnes' ).value = x + ', '  + y;
+		if( dragged )
+		{
+			dragged.style.position = 'absolute' ;
+			dragged.style.left = x + 'px' ;
+			dragged.style.top = y + 'px' ;
+		}
+	}
+	function drag_onmouseup(event)
+	{
+		dragged = null;
+	}
+	function addEvent(obj,event,fct)
+	{
+		if( obj.attachEvent)
+			obj.attachEvent('on'  + event,fct);
+		else
+			obj.addEventListener(event,fct, true);
+	}
+	addEvent(document, 'mousemove' ,drag_onmousemove);
+	addEvent(document, 'mouseup' ,drag_onmouseup);
+	</script>
+</head>
+<body>
+	<div id="drag" onmousedown="start_drag(this,event); ">
+		Coordonnées de la souris :
+		<input type="text" id="coordonnes" value="inconnues" readonly="readonly"
+		style="width: 90px" />
+	</div>
+</body>
+</html>

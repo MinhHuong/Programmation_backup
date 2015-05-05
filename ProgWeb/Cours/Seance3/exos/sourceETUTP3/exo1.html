@@ -1,0 +1,43 @@
+<html>
+
+<head>
+	<title>Exemple de getElementsByTagName</title>
+	<script type="text/javascript">
+
+	function getAllParaElems()
+	{
+  		var allParas = document.getElementsByTagName("p");
+  		var num = allParas.length;
+  		alert("Il y a " + num + " éléments <p> dans ce document.");
+	}
+
+
+	function div1ParaElems()
+	{
+  		var div1 = document.getElementsByTagName("div")[0];
+  		var div1Paras = div1.getElementsByTagName("p");
+  		var num = div1Paras.length;
+  		alert("Il y a " + num + " éléments <p> dans l'élément div1.");
+	}
+</script>
+</head>
+
+<body style="border: solid green 3px">
+	<p>Un peu de texte à l'extérieur.</p>
+	<p>Un peu de texte à l'extérieur.</p>
+
+	<div id="div1" style="border: solid blue 3px">
+		<p>Un peu de texte dans div1.</p>
+		<p>Un peu de texte dans div1.</p>
+		<p>Un peu de texte dans div1.</p>  
+	</div>
+	<p>Un peu de texte à l'extérieur.</p>
+
+
+	<button onclick="getAllParaElems();">
+	Compte les éléments p dans le document</button><br />
+
+	<button onclick="div1ParaElems();">
+	Compte les éléments p dans l'élément div1</button><br />
+</body>
+</html>

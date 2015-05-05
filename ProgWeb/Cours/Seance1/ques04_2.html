@@ -1,0 +1,64 @@
+<!-- CONSTRUCTION D'UNE STRUCTURE -->
+<!-- Creation dynamique d'un tableau & ajout des cellules avec données saisies par un "prompt"-->
+
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>My page</title>
+	<script type="text/javascript">
+		function createTab()
+		{
+			var divtab = document.getElementById("mytable");
+			var _table = document.createElement("table");
+
+			// Ajout des entêtes ici
+			var row = document.createElement("tr");
+			var column;
+			var numCol = 0;
+			var _header = [];
+			var input;
+			while(input = prompt("Entrer une entête (laisser vide pour s'arrêter)"))
+			{
+				column = document.createElement("th");
+				column.appendChild(document.createTextNode(input));
+				row.appendChild(column);
+				_header[numCol] = input;
+				numCol++;
+			}
+			_table.appendChild(row);
+
+			if(numCol == 0) return;
+			
+			// Ajout des cellules ici
+			while(confirm("Continuer à entrer des cellules ?"))
+			{
+				row = document.createElement("tr");
+				for (var i = 0; i < numCol; i++) 
+				{
+					input = prompt("Entrer " + _header[i]);
+					column = document.createElement("td");
+					column.appendChild(document.createTextNode(input));
+					row.appendChild(column);
+				}
+				_table.appendChild(row);
+			}
+
+			// Étape finale
+			divtab.appendChild(_table);
+
+		}
+	</script>
+</head>
+
+<body>
+	<h1>Il y aura un très beau tableau ici</h1>
+	<button onclick=" createTab(); ">Click to create table</button>
+
+	<div id="mytable">
+
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!-- MODIFICATION DE LA NATURE (APPARENTE) D'UN CONTRÔLE -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		span { color: blue; }
+		.italique { font-style: italic; color: blue; }
+	</style>
+	<script type="text/javascript">
+	function passerEnSaisie(id) 
+	{
+		var span = document.getElementById(id);
+		var para = span.parentNode;
+		var input = document.createElement("input");
+		para.replaceChild(input,span);
+		input.value = span.firstChild.nodeValue;
+		input.focus();
+	}
+
+	function valider(id1, id2)
+	{
+		
+	}
+
+	</script>
+</head>
+
+<body>
+	<h1> Fiche de renseignement </h1>
+	<p class="italique"> Les valeurs en bleu sont modifiables (double clic) </p>
+	<div>
+		<form action="">
+			<p>Nom : <span id="nom" ondblclick="passerEnSaisie('nom' );">
+				Dupont</span></p>
+			<p>Prénom : <span id="prenom" ondblclick="passerEnSaisie('prenom' ) ">
+					Jean</span></p>
+			<p><input type="submit" value="Valider" onclick="valider('nom', 'prenom')"></p>
+		</form>
+	</div>
+</body>
+
+</html>

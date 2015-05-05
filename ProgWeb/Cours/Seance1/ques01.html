@@ -1,0 +1,43 @@
+<!-- REPONSE AUX EVENEMENTS-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8"/>
+	<title>Evenements</title>
+	<script type="text/javascript" language="javascript">
+		// Parce qu'on doit fermer la nouvelle page en cliquant sur un bouton
+		// dans la page parent
+		// alors la variable globale
+		var myWin;
+
+		function newWindow()
+		{
+			myWin = window.open("", "", "width = 500, height = 500");
+			myWin.document.write("Welcome to Middle Earth");
+			return myWin;
+		}
+
+		function closeWindow()
+		{
+			myWin.close();
+		}
+	</script>
+</head>
+
+<body onload="alert('Bonjour' ); " >
+	<h4>Hello world</h4>
+	<input type="button" value="Hello" onclick=" alert('Hello World' ); " />
+	<h4>Modification d'attributs</h4>
+	<a href="#" onclick=' this.style.fontStyle = "italic "'>Premier lien</a>
+	<a href="#" onclick=" this.style.backgroundColor = 'blue' ">Second lien</a>
+	<h4>Avant-arrière</h4>
+	<input type="button" value="Back" onclick=" window.history.back() ">
+	<input type="button" value="Forward" onclick=" window.history.forward() ">
+	<h4>Fenêtre</h4>
+	<input type="button" value="Ouvrir" onclick=" newWindow(); ">
+	<input type="button" value="Fermer" onclick=" closeWindow(); "> 
+</body>
+
+</html>

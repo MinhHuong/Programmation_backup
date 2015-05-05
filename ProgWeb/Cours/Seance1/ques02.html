@@ -1,0 +1,55 @@
+<!-- ACCES AUX ELEMENTS DE LA PAGE EN PARCOURANT LES STRUCTURES -->
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Saisie</title>
+	<script type="text/javascript">
+	function valider() {
+		var input1 = document.formSaisie.firstNB.value;
+		var input2 = document.formSaisie.secNB.value;	
+
+		if(input1 != "" && input2 != "")
+		{
+			var nb1 = parseInt(input1);
+			var nb2 = parseInt(input2);
+
+			if(isNaN(nb1)) 
+			{
+				alert(input1 + " n'est pas un nombre");
+				return;
+			}
+			if(isNaN(nb2)) 
+			{
+				alert(input2 + " n'est pas un nombre");
+				return;
+			}
+
+			document.formSaisie.submit();
+			alert(parseInt(input1) + parseInt(input2));
+
+		}
+		else
+		{
+			alert("Saisissez tous les deux nombres");
+		}
+	}
+	</script>
+</head>
+
+<body>
+	<form action="" method="get" name="formSaisie">
+		<p>
+			<label for="firstNB">Premier nombre : </label>
+			<input type="text" name="firstNB" />
+			<label for="secNB">Deuxieme nombre : </label>
+			<input type="text" name="secNB" />
+			<input type="submit" value="Ok" onclick="valider() " />
+		</p>
+	</form>
+</body>
+
+</html>

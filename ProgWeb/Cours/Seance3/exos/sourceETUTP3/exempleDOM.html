@@ -1,0 +1,102 @@
+<html>
+<head>
+<title> Titre de ma page</title>
+<script type="text/javascript">
+function affId()
+{
+
+node=document.getElementById("p1");
+var msg  = "node.nodeName  -> "+ node.nodeName + "\n";
+	    msg += "node.nodeType  -> "+ node.nodeType + "\n";
+	    msg += "node.nodeValue -> "+ node.nodeValue + "\n";
+	    msg += "node.value     -> "+ node.value + "\n"; 
+alert(msg);	
+node=document.getElementById("p1").firstChild;
+var msg  = "node.nodeName  -> "+ node.nodeName + "\n";
+	    msg += "node.nodeType  -> "+ node.nodeType + "\n";
+	    msg += "node.nodeValue -> "+ node.nodeValue + "\n";
+	    msg += "node.value     -> "+ node.value + "\n"; 
+alert(msg);	
+node=document.getElementById("toto");
+var msg  = "node.nodeName  -> "+ node.nodeName + "\n";
+	    msg += "node.nodeType  -> "+ node.nodeType + "\n";
+	    msg += "node.nodeValue -> "+ node.nodeValue + "\n";
+	    msg += "node.value     -> "+ node.value + "\n"; 
+alert(msg);	
+
+document.getElementById("B1").firstChild.nodeValue="coucou";
+document.getElementById("p1").firstChild.nodeValue="modif";
+
+}
+
+
+
+
+function affTagName()
+{
+
+node=document.getElementsByTagName("p");
+var msg  = "1) node.nodeName  -> "+ node.nodeName + "\n";
+	    msg += "node.nodeType  -> "+ node.nodeType + "\n";
+	    msg += "node.nodeValue -> "+ node.nodeValue + "\n";
+	    msg += "node.value     -> "+ node.value + "\n"; 
+alert(msg);	
+
+
+node=document.getElementsByTagName("p").item(0);//[0];
+
+var msg  ="2) node.nodeName  -> "+ node.nodeName + "\n";
+	    msg += "node.nodeType  -> "+ node.nodeType + "\n";
+	    msg += "node.nodeValue -> "+ node.nodeValue + "\n";
+	    msg += "node.value     -> "+ node.value + "\n"; 
+alert(msg);	
+
+
+node=document.getElementsByTagName("p")[0].firstChild;
+var msg  = "3) node.nodeName  -> "+ node.nodeName + "\n";
+	    msg += "node.nodeType  -> "+ node.nodeType + "\n";
+	    msg += "node.nodeValue -> "+ node.nodeValue + "\n";
+	    msg += "node.value     -> "+ node.value + "\n"; 
+alert(msg);	          
+
+node=document.getElementsByTagName("input")[0];
+var msg  ="4) node.nodeName  -> "+ node.nodeName + "\n";
+	    msg += "node.nodeType  -> "+ node.nodeType + "\n";
+	    msg += "node.nodeValue -> "+ node.nodeValue + "\n";
+	    msg += "node.value     -> "+ node.value + "\n"; 
+alert(msg);	
+
+
+document.getElementsByTagName("button")[0].firstChild.nodeValue="coucou";
+document.getElementsByTagName("p")[0].firstChild.nodeValue="modif";
+
+
+
+
+
+
+
+}
+
+
+</script>
+</head>
+<body>
+<p id="p1">Arbre DOM</p>
+<div id=madiv> Dom est un <em>arbre</em></div>
+<p> Doc sur DOM disponible <a id ="lien" href="doc.html"> ICI </a>.</p>
+<p>Vous préférez</p>
+<input type="radio" name="browser" onclick="check(this.value)"
+value="Internet Explorer">Internet Explorer<br />
+<input id=toto type="radio" name="browser" onclick="check(this.value)"
+value="Firefox">Firefox<br />
+
+
+<button id ="B1" onClick="affId();">getElementById</button>
+<button id ="B2" onClick="affTagName();">getElementsByTagName!</button>
+
+
+
+</body>
+</html>
+

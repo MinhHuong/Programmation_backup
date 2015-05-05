@@ -1,0 +1,20 @@
+﻿.them 1 column Ho va Ten trong database Agent de nhin thay cho de dang, doi thong so de nhin thay ca ho va 
+ten
+.thêm nút modifier và textbox the hien agent minh chon lua cho list-agent (giup nguoi su dung lam viec de dang hon) (sua lai event, cach thuc truyen thong tin cua agent)... chinh lai gridview cho than thien voi nguoi dung hon (neu dua database vao trong projet, moi khi complie projet, thi database trong thu muc Database chep qua Bin/debug/Database nen tat ca nhung gi luc nay minh lam tren database cu se bi mat di)
+
+. chỉnh sửa lại giao diện và cách thức của Acheteur_souhait để thân thiện với người dùng hơn (làm khá nhiều thứ)
+. Xét các ô nhập vào có đúng yêu cầu hay không
+. khi có biens mới sẽ thông báo, và thông báo những biens mới trong vòng số ngày quy định.(2 ngày)
+.hoan thien ben Biens, list... khong double click nua, ma chon Biens giong nhu 2 ben kia
+
+chưa làm:
+. KHi Biens mới vào database, sẽ kiểm tra xem có phù hợp với souhait nào không, để thông báo
+. Them button Info, de the hien thong tin toan bo cong ty: co bao nhieu chi nhanh, bao nhieu khach hang, bao nhieu .... de them ville va agence, dua thong tin agence vao database, ville nua de khong con phai chon lua ville trong code, ma theo table trong database
+hoan thien Contrat
+chua dua hinh vao database
+kiem tra ngay ban co truoc ngay mua hay khong?
+
+
+
+Yêu cầu: khi chạy chương trình đầu tiên, phải tạo agent trước
+database dua vao projet, moi lan compile la database lai quay trở về nguyên trạng như lúc đưa vào projet nen phai xoa thu muc Database trong projet moi duoc

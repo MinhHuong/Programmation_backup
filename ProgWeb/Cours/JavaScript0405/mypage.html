@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<title>My page</title>
+	<script type="application/javascript" language="javascript">
+		function Personne(param1, param2)
+		{
+			this.nom = param1;
+			var age = param2;
+			this.presenter = function()
+			{
+				alert("Nom : " + this.nom + ", Age : " + age);
+			}
+		}
+
+		function start() {
+			var _pers = new Personne("Pauline", "25");
+			alert(_pers.nom);
+			alert(_pers.age);
+			_pers.presenter();
+		}
+	</script>
+</head>
+
+<body onload="start();">
+	titi tata toto
+</body>
+
+</html>

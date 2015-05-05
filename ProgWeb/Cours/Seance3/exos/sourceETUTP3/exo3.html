@@ -1,0 +1,52 @@
+<html>
+
+<head>
+    <title>Page de test</title>
+	<link rel="stylesheet" media="screen" type="text/css" title="Classic" href="exo3.css" />
+    <script language="javascript">
+    function flag(type)
+    {
+        if( type == 1 )
+        {
+            //si la variable reçu vaut 1
+            //Suppression de l'ancien contenu
+            var paragraphe = document.getElementById("testbox");
+            var oldContenu = paragraphe.firstChild;
+            paragraphe.removeChild(oldContenu);
+
+            //Ajout du nouveau contenu
+            var img = document.createElement("img");
+            img.setAttribute("src", "english.jpg");  
+            paragraphe.appendChild(img);
+        }
+        else if( type == 2 ){//si la variable reçu vaut 2
+            var paragraphe = document.getElementById("testbox");
+            var oldContenu = paragraphe.firstChild;
+            paragraphe.removeChild(oldContenu);
+
+            //Ajout du nouveau contenu
+            var img = document.createElement("img");
+            img.setAttribute("src", "french.gif");   
+            paragraphe.appendChild(img);
+              
+        }
+        else
+        {
+            var paragraphe = document.getElementById("testbox");
+            paragraphe.removeChild(paragraphe.firstChild);
+            var oldContenu = document.createTextNode("Bienvenue. Passez la souris sur l'un des deux liens!");
+            paragraphe.appendChild(oldContenu);
+        }
+    }
+    </script>
+</head>
+
+<body>
+    <p id="testbox">Bienvenue. Passez la souris sur l'un des deux liens!</p>
+    <p class="essai">
+        <a href="" onmouseover="flag(1)" onmouseleave="flag(0)">Engish</a> 
+        <a href="" onmouseover="flag(2)" onmouseleave="flag(0)">Francais</a>
+    </p>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<html>
+<head>
+	<script language="javascript">
+	function affiche()
+	{
+		var val = document.getElementById("zone");
+
+		var texte = val.getElementsByTagName("input")[0].value;
+
+		var el = document.getElementById("debut");
+		el.firstElementChild.innerText = "Merci d'avoir appuye sur le bouton";
+		
+		val.parentNode.removeChild(val);
+
+		var node = document.createTextNode(texte);
+
+		document.getElementById("fin").appendChild(node);
+	}
+	</script>
+</head>
+
+<body>
+	<div id="debut">
+		<p> SVP Entrez un mot</p>
+	</div>
+
+	<form name="formulaire" id="zone">
+		<input name="texte" type="text"/>
+		<input type="button" onclick="affiche()" value="Affiche"/>
+	</form>
+
+	<div id="fin"></div>
+</body>
+
+</html>

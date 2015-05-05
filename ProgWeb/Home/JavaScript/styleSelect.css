@@ -1,0 +1,16 @@
+@charset "utf-8";
+/* CSS Document */
+
+h1 + p {
+	font-style: italic;
+}
+
+#menu > li {
+	list-style-type:square;
+}
+
+a { color:green; }
+
+#warning a { color:blue; }
+
+a.error { color:red; }

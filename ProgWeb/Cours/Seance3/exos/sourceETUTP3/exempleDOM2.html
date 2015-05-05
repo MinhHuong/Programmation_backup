@@ -1,0 +1,29 @@
+<html>
+<head>
+<title> Titre de ma page</title>
+<script type="text/javascript">
+function suppr()
+{
+node=document.getElementById("p1");
+node.removeChild(node.firstChild);
+nodeInsert=document.createTextNode("bonjour tout le monde");
+node.appendChild(nodeInsert);
+}
+
+function depl()
+{
+node1=document.getElementById("p1");
+node2=document.getElementById("p2");
+node1.insertBefore(node2.firstChild,node1.firstChild);
+}
+</script>
+</head>
+<body>
+<p id="p1">Arbre DOM</p>
+<div id=madiv> Dom est un <em>arbre</em></div>
+<p id="p2"> Doc sur DOM dispo <a id="lien" href="doc.html">ICI</a><p>
+<button id ="B1" onClick="suppr();">Supprimer</button>
+<button onClick="depl();">Déplacer</button>
+</body>
+</html>
+

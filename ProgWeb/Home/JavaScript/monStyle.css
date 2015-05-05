@@ -1,0 +1,45 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	background-color:#58FAF4;
+}
+
+h1 {
+	color:#FE9A2E;
+}
+
+img {
+	margin:45px;
+}
+
+#header {
+	border: 1px solid red;
+	background-color:yellow;
+}
+
+#header h1, #header h2 {
+	text-align:center;
+}
+
+.elem_menu {
+	list-style:square;
+}
+
+div, p, ul {
+	border: 1px solid orange;
+}
+
+#logo img {
+	position:absolute;
+	bottom:0;
+	right:0;
+}
+
+#logo {
+	position:relative;
+}
+
+p {
+	float:right;
+}

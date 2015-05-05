@@ -1,0 +1,52 @@
+<!-- CONSTRUCTION D'UNE STRUCTURE -->
+<!-- Construction dynamique d'un SOMMAIRE-->
+
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+
+	function sommaire() 
+	{
+		var divliste = document.getElementById("liens");
+		while (divliste.hasChildNodes()) 
+		{
+			divliste.removeChild(divliste.lastChild);
+		}
+
+		var reps = document.getElementsByTagName("h3");
+		for (i = 0; i < reps.length; i++) 
+		{
+			var ligne = document.createElement("p");
+			//var link = divliste.ownerDocument.createElement("a");
+			// Donc, dans ce cas, divliste.ownerDocument = document lui-même ?
+			var link = document.createElement("a");
+			link.appendChild(document.createTextNode(reps[i].textContent));
+			link.setAttribute("href", "#" + reps[i].id);
+			ligne.appendChild(link);
+			divliste.appendChild(ligne);
+		}
+	}
+		
+	</script>
+</head>
+<body>
+	<div id="liens">
+	</div>
+
+	<div id="content">
+		<h3 id="html5">HTML5</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean id molestie tellus, sagittis sollicitudin augue. Sed sit amet sollicitudin velit, et vulputate lacus. Vestibulum elementum, mi vel commodo faucibus, ante augue porttitor dui, non vehicula sapien est sed magna. Vestibulum a efficitur metus. Ut sollicitudin vestibulum erat et condimentum. Sed lobortis, justo in faucibus viverra, sapien sapien bibendum dolor, imperdiet hendrerit felis velit vel libero. Nam ut purus mattis, suscipit urna vel, ornare urna. Vestibulum vitae euismod velit. Nunc libero magna, tempus sed ipsum quis, maximus rhoncus augue.</p>
+
+		<h3 id="css3">CSS3</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean id molestie tellus, sagittis sollicitudin augue. Sed sit amet sollicitudin velit, et vulputate lacus. Vestibulum elementum, mi vel commodo faucibus, ante augue porttitor dui, non vehicula sapien est sed magna. Vestibulum a efficitur metus. Ut sollicitudin vestibulum erat et condimentum. Sed lobortis, justo in faucibus viverra, sapien sapien bibendum dolor, imperdiet hendrerit felis velit vel libero. Nam ut purus mattis, suscipit urna vel, ornare urna. Vestibulum vitae euismod velit. Nunc libero magna, tempus sed ipsum quis, maximus rhoncus augue.</p>
+
+		<h3 id="javas">JavaScript</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean id molestie tellus, sagittis sollicitudin augue. Sed sit amet sollicitudin velit, et vulputate lacus. Vestibulum elementum, mi vel commodo faucibus, ante augue porttitor dui, non vehicula sapien est sed magna. Vestibulum a efficitur metus. Ut sollicitudin vestibulum erat et condimentum. Sed lobortis, justo in faucibus viverra, sapien sapien bibendum dolor, imperdiet hendrerit felis velit vel libero. Nam ut purus mattis, suscipit urna vel, ornare urna. Vestibulum vitae euismod velit. Nunc libero magna, tempus sed ipsum quis, maximus rhoncus augue.</p>
+	</div>
+
+	<button onclick="sommaire()">Try it</button>
+</body>
+</html>

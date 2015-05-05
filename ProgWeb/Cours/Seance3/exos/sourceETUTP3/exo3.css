@@ -1,0 +1,32 @@
+body
+{
+        background-color: #8fc3cb;
+        padding-left: 30%;
+}
+
+fieldset
+{
+        border: none;
+}
+
+#testbox
+{
+        border: thin dotted black;
+        position: absolute;
+        top: 10%;
+        left: 30%;
+        width: 300px;
+        height: 202px;
+}
+
+.essai
+{
+        position: absolute;
+        top: 50%;
+        left: 30%;
+        width: 300px;
+        text-align: center;
+
+	
+}
+
