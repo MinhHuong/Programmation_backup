@@ -1,0 +1,25 @@
+<html>
+<head>
+  <title>Planches à gogo</title>
+  <link rel="stylesheet" type="text/css" href="planches.css" />
+  <script type="text/javascript" src="creerRequete.js"></script>
+  <script type="text/javascript" src="texte-utils.js"></script>
+</head>
+
+<body>
+  <h1>Planches à gogo :: Tableau de bord</h1>
+  <div id="planches">
+   <table>
+    <tr><th>Planches vendues</th>
+     <td><span id="planches-vendues">1012</span></td></tr>
+     <tr><th>Prix de vente</th>
+         <td><span id="prix">249,95</span> ¤</td></tr>
+     <tr><th>Prix de revient</th>
+         <td><span id="cout">84,22</span> ¤</td></tr>
+    </table>
+    <h2>Bénéfice net : 
+    <span id="benef">167718,76</span> ¤</h2>
+    <button onclick="getPlanchesVendues();">Actualiser</button>
+  </div>
+</body>
+</html>
