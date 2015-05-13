@@ -1,0 +1,110 @@
+<!--
+Sliding Boxes and Captions with JQuery
+March 2009
+By Sam Dunn
+www.buildinternet.com / www.onemightyroar.com
+-->
+
+<html>
+<head>
+<title>Sliding Boxes and Captions with JQuery</title>
+
+<style type="text/css">
+
+	*{ padding:0px; margin:0px; }
+	body{ background:#D5DEE7; }
+	a{ color:#C8DCE5; }
+	h3{ margin: 10px 10px 0 10px; color:#FFF; font:18pt Arial, sans-serif; letter-spacing:-1px; font-weight: bold;  }
+	
+	.boxgrid{ 
+		width: 300px; 
+		height: 300px; 
+		margin:10px; 
+		float:left; 
+		background:#161613; 
+		border: solid 2px #8399AF; 
+		overflow: hidden; 
+		position: relative; 
+	}
+	
+	.boxgrid img{ 
+			position: absolute; 
+			top: 0; 
+			left: 0; 
+			border: 0; 
+		}
+	
+		.boxgrid p{ 
+			padding: 0 10px; 
+			color:#afafaf; 
+			font-weight:bold; 
+			font:10pt "Lucida Grande", Arial, sans-serif; 
+		}
+		
+	.boxcaption{ 
+		float: left; 
+    	position: absolute; 
+		background: #000; 
+		height: 100px; 
+		width: 100%; 
+		opacity: .8; 
+		top: 300;
+			left: 0;
+		}
+	 			
+	 			
+	 			
+	 	
+
+	 			
+	 					
+</style>
+
+<script type="text/javascript" src="http://jqueryjs.googlecode.com/files/jquery-1.3.1.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		
+		$(".boxgrid.caption").hover(function(){
+			$( ".cover.boxcaption").animate({top:'200px'},{duration:160});
+		}, function() {
+			$(".cover", this).animate({top:'300px'},{duration:160});
+		});
+		
+	
+		//Horizontal Sliding
+		$(".boxgrid.slideright").hover(function(){
+			$(".cover", ".boxgrid.slideright").animate({left:'300px'},{duration:300});
+		}, function() {
+			$(".cover", this).animate({left:'0px'},{duration:300});
+		});
+
+		
+		
+	});
+</script>
+
+</head>
+<body>
+
+		<div class="boxgrid slideright">
+		<img class="cover" src="strokes.jpg"/>
+		<h3>The Strokes</h3>
+		<p>Angles<br/><a href="http://new.thestrokes.com/" target="_BLANK">Plus d'infos</a></p>
+	</div>
+			
+	
+	<div class="boxgrid caption">
+		<img src="whitepony.jpg"/>
+		<div class="cover boxcaption">
+			<h3>Deftones</h3>
+			<p>White Pony<br/><a href="http://www.deftones.com/" target="_BLANK">Plus d'infos</a></p>
+		</div>		
+		</div>	
+
+	
+	
+
+
+
+</body>
+</html>

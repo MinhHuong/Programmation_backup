@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>XML</title>
+	<meta charset="UTF-8">
+ 	<script type="text/javascript">
+ 	var data = '<?xml version=\"1.0\" encoding=\"UTF-8\" ?> <GENS><PERSONNE><NOM>Flora Bonhomme</NOM><ADRESSE><RUE>5 rue Galliéni</RUE><CODE> 75012</CODE><VILLE> Paris</VILLE></ADRESSE><TEL>01 23 45 67 89</TEL></PERSONNE><PERSONNE><NOM>Anne Gentile</NOM><ADRESSE><RUE>2 rue des Dames</RUE><CODE> 75007</CODE><VILLE> Paris</VILLE></ADRESSE><TEL>01 45 23 67 89</TEL></PERSONNE></GENS>' ;
+ 	function affiche() {
+		var parser = new DOMParser();
+		var docXML = parser.parseFromString(data, "application/xml");
+		var reponses = docXML.getElementsByTagName("NOM");
+		var texte = "";
+		var liste = document.getElementById('liste');
+		for (i = 0; i < reponses.length; i++) {
+			var li = document.createElement('li');
+			li.appendChild(document.createTextNode(reponses[i].firstChild.nodeValue));
+			liste.appendChild(li);
+		}
+	}
+
+	function afficheTable() {
+		var parser = new DOMParser();
+		var docXML = parser.parseFromString(data, "application/xml");
+		var noms = docXML.getElementsByTagName("NOM");
+		var adresses = docXML.getElementsByTagName("ADRESSE");
+		var tels = docXML.getElementsByTagName("TEL");
+		var rue, code, ville;
+
+		var table = document.getElementById('tb');
+		for(i = 0 ; i < noms.length ; i++) {
+			var row = document.createElement('tr');
+			var _nom = document.createElement('td');
+			_nom.appendChild(document.createTextNode(noms[i].firstChild.nodeValue));
+
+			/*rue = adresses[i].getElementsByTagName("RUE")[0];
+			code = adresses[i].getElementsByTagName("CODE")[0];
+			ville = adresses[i].getElementsByTagName("VILLE")[0];
+
+			var _adr = document.createElement('td');
+			var value = rue.firstChild.nodeValue + ' ' 
+			+ code.firstChild.nodeValue + ' '
+			+ ville.firstChild.nodeValue;
+			_adr.appendChild(document.createTextNode(value));*/
+
+			var _adr = document.createElement('td');
+			_adr.appendChild(document.createTextNode(adresses[i].textContent));
+
+			var _tel = document.createElement('td');
+			_tel.appendChild(document.createTextNode(tels[i].firstChild.nodeValue));
+
+			row.appendChild(_nom);
+			row.appendChild(_adr);
+			row.appendChild(_tel);
+
+			table.appendChild(row);
+		}
+	}
+	</script>
+</head>
+
+<body onload="afficheTable();">
+	<div>
+		<ul id="liste"></ul>
+	</div>
+ 	<table id="tb" style="border-style: solid; border-width: 1px; border: 1px solid black">
+ 		<tr>
+ 			<th>NOM</th>
+ 			<th>ADRESSE</th>
+ 			<th>TELEPHONE</th>
+ 		</tr>
+ 		</tr>
+ 	</table>
+</body>
+
+</html>

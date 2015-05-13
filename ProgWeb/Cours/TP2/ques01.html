@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Test avec fichier XML</title>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+	<script type="text/javascript">
+	var requeteAjax;
+
+	function connect(page) {
+		requeteAjax = new XMLHttpRequest();
+		if (requeteAjax != null) {
+			requeteAjax.open("GET", page, true);
+			requeteAjax.onreadystatechange = handler;
+			requeteAjax.send();
+		}
+		else {
+			window.alert("Pas de support AJAX (XMLHTTP)");
+		}
+	}
+
+	function handler() {
+		if (requeteAjax.readyState === 4) {
+			if (requeteAjax.status === 200) {
+				display();
+			}
+		}
+	}
+
+	function call() {
+		connect("donnees.xml");
+	}
+
+	function display() {
+		var docXml = requeteAjax.responseXML;
+		var liste = document.createElement("ul");
+		var item;
+		var reponses = docXml.getElementsByTagName("MUSICIEN");
+		var nom, prenom, tel;
+		for (var i = 0; i < reponses.length; i++) {
+			nom = reponses[i].getElementsByTagName("NOM")[0].textContent;
+			prenom = reponses[i].getElementsByTagName("PRENOM")[0].textContent;
+			tel = reponses[i].getElementsByTagName("TEL")[0].textContent;
+			item = document.createElement("li");
+			item.appendChild(document.createTextNode(nom + " " + prenom + " " + tel));
+			liste.appendChild(item);
+		};
+		var divliste = document.getElementById("musiciens");
+		divliste.style.visibility = "visible";
+		divliste.appendChild(liste);
+	}
+	</script>
+</head>
+
+<body>
+	<form action="">
+		<input id="Button1" type="button" value="Appeler" onclick="call()" />
+	</form>
+	<div id="data">
+		<div id="musiciens" style="visibility:hidden"></div>
+	</div>
+</body>
+</html>

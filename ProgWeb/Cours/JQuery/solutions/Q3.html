@@ -1,0 +1,22 @@
+<html>                                                                  
+ <head>  
+ <title> nicho</title>                                                                
+ <script type="text/javascript" src="jquery.js"></script>          
+   <script type="text/javascript">                                         
+   $(document).ready(function() {
+	// Ajoute du contenu après chaque balise textarea.
+	$('textarea').after('<p>Vive le jQuery.</p>');
+	// Ajoute "Voici le titre :" avant la balise textarea.
+	$('textarea').before('Voici le titre : </br>');
+	$('textarea').after('il y a' + $('textarea').length + ' balise(s) textearea dans la page HTML');
+	$('textarea:first').replaceWith('<a href="http://google.com">Google</a>');
+ });                                    
+ </script>                                                               
+ </head>
+                                                                
+ <body>   
+<textarea name="maZonedetexte" rows="8" cols="30" ></textarea>
+<textarea name="MaZonedetexte2" rows="8" cols="30" ></textarea>
+
+</body>                                                                 
+ </html>

@@ -1,0 +1,29 @@
+<html>
+<head>
+<title>the title</title>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js">
+   </script>
+ <script type="text/javascript" src="http://www.spritely.net/releases/0.4/jquery.spritely-0.4.js">
+ </script>
+ <script type="text/javascript">
+$(document).ready(function() {
+
+     $('#bird').sprite({fps: 12, no_of_frames: 3})
+});
+</script>
+
+   </script>
+ <style type="text/css">
+#bird{
+            position: absolute;
+            width: 180px;
+            height: 120px;
+            background: transparent url(bird-forward-back.png) top left no-repeat;
+        }
+ </style>
+ 
+</head>
+<body>
+<div id="bird"></div>
+</body>
+</html>

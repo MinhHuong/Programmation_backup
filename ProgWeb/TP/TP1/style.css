@@ -1,0 +1,29 @@
+#help {
+	width: 300px;
+	display: inline-block;
+	text-align: justify;
+}
+
+#tableau {
+	float: right;
+	width: 500px;
+	height: 100px;
+	display: inline;
+}
+
+table {
+	border: thin solid black;
+}
+
+td, th {
+	border: thin dotted grey;
+	padding: 5px;
+	text-align: center;
+}
+
+#albums {
+	border: thin solid black;
+	width: 700px;
+	height: 300px;
+	float: right;
+}

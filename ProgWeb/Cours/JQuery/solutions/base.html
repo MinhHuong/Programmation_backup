@@ -1,0 +1,57 @@
+<html>                                                                  
+ <head>  
+ <title> nicho</title>
+ <meta charset="UTF-8">                                               
+ <script type="text/javascript" src="jquery.js"></script>          
+   <script type="text/javascript">                                         
+   $(document).ready(function() {
+  
+   $("a").click(function() {
+     alert("Hello world!");
+   });
+  
+  
+//  $('#titre'); // Sélectionne notre balise mais ne fait rien.
+//alert($('#titre').html()); // Affiche le contenu "J'aime les frites."
+//$('#titre').html('Je mange une pomme'); // Remplace le contenu ("J'aime les frites.") par "Je mange une pomme".
+//$('#titre').html($('title').html()); // Remplace le contenu par le titre de la page (contenu dans la balise <title>).
+
+
+// Ajoute du contenu après chaque balise textarea.
+//$('textarea')
+//    .after('<p><strong>Merci beaucoup.</strong></p>')
+//    .after('<p>Veuillez ne pas poster de commentaires injurieux.</p>');
+
+// Ajoute "Voici le titre :" avant et "! Wahou !" après la balise ayant comme id "titre".
+//$('#titre')
+ // .before('Voici le titre :')
+ // .after('! Wahou !');
+
+
+//$('div').replaceWith('<span>Salut!</span>');
+
+
+
+// Remplace les liens <a>...</a> par <em>censuré</em>.
+$('a').replaceWith('<em>censuré</em>');
+//$('h1').replaceWith($('#titre'));
+$('#titre').replaceWith('<h1>'+$('#titre').html()+'</h1>');
+$('.recherche').replaceWith('<a href="http://google.com">Google</a>');
+
+
+ });                                    
+ </script>                                                               
+ </head>                                                                 
+ <body>   
+
+<div>Bonsoir.. :)</div> 
+
+titre </br>
+<div id="titre"> coucou dd</div>
+fin titre </br>
+<a href="http://www.w3schools.com">Visit W3Schools.com!</a>
+<h1> bla </h1>
+<div class="recherche"> lllllll </div>     
+                   
+ </body>                                                                 
+ </html>

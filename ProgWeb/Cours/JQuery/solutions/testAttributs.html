@@ -1,0 +1,64 @@
+<html>
+<head>
+<title>the title</title>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js">
+   </script>
+
+ <script type="text/javascript" language="javascript">
+   
+   $(document).ready(function() {
+
+     $(".zonetoRemove").click(function () {
+       $("#"+this.id).remove();
+    });
+
+//Remarquez l'utilisation de $("#"+this.id) permettant de la duplication de code   
+//  $("#zone1").click(function () {
+//    $(this).remove( );
+//  });
+//  $("#zone2").click(function () {
+//    $(this).remove( );
+//  });
+
+$(".zonetoReplace").click(function () {
+  $("#"+this.id).replaceWith("<h1>JQuery is Great</h1>");
+    });
+    
+    $(".zonetoInsert").click(function () {
+  $("#"+this.id).before("Inserted!" );
+    });
+
+
+
+   });
+
+   </script>
+   <style>
+      #zone1{ margin:10px;padding:12px;
+                 border:2px solid #666;
+                 width:60px;
+               }
+  </style>
+</head>
+<body>
+   <p>Click on the square below:</p>
+   <span id="result"> </span>
+   <div class="zonetoRemove" id="zone1" style="background-color:blue;">
+     Remove this Blue Square!!
+   </div>  
+    <div class="zonetoRemove" id="zone2">
+Remove me!
+   </div>
+   
+   
+    <div class="zonetoReplace" id="zone3">
+Replace me!
+   </div>
+
+    <div class="zonetoInsert" id="zone4">
+Insert before me!
+   </div>
+
+   
+</body>
+</html>

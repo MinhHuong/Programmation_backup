@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JSON -> Objets</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<script id="music" type="application/json">
+	[
+		{ "Nom_Musicien": "Bacelli","Prenom_Musicien": "Monica" },
+		{ "Nom_Musicien": "Bach", "Prenom_Musicien": "Carl-Philip-Emmanuel" },
+		{ "Nom_Musicien": "Bayrakdarian", "Prenom_Musicien":"Isabel" }
+	] 
+	</script>
+	<script type="text/javaScript">
+	var musiciens = [];
+
+	function Musicien(n, p) {
+		this.nom = n;
+		this.prenom = p;
+	}
+
+	function ChargeTableau() {
+		var Musiciens = JSON.parse(document.getElementById('music' ).text);
+		Musiciens.forEach(function (mus) {
+			musiciens.push(new Musicien(mus.Nom_Musicien, mus.Prenom_Musicien));
+		});
+	}
+
+	function Affiche() {
+		ChargeTableau();
+		CreeListe();
+	}
+
+	function CreeListe() {
+		var list = document.getElementById("liste");
+		var _table = document.createElement("table");
+
+		var rowHdr = document.createElement("tr");
+
+		var hdrNom = document.createElement("th");
+		hdrNom.appendChild(document.createTextNode("NOM"));
+
+		var hdrPren = document.createElement("th");
+		hdrPren.appendChild(document.createTextNode("PRENOM"));
+
+		rowHdr.appendChild(hdrNom);
+		rowHdr.appendChild(hdrPren);
+		_table.appendChild(rowHdr);
+
+		musiciens.forEach(function (mus) {
+			var row = document.createElement("tr");
+
+			var _nom = document.createElement("td");
+			_nom.appendChild(document.createTextNode(mus.nom));
+
+			var _prenom = document.createElement("td");
+			_prenom.appendChild(document.createTextNode(mus.prenom));
+
+			row.appendChild(_nom);
+			row.appendChild(_prenom);
+
+			_table.appendChild(row);
+		});
+
+		list.appendChild(_table);
+	}
+	</script>
+ </head>
+
+ <body onload="Affiche() ">
+ 	<div id="liste">
+ 	</div>
+ </body>
+
+</html>

@@ -1,0 +1,47 @@
+<html>
+<head>
+<title>the title</title>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js">
+   </script>
+
+ <script type="text/javascript" language="javascript">
+   
+$(document).ready(function()
+{
+  //first slide down and blink the message box
+  $("#object").animate({
+  top: "30px",
+  left: "30px",
+  }, 2000 ).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
+  //close the message box when cross red image is clicked
+  $("#close_message").click(function()
+  {
+     $("#object").fadeOut("slow");
+  });
+});
+</script>
+
+<style type="text/css">	
+.message{
+border:1px solid #CCCCCC;
+position:absolute;
+width:150px;
+border:1px solid #c93;
+background:#ffc;
+padding:5px;
+left:0px;
+top : -170px;
+}
+}
+  </style>
+</head>
+<body>
+<div id="object" class="message">
+  <img id="close_message" style="float:right;cursor:pointer" src="cross.gif" />
+  <strong>Offre publicitaire penible </strong>
+  <p>Ce message ne disparaitra que si vous appuyez sur la petite croix!</p>
+</div>
+<p>Ceci est le texte de ma page web.</p>
+   
+</body>
+</html>

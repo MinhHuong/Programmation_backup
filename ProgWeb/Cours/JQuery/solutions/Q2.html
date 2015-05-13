@@ -1,0 +1,27 @@
+<html>                                                                  
+ <head>  
+ <title> nicho</title>                                                                
+ <script type="text/javascript" src="jquery.js"></script>          
+   <script type="text/javascript">                                         
+   $(document).ready(function() {
+    
+$('#titre'); // Sélectionne la balise mais ne fait rien.
+alert($('#titre').html()); // Affiche le texte contenu dans la balise."
+alert($('#titre').text()); // Affiche le texte contenu dans la balise."
+$('#titre').html('Vive le jQuery'); // Remplace le contenu de la balise.
+$('#titre').html($('title').html()); // Remplace le contenu par le titre de la page (contenu dans la balise <title>).
+$('#titre').html('</br>Vive le jQuery');
+$('#titre').text('</br>Vive le jQuery');
+
+ });                                    
+ </script>                                                               
+ </head>
+                                                                
+ <body>   
+<div id="titre"> 
+<span class="texte">
+coucou
+</span>
+</div>
+</body>                                                                 
+ </html>

@@ -1,0 +1,71 @@
+<html>
+<head>
+<title>the title</title>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js">
+   </script>
+
+ <script type="text/javascript" language="javascript">
+   
+   $(document).ready(function() {
+
+$('#btn').bind('mousedown', function(){
+ 
+  $(this).css('color', 'red') ;
+});
+
+$('#btn').bind('mouseup', function(){
+  
+  $(this).css('color', 'green') ;
+});
+
+$('#target').bind('keydown',function(event) {
+  if (event.keyCode == '65') {
+     event.preventDefault();
+     $(this).val($(this).val()+"A");
+   }
+  });
+ //Ecriture equivalente :
+/*  $('#target').keydown(function(event) {
+  if (event.keyCode == '65') {
+     event.preventDefault();
+     $(this).val($(this).val()+"A");
+   }
+  });
+*/
+
+
+
+ $('#browserInfo').text('Browser (Width : '
+                + $(window).width() + ' , Height :' + $(window).height() + ' )');
+ 
+    $(window).resize(function () {
+		$('#browserInfo').text('Browser (Width : ' + $(window).width() 
+                                 + ' , Height :' + $(window).height() + ' )');
+    });
+
+   });
+
+   </script>
+   <style>
+      #zone1{ margin:10px;padding:12px;
+                 border:2px solid #666;
+                 width:60px;
+               }
+  </style>
+</head>
+<body>
+<div id="btn">
+Test evenement
+</div>
+
+<div id="browserInfo">
+  </div>
+<input id="target" type="text" />
+<!--<fieldset>
+    <label for="target">Type Something:</label>
+    <input id="target" type="text" />
+  </fieldset>
+-->
+   
+</body>
+</html>

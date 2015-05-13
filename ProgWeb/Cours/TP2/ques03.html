@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<title>Page de compositeurs</title>
+	<script type="text/javascript">
+	var request;
+	var letter;
+
+	function afficherAlphabet() {
+		var alpha = document.getElementById("alphabet");
+		var _alpha, link;
+		for (var i = 0; i < 26; i++) {
+			link = document.createElement("a");
+			_alpha = String.fromCharCode(65+i);
+			link.appendChild(document.createTextNode(_alpha));
+			link.setAttribute("href", "#");
+			link.addEventListener("click", call);
+			link.style.margin = "10px";
+			alpha.appendChild(link);
+		}
+	}
+
+	function call() {
+		letter = this.textContent;
+		connect("data.json");
+	}
+
+	function connect(page) {
+		request = new XMLHttpRequest();
+		if(request != null) {
+			request.open("GET", page, true);
+			request.onreadystatechange = handler;
+			request.send();
+		}
+		else {
+			window.alert("Pas de support AJAX (XMLHTTP)");
+		}
+	}
+
+	function handler() {
+		if(request.readyState == 4) {
+			if(request.status == 200) {
+				display();
+			}
+		}
+	}
+
+	function display() {
+		var reponses = JSON.parse(request.responseText);
+		var liste = document.createElement("ul");
+		var item, nom, prenom;
+
+		// find the corresponding compositor (with the variable letter)
+		for (var i = 0; i < reponses.length; i++) {
+			if(letter == reponses[i].Prenom_Musicien.substring(0,1)) {
+				nom = reponses[i].Nom_Musicien;
+				prenom = reponses[i].Prenom_Musicien;
+				item = document.createElement("li");
+				item.appendChild(document.createTextNode(nom + " " + prenom));
+				liste.appendChild(item);
+			}
+		}
+
+		var divliste = document.getElementById("displayZone");
+		divliste.appendChild(liste);
+	}
+	</script>
+</head>
+
+<body onload="afficherAlphabet();">
+	<h2>Les lettres de l'alphabet</h2>
+	<div id="alphabet"></div>
+	<p></p>
+	<div id="displayZone" style="width: 500px; height: 300px;"></div>
+</body>
+</html>

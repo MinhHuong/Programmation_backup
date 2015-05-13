@@ -1,0 +1,81 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Panier</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script id="products" type="text/javascript">
+	var Albums = [
+	{ 	"Code": "10", 
+		"Titre": "Mozart : Le Nozze di Figaro", 
+		"An": "2011",
+		"URL": "http://ecx.images-amazon.com/images/I/51LIHDbHUQL.jpg" 	},
+	{ 	"Code": "15", 
+		"Titre": "Mozart : Intégrale des trios avec piano", 
+		"An": "2012", 
+		"URL": "http://ecx.images-amazon.com/images/I/41ZTHHNBRKL.jpg" },
+	{ 	"Code": "16", 
+		"Titre": "Coltrane : A love supreme", 
+		"An": "1978", 
+		"URL":"http://ecx.images-amazon.com/images/I/71vq8ZUAmxL._SL1281_.jpg" },
+	{ 	"Code": "11", 
+		"Titre": "Atom Heart Mother", 
+		"An": "1973", 
+		"URL": "http://ecx.images-amazon.com/images/I/81UBy5DIxNL._SL1300_.jpg" },
+	{ 	"Code": "21", 
+		"Titre": "Wallflower", 
+		"An": "2003", 
+		"URL": "http://ecx.imagesamazon.com/images/I/510rzLFTI2L.jpg" }, 
+	{ 	"Code": "29", 
+		"Titre": "Chaleur Humaine", 
+		"An": "2014", 
+		"URL": "http://ecx.images-amazon.com/images/I/51wcEQzibdL.jpg" }, 
+	{ 	"Code": "53", 
+		"Titre": "Rameau : Le grand théâtre de l'amour", 
+		"An": "2013",
+		"URL": "http://ecx.images-amazon.com/images/I/71SXjNkclGL._SL1500_.jpg" },
+	{ 	"Code": "57", 
+		"Titre": "Enfant de la Ville", 
+		"An": "2009", 
+		"URL": "http://ecx.images-amazon.com/images/I/51J7UYqvXUL.jpg" },
+	{ 	"Code": "82", 
+		"Titre": "Unapologetic", 
+		"An": "2012", 
+		"URL": "http://ecx.images-amazon.com/images/I/71202hkagIL._SL1000_.jpg" }
+	];
+	</script>
+	<script type="text/javascript">
+	var products = [];
+
+	function Product(c, t, a, u) {
+		this.code = c;
+		this.titre = t;
+		this.annee = a;
+		this.url = u;
+	}
+
+	function loadProduct() {
+		
+	}
+	</script>
+</head>
+
+<body>
+	<h1>Achat d'albums</h1>
+	<p id='help'>Déplacer la pochette dans votre caddie pour ajouter l'album à votre liste d'achat. Pour supprimer l'album de votre liste, il suffir de tirer sa pochette hors du caddie ou de mettre à 0 la quantité dans le tableau de droite</p>
+
+	<div id='tableau'>
+		<table>
+			<tr>
+				<th>Titre de l'album</th>
+				<th>Quantité</th>
+				<th>Prix</th>
+			</tr>
+		</table>
+	</div>
+
+	<p></p>
+	<img src="caddie.jpg" alt="Un joli panier">
+
+	<div id='albums'></div>
+</body>
+</html>

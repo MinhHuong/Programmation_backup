@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Test avec fichier XML</title>
+	<script type="text/javascript">
+	var requeteAjax;
+
+	function connect(page) {
+		requeteAjax = new XMLHttpRequest();
+		if (requeteAjax != null) {
+			requeteAjax.open("GET", page, true);
+			requeteAjax.onreadystatechange = handler;
+			requeteAjax.send();
+		}
+		else {
+			window.alert("Pas de support AJAX (XMLHTTP)");
+		}
+	}
+
+	function handler() {
+		if (requeteAjax.readyState === 4) {
+			if (requeteAjax.status === 200) {
+				display();
+			}
+		}
+	}
+
+	function call() {
+		connect("data.json");
+	}
+
+	function display() {
+		var reponses = JSON.parse(requeteAjax.responseText);
+		var liste = document.createElement("ul");
+		var item;
+		var nom, prenom;
+		
+		for (var i = 0; i < reponses.length; i++) {
+			nom = reponses[i].Nom_Musicien;
+			prenom = reponses[i].Prenom_Musicien;
+			item = document.createElement("li");
+			item.appendChild(document.createTextNode(nom + " " + prenom));
+			liste.appendChild(item);
+		};
+
+		var divliste = document.getElementById("musiciens");
+		divliste.style.visibility = "visible";
+		divliste.appendChild(liste);
+	}
+	</script>
+</head>
+
+<body>
+	<form action="">
+		<input id="Button1" type="button" value="Appeler" onclick="call()" />
+	</form>
+	<div id="data">
+		<div id="musiciens" style="visibility:hidden"></div>
+	</div>
+</body>
+</html>
