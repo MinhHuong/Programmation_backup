@@ -1,0 +1,43 @@
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Création d'un bouton animé</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<script>
+	var i = 0;
+	$(document).ready(function () {
+		$('.target span' ).click(function () {
+			if(i == 0) {
+				$(this).css('color' , 'red' );
+				$(this).css('border-color' , 'red' );
+				$(this).css('border-radius' , '20px' );
+				$(this).text("Bouton rouge");	
+			}
+			else {
+				$(this).css('color' , 'green' );
+				$(this).css('border-color' , 'green' );
+				$(this).css('border-radius' , '20px' );
+				$(this).text("Bouton vert");
+			}
+			i = (i+1)%2;
+		});
+	});
+	</script>
+	<style>
+	.target span {
+		border: 1px solid green;
+		color: green;
+		padding: 10px;
+		background-color: azure;
+	}
+	</style>
+</head>
+
+<body>
+	<h1>Mon bouton</h1>
+	<div class="target">
+		<span>Bouton vert</span>
+	</div>
+</body>
+</html>

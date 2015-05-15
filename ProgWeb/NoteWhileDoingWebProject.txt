@@ -1,0 +1,3 @@
+NOTES WHEN REALIZING PROJECT :
+
+- When using the tag <form>, in event handler jQuery, set return false so the form doens't automatically refresh, which causes the lost of all the effects of jQuery

@@ -1,0 +1,29 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Panier</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="ques05.js"></script>
+</head>
+
+<body onload="initialize();">
+	<h1>Achat d'albums</h1>
+	<p id='help'>Deplacer la pochette dans votre caddie pour ajouter l'album a votre liste d'achat. Pour supprimer l'album de votre liste, il suffit de tirer sa pochette hors du caddie ou de mettre a 0 la quantite dans le tableau de droite</p>
+
+	<div id="tableau">
+		<table id="tab">
+			<tr>
+				<th>Titre de l'album</th>
+				<th>Quantite</th>
+				<th>Prix</th>
+			</tr>
+		</table>
+	</div>
+
+	<p></p>
+	<div id="prod-caddie" ondragover="allowDrop(event);" ondrop="MouseDrop(event);">
+	</div>
+
+	<div id='albums'></div>
+</body>
+</html>

@@ -49,8 +49,12 @@
 
 	function display() {
 		var reponses = JSON.parse(request.responseText);
-		var liste = document.createElement("ul");
+		var liste = document.getElementById("listeZone");
 		var item, nom, prenom;
+
+		for(var i = 0 ; i < liste.childNodes.length ; i++) {
+			liste.removeChild(liste.firstChild);
+		}
 
 		// find the corresponding compositor (with the variable letter)
 		for (var i = 0; i < reponses.length; i++) {
@@ -73,6 +77,8 @@
 	<h2>Les lettres de l'alphabet</h2>
 	<div id="alphabet"></div>
 	<p></p>
-	<div id="displayZone" style="width: 500px; height: 300px;"></div>
+	<div id="displayZone" style="width: 500px; height: 300px;">
+		<ul id="listeZone"></ul>
+	</div>
 </body>
 </html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta charset="utf-8" http-equiv="content-type" content="text/html">
+	<meta name="description" content="Site web utilisé à manipuler des votes">
+	<meta name="author" content="LINF13PUF">
+	<meta http-equiv="cache-control" content="no-cache">
+	<link rel="stylesheet" href="../css/votant.css" type="text/css">
+	<link rel="icon" href="../img/favicon.jpg">
+	<title>Web de Vote - Petits votants</title>
+</head>
+
+<body>
+	<div id="header"> 
+		<h1 class="hdr-content">Bienvenue, <span id="nom-compte">nom de compte . . .</span></h1>
+	</div>
+
+	<div id="div-menu">
+		<ul id="menu-page">
+			<li class="menu-page-item"><a class="menu-page-link" href="votant.html">Votants</a></li>
+			<li class="menu-page-item"><a class="menu-page-link" href="sujet.html">Vote du jour</a></li>
+		</ul>
+	</div>
+
+	<div id="left-menu">
+		<div id="div-table">
+			<div id="div-table-hdr"><span>Sommaire</span></div>
+			<div id="div-table-content">
+				<table id="tab-actu">
+					<tr>
+						<th>TOTAL</th>
+						<td>8</td>
+					</tr>
+					<tr>
+						<th>VOTÉ</th>
+						<td>5</td>
+					</tr>
+					<tr>
+						<th>NON VOTÉ</th>
+						<td>2</td>
+					</tr>
+				</table>
+				<button>Actualiser</button>
+			</div>
+		</div>
+
+		<div id="div-manag">
+			<div id="div-manag-hdr"><span>Gestion des petits votants</span></div>
+			<div id="div-manag-content">
+				<ul id="menu-manag">
+					<li class="menu-manag-item" id="item01">Ajouter un petit votant</li>
+					<li class="menu-manag-item" id="item02">Modifier un petit votant</li>
+					<li class="menu-manag-item">Enlever un petit votant</li>
+				</ul>
+			</div>	
+		</div>
+	</div>
+
+	<div id="div-votants">
+		<table id="tab-votants">
+			<tr>
+				<th>PHOTO</th>
+				<th>PRÉNOM</th>
+				<th>NOM</th>
+				<th>VOTÉ ?</th>
+				<th>THÈME CHOISI</th>
+			</tr>
+			<tr>
+				<td><img src="../img/thorin.jpg" width="110px" height="110px" alt="photo d'un votant"></td>
+				<td>Thorin</td>
+				<td>Oakenshield</td>
+				<td>Oui</td>
+				<td>1 - Christmas</td>
+			</tr>
+			<tr>
+				<td><img src="../img/bilbo.jpg" width="110px" height="110px" alt="photo d'un votant"></td>
+				<td>Bilbo</td>
+				<td>Baggins</td>
+				<td>Non</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+		</table>
+	</div>
+
+	<div id="tab-pages">
+		<p>Here go some pages...</p>
+	</div>
+</body>
+
+</html>

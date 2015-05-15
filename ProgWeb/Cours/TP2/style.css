@@ -1,0 +1,38 @@
+#help {
+	width: 300px;
+	display: inline-block;
+	text-align: justify;
+}
+
+#tableau {
+	float: right;
+	width: 500px;
+	height: 100px;
+	display: inline-block;
+}
+
+table {
+	border: thin solid black;
+}
+
+td, th {
+	border: thin dotted grey;
+	padding: 5px;
+	text-align: center;
+}
+
+#albums {
+	width: 400px;
+	position: relative;
+	margin: 0px;
+	display: inline-block;
+}
+
+#prod-caddie {
+	display: inline-block;
+	left: 400px;
+	width: 400px;
+	height: 400px;
+	background-image: url("caddie.jpg");
+	position: absolute;
+}
