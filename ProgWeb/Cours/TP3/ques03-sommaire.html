@@ -2,8 +2,47 @@
 <head>
 	<meta charset="utf-8">
 	<title>Ma page de Hobbit</title>
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-	<script></script>
+	<script src="jquery-2.1.4.min.js"></script>
+	<script>
+	$(document).ready(function() {
+		$("h2").hover(
+			function() {
+				$(this).css({
+					"color" : "red",
+				});
+			},
+			function() {
+				$(this).css({
+					"color" : "black",
+				});
+			}
+		);
+
+		$("p").each(function() {
+			var _link = document.createElement("a");
+			$(_link).text("Top").attr("href", "#top").insertAfter($(this));
+		});
+
+		/* Create the menu here */
+		var sommaire = document.createElement("ul");
+
+		$("h2").each(function(index) {
+			$(this).attr("id", "menu" + (++index));
+
+			/* Method 1 : write more */
+			/*var linkItem = document.createElement("a");
+			$(linkItem).attr("href", "#menu" + (index)).text($(this).text());
+			var item = document.createElement("li");
+			$(item).append($(linkItem));
+			$(sommaire).append($(item));*/
+
+			/* Method 2 : write less */
+			$(sommaire).append(($("<li></li>")).append(($("<a></a>")).attr("href", "#menu" + (index)).text($(this).text())));
+		});
+
+		$("#top").after($(sommaire));
+	});
+	</script>
 	<style>
 	p {
 		font-size: 150%;
@@ -11,7 +50,7 @@
 	</style>
 </head>
 <body>	
-	<h1>Sommaire</h1>
+	<h1 id="top">Sommaire</h1>
 
 	<h2>THORIN II OAKENSHIELD</h2>
 	<p>

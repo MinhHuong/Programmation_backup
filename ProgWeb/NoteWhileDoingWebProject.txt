@@ -1,3 +1,7 @@
 NOTES WHEN REALIZING PROJECT :
 
 - When using the tag <form>, in event handler jQuery, set return false so the form doens't automatically refresh, which causes the lost of all the effects of jQuery
+
+- To include Bootstrap Glyphicon correctly, download the separate file bootstrap-glyphicons.css, use <link> tag as like include a css file, then in the .css file, add this @import url("../css/bootstrap-glyphicons.css");
+
+- resources interpreted as...but text/plain ==> open regedit, go to HKEY_ROOT_CLASSES ==> .js ==> Content Type : text/plain ==> change to text/application

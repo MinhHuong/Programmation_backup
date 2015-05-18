@@ -6,92 +6,106 @@
 	<meta name="description" content="Site web utilisé à manipuler des votes">
 	<meta name="author" content="LINF13PUF">
 	<meta http-equiv="cache-control" content="no-cache">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<script src="../script/jquery-2.1.4.min.js"></script>
+	<script src="../script/bootstrap.min.js"></script>
+	<script src="../script/votant.js"></script>
+
+	<link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css">
+	<link rel="stylesheet" href="../css/bootstrap-glyphicons.css" type="text/css">
 	<link rel="stylesheet" href="../css/votant.css" type="text/css">
-	<link rel="icon" href="../img/favicon.jpg">
+	<link rel="icon" href="../img/icon.jpg">
+
 	<title>Web de Vote - Petits votants</title>
 </head>
 
 <body>
+	
+	<!-- HEADER -->
 	<div id="header"> 
 		<h1 class="hdr-content">Bienvenue, <span id="nom-compte">nom de compte . . .</span></h1>
 	</div>
 
+	<!-- NAVIGATION BAR -->
+	<div class="container">
 	<div id="div-menu">
-		<ul id="menu-page">
-			<li class="menu-page-item"><a class="menu-page-link" href="votant.html">Votants</a></li>
-			<li class="menu-page-item"><a class="menu-page-link" href="sujet.html">Vote du jour</a></li>
+		<ul id="menu-page" class="nav navbar-nav">
+			<li class="menu-page-item" class="active"><a class="menu-page-link" href="votant.html">VOTANTS</a></li>
+			<li class="menu-page-item"><a class="menu-page-link" href="sujet.html">VOTE DU JOUR</a></li>
 		</ul>
 	</div>
 
-	<div id="left-menu">
-		<div id="div-table">
-			<div id="div-table-hdr"><span>Sommaire</span></div>
-			<div id="div-table-content">
-				<table id="tab-actu">
-					<tr>
-						<th>TOTAL</th>
-						<td>8</td>
-					</tr>
-					<tr>
-						<th>VOTÉ</th>
-						<td>5</td>
-					</tr>
-					<tr>
-						<th>NON VOTÉ</th>
-						<td>2</td>
-					</tr>
-				</table>
-				<button>Actualiser</button>
+	
+		<!-- MAIN PART OF THE PAGE : LEFT MENU & TABLE -->
+		<div class="row">
+
+			<!-- Left menu -->
+			<div id="left-menu" class="col-xs-12 col-sm-4 col-md-4 col-lg-3">
+				<div id="div-manag">
+					<div id="div-manag-hdr"><span>Gestion des petits votants</span></div>
+					<div id="div-manag-content">
+						<ul id="menu-manag">
+							<li data-toggle="modal" data-target="#modal-add" data-backdrop="static" class="menu-manag-item" id="item-add">Ajouter un petit votant</li>
+							<li class="menu-manag-item" id="item-edit">Modifier un petit votant</li>
+							<li class="menu-manag-item" id="item-remove">Enlever un petit votant</li>
+						</ul>
+					</div>  
+				</div>
+
+				<div id="instruction">
+					<p></p>
+				</div>
+			</div>
+
+			<!-- Table -->
+			<div class="col-xs-12 col-sm-8 col-md-8 col-lg-9" style="height: auto">
+				<div id="div-votants" class="row">
+					<span id="tab-goleft" class="glyphicon glyphicon-chevron-left" class="col-xs-4 col-sm-3 col-md-3 col-lg-2"></span>
+					<div id="tab-image" class="col-xs-4 col-sm-6 col-md-6 col-lg-10">
+					</div>
+					<span id="tab-goright" class="glyphicon glyphicon-chevron-right" class="col-xs-4 col-sm-3 col-md-3 col-lg-2"></span>
+				</div>
 			</div>
 		</div>
 
-		<div id="div-manag">
-			<div id="div-manag-hdr"><span>Gestion des petits votants</span></div>
-			<div id="div-manag-content">
-				<ul id="menu-manag">
-					<li class="menu-manag-item" id="item01">Ajouter un petit votant</li>
-					<li class="menu-manag-item" id="item02">Modifier un petit votant</li>
-					<li class="menu-manag-item">Enlever un petit votant</li>
-				</ul>
-			</div>	
+		<!-- MODAL DIALOGS FOR ADD, EDIT & REMOVE -->
+		<div class="modal fade" id="modal-add" role="dialog">
+			<div class="modal-dialog">
+				<!-- Modal Content-->
+				<div class="model-content">
+					<!-- Header -->
+					<div class="modal-header" style="padding: 15px">
+						<h3 style="margin: 0px"><span class="glyphicon glyphicon-user"></span> Ajouter un petit candidat</h3>
+					</div>
+
+					<!-- Body -->
+					<div class="modal-body" style="height: 230px; padding: 20px 30px 0px 30px">
+						<form role="form">
+							<div class="form-group form-group-img">
+								<div id="add-img"></div>
+								<button id="btn-add-img">IMG</button>
+							</div>
+							<div class="form-group form-group-text">
+								<label for="add-prenom">Prénom</label>
+								<input class="form-control" type="text" id="add-prenom" placeholder="Son prénom">
+							</div>
+							<div class="form-group form-group-text">
+								<label for="add-nom">Nom</label>
+								<input class="form-control" type="text" id="add-nom" placeholder="Son nom">
+							</div>
+							<button class="form-button" id="add-confirm">Confirmer</button>
+							<button class="form-button" id="add-cancel">Annuler</button>
+						</form>
+					</div>
+
+					<!-- Footer -->
+					<div class="modal-footer">
+					</div>
+				</div>
+			</div>
 		</div>
-	</div>
 
-	<div id="div-votants">
-		<table id="tab-votants">
-			<tr>
-				<th>PHOTO</th>
-				<th>PRÉNOM</th>
-				<th>NOM</th>
-				<th>VOTÉ ?</th>
-				<th>THÈME CHOISI</th>
-			</tr>
-			<tr>
-				<td><img src="../img/thorin.jpg" width="110px" height="110px" alt="photo d'un votant"></td>
-				<td>Thorin</td>
-				<td>Oakenshield</td>
-				<td>Oui</td>
-				<td>1 - Christmas</td>
-			</tr>
-			<tr>
-				<td><img src="../img/bilbo.jpg" width="110px" height="110px" alt="photo d'un votant"></td>
-				<td>Bilbo</td>
-				<td>Baggins</td>
-				<td>Non</td>
-				<td></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-			</tr>
-		</table>
-	</div>
-
-	<div id="tab-pages">
-		<p>Here go some pages...</p>
 	</div>
 </body>
 
