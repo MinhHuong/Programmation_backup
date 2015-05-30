@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/background">
+
+    <!-- frame layout   -->
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/background" >
+        
+	<!-- grid nay se la nhung khung de chua cac hinh cua voter -->
+   <GridView
+       android:id="@+id/gridview"
+       android:layout_width="fill_parent"
+       android:layout_height="fill_parent"
+       android:layout_marginTop="50dp"
+       android:background="@color/background"
+       android:gravity="center"
+       android:horizontalSpacing="@dimen/image_grid_hspacing"
+       android:numColumns="@integer/grid_num_cols"
+       android:stretchMode="columnWidth"
+       android:verticalSpacing="@dimen/image_grid_vspacing" />
+
+    </FrameLayout>
+
+</LinearLayout>
+

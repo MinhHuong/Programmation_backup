@@ -1,0 +1,81 @@
+<html>
+<head>
+	<meta charset="utf-8" http-equiv="content-type" content="text/html">
+	<meta name="description" content="Site web utilisé à manipuler des votes">
+	<meta name="author" content="LINF13PUF">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="pragma" content="no-cache">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<script src="../script/jquery-2.1.4.min.js"></script>
+	<script src="../script/bootstrap.min.js"></script>
+	<script src="../script/voting.min.js"></script>
+
+	<link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css">
+	<link rel="stylesheet" href="../css/bootstrap-glyphicons.min.css" type="text/css">
+	<link rel="stylesheet" href="../css/voting.min.css" type="text/css">
+	<link rel="icon" href="../img/icon.jpg">
+
+	<title>Web de Vote - Vote du jour</title>
+</head>
+
+<body>
+	<!-- HEADER -->
+	<div id="header"> 
+		<h1 class="hdr-content">Bienvenue, <span id="nom-compte">nom de compte . . .</span></h1>
+		<!-- Il n'est pas autorise de Se deconnecter durant cette partie -->
+	</div>
+
+
+	<div class="container">
+		<div class="row">
+			<!-- LA LISTE DES PETITS VOTANTS -->
+			<div id="list-votants">
+				<div class="votant">
+					<img src="../img/thorin.jpg" alt="petit votant">
+					<p>Thorin II <br>Oakenshield</p>
+				</div>
+				<div class="votant">
+					<img src="../img/bilbo.jpg" alt="petit votant">
+					<p>Bilbo <br>Baggins</p>
+				</div>
+				<div class="votant">
+					<img src="../img/gandalf.jpg" alt="petit votant">
+					<p>Gandalf <br>The Grey</p>
+				</div>
+				<div class="votant">
+					<img src="../img/galadriel.png" alt="petit votant">
+					<p>Galadriel <br>Lady of Loríen</p>
+				</div>
+				<div class="votant">
+					<img src="../img/legolas.jpg" alt="petit votant">
+					<p>Legolas <br>Greenleaf</p>
+				</div>
+				<div class="votant">
+					<img src="../img/azog.jpg" alt="petit votant">
+					<p>Azog <br>The Defiler</p>
+				</div>
+				<div class="votant">
+					<img src="../img/bard.jpg" alt="petit votant">
+					<p>Bard <br>King of Dale</p>
+				</div>
+				<div class="votant">
+					<img src="../img/thranduil.jpg" alt="petit votant">
+					<p>Thranduil <br>The Elven King</p>
+				</div>
+				<div class="votant">
+					<img src="../img/smaug.jpg" alt="petit votant">
+					<p>Smaug <br>The Dragon</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- LE ZONE DES BOUTONS-->
+		<div id="div-buttons">
+			<button id="btn-actu" class="btn btn-success" data-toggle="tooltip" title="Actualiser le status des votants (déjà/en procès/pas encore)" data-placement="left">Actualiser</button>
+			<button id="btn-stop" class="btn btn-warning" data-toggle="tooltip" title="Arrêter la vote d'aujourd'hui" data-placement="right">Arrêter</button>
+		</div>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_landscape"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/LinearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background_landscape"
+        android:layout_weight="1" >
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:padding="@dimen/grid_image_padding"
+            android:background="@color/background_cell"
+            android:src="@drawable/v1" />
+
+        <GridLayout
+            android:id="@+id/gridLayout1"
+            android:layout_width="fill_parent"
+            android:layout_height="150dp"
+            android:layout_gravity="center_vertical"
+            android:background="@color/background_cell"
+            android:columnCount="16"
+            android:rowCount="2" >
+
+        </GridLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background_landscape"
+        android:layout_weight="1" >
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center_vertical"
+            android:padding="@dimen/grid_image_padding"
+            android:background="@color/background_cell"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/v2" />
+
+        <GridLayout
+            android:id="@+id/gridLayout2"
+            android:layout_width="fill_parent"
+            android:layout_height="150dp"
+            android:layout_gravity="center_vertical"
+            android:background="@color/background_cell"
+            android:columnCount="16"
+            android:rowCount="2" >
+
+
+        </GridLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background_landscape"
+        android:layout_weight="1" >
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center_vertical"
+            android:padding="@dimen/grid_image_padding"
+            android:background="@color/background_cell"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/v3" />
+
+        <GridLayout
+            android:id="@+id/gridLayout3"
+            android:layout_width="fill_parent"
+            android:layout_height="150dp"
+            android:layout_gravity="center_vertical"
+            android:background="@color/background_cell"
+            android:columnCount="16"
+            android:rowCount="2" >
+
+
+        </GridLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background_landscape"
+        android:layout_weight="1" >
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center_vertical"
+            android:padding="@dimen/grid_image_padding"
+            android:background="@color/background_cell"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/v4" />
+
+        <GridLayout
+            android:id="@+id/gridLayout4"
+            android:layout_width="fill_parent"
+            android:layout_height="150dp"
+            android:layout_gravity="center_vertical"
+            android:background="@color/background_cell"
+            android:columnCount="16"
+            android:rowCount="2" >
+
+
+        </GridLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

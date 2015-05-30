@@ -3,6 +3,17 @@
 
 using namespace std;
 
+/********************************
+ *      PUF HCM - LINF13
+ *
+ *  Mai Trung Hieu
+ *  Nguyen Vu Anh Trung
+ *  Le Nguyen Minh Huong
+ ********************************/
+
+/**
+ * Swap 2 elements in the array
+ **/
 void swap(int t[], int a, int b) {
   int temp = t[a];
   t[a] = t[b];
@@ -10,6 +21,9 @@ void swap(int t[], int a, int b) {
 }
 
 
+/**
+ * Display the whole array
+ **/
 void display(int tab[], int n) {
   for(int i = 0 ; i < n ; i++) {
     cout << tab[i] << " ";
@@ -17,6 +31,10 @@ void display(int tab[], int n) {
   cout << endl;
 }
 
+
+/**
+ * Bubble Sort
+ **/
 void bubbleSort(int tab[], int n) {
   for(int j = 1 ; j < n-1 ; j++) {
     for(int i = n-1 ; i >= j ; i--) {
@@ -25,22 +43,25 @@ void bubbleSort(int tab[], int n) {
       }
     }
   }
-
-  display(tab, n);
 }
 
+
+/**
+ * Quick Sort
+ **/
 void quickSort(int a[], int start, int end) {
   int i, j, pivot;
   
-  if(start < end) {
+  if(start+1 < end) {
     pivot = start;
     i = start;
     j = end;
+
     while(i < j) {
-      while(a[i] <= a[pivot] && i <= end) {
+      while(a[i] <= a[pivot] && i < end) {
 	i++;
       }
-      while(a[j] > a[pivot] && j >= start) {
+      while(a[j] > a[pivot] && j > start) {
 	j--;
       }
 
@@ -48,17 +69,22 @@ void quickSort(int a[], int start, int end) {
 	swap(a, i, j);
       }
     }
-  }
   
   swap(a, pivot, j);
-  display(a, 8);
   quickSort(a, start, j); 
   quickSort(a, j+1, end);
+  }
+  else if(start+1 == end) {
+    swap(a, start, end);
+  }
 }
 
 int main() {
-  int a[8] = { 6, 5, 9, 10, 11, 4, 5, 20 };
-  quickSort(a, 0, 7);
-  //display(a, 8);
+  const int size = 8;
+  int a[size] = { 6, 5, 9, 10, 11, 4, 5, 20 };
+  //int a[size] = { 2, 1 };
+  quickSort(a, 0, size-1);
+  //bubbleSort(a, size);
+  display(a, size);
   return 0;
 }

@@ -1,0 +1,35 @@
+<html>
+
+<head>
+	<title>My diaporama</title>
+	<script src="jquery-2.1.4.min.js"></script>
+	<script src="jquery.cycle.all.min.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function() {
+		$('.slideshow').cycle({ 
+			fx		: 'scrollLeft',
+			speed	: 350,
+			timeout : 0,
+			next	: ".slideshow",
+			after 	: onAfter
+		});
+	});
+
+	function onAfter() {
+		$("#note").html(this.src);
+	}
+</script>
+</head>
+
+<body>
+	<div class="slideshow">
+		<img src="thorin.jpg" widht="200px" height="200px">
+		<img src="bilbo.jpg" widht="200px" height="200px">
+		<img src="thranduil.jpg" widht="200px" height="200px">
+		<img src="arkenstone.jpg" widht="200px" height="200px">
+		<img src="bard.jpg" widht="200px" height="200px">
+	</div>
+	<p id="note"></p>
+</body>
+
+</html>

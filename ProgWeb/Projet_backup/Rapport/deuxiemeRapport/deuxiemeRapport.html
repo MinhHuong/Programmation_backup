@@ -1,0 +1,101 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="js/jquery.cycle.all.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/rapport.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+	<title>Deuxième rapport - Lam, Huong, Thang</title>
+</head>
+
+<body>
+	<div class="container">
+	<!-- TITRE DU RAPPORT -->
+	<h1>DEUXIÈME RAPPORT DU PROJET VOTE</h1>
+
+	<!-- Des membres du groupe -->
+	<div id="div-group">
+		<h2>Classe LINF13 - PUF HCM</h2>
+		<ul id="group">
+			<li>NGUYEN Thanh Son Lam</li>
+			<li>LE Nguyen Minh Huong</li>
+			<li>TRAN Trung Thang</li>
+		</ul>
+	</div>
+
+	<!-- Des contenus principaux dans notre rapport -->
+	<div id="div-menu">
+		<h2>Sommaire</h2>
+		<ul id="menu">
+			<li><a href="#div-description" data-toggle="collapse" data-target="#div-description">Description</a></li>
+			<li><a href="#div-web" data-toggle="collapse" data-target="#div-web">Web</a></li>
+			<li><a href="#div-android" data-toggle="collapse" data-target="#div-android">Application Android</a></li>
+		</ul>
+	</div>
+
+	<!-- Description générale -->
+	<div id="div-description" class="collapse">
+		<h3>Description générale</h3>
+		<p>Suite au premier délivrable, ce deuxième consiste en l'intégration de deux maquettes (Application Android + Web)</p>
+		<p>Nous vous envoyons un rapport sour forme d'un web pour ajouter plus d'effets, et pour ne pas vous fatiguer en présentant <b style="color:green">un rapport de vingtaines pages</b> (c'est juste des images, mais il est VRAIMENT long).</p>
+	</div>
+
+	<!-- Partie du Site Web -->
+	<div id="div-web" class="collapse">
+		<h3>Site web</h3>
+		<p>Cette intégration du web est réalisée de sorte de le faire marcher locallement, donc il n'y a aucune connexion au serveur. Des données sur chaque page sont temporaires, elles seront perdues une fois la page refraichie.</p>
+		<p>Cette intégration se compose de deux versions : des fichiers html, css, js pour le faire marcher en machine locale et des captures d'écran</p>
+
+		<br><p style="color:green;font-weight:bolder;font-style:italic">*** SOURCE CODE ***</p>
+		<p>Des source code sont placé dans le répertoire /SiteWeb. Ce répertoire est organisé comme suit:</p>
+		<p>index.html (la page LOGIN)<br>
+		   | --- html/<br>
+		   | --- css/<br>
+		   | --- script/<br>
+		   | --- font/<br>
+		   | --- img/<br>
+		</p>
+		<p>Pour suivre l'enchainement des procédures pendant la gestion de vote, veuillez commencer par le fichier <strong>index.html</strong>.</p>
+		<p>Dans deux répertoires /css et /script, il existe 2 version : celle normale (.css/.js) et celle minifiée (.min.css/.min.js), pour but d'accélérer le page web le mieux possible.</p>
+		<p>Le site est déjà évalué sur Opquast : une erreur qui existe dans toutes les pages - le site web ne permet pas de CACHE (c'est notre intention).</p>
+		<p>Le site web est déjà testé sur plusieurs navigateurs, quelques problèmes notés: </p>
+		<ul>
+			<li>Google Chrome: tout fonctionne bien</li>
+			<li>Firefox : il faut changer dans le menu "Options" pour bien voir des symboles, des popup Javascript
+				<ul>
+					<li>Content --> Pop-ups --> Uncheck "Block pop-up windows"</li>
+					<li> Content --> Fonts et Colors --> Advanced --> Check "Allow pages to choose their own fonts, instead of my selections above"</li>
+				</ul>
+			</li>
+			<li>Internet Explorer : il faut confirmer “Allow popup content”</li>
+		</ul>
+
+		<br><br><p style="color:green;font-weight:bolder;font-style:italic">*** DES CAPTURES D'ÉCRAN ***</p>
+		<p style="font-weight:bold">Cliquer sur l'image pour en faire apparaitre d'autres. Des explications se trouvent au-dessous de ce slideshow</p>
+
+		<div id="all-slideshow-web">
+			<div class="slideshow" id="slideshow-web"></div>
+			<div id="explanation-web"><p></p></div>
+		</div>
+	</div>
+
+	<!-- Partie de l'Application Android -->
+	<div id="div-android" class="collapse">
+		<h3>Application Android</h3>
+		<p>Cette intégration se compose de deux versions : des captures d'écran et un package APK pour importer à Eclipse.</p>
+
+		<div id="all-slideshow-app">
+			<div class="slideshow" id="slideshow-app"></div>
+			<div id="explanation-app"><p></p></div>
+		</div>
+	</div>
+</div>
+</body>
+
+</html>

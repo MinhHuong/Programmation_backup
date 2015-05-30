@@ -5,3 +5,30 @@ NOTES WHEN REALIZING PROJECT :
 - To include Bootstrap Glyphicon correctly, download the separate file bootstrap-glyphicons.css, use <link> tag as like include a css file, then in the .css file, add this @import url("../css/bootstrap-glyphicons.css");
 
 - resources interpreted as...but text/plain ==> open regedit, go to HKEY_ROOT_CLASSES ==> .js ==> Content Type : text/plain ==> change to text/application
+
+- fire onchange event on input[type="file"] if you want to load that file and do some stuff to it
+
+- Set all the input[type="radio"] the same name, so it will allow only one selection between input[type="radio"] of the same name
+
+- TEXT ALIGN WORKS ON ALMOST ANY KIND OF ELEMENT. OH SWEET LORD. SUCCUMB TO THE POWER OF HTML.
+
+- JUST TO QUOTE AND POINT THIS OUT:
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+3. if you're using fseek() to write data to a file, remember to open the file in "r+" 
+mode, example:
+
+  $fp=fopen($filename,"r+");
+
+DON'T open the file in mode "a" (for append), because it puts
+the file pointer at the end of the file and doesn't let you 
+fseek earlier positions in the file (it didn't for me!). Also, 
+don't open the file in mode "w" -- although this puts you at 
+the beginning of the file -- because it wipes out all data in 
+the file. 
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+Took me half a day to figure :/
+
+- $().trigger("event") --> invoke the function for that event

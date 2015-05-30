@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background" >
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="@dimen/image_size"
+        android:layout_height="@dimen/image_size"
+        android:layout_x="200dp"
+        android:layout_y="58dp"
+        android:background="@color/background_cell"
+        android:padding="@dimen/grid_image_padding"
+        android:src="@drawable/v1" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="@dimen/image_size"
+        android:layout_height="@dimen/image_size"
+        android:layout_x="342dp"
+        android:layout_y="360dp"
+        android:background="@color/background_cell"
+        android:padding="@dimen/grid_image_padding"
+        android:src="@drawable/v2" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="@dimen/image_size"
+        android:layout_height="@dimen/image_size"
+        android:layout_x="50dp"
+        android:layout_y="360dp"
+        android:background="@color/background_cell"
+        android:padding="@dimen/grid_image_padding"
+        android:src="@drawable/v3" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="@dimen/image_size"
+        android:layout_height="@dimen/image_size"
+        android:layout_x="200dp"
+        android:layout_y="661dp"
+        android:background="@color/background_cell"
+        android:padding="@dimen/grid_image_padding"
+        android:src="@drawable/v4" />
+
+</AbsoluteLayout>

@@ -1,0 +1,56 @@
+h1 {
+	margin: 0px;
+}
+
+#help {
+	width: 500px;
+	display: inline-block;
+	text-align: justify;
+}
+
+#tableau {
+	float: right;
+	width: 500px;
+	height: 100px;
+	display: inline-block;
+}
+
+table {
+	border: thin solid black;
+}
+
+td, th {
+	border: thin dotted grey;
+	padding: 5px;
+	text-align: center;
+}
+
+#albums {
+	width: 400px;
+	position: relative;
+	margin: 0px;
+	display: inline-block;
+	height: 540px;
+}
+
+#albums ul {
+	padding: 0;
+}
+
+#prod-caddie {
+	display: inline-block;
+	position: absolute;
+	left: 400px;
+	width: 400px;
+	height: 400px;
+	background-image: url("img/caddie.jpg");
+}
+
+li {
+	list-style: none;
+}
+
+#gallery {
+	display: inline-block;
+	width:400px;
+}

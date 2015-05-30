@@ -1,0 +1,13 @@
+<resources>
+	<!-- format la  alpha - red - green -blue -->
+	<color name="white">#ffffffff</color>
+    <color name="name_text_background">#aa336699</color>
+    <color name="background">#ff0099cc</color>
+    <color name="background_outline">#cfcfcf</color>
+    <color name="black_overlay">#66000000</color>
+    <color name="background_grid1_cell">#33AAAAAA</color>
+    <color name="background_cell">#aa232631</color>
+    <color name="background_landscape">#ffffa7b6</color>
+    
+
+</resources>

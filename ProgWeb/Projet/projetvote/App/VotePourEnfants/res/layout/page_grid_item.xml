@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    
+	<!-- layout duoc goi va chinh tu GridImageAdapter.java -->
+	
+    <!-- control size of the image here 
+    src=a la khi khong co hinh, thi de hinh mac dinh vao
+    -->
+    <ImageView 
+        android:id="@+id/image"
+        android:layout_width="@dimen/image_size" 
+        android:layout_height="@dimen/image_size" 
+        android:padding="@dimen/grid_image_padding"
+        android:scaleType="fitCenter"
+        android:src="@drawable/a"    
+
+
+        
+        />
+
+    
+    
+    <!-- Show name of the voter, bottom-center of the image 
+    @string/anonymous co the xoa, vi de mac dinh vay neu hinh 
+    la nguoi khong co ten, thi lay ten mac dinh
+    pading la canh chinh khoang cach tu chu den khung
+    -->
+
+    <TextView
+        android:id="@+id/voter_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|start"
+        android:layout_marginBottom="2dp"
+        android:background="@color/name_text_background"
+        android:paddingBottom="2dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="5dp"
+        android:text="@string/anonymous"
+        android:textColor="@color/white"
+        android:textSize="@dimen/name_text_size"
+        android:textStyle="italic|bold"
+        android:typeface="normal" />
+
+</FrameLayout>

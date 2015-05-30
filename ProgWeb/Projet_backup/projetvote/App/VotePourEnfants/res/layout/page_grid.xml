@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/background">
+
+    <!-- frame layout   -->
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/background" >
+        
+	<!-- grid nay se la nhung khung de chua cac hinh cua voter -->
+   <GridView
+       android:id="@+id/gridview"
+       android:layout_width="fill_parent"
+       android:layout_height="fill_parent"
+       android:layout_marginTop="50dp"
+       android:background="@color/background"
+       android:gravity="center"
+       android:horizontalSpacing="@dimen/image_grid_hspacing"
+       android:numColumns="@integer/grid_num_cols"
+       android:stretchMode="columnWidth"
+       android:verticalSpacing="@dimen/image_grid_vspacing" />
+
+        <!-- Neu list empty thi se the hien dong text nay (van chay chua duoc, co the xoa) -->
+        <TextView 
+            android:id="@+id/no_topics_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/no_items"/>
+
+    </FrameLayout>
+
+</LinearLayout>
+

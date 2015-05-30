@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="anonymous">Anonymous</string>
+    <string name="app_name">Vote pour Enfants</string>
+    
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    
+    
+    <string name="hello">Welcome</string>
+    
+    <string name="alternate_title">An alternate title that is long</string>
+    <string name="toggle_title">Toggle title</string>
+
+    <string name="menu_refresh">Refresh</string>
+    <string name="menu_search">Search</string>
+    <string name="menu_share">Share</string>
+    
+    <string name="first_page">First</string>
+    <string name="last_page">Last</string>
+	<string name="demo_pager_title">Enfant</string>
+	<string name="demo_pager2_title">Huhuh</string>
+	<string name="sample_topic_title">Sample Topic</string>
+	<string name="sample_topic_text">troi mua bong bong</string>
+	<string name="no_items">No items</string>
+
+</resources>

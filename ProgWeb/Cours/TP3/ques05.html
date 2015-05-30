@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Sélectionneur d'image</title>
+	<script src="jquery-2.1.4.min.js"></script>
+	<script>
+	/*var preced;
+
+	$(document).ready(function() {
+		$("img").click(function() {
+			$(this).animate({ height:"128px", width:"128px"}, 1000);
+			if(preced != "") {
+				$("#" + preced).animate({ height:"64px", width:"64px"}, 1000);
+			}
+			preced = $(this).attr("id");
+		});
+	});*/
+	var centrale;
+	var preced;
+
+	$(document).ready(function() {
+		var arrImg = $("#images").children();
+		centrale = parseInt(arrImg.length/2)-1;
+		$( $("#images")[0].children[centrale] ).animate({ height:"128px", width:"128px"}, 1000);
+
+		//preced = centrale = parseInt(nbImg/2);
+		//$("#img"+centrale).animate({ height:"128px", width:"128px"}, 1000);
+
+		$("#btn-prev").click(function() {
+			preced = centrale+1;
+			var _last = $("#images img:last-child");
+			$(_last).remove();
+			$("#images").prepend($(_last));
+			$( $("#images")[0].children[preced] ).animate({ height:"64px", width:"64px"}, 1000);
+			$( $("#images")[0].children[centrale] ).animate({ height:"128px", width:"128px"}, 1000);
+			
+		});
+
+		$("#btn-next").click(function() {
+			preced = centrale-1;
+			var _first = $("#images img:first-child");
+			$(_first).remove();
+			$("#images").append($(_first));
+			$( $("#images")[0].children[centrale] ).animate({ height:"128px", width:"128px"}, 1000);
+			$( $("#images")[0].children[preced] ).animate({ height:"64px", width:"64px"}, 1000);
+		});
+	});
+	
+	</script>
+	<style>
+	img{height:64px;width:64px;vertical-align:middle;}
+	#images{line-height:150px;}
+	</style>
+</head>
+<body>
+	<div id="images">
+		<img alt="1" src="img/default01.png" id="img1">
+		<img alt="2" src="img/default02.png" id="img2">
+		<img alt="3" src="img/default03.png" id="img3">
+		<img alt="4" src="img/default04.png" id="img4">
+	</div>
+	<button id="btn-prev">Prev</button>
+	<button id="btn-next">Next</button>
+</body>
+</html>

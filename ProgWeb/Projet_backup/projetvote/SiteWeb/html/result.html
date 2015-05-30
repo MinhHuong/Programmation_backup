@@ -1,0 +1,136 @@
+<html>
+
+<head>
+	<meta charset="utf-8" http-equiv="content-type" content="text/html">
+	<meta name="description" content="Site web utilisé à manipuler des votes">
+	<meta name="author" content="LINF13PUF">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="pragma" content="no-cache">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<script src="../script/jquery-2.1.4.min.js"></script>
+	<script src="../script/bootstrap.min.js"></script>
+	<script src="../script/result.min.js"></script>
+
+	<link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css">
+	<link rel="stylesheet" href="../css/bootstrap-glyphicons.min.css" type="text/css">
+	<link rel="stylesheet" href="../css/result.min.css" type="text/css">
+	<link rel="icon" href="../img/icon.jpg">
+
+	<title>Web de Vote - Vote du jour</title>
+</head>
+
+<body>
+	<!-- HEADER -->
+	<div id="header"> 
+		<h1 class="hdr-content">Bienvenue, <span id="nom-compte">nom de compte . . .</span></h1>
+		<a href="../index.html" id="logout">Se déconnecter</a>
+	</div>
+
+	<!-- MAIN PART OF THE PAGE : RESULT OF VOTE & DETAILED CHOICE OF EACH VOTANT -->
+	<div class="container">
+		<div class="row">
+
+			<!-- LE TABLEAU CONTENANT LE SUBTOPIC CHOISI -->
+			<div id="left-menu" class="col-xs-12 col-sm-4 col-md-4 col-lg-3">
+				<div id="vote-result">
+					<!-- En-tete du tableau -->
+					<div id="vote-result-hdr">
+						<h2>Résultat</h2>
+					</div>
+
+					<!-- Contenu du tableau -->
+					<div id="vote-result-content">
+						<h3>HOBBIT</h3>
+						<img src="../img/arkenstone.jpg" alt="photo du subtopic choisi">
+						<p id="choosen">ARKENSTONE : <span class="number">8</span></p>
+						<p>THRANDUIL : <span class="number">3</span></p>
+						<p>SMAUG : <span class="number">2</span></p>
+						<p>GOLLUM : <span class="number">1</span></p>
+					</div>
+				</div>
+			</div>
+
+			<!-- LA PARTIE CONTENANT L'INFORMATION DES PETITS VOTANTS ET LEUR CHOIX DE SUBTOPIC -->
+			<div id="votants-result" class="col-xs-12 col-sm-8 col-md-8 col-lg-9">
+				<div id="table-scroll">
+					<table id="table-votants-result">
+						<!-- Table's header -->
+						<thead>
+							<tr>
+								<th>PHOTO</th>
+								<th>PRÉNOM</th>
+								<th>NOM</th>
+								<th>SUBTOPIC</th>
+							</tr>
+						</thead>
+
+						<tbody>
+							<tr>
+								<td><img src="../img/thorin.jpg" alt="photo d'un petit votant"></td>
+								<td>Thorin II</td>
+								<td>Oakenshield</td>
+								<td>Arkenstone</td>
+							</tr>
+
+							<tr>
+								<td><img src="../img/thorin.jpg" alt="photo d'un petit votant"></td>
+								<td>Thorin II</td>
+								<td>Oakenshield</td>
+								<td>Arkenstone</td>
+							</tr>
+
+							<tr>
+								<td><img src="../img/thorin.jpg" alt="photo d'un petit votant"></td>
+								<td>Thorin II</td>
+								<td>Oakenshield</td>
+								<td>Arkenstone</td>
+							</tr>
+
+							<tr>
+								<td><img src="../img/thorin.jpg" alt="photo d'un petit votant"></td>
+								<td>Thorin II</td>
+								<td>Oakenshield</td>
+								<td>Arkenstone</td>
+							</tr>
+						</tbody>
+
+					</table>
+				</div>
+			</div>
+
+		</div>
+
+		<div id="btn-area">
+			<button id="btn-newvote" class="btn btn-primary" data-toggle="tooltip" title="Commencer la vote du jour">Nouvelle vote</button>
+		</div>
+	</div>
+
+	<!-- MODAL DE CONFIRMATION AVANT DE COMMENCER UNE NOUVELLE VOTE -->
+	<div class="modal fade" id="modal-confirm" role="dialog">
+		<div class="modal-dialog">
+			<!-- Modal Content-->
+			<div class="modal-content">
+				<!-- Header -->
+				<div class="modal-header">
+					<h2><span class="glyphicon glyphicon-home"></span> Commencer une nouvelle vote</h2>
+				</div>
+
+				<!-- Body -->
+				<div class="modal-body">
+					<p>Êtes-vous sur(e) que vous voulez commencer une nouvelle vote ? Tous les resultats seront perdus.</p>
+					<button class="form-button btn btn-success" id="btn-confirm">Confirmer</button>
+					<button class="form-button btn btn-warning" id="btn-cancel">Annuler</button>
+				</form>
+			</div>
+
+			<!-- Footer -->
+			<div class="modal-footer">
+			</div>
+		</div>
+	</div>
+</div>
+
+</body>
+
+</html>

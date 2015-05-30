@@ -1,0 +1,220 @@
+@import url("../css/bootstrap-glyphicons.css");
+
+/********* SETUP OF THE WHOLE CONTAINER *******/
+
+.container {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.row {
+	margin-left: 0;
+	margin-right: 0;
+	height: auto;
+}
+
+/********** HEADER OF THE PAGE **********/
+#header {
+	height: 72px;
+	position: relative;
+	background-image: url("../img/hdr-pattern08.gif");
+}
+
+.hdr-content {
+	position: relative;
+	display: inline-block;
+	margin: 0px;
+	top: 10px;
+	left: 90px;
+	font-size: 40px;
+	font-family: fontHeader;
+	color: #FFFFFF;
+	font-style: italic;
+	text-align: center;
+}
+
+#logout {
+	float: right;
+	position: relative;
+	top: 25px;
+	right: 30px;
+	font-size: 110%;
+}
+
+/******** RÉSULTAT DE VOTE *********/
+#left-menu {
+	/*border: 1px solid #000000;*/
+	display: inline-block;
+	position: relative;
+	top: 35px;
+	height: 430px;
+}
+
+#vote-result {
+	display: block;
+	border: 1px solid #848484;
+	height: 430px;
+	border-radius: 6px;
+	/*position: relative;
+	top: 35px;*/
+}
+
+#vote-result:hover {
+	box-shadow: 6px 6px 5px #CCCCCC
+}
+
+/*===== Header =====*/
+#vote-result-hdr {
+	border-bottom: 1px solid #848484;
+	padding: 3px;
+	background-image: url("../img/hdr-pattern09.png");
+	border-radius: 6px 6px 0px 0px;
+}
+
+#vote-result-hdr > h2 {
+	font-size: 18px;
+	margin: 8px 8px 8px 15px;
+	font-weight: bolder;
+}
+
+/*===== Content =====*/
+#vote-result-content {
+	/*border: 1px solid #000000;*/
+	text-align: center;
+	background-color: transparent;
+}
+
+#vote-result-content > h3 {
+	margin: 15px;
+	padding-bottom: 10px;
+	border-bottom: 2px dotted #848484;
+	font-weight: bold;
+	font-size: 30px;
+}
+
+#vote-result-content img {
+	width: 150px;
+	height: 150px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	/*box-shadow: 6px 6px 6px #A4A4A4;*/
+	border: 6px double #A4A4A4;
+}
+
+#choosen {
+	font-size: 20px;
+	border-bottom: 2px dotted #848484;
+	padding-bottom: 10px;
+	font-weight: bold;
+}
+
+#vote-result-content p {
+	margin: 11px;
+	font-weight: bold;
+}
+
+/******* TABLEAU DES VOTANTS *******/
+
+#votants-result {
+	display: inline-block;
+	/*border: 1px	solid #000000;*/
+	height: 430px;
+	position: relative;
+	top: 35px;
+	padding-left: 25px;
+	padding-right: 25px;
+	overflow: hidden;
+}
+
+#table-scroll {
+	overflow: auto;
+	overflow-x: hidden;
+	height: 430px;
+	margin: 0px;
+	padding: 0px;
+	display: inline-block;
+	border: 1px solid #848484;
+}
+
+#table-votants-result {
+	/*border: 1px solid #000000;*/
+	margin: 0px;
+}
+
+#table-votants-result td {
+	padding: 10px;
+	width: 200px;
+	text-align: center;
+	border-top: 1px dotted #000000;
+	border-right: 1px dotted #000000;
+}
+
+#table-votants-result tr {
+	padding: 10px;
+	width: 200px;
+	text-align: center;
+	/*border-top: 1px dotted #000000;*/
+}
+
+#table-votants-result th {
+	padding: 10px;
+	width: 200px;
+	text-align: center;
+	/*background-color: #9FF781;*/
+	background-image: url("../img/manag-hdr-03.jpg");
+	border-right: 1px solid #848484;
+	border-bottom: 1px solid #848484;
+}
+
+#table-votants-result td > img {
+	width: 80px;
+	height: 80px;
+	/*box-shadow: 5px 5px 5px #BDBDBD;*/
+}
+
+/************ BUTTON ***************/
+
+#btn-area {
+	display: block;
+	position: relative;
+	top: 70px;
+	text-align: center;
+}
+
+/******** MODAL CONFIRM ************/
+.modal-header {
+	background-color: #9FF781;
+	padding: 5px 10px 5px 10px;
+	border-radius: 8px 8px 0px 0px;
+}
+
+.modal-body {
+	background-color: #FFFFFF;
+	height: 150px;
+	text-align: center;
+}
+
+.modal-footer {
+	background-color: #9FF781;
+	border-radius: 0px 0px 8px 8px;
+}
+
+.modal-header h2 {
+	font-size: 25px;
+	font-weight: bold;
+}
+
+.modal-body button {
+	margin: 20px 25px 10px 25px;
+	width: 100px;
+}
+
+/************** MISC ***************/
+@font-face {
+	font-family: fontHeader;
+	src: url("../font/sofia.otf");
+}
+
+body {
+	margin: 0px;
+}

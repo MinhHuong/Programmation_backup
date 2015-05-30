@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- The frame layout is here since we will be showing either
+    the empty view or the list view.  -->
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:background="#f7d8fe" >
+
+   <GridView
+       android:id="@+id/gridview"
+       android:layout_width="fill_parent"
+       android:layout_height="fill_parent"
+       android:layout_marginTop="20dp"
+       android:background="#f7d8fe"
+       android:gravity="center"
+       android:horizontalSpacing="@dimen/image_grid_hspacing"
+       android:numColumns="@integer/grid_num_cols"
+       android:stretchMode="columnWidth"
+       android:verticalSpacing="@dimen/image_grid_vspacing" />
+
+        <!-- Here is the view to show if the list is emtpy -->
+        <TextView 
+            android:id="@+id/no_topics_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/no_items"/>
+
+    </FrameLayout>
+
+</LinearLayout>
+

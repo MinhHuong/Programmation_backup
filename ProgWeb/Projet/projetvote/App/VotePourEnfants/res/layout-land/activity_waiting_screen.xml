@@ -1,0 +1,53 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context="pufhcm.votepourenfants.Waiting_screen" >
+
+    <!--
+         The primary full-screen view. This can be replaced with whatever view
+         is needed to present your content, e.g. VideoView, SurfaceView,
+         TextureView, etc.
+    -->
+
+	<!-- Layout hien hinh trong khi cho doi de vao chon nguoi vote -->
+
+	<ImageView
+	    android:id="@+id/waiting"
+	    android:layout_width="320dp"
+	    android:layout_height="470dp"
+	    android:layout_gravity="center_horizontal|center_vertical"
+	    android:background="@color/background_outline"
+	    android:longClickable="true"
+	    android:outlineProvider="paddedBounds"
+	    android:padding="@dimen/grid_image_padding"
+	    android:src="@drawable/waiting_image" >
+
+    </ImageView>
+    
+
+    <!--
+         This FrameLayout insets its children based on system windows using
+         android:fitsSystemWindows.
+    -->
+	<!-- Chinh giao dien cua phan tu dong tat mo menu bar va bar cuoi cung de thoat
+	chinh color o day chi tac dung voi thanh menubar o tren -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true" >
+
+        <LinearLayout
+            android:id="@+id/fullscreen_content_controls"
+            style="?metaButtonBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:background="@color/black_overlay"
+            android:orientation="horizontal"
+            tools:ignore="UselessParent" >
+        </LinearLayout>
+    </FrameLayout>
+
+</FrameLayout>

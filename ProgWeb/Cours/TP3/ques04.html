@@ -1,0 +1,74 @@
+<html>
+
+<head>
+	<meta charset="utf-8"><title>Animations</title>
+	<script src="jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" language="javascript">
+	var _img, _strong, _p;
+
+	$(document).ready(function () {
+	 //first slide down and blink the message box
+ 		$("#object").animate({
+ 			top: "30px",
+ 			left: "30px",
+ 		}, 2000).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
+
+ 		//close the message box when cross red image is clicked
+ 		$(".close_message").click(function () {
+ 			$(this).parent().fadeOut("slow");
+
+ 			var popup01 = $("#object").clone(true);
+ 			$(popup01).attr("id", "1");
+ 			$("body").append($(popup01));
+ 			$(popup01).animate({
+ 			top: "100px",
+ 			left: "50px",
+ 			}, 2000).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
+
+ 			var popup02 = $("#object").clone(true);
+ 			$(popup02).attr("id", "2");
+ 			$("body").append($(popup02));
+ 			$(popup02).animate({
+ 			top: "300px",
+ 			left: "10px",
+ 			}, 2000).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
+ 		});
+	});
+
+	function createPopUp(number) {
+		var _popup = document.createElement("div");
+ 		$(_popup).attr({
+ 			"id"	: "object" + number
+ 		});
+ 		$(_popup).addClass("message");	
+ 		_img = $("#object").find("img").first();
+ 		_strong = $("#object").find("strong").first();
+ 		_p = $("#object").find("p").first();
+ 		$(_popup).append($(_img)).append($(_strong)).append($(_p));
+ 		return _popup;
+	}
+	</script>
+	<style type="text/css">
+	.message {
+		border: 1px solid #CCCCCC;
+		position: absolute;
+		width: 150px;
+		border: 1px solid #c93;
+		background: #ffc;
+		padding: 5px;
+		left: 0px;
+		top: -170px;
+	}
+	</style>
+</head>
+
+<body>
+	<div id="object" class="message">
+		<img class="close_message" style="float:right; cursor:pointer" src="cross.png" width="20px" height="20px"/>
+		<strong>Offre publicitaire pénible </strong>
+		<p>Ce message ne disparaîtra que si vous appuyez sur la petite croix! </p>
+	</div>
+	<p>Ceci est le texte de ma page web. </p>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<resources>
+
+    <!-- so luong cot va dong -->
+    <integer name="grid_num_rows">2</integer>
+    <integer name="grid_num_cols">3</integer>
+    
+    <!-- kich thuc cell chua khung hinh -->
+    <integer name="cell_width">100</integer>
+    <integer name="cell_height">100</integer>
+    
+    <!-- kich thuoc hinh va font size -->
+	<dimen name="image_size">280dp</dimen>
+    <dimen name="image_width">0sp</dimen>
+    <dimen name="image_height">0sp</dimen>
+	
+    <dimen name="image_grid_vspacing">20sp</dimen>
+    <dimen name="image_grid_hspacing">30sp</dimen>
+
+	
+	<!-- khoang canh hinh den khung -->
+    <dimen name="grid_image_padding">20dip</dimen>
+    
+
+
+</resources>

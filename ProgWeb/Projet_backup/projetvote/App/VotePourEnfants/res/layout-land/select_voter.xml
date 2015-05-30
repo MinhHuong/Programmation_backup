@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#0099cc">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+            <ImageView
+            android:id="@+id/waiting0"
+            android:layout_width="250dip"
+            android:layout_height="250dip"
+            android:layout_marginBottom="40dip"
+            android:layout_marginLeft="140dip"
+            android:layout_marginRight="50dip"
+            android:layout_marginTop="30dip"
+            android:background="#cfcfcf"
+            android:longClickable="true"
+            android:outlineProvider="paddedBounds"
+            android:paddingBottom="15dip"
+            android:paddingLeft="15dip"
+            android:paddingRight="15dip"
+            android:paddingTop="15dip"
+            android:src="@drawable/a" />
+
+        <ImageView
+            android:id="@+id/waiting2"
+            android:layout_width="250dip"
+            android:layout_height="250dip"
+            android:layout_marginBottom="40dip"
+            android:layout_marginLeft="50dip"
+            android:layout_marginRight="50dip"
+            android:layout_marginTop="30dip"
+            android:background="#cfcfcf"
+            android:longClickable="true"
+            android:outlineProvider="paddedBounds"
+            android:paddingBottom="15dip"
+            android:paddingLeft="15dip"
+            android:paddingRight="15dip"
+            android:paddingTop="15dip"
+            android:src="@drawable/o" />
+        <ImageView
+            android:id="@+id/imageView0"
+            android:layout_width="250dip"
+            android:layout_height="250dip"
+            android:layout_marginBottom="40dip"
+            android:layout_marginLeft="50dip"
+            android:layout_marginRight="80dip"
+            android:layout_marginTop="30dip"
+            android:background="#cfcfcf"
+            android:longClickable="true"
+            android:outlineProvider="paddedBounds"
+            android:paddingBottom="15dip"
+            android:paddingLeft="15dip"
+            android:paddingRight="15dip"
+            android:paddingTop="15dip"
+            android:src="@drawable/p" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="250dip"
+            android:layout_height="250dip"
+            android:layout_marginBottom="40dip"
+            android:layout_marginLeft="140dip"
+            android:layout_marginRight="50dip"
+            android:layout_marginTop="40dip"
+            android:background="#cfcfcf"
+            android:longClickable="true"
+            android:outlineProvider="paddedBounds"
+            android:paddingBottom="15dip"
+            android:paddingLeft="15dip"
+            android:paddingRight="15dip"
+            android:paddingTop="15dip"
+            android:src="@drawable/d" />
+        
+            <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="250dip"
+            android:layout_height="250dip"
+            android:layout_marginBottom="40dip"
+            android:layout_marginLeft="50dip"
+            android:layout_marginRight="50dip"
+            android:layout_marginTop="40dip"
+            android:background="#cfcfcf"
+            android:longClickable="true"
+            android:outlineProvider="paddedBounds"
+            android:paddingBottom="15dip"
+            android:paddingLeft="15dip"
+            android:paddingRight="15dip"
+            android:paddingTop="15dip"
+            android:src="@drawable/f" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="250dip"
+            android:layout_height="250dip"
+            android:layout_marginBottom="40dip"
+            android:layout_marginLeft="50dip"
+            android:layout_marginRight="80dip"
+            android:layout_marginTop="40dip"
+            android:background="#cfcfcf"
+            android:longClickable="true"
+            android:outlineProvider="paddedBounds"
+            android:paddingBottom="15dip"
+            android:paddingLeft="15dip"
+            android:paddingRight="15dip"
+            android:paddingTop="15dip"
+            android:src="@drawable/g" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

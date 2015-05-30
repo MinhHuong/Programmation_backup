@@ -1,0 +1,54 @@
+============ SITE WEB ============
+
+Ce fichier sert à lister des tâches à faire
+
+/*============================
+MODULE 1 : VOTANTS
+==============================*/
+- Télécharger une photo sur le site web : (FINI)
+	+ d'abord, juste ajouter un autre atribut URL dans la classe Votant pour qu'elle stocke URL de l'image choisie
+	+ penser à réaliser une connexion à la base de données
+	+ des images seront alors stockées sous forme de URL
+	+ L'image est téléchargée, puis stockée en tant que fichier sur le serveur, la base de données ne lit que son URL
+
+- Ajouter le champ de "Se déconnecter" dans l'entête de la page (FINI)
+
+- Modifier la structure de la page pour que des terminaux de taille petite puisse la voir convenablement (margin auto...) --> pas très nécessaire maintenant
+
+- Zone de l'instruction : ajouter aussi des instructions pour le navigation bar (VOTANTS/VOTE DU JOUR)
+
+- Optimiser les codes !!! (il y a des repetitions non necessaires dans le code) :
+	+ Repetitions dans l'evenement des input type="file"
+	
+- Permettre a utliser ENTER pour confirmer un formulaire
+
+/*============================
+MODULE 2 : VOTE DU JOUR
+==============================*/
+
+- Penser à bien manipuler du display(CSS) entre deux états : .modifying and .ready
+(do not use "initial", "none" is good, but "initial" would make my web a mess) (FINI)
+
+- Agir sur la modification des topics existants
+
+==> TOUT FINIT
+
+/*============================
+MODULE 3 : EN PROCÈS DE VOTE
+==============================*/
+
+- Revoir les styles de la page
+
+/*============================
+MODULE 4 : RÉSULTAT
+==============================*/
+
+- Mettre des styles dans la page
+
+/*============================
+            ERREUR
+==============================*/
+- Firefox : il faut modifier le Settings un peu pour voir les Glyphicons
+Settings --> Font --> Uncheck Block pop-up --> Advance --> Allow pages to use theire own fonts...
+
+- Safari : la page de Login, des composants ne sont pas bien mis. Impossible a faire apparaitre des fenetres pour choisir les images.

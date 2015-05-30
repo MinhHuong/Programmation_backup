@@ -1,0 +1,154 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="js/jquery.cycle.all.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/rapport.min.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.min.css">
+
+	<title>Deuxième rapport - Lam, Huong, Thang</title>
+</head>
+
+<body>
+	<div class="container">
+	<!-- TITRE DU RAPPORT -->
+	<h1>DEUXIÈME RAPPORT DU PROJET VOTE</h1>
+
+	<!-- Des membres du groupe -->
+	<div id="div-group">
+		<h2>Classe LINF13 - PUF HCM</h2>
+		<ul id="group">
+			<li>NGUYEN Thanh Son Lam</li>
+			<li>LE Nguyen Minh Huong</li>
+			<li>TRAN Trung Thang</li>
+		</ul>
+	</div>
+
+	<!-- Des contenus principaux dans notre rapport -->
+	<div id="div-menu">
+		<h2>Sommaire</h2>
+		<ul id="menu">
+			<li id="item-description">Description</li>
+			<li id="item-web">Web</li>
+			<li id="item-android">Application Android</li>
+		</ul>
+	</div>
+
+	<!-- Description générale -->
+	<div id="div-description">
+		<h3>Description générale</h3>
+		<p>Suite au premier délivrable, ce deuxième consiste en l'intégration de deux maquettes (Application Android + Web).</p>
+		<p>Nous vous envoyons un rapport sour forme de web pour ajouter plus d'effets, et pour ne pas vous fatiguer en présentant <b style="color:orange">un rapport de vingtaines pages</b> (c'est juste des images, mais il est VRAIMENT long).</p>
+	</div>
+
+	<!-- Partie du Site Web -->
+	<div id="div-web">
+		<h3>Site web</h3>
+		<p>Cette intégration du web est réalisée de sorte de le faire marcher locallement, donc il n'y a aucune connexion au serveur. Des données sur chaque page sont temporaires, elles seront perdues une fois la page rafraichie.</p>
+		<p>Cette intégration se compose de deux versions : <b>des fichiers html, css, js</b> pour le faire marcher en machine locale et <b>des captures d'écran</b>.</p>
+
+		<br><p style="color:green;font-weight:bolder;font-style:italic">*** SOURCE CODE ***</p>
+		<h4>Structure</h4>
+		<p>Des source code sont placés dans le répertoire /SiteWeb. Ce répertoire est organisé comme suit:</p>
+		<p>index.html (la page LOGIN)<br>
+		   | --- html/<br>
+		   | --- css/<br>
+		   | --- script/<br>
+		   | --- font/<br>
+		   | --- img/<br>
+		</p>
+		<p>Pour suivre l'enchainement des procédures pendant la gestion de vote, veuillez commencer par le fichier <strong>index.html</strong>.</p>
+		<p>Dans deux répertoires /css et /script, il existe 2 version : celle normale (.css/.js) et celle minifiée (.min.css/.min.js). On profite de la version minifiée pour but d'accélérer la page web le mieux possible.</p>
+		<p style="font-size:20px;text-align:center">Cliquer <a href="SiteWeb/index.html">ici</a> pour entrer dans notre site web local.</p><br>
+
+		<h4>Évaluation par Opquast</h4>
+		<p>Le site est déjà évalué sur Opquast : une erreur qui existe dans toutes les pages - le site web ne permet pas de CACHE (c'est notre intention).</p><br>
+
+		<h4>Compatibilité</h4>
+		<p>Le site web est déjà testé sur plusieurs navigateurs, quelques problèmes notés: </p>
+		<ul>
+			<li><b>Google Chrome :</b> tout fonctionne bien</li>
+			<li><b>Firefox :</b> il faut changer dans le menu "Options" pour bien voir des symboles, des popup Javascript
+				<ul>
+					<li>Content --> Pop-ups --> Uncheck "Block pop-up windows"</li>
+					<li> Content --> Fonts et Colors --> Advanced --> Check "Allow pages to choose their own fonts, instead of my selections above"</li>
+				</ul>
+			</li>
+			<li><b>Internet Explorer :</b> il faut confirmer "Allow popup content"</li>
+		</ul>
+
+		<br><br><p style="color:green;font-weight:bolder;font-style:italic">*** DES CAPTURES D'ÉCRAN ***</p>
+		<p style="font-weight:bold;color:#FE642E">Cliquer sur l'image pour en passer à une autre. Des explications se trouvent au-dessous de ce slideshow.</p>
+
+		<div id="all-slideshow-web">
+			<div class="slideshow" id="slideshow-web"></div>
+			<div id="explanation-web"><p></p></div>
+		</div>
+	</div>
+
+	<!-- Partie de l'Application Android -->
+	<div id="div-android">
+		<h3>Application Android</h3>
+
+		<h4>Compatibilité</h4>
+		<p>L'application Android est codée sur Eclipse, avec le SDK.</p>
+		<p>Elle est déjà testé sur l'environnement de Android 4.0.4 et 4.2.2, marche sur la tablette 10inch.</p>
+		<p>Il y a des erreurs sur l'écran de 8inch, Android 4.4.2. Nous sommes en train de fixer ces erreurs : l'écran des Votants n'affiche pas les photos des petits, tandis que d'autres écrans de l'application fonctionne normalement.</p><br>
+
+		<h4>Structure</h4>
+		<p>L'application, nommée VotePourEnfants, se compose de 4 écrans principaux :</p>
+		<ul>
+			<li><b>Attente :</b> cet écran s'affiche et reste jusqu'à ce que le serveur est prêt à déclencher la vote du jour (cad, l'enseignant finit à ajouter des votants, donner un Topic sur son site web de gestion). Dans cette intégration, un clic sur l'écran suffit à entrer à l'écran suivant.</li><br>
+			<li><b>Votants :</b> dans cette partie, des petits appuient <b>(un LONG clic, appuyer sur la photo jusqu'à ce qu'elle soit marquée en gris)</b> sur sa photo pour s'identifier avant de faire la vote. Si un petit a déjà voté, sa photo sera marquée en gris. Si l'utilisateur veut aller backward (fonctionnalité disponible sur toute tablette Android), l'application ferme immédiatement.</li><br>
+			<li><b>Vote du jour :</b> Cliquer sur le subtopic souhaité pour confirmer le choix. Si l'utilisateur décide de retourner à l'écran Votants (Back), il y retourner sans que sa photo soit désactivée.</li><br>
+			<li><b>Résultat :</b> Cet écran s'affiche dans 2 cas, soit tous les petits ont déjà fait leur vote, soit l'enseignant clique sur "ARRÊTER" à partie du site web (un bouton "Simulate" simule le dernier cas). Cliquer sur chaque photo de l'écran Résultat pour écouter le nombre de votes.</li>
+		</ul><br>
+
+		<h4>Voix</h4>
+		<p>Comme cette application est destinée aux enfants de 4-5, qui ne lisent pas encore, ce sera préférable d'avoir des voix d'instruction pendant l'utilisation de l'application.<br>Des instructions sont en francais.</p>
+		<p>Pour l'utiliser, il faut activer la fonction textToSpeech dans Setting --> Language and Input --> Choisir la langue "French".</p>
+		<br>
+
+		<h4>Difficultés</h4>
+		<p>La mise en place automatique des composants se pose des problèmes à gérer (Layout, Adapter).<br>
+		   Par manque d'expérience de travail sur Android, des codes ne sont pas optimisés, ce qui cause l'application à se ralentir, ne pas marcher doucement.
+		</p><br>
+
+		<h4>Tâches à faire pour le 3e délivrable</h4>
+		<ul>
+			<li>Optimiser les codes</li>
+			<li>Prendre les données des Votants à partir du serveur</li>
+			<li>Synchroniser avec le serveur</li>
+			<li>Permettre de voter sur plusieurs tablettes en même temps, en évitant que deux personnes s'identifient en un même compte</li>
+			<li>Les résultats de vote sont envoyés au serveur</li>
+			<li>Chercher à améliorer l'association des couleurs, afin de donner à l'application l'impression de plus forte interactivité avec l'utilisateur</li>
+			<li>Penser à rendre l'application plus ergonomique</li>
+		</ul><br>
+
+		<h4>À propos de cette intégration</h4>
+		<p>Cette intégration se compose de trois versions : <b>des source code</b>, un <b>package APK</b> et <b>des captures d'écran</b>.</p>
+
+		<br><br><p style="color:green;font-weight:bolder;font-style:italic">*** SOURCE CODE ***</p>
+		<p>Dans ce répertoire, vous trouverez un fichier zip <b>VotePourEnfants.zip</b>. Vous pourrez extraire ce zip, puis importer tout ce répertoire dans Eclipse et faire marcher l'application sur votre machine.</p>
+
+		<br><br><p style="color:green;font-weight:bolder;font-style:italic">*** PACKAGE APK ***</p>
+		<p>Dans ce répertoire, vous trouverez un fichier zip <b>VotePourEnfants.zip</b>. Vous extrairez ce zip, puis suivrez ce chemin : <b>VotePourEnfants/bin/VotePourEnfants.apk</b>. C'est le package APK dont vous avez besoin.</p>
+
+		<br><br><p style="color:green;font-weight:bolder;font-style:italic">*** DES CAPTURES D'ÉCRAN ***</p>
+
+		<p style="font-weight:bolder;color:#FE642E">Voici les captures d'écran de l'application. Des explications s'affichent au-dessous de ce slideshow.<br>Cliquer sur l'image pour en passer à une autre.</p>
+
+		<div id="all-slideshow-app">
+			<div class="slideshow" id="slideshow-app"></div>
+			<div id="explanation-app"><p></p></div>
+		</div>
+	</div>
+</div>
+</body>
+
+</html>

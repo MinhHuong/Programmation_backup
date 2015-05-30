@@ -1,0 +1,232 @@
+@import url("../css/bootstrap-glyphicons.css");
+
+/********* SETUP OF THE WHOLE CONTAINER *******/
+
+/*.container {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.row {
+	margin-left: 0;
+	margin-right: 0;
+	height: auto;
+}*/
+
+/********** HEADER OF THE PAGE **********/
+#header {
+	height: 72px;
+	position: relative;
+	background-image: url("../img/hdr-pattern08.gif");
+}
+
+.hdr-content {
+	position: relative;
+	display: inline-block;
+	margin: 0px;
+	top: 10px;
+	left: 90px;
+	font-size: 40px;
+	font-family: fontHeader;
+	color: #FFFFFF;
+	font-style: italic;
+	text-align: center;
+}
+
+#logout {
+	float: right;
+	position: relative;
+	top: 25px;
+	right: 30px;
+	font-size: 110%;
+}
+
+/************ NAVIGATION BAR *************/
+#div-menu {
+	position: relative;
+	display: inline-block;
+	top: 5px;
+	left: 420px;
+	height: 40px;
+}
+
+/*.navbar-nav > li > a {
+	padding: 0px;
+}*/
+
+.nav > li > a {
+	padding: 8px;
+	border-bottom: thin dotted #000000;
+	font-weight: bolder;
+	font-size: 120%;
+}
+
+#menu-page {
+	margin: 0px;
+	position: relative;
+}
+
+.menu-page-item {
+	list-style-type: none;
+	display: inline-block;
+	position: relative;
+	width: 150px;
+	height: 35px;
+	left: 18px;
+	text-align: center;
+}
+
+/*.menu-page-link {
+	text-decoration: none;
+	height: 40px;
+	padding: 0px;
+}*/
+
+.menu-page-link:hover {
+	text-shadow: 1px 1px 2px #A4A4A4;
+}
+
+/************* LEFT MENU ************/
+#left-menu { 
+	display: inline-block;
+	/*width: 300px;*/
+	top: 30px;
+	/*left: 50px;*/
+	/*float: left;*/
+}
+
+#div-manag {
+	display: block;
+	border: 1px solid #848484;
+	width: auto;
+	/*width: 274px;*/
+	border-radius: 8px;
+	height: 410px;
+	background-color: transparent;
+}
+
+#div-manag:hover {
+	box-shadow: 6px 6px 5px #CCCCCC;
+}
+
+#div-manag-hdr {
+	background-image: url("../img/hdr-pattern10.png");
+	border-bottom: 1px solid #848484;
+	padding: 5px;
+	border-radius: 8px 8px 0px 0px;
+}
+
+#div-manag-hdr span {
+	font-weight: bolder;
+	font-size: 18px;
+	margin-left: 10px;
+}
+
+#div-manag-content {
+	height: 360px;
+	padding: 20px;
+	overflow: auto;
+	background-color: transparent;
+}
+
+input[type="radio"] + label {
+	display: inline-block;
+	font-size: 120%;
+	margin-left: 15px;
+	margin-bottom: 15px;
+}
+
+/***** AREA OF CHOOSING SUBJECT ****/
+
+/* The whole area of choosing subject*/
+#area-subject {
+	display: inline-block;
+	border: 5px dashed #A4A4A4;
+	border-radius: 15px;
+	/*float: right;*/
+	position: relative;
+	padding-top: 20px;
+	top: 30px;
+	/*height: 438px;*/
+	height: auto;
+	/*overflow-y: scroll;
+	overflow-x: hidden;*/
+	/*overflow: auto;*/
+	left: 30px;
+}
+
+/*======== Topic =========*/
+#area-topic {
+	text-align: center;
+}
+
+#area-topic > h2 {
+	font-weight: bold;
+	margin: 10px;
+}
+
+#topic {
+	margin: 15px;
+}
+
+/*======== Four subtopics =======*/
+#area-subtopic {
+	text-align: center;
+}
+
+.subtopic-content {
+	/*border: 1px solid #000000;*/
+	display: inline-block;
+	margin: 20px 30px 20px 30px;
+	width: 122px;
+}
+
+.subtopic-content p {
+	font-size: 110%;
+	margin: 15px 10px 10px 10px;
+}
+
+.subtopic-content img {
+	width: 120px;
+	height: 120px;
+	box-shadow: 5px 5px 5px #A4A4A4;
+	border-radius: 8px;
+}
+
+.subtopic {
+	display: inline-block;
+}
+
+#area-button {
+	text-align: center;
+	margin-top: 10px;
+}
+
+#area-button button {
+	margin: 37px 30px 38px 30px;
+	width: 100px;
+}
+
+h2.ready {
+	height: 36px;
+}
+
+input[type="text"].modifying {
+	width: 120px;
+	display: inline-block;
+	margin-top: 20px;
+}
+
+#topic {
+	width: 300px;
+}
+
+/************** MISC ***************/
+@font-face {
+	font-family: fontHeader;
+	src: url("../font/sofia.otf");
+}
+
+body {
+	margin: 0px;
+}
